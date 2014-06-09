@@ -1,0 +1,164 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata|Roboto:400,300,300italic&subset=latin,cyrillic-ext);
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    line-height: 160%;
+    margin: 0;
+    background: #fffbf4;
+    color: #000;
+    text-align: center;
+}
+
+strong, b {
+    font-weight: 400;
+}
+
+a, a:visited {
+   color: #5fb336;
+   text-decoration: none;
+}
+
+a {
+    display: inline-block;
+    padding: 0 0.3em;
+    border-radius: 0.3em;
+    margin: 0 -0.3em;
+}
+
+a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.wrapper {
+    width: 940px;
+    display: inline-block;
+    text-align: left;
+}
+
+.header-bg {
+    background: rgba(0, 0, 0, 0.05);
+    position: absolute;
+    height: 90px;
+    left: 0;
+    right: 0;
+}
+
+.header {
+    position: relative;
+    height: 70px;
+    padding-top: 20px;
+}
+
+h1 {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.5em;
+    margin: 1.5em 0 0.5em;
+}
+
+code, dt {
+    font-family: "Inconsolata", monospace;
+    font-size: 120%;
+    font-weight: normal;
+}
+
+dt b {
+    font-weight: normal;
+}
+
+code, dt b {
+    color: #975a2a;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 2.5em;
+    text-decoration: none;
+    vertical-align: top;
+    line-height: 48px;
+}
+
+.logo,
+.logo:visited {
+    color: #5fb336;
+}
+
+.header h1 {
+    font-size: 2.2em;
+    font-weight: normal;
+    margin: 0;
+    padding-bottom: 0.5em;
+}
+
+.footer {
+    margin-top: 4em;
+    font-size: 80%;
+    color: #999;
+    border-top: 1px solid #ccc;
+    padding: 1em 0;
+}
+
+
+/* ========================== */
+
+.graphic-bg {
+    background: rgba(0, 0, 0, 0.1) url(graphic.png) 50% 0 no-repeat;
+    position: absolute;
+    height: 200px;
+    left: 0;
+    right: 0;
+}
+
+.graphic {
+    height: 200px;
+    margin-bottom: 3em;
+}
+
+/* ========================== */
+
+.menu {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    line-height: 2.2em;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.menu li {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.menu li.extra {
+    border-left: 1px solid #5fb336;
+    padding-left: 1em;
+}
+
+.menu li a {
+    padding: 0 0.7em;
+}
+
+.menu li a.selected {
+    background-color: #5fb336;
+    color: #fff;
+}
+
+code {
+    white-space: nowrap;
+}
+
+code.block {
+    display: block;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.3em;
+    padding: 0.3em 0.6em;
+    margin: 0 1em;
+    white-space: pre;
+}
+
