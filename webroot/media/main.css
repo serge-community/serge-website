@@ -43,6 +43,8 @@ a:hover {
     height: 90px;
     left: 0;
     right: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
 }
 
 .header {
