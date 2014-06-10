@@ -120,7 +120,7 @@ code, dt b {
 
 /* ========================== */
 
-.menu {
+ul.menu {
     display: inline-block;
     list-style-type: none;
     margin: 0;
@@ -131,21 +131,21 @@ code, dt b {
     margin-top: 10px;
 }
 
-.menu li {
+ul.menu li {
     display: inline-block;
     margin-left: 1em;
 }
 
-.menu li.extra {
+ul.menu li.extra {
     border-left: 1px solid #5fb336;
     padding-left: 1em;
 }
 
-.menu li a {
+ul.menu li a {
     padding: 0 0.7em;
 }
 
-.menu li a.selected {
+ul.menu li a.selected {
     background-color: #5fb336;
     color: #fff;
 }
@@ -162,5 +162,21 @@ code.block {
     padding: 0.3em 0.6em;
     margin: 0 1em;
     white-space: pre;
+}
+
+ul.social-buttons {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    line-height: 2.2em;
+    margin-top: 10px;
+}
+
+ul.social-buttons li {
+    display: inline-block;
+    margin-left: 1em;
+    width: 120px;
 }
 
