@@ -9,7 +9,8 @@
         		<li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://serge.io/" data-dnt="true"></a></li>
         	</ul>
             */ ?>
-        	Serge and Serge website are &copy; 2014 Evernote Corporation. All rights reserved.<br/>Serge is licensed under GNU General Public License.
+        	Serge and Serge website are &copy; 2014 Evernote Corporation. All rights reserved.<br/>
+            Serge is licensed under Standard Perl License (dual <a href="http://dev.perl.org/licenses/gpl1.html">GPL</a> / <a href="http://dev.perl.org/licenses/artistic.html">Artistic License</a>)
         </div>
     </div><!-- /wrapper -->
 

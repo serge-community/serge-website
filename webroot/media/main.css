@@ -53,6 +53,10 @@ a:hover {
     padding-top: 20px;
 }
 
+.header a.logo:hover {
+    background: none;
+}
+
 h1 {
     font-weight: 400;
     color: rgba(0, 0, 0, 0.6);
@@ -85,6 +89,10 @@ code, dt b {
 .logo,
 .logo:visited {
     color: #5fb336;
+}
+
+.logo img {
+    margin-right: 0.2em;
 }
 
 .header h1 {
