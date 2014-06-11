@@ -6,24 +6,9 @@
 <div class="graphic-bg"></div>
 <div class="graphic"></div>
 
-<p><strong>Serge</strong> (it's name stands for <u>S</u>tring <u>E</u>xtraction and <u>R</u>esource <u>G</u>eneration <u>E</u>ngine) <strong>is a free, open-source toolkit</strong> written in Perl that helps you set up a seamless continuous localization process for your software and/or marketing assets in a fully automated and scalable fashion. It will fit perfectly into your agile development cycle.</p>
+<p><strong>Serge</strong> (it's name stands for <u>S</u>tring <u>E</u>xtraction and <u>R</u>esource <u>G</u>eneration <u>E</u>ngine) <strong>is a free, open-source toolkit</strong> written in Perl that helps you set up a seamless continuous localization process for your software and marketing assets in a fully automated and scalable fashion. It will fit perfectly into your agile development cycle.</p>
 
-<p>Serge is developed and maintained by <a href="http://evernote.com/">Evernote</a>, where it works non-stop to help deliver dozens of different Evernote clients, websites and marketing materials in 30+ languages. But it will equally work well for an indie developer with just one project to translate.</p>
-
-<h1>What Does it Do, Exactly?</h1>
-
-<p>Serge is a command-line tool that can be either run manually and on demand on a developers' computer, or be run continuously on a standalone server. Being provided a special project configuration file or a directory with the configuration files, it will automatically do the following for each project:
-<ol>
-    <li>Pull source files from your remote development repository</li>
-    <li>Parse specific localizable resource files from the local checkout and extract strings from there</li>
-    <li>Put translatable strings into its own Translation Memory database</li>
-    <li>Generate .po files that can be further used in an offline or online translation environment</li>
-    <li>Parse previously generated .po files to integrate translations back into TM database</li>
-    <li>Generate localized copies of source files based on existing translations, optionally massaging the content of the files using regular expressions</li>
-    <li>Push generated files back to your remote repository</li>
-</ol>
-
-<p>This allows developers to concentrate on editing localizable resource files in just one language (e.g. English). After pushing their changes to the remote repository, they will see all the localized files to be accordingly updated after the next Serge cycle run.</p>
+<p>Serge is developed and maintained by <a href="http://evernote.com/">Evernote</a>, where it works non-stop to help deliver dozens of different Evernote clients, websites and marketing materials in 30+ languages, but it will equally work well for an indie developer with just one project to translate. It allows developers to concentrate on maintaining resource files in just one language (e.g. English), and Serge will take care of keeping all localized resources in sync.</p>
 
 <h1>Key Features</h1>
 

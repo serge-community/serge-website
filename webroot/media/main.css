@@ -61,7 +61,15 @@ h1 {
     font-weight: 400;
     color: rgba(0, 0, 0, 0.6);
     font-size: 1.5em;
-    margin: 1.5em 0 0.5em;
+    display: inline-block;
+    padding: 5px;
+    margin: 1.5em -5px 0.5em;
+    border-radius: 5px;
+}
+
+h1:target {
+    background-color: #5fb336;
+    color: #fff;
 }
 
 code, dt {
@@ -119,6 +127,7 @@ code, dt b {
     height: 200px;
     left: 0;
     right: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .graphic {
@@ -188,3 +197,22 @@ ul.social-buttons li {
     width: 120px;
 }
 
+ul, ol {
+    margin-left: 1em;
+}
+
+ol {
+    counter-reset: item;
+}
+
+ol > li {
+    display: block;
+    position: relative;
+}
+ol > li:before {
+    content: counters(item, ".")".";
+    counter-increment: item;
+    position: absolute;
+    margin-right: 100%;
+    right: 1em; /* space between number and text */
+}
