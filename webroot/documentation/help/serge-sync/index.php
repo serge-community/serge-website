@@ -25,31 +25,31 @@
 <dt><b>--force</b></dt>
 <dd>
 
-<p>Has the same effect as <code><a href="serge-pull-po">serge pull-po --force</a></code> and <code><a href="serge-localize">serge localize --force</a></code> combined.</p>
+<p>Has the same effect as <code><a href="../serge-pull-po/">serge pull-po --force</a></code> and <code><a href="../serge-localize/">serge localize --force</a></code> combined.</p>
 
 </dd>
 <dt><b>--no-cache-preload</b></dt>
 <dd>
 
-<p>Has the same effect as <code><a href="serge-localize">serge localize --no-cache-preload</a></code>.</p>
+<p>Has the same effect as <code><a href="../serge-localize/">serge localize --no-cache-preload</a></code>.</p>
 
 </dd>
 <dt><b>--recreate-po</b></dt>
 <dd>
 
-<p>Has the same effect as <code><a href="serge-localize">serge localize --recreate-po</a></code>.</p>
+<p>Has the same effect as <code><a href="../serge-localize/">serge localize --recreate-po</a></code>.</p>
 
 </dd>
 <dt><b>--lang=xx[,yy][,zz]</b>, <b>--language=xx[,yy][,zz]</b> <b>--languages=xx[,yy][,zz]</b></dt>
 <dd>
 
-<p>See <code><a href="serge-localize">serge localize --lang</a></code>. Will also completely skip processing configs where no target languages are found.</p>
+<p>See <code><a href="../serge-localize/">serge localize --lang</a></code>. Will also completely skip processing configs where no target languages are found.</p>
 
 </dd>
 <dt><b>--job=xx[,yy][,zz]</b>, <b>--jobs=xx[,yy][,zz]</b></dt>
 <dd>
 
-<p>See <code><a href="serge-localize">serge localize --job</a></code>. Will also completely skip processing configs where no target jobs are found.</p>
+<p>See <code><a href="../serge-localize/">serge localize --job</a></code>. Will also completely skip processing configs where no target jobs are found.</p>
 
 </dd>
 <dt><b>--echo-commands</b></dt>
@@ -68,9 +68,9 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="serge-pull">serge-pull</a>, <a href="serge-pull-po">serge-pull-po</a>, <a href="serge-localize">serge-localize</a>, <a href="serge-push-po">serge-push-po</a>, <a href="serge-push">serge-push</a></p>
+<p><a href="../serge-pull/">serge-pull</a>, <a href="../serge-pull-po/">serge-pull-po</a>, <a href="../serge-localize/">serge-localize</a>, <a href="../serge-push-po/">serge-push-po</a>, <a href="../serge-push/">serge-push</a></p>
 
-<p>Part of <a href="serge">serge</a> suite.</p>
+<p>Part of <a href="../serge/">serge</a> suite.</p>
 
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/help-footer.php') ?>

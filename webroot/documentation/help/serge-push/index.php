@@ -40,7 +40,7 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p>Part of <a href="serge">serge</a> suite.</p>
+<p>Part of <a href="../serge/">serge</a> suite.</p>
 
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/help-footer.php') ?>

@@ -16,7 +16,7 @@
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p><b>serge-import</b> does the opposite of <a href="serge-localize">serge-localize</a>: it scans previously generated localized resource files according to the rules in configuration files, and tries to import translations back into the database.</p>
+<p><b>serge-import</b> does the opposite of <a href="../serge-localize/">serge-localize</a>: it scans previously generated localized resource files according to the rules in configuration files, and tries to import translations back into the database.</p>
 
 <p>This is useful to initially import pre-existing translations before setting up an automated localization flow.</p>
 
@@ -70,7 +70,7 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p>Part of <a href="serge">serge</a> suite.</p>
+<p>Part of <a href="../serge/">serge</a> suite.</p>
 
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/help-footer.php') ?>

@@ -56,8 +56,8 @@ sub save_php {
     my $localtime = localtime;
 
     my $parser = Pod::Simple::XHTML->new();
-    $parser->perldoc_url_prefix('');
-    $parser->perldoc_url_postfix('');
+    $parser->perldoc_url_prefix('../');
+    $parser->perldoc_url_postfix('/');
 
     $parser->html_header(
 qq|<?php
