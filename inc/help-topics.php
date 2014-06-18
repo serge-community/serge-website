@@ -1,0 +1,1 @@
+<?php $help_topics = array("serge","serge-clean-po","serge-gendocs","serge-help","serge-import","serge-localize","serge-pull","serge-pull-po","serge-push","serge-push-po","serge-sync"); ?>

@@ -14,8 +14,8 @@
 
 <ul>
     <li><strong>Pluggable architecture</strong>: plugins can provide hooks at various stages of main code execution and control the flow; you can easily write your own plugins</li>
-    <li><strong>VCS synchronization plugins</strong>: Git; Git/Gerrit, SVN 
-    <li><strong>.PO synchronization plugins</strong>: Pootle (online translation server) 
+    <li><strong>VCS synchronization plugins</strong>: Git; Git/Gerrit, SVN
+    <li><strong>.PO synchronization plugins</strong>: Pootle (online translation server)
     <li><strong>Parser plugins</strong>: Android .strings; Google Chrome .json; DTD entities; arbitrary JSON, XML and YAML trees; static PHP/XHTML; MacOS/iOS .strings and .plist files; .pot files; Java .properties; Windows .rc, .resx and .wxl; Blackberry .rrc; Qt .ts; miscellaneous simple key/value formats (Perl, JavaScript, etc.); .master (internal markup format)</li>
     <li><strong>Control flow plugins</strong>: limit the list of destination languages for each individual file based on certain content found in a file; create/update files only when they reach a certain completeness level; replace strings using regular expressions; run arbitrary shell command for each saved localized file</li>
     <li><strong>Translation plugins</strong>: guess translations from previously known similar strings and their translations; fake (test) translation plugin</li>

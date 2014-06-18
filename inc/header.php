@@ -18,7 +18,7 @@
         <div class="header">
             <a class="logo" href="/"><img src="/media/logo.png" />Serge</a>
 
-            <ul class="menu">
+            <ul class="menu<?php echo $subselection ? ' subselection' : '' ?>">
                 <li><a href="/"<?php echo menuSel('index') ?>>Home</a></li>
                 <li><a href="/download/"<?php echo menuSel('download') ?>>Download</a></li>
                 <li><a href="/documentation/"<?php echo menuSel('documentation') ?>>Documentation</a></li>

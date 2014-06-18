@@ -167,8 +167,16 @@ ul.menu li a.selected {
     color: #fff;
 }
 
-code {
-    white-space: nowrap;
+ul.menu.subselection li a.selected {
+    background: none;
+    color: #5fb336;
+    box-shadow: 0 0 2px;
+}
+
+ul.menu.subselection li a.selected:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+    box-shadow: none;
 }
 
 code.block {
@@ -215,4 +223,60 @@ ol > li:before {
     position: absolute;
     margin-right: 100%;
     right: 1em; /* space between number and text */
+}
+
+/* HELP */
+
+.pod {
+    display: table;
+}
+
+.pod .menu,
+.pod .body {
+    display: table-cell;
+    padding: 2em;
+}
+
+.pod .menu {
+    padding-left: 0;
+}
+
+.pod .body {
+    padding-right: 0;
+}
+
+.pod .menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.pod .menu a {
+    white-space: nowrap;
+}
+
+.pod .menu li.selected a {
+    background: #5fb336;
+    color: #fff;
+}
+
+
+.pod .body h1 {
+    opacity: 0.7;
+}
+
+.pod .body h1#NAME {
+    display: none;
+}
+
+.pod .body h1.top {
+    font-size: 2.1em;
+    opacity: 1;
+    display: block;
+    margin: 0.5em 0 1.5em;
+    padding: 0;
+}
+
+.pod .body h1 code {
+    font-size: 120%;
 }
