@@ -15,7 +15,7 @@
 
 <code class="block">cpan Serge</code>
 
-<p>`cpan` is a command line package installation client that comes with Perl. It will take care of all missing dependencies.</p>
+<p>`cpan` is a command line package installation client that either comes with Perl or can be installed separately using your package manager. It will take care of all missing dependencies.</p>
 
 <h1>The Bleeding Edge</h1>
 
