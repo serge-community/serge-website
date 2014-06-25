@@ -90,7 +90,6 @@ code, dt b {
     display: inline-block;
     font-size: 2.5em;
     text-decoration: none;
-    vertical-align: top;
     line-height: 48px;
 }
 
@@ -101,6 +100,7 @@ code, dt b {
 
 .logo img {
     margin-right: 0.2em;
+    vertical-align: top;
 }
 
 .header h1 {
