@@ -58,17 +58,25 @@ a:hover {
     background: none;
 }
 
-h1 {
+h1,
+h2 {
     font-weight: 400;
     color: rgba(0, 0, 0, 0.6);
     font-size: 1.5em;
-    display: inline-block;
+    display: table;
     padding: 5px;
     margin: 1.5em -5px 0.5em;
     border-radius: 5px;
 }
 
-h1:target {
+h2 {
+    font-size: 1.3em;
+    margin-top: 1em;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+h1:target,
+h2:target {
     background-color: #5fb336;
     color: #fff;
 }
@@ -186,7 +194,7 @@ code.block {
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.3em;
     padding: 0.3em 0.6em;
-    margin: 0 1em;
+    margin: 1em;
     white-space: pre;
 }
 
