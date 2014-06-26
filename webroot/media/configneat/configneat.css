@@ -1,0 +1,16 @@
+.cm-keyword     {color: #08c; }
+.cm-key-label   {color: #f08; font-style: italic; }
+.cm-key-merge   {color: #0c0; }
+.cm-key-delete  {color: #c00; }
+.cm-variable    {color: #000; }
+.cm-placeholder {color: #f80; font-style: italic; }
+.cm-bracket     {color: #999; }
+.cm-quote       {color: #090; }
+.cm-comment     {color: #999; }
+.cm-string-2    {color: #c0f; }
+.cm-builtin     {color: #86f; }
+
+code.block.config {
+    white-space: pre-wrap;
+    font-size: 90%;
+}

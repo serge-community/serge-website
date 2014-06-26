@@ -17,7 +17,7 @@
 
 <p>Configuration files provide all the required information: how to interact with the version control system and external translation service, where to store the local checkout and .po files, which database to use, which files to process, which parser and additional plugins to use, how to name localized versions of files, and so on.</p>
 
-<p>TBD</p>
+<p>See the <a href="config/">configuration file reference</a>.</p>
 
 <h1 id="commands">Serge Commands</h1>
 

@@ -1,16 +1,15 @@
 <?php
-
     function menuSel($menu_page) {
         global $page;
         return ($page == $menu_page) ? ' class="selected"' : '';
     }
-
 ?>
 <html>
 <head>
     <title>Serge - Localization Toolkit</title>
     <link rel="stylesheet" href="/media/main.css" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <?php echo $head ?>
 </head>
 <body>
     <div class="wrapper">

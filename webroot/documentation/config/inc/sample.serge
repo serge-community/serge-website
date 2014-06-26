@@ -1,0 +1,357 @@
+/*
+    Sample configuration file.
+    Do not alter it directly; make a copy of the file first.
+
+    This configuration file uses Config::Neat format.
+    See https://github.com/iafan/Config-Neat for more information.
+*/
+
+/*
+    `sync` block describes where to get translatable files from.
+*/
+sync
+{
+    # absolute path to local folder where local checkout will be stored.
+
+    /*
+        You can use `%ENV:SOMEVAR%` macros anywhere in the string — it will be substituted
+        with the value of corresponding environment variables; if the variable with that name
+        is not defined, the script will fail with the corresponding message. This allows
+        to use the same configuration file in different environments (different developers'
+        and build machines)
+    */
+    data_dir                        %ENV:L10N_DATA_DIR%
+
+    # id (unique folder name) of the project in Pootle.
+    pootle_project                  sample_project_1
+
+    # path to Pootle's `manage.py` utility that is used to sync po files with its internal database
+    pootle_manage_py_path           %ENV:L10N_MANAGE_PY_PATH%
+
+    # should the newly generated files be added to the remote repository automatically?
+    # (YES or NO, defaults to NO)
+    add_unversioned                 NO
+
+    # connection parameters for a remote source control repository
+    server
+    {
+        # VCS plugin name (currently supported are `svn`, `git` and `gerrit`)
+        plugin                      git
+
+        # Plugin-specific data
+        # (note that Git and Gerrit plugins rely on Git-specific authentication mechanism
+        # that uses private keys)
+        data
+        {
+            # username to pull and push on behalf of
+            user                    johndoe
+
+            # password (used in SVN only; Git/Gerrit usу Git-specific private keys for SSH)
+            #password                SomeSecret1234
+
+            # public author name (used by Git and Gerrit only)
+            name                    John Doe
+
+            # author's email address (used by Git and Gerrit only)
+            email                   johndoe@example.com
+        }
+    }
+
+    # a list of local subfolders to create and corresponding remote repositories
+    path
+    {
+        main                        ssh://johndoe@git.example.com/myapplication#branch_v5 # uses `branch_v5` branch
+        widget                      ssh://johndoe@git.example.com/myappwidget # uses `master` branch by default
+    }
+
+    # commit message (optional)
+    # Default is: 'Automatic commit of updated project files'
+    commit_message                  Automatic commit of updated project files
+}
+
+
+/*
+    `jobs` block represents an ordered list of jobs to process.
+    There should be at least one job present there
+*/
+jobs
+{
+    /*
+        First job definition
+    */
+    {
+        # Name of the job (this is used only for logging purposes)
+        name                        Sample job 1
+
+        # Unique job identifier string. Format is arbitrary
+        id                          unique.job.identifier.string
+
+        # Can optimizations be applied during job run? (YES or NO)
+        # YES - active (default)
+        # NO - optimizations should be permanently disabled for the job
+        # (set this to NO when you want all files to be parsed unconditionally)
+        optimizations               YES
+
+        # Is the job active? (boolean)
+        # YES - active
+        # NO  - job should be skipped (default)
+        active                      YES
+
+        # Debug mode (boolean)
+        # YES - enable debug mode (will produce much more verbose output for debugging purposes)
+        # NO  - disable debug mode (default)
+        debug                       NO
+
+        # Disable saving any files (boolean)
+        # YES - enable this mode (no .po files and no localized files will be generated)
+        # NO  - disable this mode (default)
+        debug_nosave                NO
+
+        # Only produce output files: do not parse or generate .po files,
+        # do not update database with source strings or translations (YES or NO)
+        # YES - enable this mode
+        # NO - disable this mode (default)
+        output_only_mode            NO
+
+        # Source language
+        # Languages should be in ISO 639-1 format for wider compatibility,
+        # but internally Serge can accept any strings as language identifiers
+        source_language             en
+
+        # Destination (generated) languages
+        # This list should not include the source language
+        destination_languages       de ja ru
+
+        # Path to source files relative to the config file
+        # ('.' here is the current dir)
+        source_dir                  .
+
+        /*
+            An optional path prefix which will be prepended to the relative file path,
+            allowing gathering multiple files with the same name under the same db_namespace
+            pretending they are from different subdirectories or having different filename prefixes.
+
+            The parameter must end with a path delimiter / (e.g. 'virtual/dir/')
+            or otherwise it will become a file prefix.
+
+            Examples (provided we have files 'somefile.po' and 'somefolder/otherfile.po'):
+            'my/dir/' will generate files like 'my/dir/somefile.po' or 'my/dir/somefolder/otherfile.po'
+            'my/prefix_' will generate files like 'my/prefix_somefile.po' or 'my/prefix_somefolder/otherfile.po'
+        */
+        source_path_prefix          ``
+
+        # Should the directory be processed recursively? (YES or NO)
+        # YES - subdirectories are processed
+        # NO - subdirectories are not processed
+        source_process_subdirs      NO
+
+        # Regular expressions for the file name to match the files that should be processed
+        # This matches case-insensitively agains the file name (without path)
+        source_match                \.rc$
+
+        # Regular expressions for the file name to match the files that should be skipped
+        # This matches case-insensitively agains the file name (without path)
+        source_exclude              ``
+
+        # Plugin to use for processing. See plugins/parse_*.pm files
+        plugin                      parse_rc
+
+        # Optional data namespace for plugin parameters
+        data
+        {
+            param1                  value1
+            param2                  value2
+        }
+
+        # Should the strings be normalized (trimmed, converted to single line with no double-spaces)?
+        # (YES or NO, defaults to NO)
+        normalize_strings           NO
+
+        /*
+            DBI-compatible connection string
+            Supported drivers: SQLite, MySQL and Postgres
+            SQLite sample: 'DBD:SQLite:dbname=/path/to/translate.db3'
+            SQLite sample: 'DBD:SQLite:dbname=:memory:' - in-memory database for testing purposes
+            MySQL sample: 'DBI:mysql:database=translations'
+            MySQL sample: 'DBI:mysql:database=translations;host=localhost;port=3306'
+
+            Note 1: if SQLite database will be created automatically if the target file does not exist
+            Note 2: database will be initialized automatically if necessary
+        */
+        db_source                   DBD:SQLite:dbname=./translate.db3
+
+        # Optional username for database connection (when applicable; does no effect for SQLite-based databases)
+        db_username                 johndoe
+
+        # Optional password for database connection (when applicable; does no effect for SQLite-based databases)
+        db_password                 secretword
+
+        # Internal namespace to store files in the database
+        # (should be unique among other jobs for a given database, so the files would not
+        # overwrite each other)
+        db_namespace                my_project
+
+        # Should the translations from other files or namespaces be reused (copied)? If ommitted, defaults to YES
+        # but can be set to NO for terminology projects where everything needs to be translated explicitly
+        reuse_translations          YES
+
+        # should the fuzzy flag be set on translations which are copied from other strings? If ommitted, defaults to YES;
+        # fuzzy flag indicates that the translation is not final and needs review. The fuzzy flag is exported in the .po
+        # file, and .po editing software can indicate or otherwise filter such fuzzy strings
+        reuse_as_fuzzy_default      YES
+
+        # the list of languages where reused translations should have the fuzzy flag turned on disregarding the
+        # `reuse_as_fuzzy_default' setting. Use this as an override. If ommitted, the list is empty
+        reuse_as_fuzzy              ja
+
+        # the list of languages where reused translations should NOT have the fuzzy flag turned on disregarding the
+        # `reuse_as_fuzzy_default' setting. Use this as an override. If ommitted, the list is empty
+        reuse_as_not_fuzzy          de
+
+        # the list of rules defining if translations can be copied over from similar languages. If ommitted,
+        # the list of rules is empty (which means no cross-language translation reuse)
+        similar_languages
+        {
+            # for Latino American Spanish, borrow translations as fuzzy from generic (European) Spanish
+            {
+                # source language (where to look translations in)
+                source              es
+                # destination language (where to apply translations to)
+                destination         es-latam
+                # should the translations copied from `source' to `destination' be marked as fuzzy?
+                # if not defined or set to NO, the fuzzy state will be taken from the original translation
+                as_fuzzy            YES
+            }
+
+            # vice versa
+            {
+                source              es-latam
+                destination         es
+                as_fuzzy            YES
+            }
+        }
+
+        /*
+            Path to output .po files (relative to the config file or absolute)
+
+            Allowed macros:
+
+            %ENV:WHATEVER%  -  gets substituted with `WHATEVER' environment variable, or dies if it is not set.
+                               This allows to define parameters externally without modifying the config file itself.
+
+            %PATH%           - file path including trailing path delimiter
+            %NAME%           - file name without extension
+                               (the rightmost dot is used to split name and extension)
+            %EXT%            - extension (the rightmost dot is used to split name and extension)
+            %LNAME%          - file name without extension
+                               (the leftmost dot is used to split name and extension)
+            %LEXT%           - extension (the leftmost dot is used to split name and extension)
+            %NAME:NAME%      - split the %NAME% using the rightmost dot and take the left part
+            %NAME:EXT%       - split the %NAME% using the rightmost dot and take the right part
+            %NAME:LNAME%     - split the %NAME% using the leftmost dot and take the left part
+            %NAME:LEXT%      - split the %NAME% using the leftmost dot and take the right part
+                               (%NAME% is equivalent to %NAME:NAME%.%NAME:EXT%)
+
+            %LNAME:NOLOCALE% - take %LNAME% and strip the source locale '_XX' suffix (e.g. '_en')
+            %NAME:NOLOCALE%  - take %NAME% and strip the source locale '_XX' suffix (e.g. '_en')
+
+            %FILE%           - original file name including full path
+                               (equivalent to %PATH%%NAME%.%EXT% or %PATH%%LNAME%.%LEXT%)
+
+            %LANG%           - language tag (e.g. 'en', 'ru', 'pt-br')
+            %CULTURE%        - culture tag (e.g. 'en-US', 'ru-RU', 'pt-BR')
+            %LOCALE%         - locale name in Java- and Pootle-compatible format (e.g. 'en', 'ru', 'pt_BR')
+            %LOCALE:ANDROID% - locale name as used on Android (e.g. 'en', 'ru', 'pt-rBR')
+            %LOCALE:IPHONE%  - locale name as used on iPhone
+            %LOCALE:LC%      - a lowercased locale name (e.g. 'en', 'ru', 'pt_br')
+            %LOCALE:UC%      - an uppercased locale name (e.g. 'EN', 'RU', 'PT_BR')
+            %LOCALE:FULL%    - full locale (e.g. 'en_US', 'ru_RU', 'pt_BR')
+            %LOCALE:FULL:LC% - same as above, but lowercased
+            %LOCALE:FULL:UC% - same as above, but uppercased
+            %LANGNAME%       - full language name (e.g. 'English', 'Russian') used in Mac
+                               (LEGACY, DEPRECATED, use %LOCALE% instead)
+            %LANGNAME:IPHONE%- full language name (e.g. 'English', 'Russian') used in iPhone
+                               (LEGACY, DEPRECATED, use %LOCALE:IPHONE% instead)
+            %LANGID%         - Win32 laguage locale as 4-digit hex value (e.g. '0419')
+            %LANGID:DEC%     - Win32 laguage locale as decimal value (e.g. '1049')
+            %LANGCONST%      - Win32 LANG_ constant (e.g. 'LANG_RUSSIAN')
+            %SUBLANGCONST%   - Win32 SUBLANG_ constant (e.g 'SUBLANG_RUSSIAN_RUSSIA')
+            %AFXTARGCONST%   - Win32 AFX_TARG_ constant (e.g. 'AFX_TARG_RUS')
+            %CODEPAGE%       - Win32 codepage (e.g. '1251')
+        */
+        po_path                     ./po/my_project/%LOCALE%/%FILE%.po
+
+        # Should the language-specific files be created from each source file? (YES or NO)
+        output_lang_files           YES
+
+        # Should the language-specific files be created for the default language as well? (YES or NO)
+        # This is required if the original language file is a template that has to be preprocessed
+        output_default_lang_file    YES
+
+        /*
+            Output encoding for generated language files
+            Sample values: UTF-8, UTF-16, UCS-2, UCS-4
+            For .rc files, the output encoding should be little-endian Unicode (UCS-2LE) (see MSDN documentation)
+            For .strings files, the recommended output encoding is UTF-16 (see ADC documentation)
+            This value has effect only if output_lang_files is set to 1
+        */
+        output_encoding             UCS-2LE
+
+        # Should the BOM (byte order mark) be added to the output file?
+        # (YES or NO defaults to YES)
+        output_bom                  YES
+
+        # Optional hash telling to use different language name when constructing output_path.
+        # This allows to tweak language/locale names for different projects
+        output_lang_rewrite
+        {
+            no                      nb
+        }
+
+        # Path to a generated file (relative to the config file or absolute)
+        # Allowed macros: same as for po_path
+        # This value has effect only if output_lang_files is set to YES
+        output_path                 ./%FILE%.%LANG%
+
+        # List of strings that should be treated as trademarks. If a translatable string will contain
+        # a trademark, a special 'Do not translate trademarks' hint will be added
+        # to a generated .po file, with the list of such found strings
+        trademarks                  Apple Microsoft `Mac OS`
+                                    `Microsoft Windows`
+                                    `Windows Phone`
+
+        # A list of callback plugins that we should load, with the parameters to pass
+        callback_plugins
+        {
+            {
+                plugin              foo_plugin
+                data
+                {
+                    bar             YES
+                    baz             string
+                    etc             1 2 3
+                }
+            }
+        }
+    } # end of first job definition
+
+    /*
+        Second job definition
+    */
+    {
+        name                        Sample `<%`...`%>` parsing job
+        active                      YES
+        source_language             en
+        destination_languages       es de it fr ru
+        source_dir                  ./sample
+        source_match                \.txt$
+        plugin                      parse_default
+        db_source                   DBD:SQLite:dbname=./translate.db3
+        db_namespace                sample
+        po_path                     ./po/sample/%LANG%/%FILE%.po
+        output_path                 ./sample/%FILE%.%LANG%
+    } # end of second job definition
+
+} # end of jobs block
+
+# end of config
