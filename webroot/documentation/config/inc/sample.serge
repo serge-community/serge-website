@@ -214,6 +214,11 @@ jobs
         # needs to be translated explicitly)
         reuse_translations          YES
 
+        # Should the translations be reused even if there are different translations for the same source? (boolean)
+        # YES - just try to pick the best one based on context/file/namespace
+        # NO - do not reuse such uncertain translations at all (default)
+        reuse_uncertain             NO
+
         # Should the fuzzy flag be set on translations which are copied from other strings? (boolean)
         # Fuzzy flag indicates that the translation is not final and needs review. The fuzzy flag is exported
         # in the .po file, and .po editing software can indicate or otherwise filter such fuzzy strings.
