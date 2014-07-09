@@ -25,31 +25,31 @@
 <dt><b>--force</b></dt>
 <dd>
 
-<p>Has the same effect as <code><a href="../serge-pull-po/">serge pull-po --force</a></code> and <code><a href="../serge-localize/">serge localize --force</a></code> combined.</p>
+<p>Has the same effect as <a href="../serge-pull-po/"><code>serge pull-po --force</code></a> and <a href="../serge-localize/"><code>serge localize --force</code></a> combined.</p>
 
 </dd>
 <dt><b>--no-cache-preload</b></dt>
 <dd>
 
-<p>Has the same effect as <code><a href="../serge-localize/">serge localize --no-cache-preload</a></code>.</p>
+<p>Has the same effect as <a href="../serge-localize/"><code>serge localize --no-cache-preload</code></a>.</p>
 
 </dd>
 <dt><b>--recreate-po</b></dt>
 <dd>
 
-<p>Has the same effect as <code><a href="../serge-localize/">serge localize --recreate-po</a></code>.</p>
+<p>Has the same effect as <a href="../serge-localize/"><code>serge localize --recreate-po</code></a>.</p>
 
 </dd>
 <dt><b>--lang=xx[,yy][,zz]</b>, <b>--language=xx[,yy][,zz]</b> <b>--languages=xx[,yy][,zz]</b></dt>
 <dd>
 
-<p>See <code><a href="../serge-localize/">serge localize --lang</a></code>. Will also completely skip processing configs where no target languages are found.</p>
+<p>See <a href="../serge-localize/"><code>serge localize --lang</code></a>. Will also completely skip processing configs where no target languages are found.</p>
 
 </dd>
 <dt><b>--job=xx[,yy][,zz]</b>, <b>--jobs=xx[,yy][,zz]</b></dt>
 <dd>
 
-<p>See <code><a href="../serge-localize/">serge localize --job</a></code>. Will also completely skip processing configs where no target jobs are found.</p>
+<p>See <a href="../serge-localize/"><code>serge localize --job</code></a>. Will also completely skip processing configs where no target jobs are found.</p>
 
 </dd>
 <dt><b>--echo-commands</b></dt>
