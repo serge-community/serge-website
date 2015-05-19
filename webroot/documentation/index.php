@@ -52,11 +52,11 @@
     <?php endforeach ?>
 </ul>
 
+<?php /*
+
 <h1 id="translation-services">Integration with External Translation Services</h1>
 
-<p><code><a href="/documentation/help/serge-pull-po/">serge pull-po</a></code> and <code><a href="/documentation/help/serge-push-po/">serge push-po</a></code> commands are used to synchronize the generated .po files with the external translation service. Currently Serge has been tailored to work primarily with <a href="https://github.com/translate/pootle/">Pootle server</a> by the means of its command-line API (shell script), but you can create plugins that will do any synchronization tasks specific to your environment. Please use Pootle plugin as an example (see <code>&lt;Serge Folder&gt;/lib/Serge/Sync/Plugin/TranslationService/pootle.pm</code>).</p>
-
-<?php /*
+<p><code><a href="/documentation/help/serge-pull-po/">serge pull-po</a></code> and <code><a href="/documentation/help/serge-push-po/">serge push-po</a></code> commands are used to synchronize the generated .po files with the external translation service. Currently Serge has been tailored to work primarily with <a href="https://github.com/translate/pootle/">Pootle server</a> by the means of its command-line API (shell script), but you can create plugins that will do any synchronization tasks specific to your environment. Please use Pootle plugin as an example (see <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/TranslationService/pootle.pm</code>).</p>
 
 <h2>How Does This Work?</h2>
 
