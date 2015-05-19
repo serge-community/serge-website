@@ -10,7 +10,7 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><code>serge sync &lt;configuration-files&gt; [--force] [--no-cache-preload] [--recreate-po] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
+<p><code>serge sync &lt;configuration-files&gt; [--force] [--recreate-po] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
 
 <p>Where <code>&lt;configuration-files&gt;</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters.</p>
 
@@ -28,16 +28,16 @@
 <p>Has the same effect as <a href="../serge-pull-po/"><code>serge pull-po --force</code></a> and <a href="../serge-localize/"><code>serge localize --force</code></a> combined.</p>
 
 </dd>
-<dt><b>--no-cache-preload</b></dt>
-<dd>
-
-<p>Has the same effect as <a href="../serge-localize/"><code>serge localize --no-cache-preload</code></a>.</p>
-
-</dd>
 <dt><b>--recreate-po</b></dt>
 <dd>
 
 <p>Has the same effect as <a href="../serge-localize/"><code>serge localize --recreate-po</code></a>.</p>
+
+</dd>
+<dt><b>--output-only-mode</b></dt>
+<dd>
+
+<p>Has the same effect as <a href="../serge-localize/"><code>serge localize --output-only-mode</code></a>.</p>
 
 </dd>
 <dt><b>--lang=xx[,yy][,zz]</b>, <b>--language=xx[,yy][,zz]</b> <b>--languages=xx[,yy][,zz]</b></dt>

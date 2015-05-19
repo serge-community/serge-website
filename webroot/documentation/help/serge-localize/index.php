@@ -10,7 +10,7 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><code>serge localize &lt;configuration-files&gt; [--force] [--no-cache-preload] [--recreate-po] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
+<p><code>serge localize &lt;configuration-files&gt; [--force] [--recreate-po] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
 
 <p>Where <code>&lt;configuration-files&gt;</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters.</p>
 
@@ -62,18 +62,12 @@
 <p>An optional comma-separated list of jobs to process.</p>
 
 </dd>
-<dt><b>--no-cache-preload</b></dt>
-<dd>
-
-<p>Do not preload language cache in memory. This can be faster if your translation memory database has grown big, and all that you need is to rebuild resources for a certain localization job.</p>
-
-</dd>
 <dt><b>--recreate-po</b></dt>
 <dd>
 
 <p>With this mode enabled, .po files will not be parsed, their existing translations will be discarded, and the .po files will be forcedly generated again.</p>
 
-<p>Note that you won&#39;t need this in the typical use of Serge tookit, until you write some custom scripts that import translations directly into the translation memory ddatabase, bypassing the .po files. So, this option will propagate translation changes from the database into .po files, otherwise in the next localization cycle (<code>serge localize</code> or <code>serge sync</code>) translations will be read from .po files, essentially undoing any side changes.</p>
+<p>Note that you won&#39;t need this in the typical use of Serge toolkit, until you write some custom scripts that import translations directly into the translation memory database, bypassing the .po files. So, this option will propagate translation changes from the database into .po files, otherwise in the next localization cycle (<code>serge localize</code> or <code>serge sync</code>) translations will be read from .po files, essentially undoing any side changes.</p>
 
 <p>The typical custom import flow is:</p>
 
@@ -92,6 +86,12 @@
 
 </li>
 </ol>
+
+</dd>
+<dt><b>--output-only-mode</b></dt>
+<dd>
+
+<p>Only produce output files: do not parse or generate .po files, do not update database with source strings or translations. This flag will force this mode on all jobs, disregarding their own <code>output_only_mode</code> setting.</p>
 
 </dd>
 </dl>

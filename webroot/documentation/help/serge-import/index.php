@@ -36,12 +36,6 @@
 <p>An optional comma-separated list of target languages</p>
 
 </dd>
-<dt><b>--no-cache-preload</b></dt>
-<dd>
-
-<p>Do not preload language cache (may work faster for small projects)</p>
-
-</dd>
 <dt><b>--disambiguate-keys</b></dt>
 <dd>
 

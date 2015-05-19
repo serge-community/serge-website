@@ -54,7 +54,9 @@
 
 <h1 id="translation-services">Integration with External Translation Services</h1>
 
-<p><code><a href="/documentation/help/serge-pull-po/">serge pull-po</a></code> and <code><a href="/documentation/help/serge-push-po/">serge push-po</a></code> commands are used to synchronize the generated .po files with the external software. Currently Serge has been tailored to work primarily with <a href="https://github.com/evernote/pootle">Pootle server</a> by the means of its command-line API (shell script), but you can create proxy shell scripts that will do any synchronization tasks specific to your environment.</p>
+<p><code><a href="/documentation/help/serge-pull-po/">serge pull-po</a></code> and <code><a href="/documentation/help/serge-push-po/">serge push-po</a></code> commands are used to synchronize the generated .po files with the external translation service. Currently Serge has been tailored to work primarily with <a href="https://github.com/translate/pootle/">Pootle server</a> by the means of its command-line API (shell script), but you can create plugins that will do any synchronization tasks specific to your environment. Please use Pootle plugin as an example (see <code>&lt;Serge Folder&gt;/lib/Serge/Sync/Plugin/TranslationService/pootle.pm</code>).</p>
+
+<?php /*
 
 <h2>How Does This Work?</h2>
 
@@ -63,7 +65,7 @@
 <ol>
     <li>Serge gets the path to the local .po synchronization script from <code>sync &rarr; pootle_manage_py_path</code> parameter in the configuration file. Though the parameter name implies that it expects a path to <code>manage.py</code> script that comes with Pootle, you can specify a path to any arbitrary binary or script with executable permissions here (let's call it <code><em>the_script</em></code>).</li>
 
-    <li>Serge gets the <code>sync &rarr; pootle_project</code> parameter that specifies the project id (in case of Pootle it is a unique subfolder containing the .po files). If you're integrating Serge with your own translation environment, this parameter can hold any arbitrary string (id or file path) that helps you identify the subset of .po files to synchronize (let's call it <code><em>the_project</em></code>).</li>
+    <li>Serge gets the <code>sync &rarr; external_project_id</code> parameter that specifies the project id (in case of Pootle it is a unique subfolder containing the .po files). If you're integrating Serge with your own translation environment, this parameter can hold any arbitrary string (id or file path) that helps you identify the subset of .po files to synchronize (let's call it <code><em>the_project</em></code>).</li>
 </ol>
 
 <h2>Pulling Changes From External Translation Services</h2>
@@ -89,5 +91,7 @@
 <p>For optimization purposes, one or more <code>--language=<em>xx</em></code> parameters may be provided. The script is expected to deal with .po files for these target languages only.</p>
 
 <p>The <code>--force</code> parameter will be provided if Serge is itself run with <code>--force</code> option. The script is expected to disable all optimizations and process all .po files.</p>
+
+*/ ?>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/footer.php') ?>

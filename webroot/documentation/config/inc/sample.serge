@@ -11,9 +11,6 @@
 */
 sync
 {
-    # Absolute path to local folder where local checkout will be stored.
-    data_dir                        %ENV:SERGE_DATA_DIR%/sample_project_1
-
     /*
         As you can see from the line above, one can use `%ENV:SOMEVAR%` macro anywhere
         in the string — it will be substituted with the value of the environment variable;
@@ -23,18 +20,22 @@ sync
         configuration parameters across multiple configuration files.
     */
 
-    # ID (unique folder name) of the project in Pootle.
-    pootle_project                  sample_project_1
+    translation_service
+    {
+        plugin                      pootle
 
-    # Path to Pootle's `manage.py` utility that is used to sync po files with its internal database
-    pootle_manage_py_path           %ENV:SERGE_POOTLE_MANAGE_PY_PATH%
+        data
+        {
+            # Unique project id (folder name) in Pootle
+            project_id              sample_project_1
 
-    # should the newly generated files be added to the remote repository automatically?
-    # (YES or NO, defaults to NO)
-    add_unversioned                 NO
+            # Path to Pootle's `manage.py` utility that is used to sync po files with its internal database
+            manage_py_path          /path/to/pootle/manage.py
+        }
+    }
 
     # connection parameters for a remote source control repository
-    server
+    vcs
     {
         # VCS plugin name (currently supported are `svn`, `git` and `gerrit`)
         plugin                      git
@@ -44,6 +45,29 @@ sync
         # that uses private keys)
         data
         {
+            # Absolute path to local folder where local checkout will be stored.
+            data_dir                %ENV:SERGE_DATA_DIR%/sample_project_1
+
+            # should the newly generated files be added to the remote repository automatically?
+            # (YES or NO, defaults to NO)
+            add_unversioned         NO
+
+            # Path to a single remote repository to sync with local `data_dir` folder
+            path                    ssh://johndoe@git.example.com/myrepo
+            # --- OR ---
+            # A list of local subfolders to create and their corresponding remote repositories
+            # (if the localizable data for the single localization project is located in several
+            # per-component or per-library repositories)
+            path
+            {
+                main                ssh://johndoe@git.example.com/myapplication#branch_v5 # uses `branch_v5` branch
+                widget              ssh://johndoe@git.example.com/myappwidget # uses `master` branch by default
+            }
+
+            # Commit message (optional)
+            # Default: 'Automatic commit of updated project files'
+            commit_message          Automatic commit of updated project files
+
             # username to pull and push on behalf of
             user                    johndoe
 
@@ -57,22 +81,6 @@ sync
             email                   johndoe@example.com
         }
     }
-
-    # Path to a single remote repository to sync with local `data_dir` folder  
-    path                            ssh://johndoe@git.example.com/myrepo
-    # --- OR ---
-    # A list of local subfolders to create and their corresponding remote repositories
-    # (if the localizable data for the single localization project is located in several
-    # per-component or per-library repositories)
-    path
-    {
-        main                        ssh://johndoe@git.example.com/myapplication#branch_v5 # uses `branch_v5` branch
-        widget                      ssh://johndoe@git.example.com/myappwidget # uses `master` branch by default
-    }
-
-    # Commit message (optional)
-    # Default: 'Automatic commit of updated project files'
-    commit_message                  Automatic commit of updated project files
 }
 
 /*

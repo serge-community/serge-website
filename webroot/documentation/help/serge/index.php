@@ -56,12 +56,6 @@
 <p>An optional comma-separated list of jobs to process</p>
 
 </dd>
-<dt><b>--no-cache-preload</b></dt>
-<dd>
-
-<p>Do not preload language cache (may work faster for small projects)</p>
-
-</dd>
 <dt><b>--force</b></dt>
 <dd>
 
