@@ -1,8 +1,6 @@
 <?php
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/../inc/help-topics.php');
-
-	$page = 'documentation';
-	include($_SERVER['DOCUMENT_ROOT'] . '/../inc/header.php');
+    include($_SERVER['DOCUMENT_ROOT'] . '/../inc/help-topics.php'); # to list topics below
+    include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 
 <h1>Getting Started</h1>
@@ -15,7 +13,7 @@
 
 <h1 id="config-files">Configuration Files</h1>
 
-<p>Configuration files provide all the required information: how to interact with the version control system and <a href="#translation-services">external translation service</a>, where to store the local checkout and .po files, which database to use, which files to process, which parser and additional plugins to use, how to name localized versions of files, and so on.</p>
+<p>Configuration files provide all the required information: how to interact with the version control system and external translation service, where to store the local checkout and .po files, which database to use, which files to process, which parser and additional plugins to use, how to name localized versions of files, and so on.</p>
 
 <p>See the <a href="config/">configuration file reference</a>.</p>
 
@@ -94,4 +92,4 @@
 
 */ ?>
 
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/footer.php') ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>

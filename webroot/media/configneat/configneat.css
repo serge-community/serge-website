@@ -11,6 +11,7 @@
 .cm-builtin     {color: #86f; }
 
 code.block.config {
-    white-space: pre-wrap;
     font-size: 90%;
+    font-size: 80%;
+    line-height: 120%;
 }

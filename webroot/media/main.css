@@ -1,11 +1,10 @@
-@import url(//fonts.googleapis.com/css?family=Inconsolata|Roboto:400,300,300italic&subset=latin,cyrillic-ext);
-
 body {
     font-family: "Roboto", sans-serif;
+    text-rendering: optimizeLegibility;
     font-weight: 300;
     line-height: 160%;
     margin: 0;
-    background: #fffbf4;
+    background: #fbfbfb;
     color: #000;
     text-align: center;
 }
@@ -15,8 +14,9 @@ strong, b {
 }
 
 a, a:visited {
-   color: #5fb336;
+   color: rgb(95, 179, 54);
    text-decoration: none;
+   font-weight: bolder;
 }
 
 a {
@@ -38,12 +38,11 @@ a:hover {
 }
 
 .header-bg {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgb(204, 111, 60);
     position: absolute;
-    height: 90px;
+    height: 70px;
     left: 0;
     right: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
          box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
@@ -51,7 +50,9 @@ a:hover {
 .header {
     position: relative;
     height: 70px;
-    padding-top: 20px;
+    padding-top: 14px;
+         box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 .header a.logo:hover {
@@ -61,7 +62,7 @@ a:hover {
 h1,
 h2 {
     font-weight: 400;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.8);
     font-size: 1.5em;
     display: table;
     padding: 5px;
@@ -77,7 +78,7 @@ h2 {
 
 h1:target,
 h2:target {
-    background-color: #5fb336;
+    background-color: rgb(204, 111, 60);
     color: #fff;
 }
 
@@ -87,27 +88,37 @@ code, dt {
     font-weight: normal;
 }
 
+code a {
+    font-weight: normal;
+}
+
 dt b {
     font-weight: normal;
 }
 
 code, dt b {
-    color: #975a2a;
+  color: rgb(204, 111, 60);
 }
 
 .logo {
     display: inline-block;
-    font-size: 2.5em;
+    font-size: 2.3em;
     text-decoration: none;
-    line-height: 48px;
+    line-height: 40px;
+}
+
+a.logo {
+    font-weight: lighter;
 }
 
 .logo,
 .logo:visited {
-    color: #5fb336;
+    color: #fff;
 }
 
 .logo img {
+    width: 43px;
+    height: 43px;
     margin-right: 0.2em;
     vertical-align: top;
 }
@@ -120,28 +131,25 @@ code, dt b {
 }
 
 .footer {
-    margin-top: 4em;
-    font-size: 80%;
+    clear: both;
+    margin: 4em 0;
+    font-size: 75%;
+    line-height: 1.4;
     color: #999;
     border-top: 1px solid #ccc;
     padding: 1em 0;
 }
 
-
-/* ========================== */
-
-.graphic-bg {
-    background: rgba(0, 0, 0, 0.1) url(graphic.png) 50% 0 no-repeat;
-    position: absolute;
-    height: 200px;
-    left: 0;
-    right: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+.footer .copyright {
+    float: left;
 }
 
-.graphic {
-    height: 200px;
-    margin-bottom: 3em;
+.footer .social-buttons {
+    float: right;
+}
+
+.footer .license {
+    float: right;
 }
 
 /* ========================== */
@@ -153,8 +161,8 @@ ul.menu {
     padding: 0;
     float: right;
     line-height: 2.2em;
-    font-size: 0.9em;
-    margin-top: 10px;
+    font-size: 0.95em;
+    margin-top: 5px;
 }
 
 ul.menu li {
@@ -163,35 +171,34 @@ ul.menu li {
 }
 
 ul.menu li.extra {
-    border-left: 1px solid #5fb336;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
     padding-left: 1em;
 }
 
 ul.menu li a {
+    color: #fff;
     padding: 0 0.7em;
 }
 
 ul.menu li a.selected {
-    background-color: #5fb336;
-    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 ul.menu.subselection li a.selected {
     background: none;
-    color: #5fb336;
+    color: #fff;
     box-shadow: 0 0 2px;
 }
 
 ul.menu.subselection li a.selected:hover {
     background: rgba(0, 0, 0, 0.1);
-    color: #000;
     box-shadow: none;
 }
 
 code.block {
     display: block;
     background: white;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0.3em;
     padding: 0.3em 0.6em;
     margin: 1em;
@@ -199,19 +206,20 @@ code.block {
 }
 
 ul.social-buttons {
-    display: inline-block;
     list-style-type: none;
     margin: 0;
     padding: 0;
     float: right;
     line-height: 2.2em;
-    margin-top: 10px;
+    width: 10em;
+    display: inline-block;
+    padding-top: 0.6em;
 }
 
 ul.social-buttons li {
     display: inline-block;
     margin-left: 1em;
-    width: 120px;
+    /*width: 120px;*/
 }
 
 ul, ol {
@@ -264,15 +272,15 @@ ol > li:before {
     white-space: nowrap;
 }
 
+.pod .menu li {
+    margin-bottom: 0.2em;
+}
+
 .pod .menu li.selected a {
-    background: #5fb336;
+    background: rgb(204, 111, 60);
     color: #fff;
 }
 
-
-.pod .body h1 {
-    opacity: 0.7;
-}
 
 .pod .body h1#NAME {
     display: none;
@@ -288,4 +296,44 @@ ol > li:before {
 
 .pod .body h1 code {
     font-size: 120%;
+}
+
+/* Home page */
+
+.motto {
+    display: block;
+    text-align: center;
+    font-size: 1.4em;
+    background-color: rgb(70, 70, 70);
+    color: #fff;
+    height: 120px;
+    line-height: 120px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.graphic-bg {
+    background: rgb(229, 225, 219) url(graphic.png) 50% 0 no-repeat;
+    position: absolute;
+    height: 200px;
+    left: 0;
+    right: 0;
+    top: 190px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.graphic {
+    height: 200px;
+    margin-bottom: 120px;
+}
+
+/* tables */
+
+div.table {
+    display: table;
+}
+
+div.table > div {
+    display: table-cell;
 }

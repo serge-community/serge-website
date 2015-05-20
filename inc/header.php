@@ -7,6 +7,7 @@
 <html>
 <head>
     <title>Serge - Localization Toolkit</title>
+    <link rel="stylesheet" href="/media/vendor/google/google-fonts.css" type="text/css" />
     <link rel="stylesheet" href="/media/main.css" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <?php echo $head ?>
@@ -15,7 +16,7 @@
     <div class="wrapper">
         <div class="header-bg"></div>
         <div class="header">
-            <a class="logo" href="/"><img src="/media/logo.png" />Serge</a>
+            <a class="logo" href="/"><img src="/media/logo.svg" />Serge</a>
 
             <ul class="menu<?php echo $subselection ? ' subselection' : '' ?>">
                 <li><a href="/"<?php echo menuSel('index') ?>>Home</a></li>

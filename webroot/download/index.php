@@ -21,7 +21,7 @@
 
 <p>Serge is being actively developed, so make sure you visit our offical repository: <a href="https://github.com/evernote/serge">github.com/evernote/serge</a></p>
 
-<p>Serge can work off of any directory. So create a new directory (we will reference it as <code>&lt;serge_root&gt;</code> hereafter), and clone the repo:
+<p>Serge can work in any directory. So create a new directory (we will reference it as <code>&lt;serge_root&gt;</code> hereafter), and clone the repo:
 
 <code class="block">cd &lt;serge_root&gt;
 git clone git@github.com:evernote/serge.git .</code>
@@ -48,7 +48,7 @@ cpanm --installdeps .</code>
 
 <code class="block">serge</code>
 
-<p>If you see basic command-line from Serge, then everything has been set up correctly.</p>
+<p>If you see command-line help from Serge, then everything has been set up correctly.</p>
 
 <p>Now, <a href="/documentation/">get started with Serge workflow and configuration &rarr;</a></p>
 
