@@ -1,5 +1,6 @@
 <?php
 	$page = 'download';
+    $title = 'Download';
 	include($_SERVER['DOCUMENT_ROOT'] . '/../inc/header.php');
 ?>
 
@@ -13,7 +14,7 @@
 
 <p>Serge, being written in Perl, is published on <a href="http://www.cpan.org/">CPAN</a>. Run the following command to install or upgrade to the latest stable release (make sure you run this as an administrator; on Unix, use <code>sudo</code>):</p>
 
-<code class="block">cpan Serge</code>
+<code class="cli">cpan Serge</code>
 
 <p>`cpan` is a command line package installation client that either comes with Perl or can be installed separately using your package manager. It will take care of all missing dependencies.</p>
 
@@ -23,12 +24,12 @@
 
 <p>Serge can work in any directory. So create a new directory (we will reference it as <code>&lt;serge_root&gt;</code> hereafter), and clone the repo:
 
-<code class="block">cd &lt;serge_root&gt;
+<code class="cli">cd &lt;serge_root&gt;
 git clone git@github.com:evernote/serge.git .</code>
 
 <p>or download the snapshot as a ZIP archive:</p>
 
-<code class="block">cd &lt;serge_root&gt;
+<code class="cli">cd &lt;serge_root&gt;
 wget https://github.com/evernote/serge/archive/master.zip
 unzip master.zip
 unlink master.zip</code>
@@ -37,7 +38,7 @@ unlink master.zip</code>
 
 <p>In case you use the latest snapshot, you will need to manage dependencies yourself. This command will install missing dependencies into system (make sure you run this as an administrator):
 
-<code class="block">cd &lt;serge_root&gt;
+<code class="cli">cd &lt;serge_root&gt;
 cpanm --installdeps .</code>
 
 <p>See also <code>&lt;serge_root&gt;/README</code> file for a list of other installation options (including installing dependencies locally if you don't have administrative rights).</p>
@@ -46,7 +47,7 @@ cpanm --installdeps .</code>
 
 <p>Run this command:</p>
 
-<code class="block">serge</code>
+<code class="cli">serge</code>
 
 <p>If you see command-line help from Serge, then everything has been set up correctly.</p>
 

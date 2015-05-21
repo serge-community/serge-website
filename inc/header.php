@@ -6,7 +6,7 @@
 ?>
 <html>
 <head>
-    <title>Serge - Localization Toolkit</title>
+    <title><?php echo isset($title) ? $title.' | Serge' : 'Serge - Free, Open-Source Solution for Continuous Localization' ?></title>
     <link rel="stylesheet" href="/media/vendor/google/google-fonts.css" type="text/css" />
     <link rel="stylesheet" href="/media/main.css" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

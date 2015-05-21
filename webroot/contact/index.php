@@ -1,5 +1,6 @@
 <?php
 	$page = 'contact';
+    $title = 'Contact';
 	include($_SERVER['DOCUMENT_ROOT'] . '/../inc/header.php');
 ?>
 

@@ -11,7 +11,7 @@
     <div style="width: 400px; padding-right: 80px">
         <h1>In a Nutshell</h1>
 
-        <p><strong style="cursor: help" title="'Serge' stands for 'String Extraction and Resource Generation Engine'">Serge</strong> helps you set up a seamless continuous localization process for your software and marketing assets in a fully automated and scalable fashion. It will fit perfectly into your agile development cycle.</p>
+        <p><strong style="cursor: help" title="'Serge' stands for 'String Extraction and Resource Generation Engine'">Serge</strong> helps you set up a seamless <a href="/documentation/continuous-localization/">continuous localization process</a> for your software and marketing assets in a fully automated and scalable fashion. It will fit perfectly into your agile development cycle.</p>
 
         <p>Serge is developed and maintained by <a href="http://evernote.com/">Evernote</a>, where it works non-stop to help deliver dozens of different Evernote clients, websites and marketing materials in 30+ languages, but it will equally work well for an indie developer with just one project to translate. It allows developers to concentrate on maintaining resource files in just one language (e.g. English), and will take care of keeping all localized resources in sync.</p>
     </div>

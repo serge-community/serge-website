@@ -26,6 +26,12 @@ a {
     margin: 0 -0.3em;
 }
 
+a[href^="//"],
+a[href^="http://"],
+a[href^="https://"] {
+    color: #00a2dd;
+}
+
 a:hover {
     background: rgba(0, 0, 0, 0.1);
     color: #000;
@@ -59,8 +65,7 @@ a:hover {
     background: none;
 }
 
-h1,
-h2 {
+h1, h2, h3 {
     font-weight: 400;
     color: rgba(0, 0, 0, 0.8);
     font-size: 1.5em;
@@ -71,13 +76,18 @@ h2 {
 }
 
 h2 {
-    font-size: 1.3em;
     margin-top: 1em;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 h1:target,
-h2:target {
+h2:target,
+h3:target {
     background-color: rgb(204, 111, 60);
     color: #fff;
 }
@@ -97,7 +107,7 @@ dt b {
 }
 
 code, dt b {
-  color: rgb(204, 111, 60);
+  color: rgb(142, 77, 41);
 }
 
 .logo {
@@ -195,7 +205,8 @@ ul.menu.subselection li a.selected:hover {
     box-shadow: none;
 }
 
-code.block {
+code.block,
+code.cli {
     display: block;
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -203,6 +214,20 @@ code.block {
     padding: 0.3em 0.6em;
     margin: 1em;
     white-space: pre;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+code.cli:before {
+    content: '$  ';
+    color: rgba(0, 0, 0, 0.3);
+}
+
+code.cli {
+    text-indent: -1.5em;
+}
+
+code.cli > * {
+    text-indent: 0;
 }
 
 ul.social-buttons {
@@ -255,6 +280,7 @@ ol > li:before {
 }
 
 .pod .menu {
+    font-size: 90%;
     padding-left: 0;
 }
 

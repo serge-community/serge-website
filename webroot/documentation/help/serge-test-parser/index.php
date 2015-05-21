@@ -10,7 +10,7 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><code>serge test-parser &lt;parser_name&gt; &lt;file_path&gt;</code> [--output-mode=&lt;mode&gt;]</p>
+<p><code>serge test-parser &lt;parser_name&gt; &lt;file_path&gt; [--output-mode=&lt;mode&gt;]</code></p>
 
 <p>Where <code>&lt;parser_name&gt;</code> is a file name of the parser sans its extension (parsers are typically located in lib/Serge/Engine/Plugin folder), and <code>&lt;file_path&gt;</code> is a path to the localizable file to test this parser on.</p>
 
