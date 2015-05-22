@@ -319,21 +319,16 @@ ol > li:before {
     color: #fff;
 }
 
+.pod .body h1:first-child {
+    margin-top: 0;
+}
 
 .pod .body h1#NAME {
     display: none;
 }
 
-.pod .body h1.top {
-    font-size: 2.1em;
-    opacity: 1;
-    display: block;
-    margin: 0.5em 0 1.5em;
-    padding: 0;
-}
-
-.pod .body h1 code {
-    font-size: 120%;
+.pod .body h1.command {
+    font-size: 200%;
 }
 
 /* Home page */
