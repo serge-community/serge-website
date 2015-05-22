@@ -1,5 +1,6 @@
 <?php
     $subpage = 'command-line-interface';
+    $title = 'Command-Line Interface';
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 

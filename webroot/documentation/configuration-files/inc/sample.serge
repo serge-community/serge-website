@@ -7,29 +7,27 @@
 */
 
 /*
-    `sync` block describes where to get translatable files from.
+    `sync` block contains all synchroinzation-related settings
 */
 sync
 {
     /*
-        As you can see from the line above, one can use `%ENV:SOMEVAR%` macro anywhere
-        in the string — it will be substituted with the value of the environment variable;
-        if the variable with that name is not defined, the script will fail with the
-        corresponding message. This allows to use the same configuration file in different
-        environments (e.g. different developers' and build machines) or to reuse common
-        configuration parameters across multiple configuration files.
+        `translation_service` defines which translation service (TS)
+        to synchronize .po files with
     */
-
     translation_service
     {
+        # TS plugin name (currently supported is `pootle`)
         plugin                      pootle
 
+        # Plugin-specific data
         data
         {
             # Unique project id (folder name) in Pootle
             project_id              sample_project_1
 
-            # Path to Pootle's `manage.py` utility that is used to sync po files with its internal database
+            # Path to Pootle's `manage.py` utility that is used to sync
+            # .po files with its internal database
             manage_py_path          /path/to/pootle/manage.py
         }
     }
@@ -40,29 +38,46 @@ sync
         # VCS plugin name (currently supported are `svn`, `git` and `gerrit`)
         plugin                      git
 
-        # Plugin-specific data
-        # (note that Git and Gerrit plugins rely on Git-specific authentication mechanism
-        # that uses private keys)
+        /*
+            Plugin-specific data
+            (note that Git and Gerrit plugins rely on Git-specific authentication
+            mechanism that uses private keys)
+        */
         data
         {
             # Absolute path to local folder where local checkout will be stored.
-            data_dir                %ENV:SERGE_DATA_DIR%/sample_project_1
+            local_path              %ENV:SERGE_DATA_DIR%/sample_project_1
 
-            # should the newly generated files be added to the remote repository automatically?
-            # (YES or NO, defaults to NO)
-            add_unversioned         NO
+            /*
+                As you can see from the line above, one can use `%ENV:SOMEVAR%` macro
+                anywhere in the string — it will be substituted with the value
+                of the `SOMEVAR` environment variable; if the variable with that name
+                is not defined, the script will fail with the corresponding message.
+                This allows to use the same configuration file in different environments
+                (e.g. different developers' and build machines) or to reuse
+                common configuration parameters across multiple configuration files.
+            */
 
             # Path to a single remote repository to sync with local `data_dir` folder
-            path                    ssh://johndoe@git.example.com/myrepo
+            remote_path             ssh://johndoe@git.example.com/myrepo
             # --- OR ---
-            # A list of local subfolders to create and their corresponding remote repositories
-            # (if the localizable data for the single localization project is located in several
-            # per-component or per-library repositories)
-            path
+            # A list of local subfolders to create and their corresponding
+            # remote repositories (if the localizable data for the
+            # single localization project is located in several per-component
+            # or per-library repositories)
+            remote_path
             {
-                main                ssh://johndoe@git.example.com/myapplication#branch_v5 # uses `branch_v5` branch
-                widget              ssh://johndoe@git.example.com/myappwidget # uses `master` branch by default
+                # one can specify branch name after the '#'.
+                # below, the `branch_v5` branch us used
+                main                ssh://johndoe@git.example.com/myapplication#branch_v5
+                # if no branch is specified, `master` branch is used by default
+                widget              ssh://johndoe@git.example.com/myappwidget
             }
+
+            # should the newly generated files be added
+            # to the remote repository automatically?
+            # (YES or NO, defaults to NO)
+            add_unversioned         NO
 
             # Commit message (optional)
             # Default: 'Automatic commit of updated project files'
@@ -84,8 +99,7 @@ sync
 }
 
 /*
-    `jobs` block represents an ordered list of jobs to process.
-    There should be at least one job present there
+    `jobs` block represents an ordered list of localization jobs to process.
 */
 jobs
 {
@@ -111,7 +125,8 @@ jobs
         active                      YES
 
         # Debug mode (boolean)
-        # YES - enable debug mode (will produce much more verbose output for debugging purposes)
+        # YES - enable debug mode
+        # (will produce much more verbose output for debugging purposes)
         # NO  - disable debug mode (default)
         debug                       NO
 
@@ -142,15 +157,18 @@ jobs
 
         # An optional path prefix which will be prepended to the relative file path,
         # allowing gathering multiple files with the same name under the same db_namespace
-        # pretending they are from different subdirectories or having different filename prefixes.
+        # pretending they are from different subdirectories or having different
+        # filename prefixes.
         # Default: blank string
         #
         # The parameter must end with a path delimiter / (e.g. 'virtual/dir/')
         # or otherwise it will become a file prefix.
         #
         # Examples (provided we have files 'somefile.po' and 'somefolder/otherfile.po'):
-        # 'my/dir/' will generate files like 'my/dir/somefile.po' or 'my/dir/somefolder/otherfile.po'
-        # 'my/prefix_' will generate files like 'my/prefix_somefile.po' or 'my/prefix_somefolder/otherfile.po'
+        # 'my/dir/' will generate files like 'my/dir/somefile.po'
+        # or 'my/dir/somefolder/otherfile.po'
+        # 'my/prefix_' will generate files like 'my/prefix_somefile.po'
+        # or 'my/prefix_somefolder/otherfile.po'
         source_path_prefix          ``
 
         /*
@@ -176,14 +194,16 @@ jobs
         plugin                      parse_rc
 
         # Optional data for plugin parameters. Each plugin may have specific parameters
-        # inside the `data` block. See the documentation for each specific plugin for more information.
+        # inside the `data` block. See the documentation for each specific plugin
+        # for more information.
         data
         {
             #param1                  value1
             #param2                  value2
         }
 
-        # Should the strings be normalized, i.e. trimmed and converted to single line with no double-spaces? (boolean)
+        # Should the strings be normalized, i.e. trimmed and converted to single line
+        # with no double-spaces? (boolean)
         # YES - the string should be normalized
         # NO - the string is extracted as is (default)
         normalize_strings           NO
@@ -191,33 +211,39 @@ jobs
         # DBI-compatible connection string
         # Supported drivers: SQLite, MySQL and Postgres
         # SQLite sample: 'DBD:SQLite:dbname=/path/to/translate.db3'
-        # SQLite sample: 'DBD:SQLite:dbname=:memory:' - in-memory database for testing purposes
+        # SQLite sample: 'DBD:SQLite:dbname=:memory:' - in-memory database
+        # for testing purposes
         # MySQL sample: 'DBI:mysql:database=translations'
         # MySQL sample: 'DBI:mysql:database=translations;host=localhost;port=3306'
-        # 
-        # Note 1: SQLite database will be created automatically if the target file does not exist
+        #
+        # Note 1: SQLite database will be created automatically
+        # if the target file does not exist
         # Note 2: Database will be initialized automatically if necessary
         db_source                   DBD:SQLite:dbname=./translate.db3
 
-        # Optional username for database connection (when applicable; has no effect for SQLite-based databases)
+        # Optional username for database connection
+        # (when applicable; has no effect for SQLite-based databases)
         db_username                 johndoe
 
-        # Optional password for database connection (when applicable; has no effect for SQLite-based databases)
+        # Optional password for database connection
+        # (when applicable;  has no effect for SQLite-based databases)
         db_password                 secretword
 
         # Internal namespace to register files under in the database.
-        # Namespace (can be perceived as a localization project name) are used to group jobs together
-        # and are used to improve the fidelity of TM reuse: by default, translations are looked up
-        # in the same file, then in the same namespace, then in the entire TM database.
-        # Note that (namespace + relative file path) pair must be unique. So different jobs sharing
-        # the same namespace must generate different relative file paths to avoid collisions.
-        # The format of the string is arbitrary. We don't recommend using spaces, however, because
-        # it will be harder to specify such namespace names as command-line parameters in various
-        # situations.
+        # Namespace (can be perceived as a localization project name) are used to group jobs
+        # together and are used to improve the fidelity of TM reuse: by default, translations
+        # are looked up in the same file, then in the same namespace, then in the entire TM
+        # database.
+        # Note that (namespace + relative file path) pair must be unique. So different jobs
+        # sharing the same namespace must generate different relative file paths to avoid
+        # collisions. The format of the string is arbitrary. We don't recommend using spaces,
+        # however, because it will be harder to specify such namespace names as command-line
+        # parameters in various situations.
         db_namespace                my_project
 
         # Should the translations from other files or namespaces be reused? (boolean)
-        # YES - enable reuse (copying) from pre-existing translations for the same strings (default)
+        # YES - enable reuse (copying) from pre-existing translations
+        # for the same strings (default)
         # NO - do not reuse translations (good for e.g. terminology projects where everything
         # needs to be translated explicitly)
         reuse_translations          YES
@@ -228,39 +254,48 @@ jobs
         # NO - do not reuse orphaned translations
         reuse_orphaned              YES
 
-        # Should the translations be reused even if there are different translations for the same source? (boolean)
+        # Should the translations be reused even if there are different translations
+        # for the same source? (boolean)
         # YES - just try to pick the best one based on context/file/namespace
         # NO - do not reuse such uncertain translations at all (default)
         reuse_uncertain             NO
 
-        # Should the fuzzy flag be set on translations which are copied from other strings? (boolean)
-        # Fuzzy flag indicates that the translation is not final and needs review. The fuzzy flag is exported
-        # in the .po file, and .po editing software can indicate or otherwise filter such fuzzy strings.
+        # Should the fuzzy flag be set on translations which are copied from other strings?
+        # (boolean)
+        # Fuzzy flag indicates that the translation is not final and needs review.
+        # The fuzzy flag is exported in the .po file, and .po editing software can indicate
+        # or otherwise filter such fuzzy strings.
         # YES - set the fuzzy flag (default)
-        # NO - do not set the fuzzy flag (but the flag may be set explicitly by other rules, see below)
+        # NO - do not set the fuzzy flag (but the flag may be set explicitly by other rules,
+        # see below)
         reuse_as_fuzzy_default      YES
 
-        # The list of languages where reused translations should have the fuzzy flag turned on
-        # disregarding the `reuse_as_fuzzy_default' setting. Use this as an override.
+        # The list of languages where reused translations should have the fuzzy flag
+        # turned on disregarding the `reuse_as_fuzzy_default' setting.
+        # Use this as an override.
         # Default: an empty list
         reuse_as_fuzzy              ja
 
-        # the list of languages where reused translations should NOT have the fuzzy flag turned on
-        # disregarding the `reuse_as_fuzzy_default' setting. Use this as an override.
+        # the list of languages where reused translations should NOT have the fuzzy flag
+        # turned on disregarding the `reuse_as_fuzzy_default' setting.
+        # Use this as an override.
         # Default: an empty list
         reuse_as_not_fuzzy          de
 
-        # The list of rules defining if translations can be copied over from similar languages.
+        # The list of rules defining if translations can be copied over from similar
+        # languages.
         # Default: an empty list (which means no cross-language translation reuse)
         similar_languages
         {
-            # For Latino American Spanish, borrow translations as fuzzy from generic (European) Spanish
+            # For Latino American Spanish, borrow translations as fuzzy from generic
+            # (European) Spanish
             {
                 # Source language (where to look translations in)
                 source              es
                 # Destination language (where to apply translations to)
                 destination         es-latam
-                # Should the translations copied from `source' to `destination' be marked as fuzzy? (boolean)
+                # Should the translations copied from `source' to `destination'
+                # be marked as fuzzy? (boolean)
                 # YES - force the fuzzy flag
                 # NO - the fuzzy state will be taken from the original translation (default)
                 as_fuzzy            YES
@@ -280,13 +315,15 @@ jobs
         /*
             In the parameter above, the following macros are allowed:
 
-            %ENV:WHATEVER%  -  gets substituted with `WHATEVER' environment variable, or dies if it is not set.
-                               This allows to define parameters externally without modifying the config file itself.
+            %ENV:WHATEVER%  -  gets substituted with `WHATEVER' environment variable,
+                               or dies if it is not set. This allows to define parameters
+                               externally without modifying the config file itself.
 
             %PATH%           - file path including trailing path delimiter
             %NAME%           - file name without extension
                                (the rightmost dot is used to split name and extension)
-            %EXT%            - extension (the rightmost dot is used to split name and extension)
+            %EXT%            - extension (the rightmost dot is used to split
+                               name and extension)
             %LNAME%          - file name without extension
                                (the leftmost dot is used to split name and extension)
             %LEXT%           - extension (the leftmost dot is used to split name and extension)
@@ -296,26 +333,29 @@ jobs
             %NAME:LEXT%      - split the %NAME% using the leftmost dot and take the right part
                                (%NAME% is equivalent to %NAME:NAME%.%NAME:EXT%)
 
-            %LNAME:NOLOCALE% - take %LNAME% and strip the source locale '_XX' suffix (e.g. '_en')
-            %NAME:NOLOCALE%  - take %NAME% and strip the source locale '_XX' suffix (e.g. '_en')
+            %LNAME:NOLOCALE% - take %LNAME% and strip the source locale '_XX' suffix
+                               (e.g. '_en')
+            %NAME:NOLOCALE%  - take %NAME% and strip the source locale '_XX' suffix
+                               (e.g. '_en')
 
             %FILE%           - original file name including full path
                                (equivalent to %PATH%%NAME%.%EXT% or %PATH%%LNAME%.%LEXT%)
 
             %LANG%           - language tag (e.g. 'en', 'ru', 'pt-br')
             %CULTURE%        - culture tag (e.g. 'en-US', 'ru-RU', 'pt-BR')
-            %LOCALE%         - locale name in Java- and Pootle-compatible format (e.g. 'en', 'ru', 'pt_BR')
+            %LOCALE%         - locale name (e.g. 'en', 'ru', 'pt_BR')
             %LOCALE:ANDROID% - locale name as used on Android (e.g. 'en', 'ru', 'pt-rBR')
             %LOCALE:IPHONE%  - locale name as used on iPhone
+                               (**DEPRECATED**, use %LANG% instead + `output_lang_rewrite`)
             %LOCALE:LC%      - a lowercased locale name (e.g. 'en', 'ru', 'pt_br')
             %LOCALE:UC%      - an uppercased locale name (e.g. 'EN', 'RU', 'PT_BR')
-            %LOCALE:FULL%    - full locale (e.g. 'en_US', 'ru_RU', 'pt_BR')
+            %LOCALE:FULL%    - full locale with country name (e.g. 'en_US', 'ru_RU', 'pt_BR')
             %LOCALE:FULL:LC% - same as above, but lowercased
             %LOCALE:FULL:UC% - same as above, but uppercased
             %LANGNAME%       - full language name (e.g. 'English', 'Russian') used in Mac
-                               (LEGACY, DEPRECATED, use %LOCALE% instead)
+                               (**LEGACY, DEPRECATED**)
             %LANGNAME:IPHONE%- full language name (e.g. 'English', 'Russian') used in iPhone
-                               (LEGACY, DEPRECATED, use %LOCALE:IPHONE% instead)
+                               (**LEGACY, DEPRECATED**)
             %LANGID%         - Win32 laguage locale as 4-digit hex value (e.g. '0419')
             %LANGID:DEC%     - Win32 laguage locale as decimal value (e.g. '1049')
             %LANGCONST%      - Win32 LANG_ constant (e.g. 'LANG_RUSSIAN')
@@ -334,27 +374,32 @@ jobs
         # Should the localized files be created for the default language as well? (boolean)
         # YES - the files needs to be created
         # NO - do not create the files
-        # Note: This option is handy when the source file is not the final localizable resource
-        # to use but rather a template that has to be preprocessed. See e.g. the `parse_default` parser
-        # and its `.master` template file format that allows one to mark up unstructured plain text files
-        # for translation
+        # Note: This option is handy when the source file is not the final localizable
+        # resource to use but rather a template that has to be preprocessed.
+        # See e.g. the `parse_default` parser and its `.master` template file format
+        # that allows one to mark up unstructured plain text files for translation
         output_default_lang_file    YES
 
         # Output encoding for generated language files
         # Sample values: UTF-8, UTF-16, UCS-2, UCS-4
-        # For .rc files, the output encoding should be little-endian Unicode (UCS-2LE) (see MSDN documentation)
-        # For .strings files, the recommended output encoding is UTF-16 (see ADC documentation)
-        # This value has effect only if `output_lang_files` or `output_default_lang_file` parameters are set to YES
+        # For .rc files, the output encoding should be little-endian Unicode (UCS-2LE)
+        # (see MSDN documentation)
+        # For .strings files, the recommended output encoding is UTF-16
+        # (see ADC documentation)
+        # This value has effect only if `output_lang_files` or `output_default_lang_file`
+        # parameters are set to YES
         output_encoding             UCS-2LE
 
-        # Should the BOM (byte order mark) be emitted at the beginning of the output file? (boolean)
+        # Should the BOM (byte order mark) be emitted at the beginning
+        # of the output file? (boolean)
         # YES - output the BOM (default)
         # NO - do not output the BOM
         output_bom                  YES
 
-        # Optional map telling to use different language name when constructing output_path.
-        # This allows to tweak language/locale names for different projects. This setting affects
-        # language-specific macros (see the list of available macros in `po_path` parameter description)
+        # Optional map telling to use different language name when constructing
+        # output_path. This allows to tweak language/locale names for different projects.
+        # This setting affects language-specific macros (see the list of available macros
+        # in `po_path` parameter description)
         output_lang_rewrite
         {
             no                      nb
@@ -362,12 +407,17 @@ jobs
 
         # Path to a generated file (relative to the config file or absolute)
         # Allowed macros: same as for the `po_path` parameter (see above)
-        # This value has effect only if `output_lang_files` or `output_default_lang_file` parameters are set to YES
+        # This value has effect only if `output_lang_files` or `output_default_lang_file`
+        # parameters are set to YES
         output_path                 ./%FILE%.%LANG%
 
-        # List of strings that should be treated as trademarks. If a translatable string will contain
-        # a trademark, a special 'Do not translate trademarks' hint will be added
+        # List of strings that should be treated as trademarks. If a translatable string
+        # will contain a trademark, a special 'Do not translate trademarks' hint will be added
         # to a generated .po file, with the list of such found strings
+        #
+        # ** DEPRECATION WARNING: This functionality will be eventually moved into a
+        # separate plugin **
+        #
         trademarks                  Apple Microsoft `Mac OS`
                                     `Microsoft Windows`
                                     `Windows Phone`
@@ -380,9 +430,9 @@ jobs
                 # Plugin to use for processing. See Serge/Engine/Plugin/*.pm files
                 plugin              foo_plugin
 
-                # Optional data for plugin parameters. Each plugin may have specific parameters
-                # inside the `data` block. See the documentation for each specific plugin
-                # for more information.
+                # Optional data for plugin parameters. Each plugin may have
+                # specific parameters inside the `data` block. See the documentation
+                # for each specific plugin for more information.
                 data
                 {
                     bar             YES

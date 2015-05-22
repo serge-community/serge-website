@@ -1,4 +1,5 @@
 <?php
+    $title = 'Getting Started';
 	include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 

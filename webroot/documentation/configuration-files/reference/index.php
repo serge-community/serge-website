@@ -1,5 +1,6 @@
 <?php
     $subpage = 'ref-config';
+    $title = 'Configuration File Reference';
 
     $head = '
         <script src="/media/vendor/codemirror/codemirror.js"></script>

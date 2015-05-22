@@ -1,5 +1,6 @@
 <?php
     $subpage = 'localization-cycle';
+    $title = 'Localization Cycle';
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 

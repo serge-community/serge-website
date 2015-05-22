@@ -1,7 +1,7 @@
 <?php
-	$page = 'download';
+    $page = 'download';
     $title = 'Download';
-	include($_SERVER['DOCUMENT_ROOT'] . '/../inc/header.php');
+    include($_SERVER['DOCUMENT_ROOT'] . '/../inc/header.php');
 ?>
 
 <h1>System Requirements</h1>
