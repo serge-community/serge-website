@@ -1,4 +1,1 @@
-	</div> <!-- /body -->
-</div> <!-- /pod -->
-
-<?php include('footer.php') ?>
+<?php include('documenation-footer.php') ?>

@@ -11,9 +11,16 @@
     }
 
     function _item($id, $url, $title) {
-        echo '<li'._sel($id).'><a href="'.$url.'">'.htmlspecialchars($title).'</a></li>';
+        /* DEBUG: remove this feature before opening in production! */
+        $ok = file_exists($_SERVER['DOCUMENT_ROOT'] . "$url/index.php");
+        $a_class = $ok ? '' : 'class="err"';
+        /* DEBUG */
+
+        echo '<li'._sel($id).'><a href="'.$url.'"'.$a_class.'>'.htmlspecialchars($title).'</a></li>';
     }
 
+    require_once('help-topics.php');
+    require_once('plugins.php');
 ?>
 
 <div class="pod">
@@ -31,10 +38,36 @@
         <h3>Reference</h3>
         <ul>
             <?php _item("help",                         "/documentation/help/",                           "Command-line Help") ?>
+            <ul>
+                <?php
+                    if ($section == 'help') {
+                        foreach ($help_topics as $topic) {
+                            _item($topic, "/documentation/help/$topic/",  $topic);
+                        }
+                    }
+                ?>
+            </ul>
+            <?php _item("-ref-plugins",                 "/documentation/plugins/$parser_plugins[0]",      "Parser Plugins") ?>
+            <ul>
+                <?php
+                    if ($section == 'parser-plugins') {
+                        foreach ($parser_plugins as $name) {
+                            _item("ref-plugin-$name", "/documentation/plugins/$name/",  $name);
+                        }
+                    }
+                ?>
+            </ul>
+            <?php _item("-ref-plugins",                 "/documentation/plugins/$control_plugins[0]",     "Control Plugins") ?>
+            <ul>
+                <?php
+                    if ($section == 'control-plugins') {
+                        foreach ($control_plugins as $name) {
+                            _item("ref-plugin-$name", "/documentation/plugins/$name/",  $name);
+                        }
+                    }
+                ?>
+            </ul>
             <?php _item("ref-config",                   "/documentation/configuration-files/reference/",  "Configuration File Format") ?>
-            <?php //_item("ref-plugins",                  "/documentation/plugins/",                        "Parser Plugins") ?>
-            <?php //_item("ref-plugins",                  "/documentation/plugins/",                        "Control Plugins") ?>
-            <?php //_item("ref-plugins",                  "/documentation/plugins/",                        "Filter Plugins") ?>
         </ul>
         <?php /*
         <h3>Extending Serge</h3>

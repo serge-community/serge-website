@@ -295,9 +295,20 @@ ol > li:before {
     list-style-type: none;
 }
 
+.pod .menu ul > ul {
+    padding-left: 2em;
+}
+
 .pod .menu a {
     white-space: nowrap;
 }
+
+/* DEBUG */
+.pod .menu a.err {
+    color: red;
+    opacity: 0.5;
+}
+/* DEBUG */
 
 .pod .menu li {
     margin-bottom: 0.2em;
@@ -363,4 +374,14 @@ div.table {
 
 div.table > div {
     display: table-cell;
+}
+
+/* Error pages */
+
+h1.error {
+    display: block;
+    text-align: center;
+    font-size: 3em;
+    margin: 5em 0;
+    color: rgba(0, 0, 0, 0.5);
 }
