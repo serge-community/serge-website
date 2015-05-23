@@ -1,3 +1,7 @@
+html {
+    -webkit-text-size-adjust: 100%; /* prevent font scaling on iOS */
+}
+
 body {
     font-family: "Roboto", sans-serif;
     text-rendering: optimizeLegibility;
@@ -347,9 +351,10 @@ ol > li:before {
 }
 
 .graphic-bg {
-    background: rgb(229, 225, 219) url(graphic.png) 50% 0 no-repeat;
+    background: rgb(229, 225, 219) url(homepage_diagram.svg) 50% 0 no-repeat;
+    background-size: 1565px 220px;
     position: absolute;
-    height: 200px;
+    height: 220px;
     left: 0;
     right: 0;
     top: 190px;
