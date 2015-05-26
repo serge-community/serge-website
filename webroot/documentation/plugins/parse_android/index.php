@@ -1,13 +1,41 @@
 <?php
     $section = 'parser-plugins';
     $subpage = 'ref-plugin-parse_android';
-    $title = '.XML parser (Android resource files)';
+    $title = 'Android strings.xml Parser Plugin';
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
-<p>...</p>
+<p>Plugin location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_android.pm</code></p>
+
+<p>This plugin extracts strings from Android resource files (strings.xml). String names (IDs) are extracted as translation hints. Tags that bear <code>translatable="false"</code> attribute are skipped. Plugin handles Android-specific escaping of apostrophes and quotation marks.</p>
+
+<h2>Code Examples</h2>
+
+<h3>Simple Strings</h3>
+
+<code class="block">&lt;string name="<span class="hint">hint</span>" ...&gt;<span class="string">string</span>&lt;/string&gt;</code>
+
+<h3>String Arrays</h3>
+
+<p>To provide better context and indicate that string comes from an arrat, the resulting hint is constructed as <code><span class="hint">hint</span>:item</code>.</p>
+
+<code class="block">&lt;string-array name="<span class="hint">hint</span>" ...&gt;
+  &lt;item&gt;<span class="string">string</span>&lt;/item&gt;
+  ...
+&lt;/string-array&gt;</code>
+
+<h3>Plural Strings</h3>
+
+<p>For plural strings, hint is extracted from both parent <code>&lt;plurals&gt;</code> tag and individual quantity value; the resulting hint is constructed as <code><span class="hint">parent_hint</span>:<span class="hint">quantity_hint</span></code>.</p>
+
+<code class="block">&lt;plurals name="<span class="hint">parent_hint</span>" ...&gt;
+  &lt;item quantity="<span class="hint">quantity_hint</span>"&gt;<span class="string">string</span>&lt;/item&gt;
+  ...
+&lt;/plurals&gt;</code>
+
+<p class="notice">Limitation: dynamic number of plurals is not supported yet; all quantity variants need to be pre-created in the original XML resource file.</p>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
 

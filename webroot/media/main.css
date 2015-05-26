@@ -210,6 +210,17 @@ ul.menu.subselection li a.selected:hover {
     box-shadow: none;
 }
 
+p.notice {
+    display: block;
+    background: #ffbaba;
+    color: #900;
+    border: 1px solid rgba(102, 0, 0, 0.1);
+    border-radius: 0.3em;
+    padding: 0.3em 0.6em;
+    margin: 1.2em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
 code.block,
 code.cli {
     display: block;
@@ -233,6 +244,23 @@ code.cli {
 
 code.cli > * {
     text-indent: 0;
+}
+
+code > .hint,
+code > .string {
+    border-radius: 0.3em;
+    padding: 0 0.4em;
+    text-align: center;
+}
+
+code > .hint {
+    background: rgba(153, 153, 153, 0.3);
+    color: #333;
+}
+
+code > .string {
+    background: rgba(95, 179, 54, 0.5);
+    color: #030;
 }
 
 ul.social-buttons {
