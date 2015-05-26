@@ -31,7 +31,7 @@
 
 <p><code>sync</code> command makes sense in a continuous localization environment. On a very basic level, you can run <code>serge sync /path/to/localization-configuration-files-folder</code> as a cron job on your server.</p>
 
-<p><code>localize</code> command alone can be used on a local development machine for on-demand resource localization, localziation project configuration, or testing your custom parsers.</p>
+<p><code>localize</code> command alone can be used on a local development machine for on-demand resource localization, localization project configuration, or testing your custom parsers.</p>
 
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>

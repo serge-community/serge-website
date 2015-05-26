@@ -8,7 +8,7 @@
             </div>
             <div class="license">
                 Serge is licensed under Standard Perl License (dual <a href="http://dev.perl.org/licenses/gpl1.html">GPL</a> / <a href="http://dev.perl.org/licenses/artistic.html">Artistic License</a>)<br/>
-                Serge.io website and Serge documenation are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+                Serge.io website and Serge documentation are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
             </div>
             <ul class="social-buttons">
                 <li><iframe src="http://ghbtns.com/github-btn.html?user=evernote&amp;repo=serge&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>

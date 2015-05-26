@@ -1,1 +1,1 @@
-<?php include('documenation-footer.php') ?>
+<?php include('documentation-footer.php') ?>
