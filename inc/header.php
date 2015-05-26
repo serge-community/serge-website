@@ -21,7 +21,7 @@
             <ul class="menu<?php echo $subselection ? ' subselection' : '' ?>">
                 <li><a href="/"<?php echo menuSel('index') ?>>Home</a></li>
                 <li><a href="/download/"<?php echo menuSel('download') ?>>Download</a></li>
-                <li><a href="/documentation/"<?php echo menuSel('documentation') ?>>Documentation</a></li>
+                <li><a href="/docs/"<?php echo menuSel('documentation') ?>>Documentation</a></li>
                 <li><a href="/contact/"<?php echo menuSel('contact') ?>>Contact Us</a></li>
                 <li class="extra"><a href="//evernote.com">evernote.com</a></li>
             </ul>

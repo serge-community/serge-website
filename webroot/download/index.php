@@ -51,6 +51,6 @@ cpanm --installdeps .</code>
 
 <p>If you see command-line help from Serge, then everything has been set up correctly.</p>
 
-<p>Now, <a href="/documentation/">get started with Serge workflow and configuration &rarr;</a></p>
+<p>Now, <a href="/docs/">get started with Serge workflow and configuration &rarr;</a></p>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/footer.php') ?>

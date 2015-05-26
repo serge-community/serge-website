@@ -18,7 +18,7 @@ use Serge::Pod;
 my $pod = Serge::Pod->new();
 my $pod_root = $pod->{pod_root};
 
-my $help_root = catfile(dirname(__FILE__), 'webroot/documentation/help');
+my $help_root = catfile(dirname(__FILE__), 'webroot/docs/help');
 my $inc_root = catfile(dirname(__FILE__), 'inc');
 
 my @podfiles;
