@@ -351,6 +351,16 @@ ol > li:before {
     color: #fff;
 }
 
+.pod .menu li.collapsed:before,
+.pod .menu li.expanded:before {
+    content: '▼ ';
+    opacity: 0.3;
+}
+
+.pod .menu li.collapsed:before {
+    content: '► ';
+}
+
 .pod .body h1:first-child {
     margin-top: 0;
 }

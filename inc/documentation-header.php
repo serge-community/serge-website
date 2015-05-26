@@ -10,13 +10,14 @@
         return ($id == $subpage) ? ' class="selected"' : '';
     }
 
-    function _item($id, $url, $title) {
+    function _item($id, $url, $title, $li_class = '') {
         /* DEBUG: remove this feature before opening in production! */
         $ok = file_exists($_SERVER['DOCUMENT_ROOT'] . "$url/index.php");
         $a_class = $ok ? '' : 'class="err"';
         /* DEBUG */
+        $li_class = $li_class != '' ? ' class="'.$li_class.'"' : '';
 
-        echo '<li'._sel($id).'><a href="'.$url.'"'.$a_class.'>'.htmlspecialchars($title).'</a></li>';
+        echo '<li'._sel($id).$li_class.'><a href="'.$url.'"'.$a_class.'>'.htmlspecialchars($title).'</a></li>';
     }
 
     require_once('help-topics.php');
@@ -37,7 +38,8 @@
         </ul>
         <h3>Reference</h3>
         <ul>
-            <?php _item("help",                         "/docs/help/",                           "Command-line Help") ?>
+            <?php _item("help",                         "/docs/help/",                           "Command-line Help",
+                        $section == 'help' ? "expanded" : "collapsed") ?>
             <ul>
                 <?php
                     if ($section == 'help') {
@@ -47,7 +49,8 @@
                     }
                 ?>
             </ul>
-            <?php _item("-ref-plugins",                 "/docs/plugins/$parser_plugins[0]",      "Parser Plugins") ?>
+            <?php _item("-ref-plugins",                 "/docs/plugins/$parser_plugins[0]",      "Parser Plugins",
+                        $section == 'parser-plugins' ? "expanded" : "collapsed") ?>
             <ul>
                 <?php
                     if ($section == 'parser-plugins') {
@@ -57,7 +60,8 @@
                     }
                 ?>
             </ul>
-            <?php _item("-ref-plugins",                 "/docs/plugins/$control_plugins[0]",     "Control Plugins") ?>
+            <?php _item("-ref-plugins",                 "/docs/plugins/$control_plugins[0]",     "Control Plugins",
+                        $section == 'control-plugins' ? "expanded" : "collapsed") ?>
             <ul>
                 <?php
                     if ($section == 'control-plugins') {
