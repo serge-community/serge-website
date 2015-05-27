@@ -354,7 +354,7 @@ ol > li:before {
 .pod .menu li.expanded,
 .pod .menu li.collapsed {
     padding-left: 1em;
-    background: url(triangle_collapsed.svg) -0.2em 50% no-repeat;
+    background: url(triangle_collapsed.svg) 0 50% no-repeat;
     background-size: 0.8em 0.8em;
 }
 
