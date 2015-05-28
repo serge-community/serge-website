@@ -99,7 +99,7 @@ h3:target {
 
 code, dt {
     font-family: "Inconsolata", monospace;
-    font-size: 120%;
+    font-size: 110%;
     font-weight: normal;
 }
 
@@ -217,20 +217,48 @@ p.notice {
     border: 1px solid rgba(102, 0, 0, 0.1);
     border-radius: 0.3em;
     padding: 0.3em 0.6em;
-    margin: 1.2em;
+    margin: 1em;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
+figure,
 code.block,
 code.cli {
     display: block;
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0.3em;
-    padding: 0.3em 0.6em;
     margin: 1em;
-    white-space: pre;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+figcaption,
+code.block,
+code.cli {
+    padding: 0.3em 0.6em;
+}
+
+code.block,
+code.cli {
+    white-space: pre;
+}
+
+figure {
+    overflow: hidden;
+}
+
+figcaption {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 0.2em 0.2em 0 0;
+    color: #999;
+    font-size: 80%;
+}
+
+figure code.block {
+    border: none;
+    box-shadow: none;
+    border-radius: 0 0 0.2em 0.2em;
+    margin: 0;
 }
 
 code.cli:before {
