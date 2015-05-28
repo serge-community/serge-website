@@ -18,7 +18,7 @@
 
 <p>Each system is supported by its own &lsquo;VCS plugin&rsquo;, and you can write your own VCS integration plugins. You can use existing plugin code (located in <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/VCS</code> folder) as an inspiration.</p>
 
-<p>Serge comes with the ready-to use plugin for <a href="http://pootle.translatehouse.org/">Pootle</a> — a free open-source online translation server software (which we use <a href="https://translate.evernote.com/">at Evernote</a> with little modifications). You can use plugins's code (located in <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/TranslationService/pootle.pm</code>) as a reference implementation for your own plugins.</p>
+<p>Serge comes with the ready-to use plugin for <a href="http://pootle.translatehouse.org/">Pootle</a> — a free open-source online translation server software (which we use <a href="https://translate.evernote.com/">at Evernote</a> with little modifications). You can use plugin's code (located in <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/TranslationService/pootle.pm</code>) as a reference implementation for your own plugins.</p>
 
 <p>VCS are defined on a per-<a href="/docs/configuration-files/">configuration file</a> basis. So you can have some translation projects working with Git, and others with SVN, for example. Also, each translation project can define one or more repositories to pull data from.</p>
 

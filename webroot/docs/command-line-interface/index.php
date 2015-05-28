@@ -10,7 +10,7 @@
 
 <code class="cli">serge <em><a href="#available-commands">&lt;command&gt;</a></em> <em><a href="/docs/configuration-files/">&lt;configuration-file-or-directory&gt;</a></em></code>
 
-<p>When running any Serge command which expects a configuration file, you can actually provide muiltiple configuration files, or even specify the directory where configuration files with .serge extension are located, and Serge will process all these files.</p>
+<p>When running any Serge command which expects a configuration file, you can actually provide multiple configuration files, or even specify the directory where configuration files with .serge extension are located, and Serge will process all these files.</p>
 
 <p>Example (run 'push' command on 'my-ios-client.serge' and 'my-mac-client.serge' configuration files):</p>
 <code class="cli">serge push my-ios-client.serge my-mac-client.serge</code>

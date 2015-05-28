@@ -22,7 +22,7 @@
 
 <h3>String Arrays</h3>
 
-<p>To provide better context and indicate that string comes from an arrat, the resulting hint is constructed as <code><span class="hint">hint</span>:item</code>.</p>
+<p>To provide better context and indicate that string comes from an array, the resulting hint is constructed as <code><span class="hint">hint</span>:item</code>.</p>
 
 <figure>
     <figcaption>strings.xml</figcaption>

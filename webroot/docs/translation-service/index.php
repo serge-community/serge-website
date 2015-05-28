@@ -18,7 +18,7 @@
 
 <p>Such functionality is realized by the means of &lsquo;translation service plugins&rsquo;, which need to know how to send a specified directory of .po files to an external service and how to get the files back into file system.</p>
 
-<p>Serge comes with the ready-to use plugin for <a href="http://pootle.translatehouse.org/">Pootle</a> — a free open-source online translation server software (which we use <a href="https://translate.evernote.com/">at Evernote</a> with little modifications). You can use plugins's code (located in <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/TranslationService/pootle.pm</code>) as a reference implementation for your own plugins.</p>
+<p>Serge comes with the ready-to use plugin for <a href="http://pootle.translatehouse.org/">Pootle</a> — a free open-source online translation server software (which we use <a href="https://translate.evernote.com/">at Evernote</a> with little modifications). You can use plugin's code (located in <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/TranslationService/pootle.pm</code>) as a reference implementation for your own plugins.</p>
 
 <p>Note that Serge is very flexible when it comes to <a href="/docs/configuration-files/">configuration</a>. You can send select translation projects to a localization vendor, while using crowdsourcing service to translate the rest.</p>
 
