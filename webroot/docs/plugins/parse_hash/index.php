@@ -7,7 +7,7 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
-<p>This plugin is used to parse associative arrays (aka hashes) in <code>'key' => 'value'</code> format which are used in Perl, PHP, and Ruby.</p>
+<p>This plugin is used to parse associative arrays (aka hashes) in <code>'key' => 'value'</code> format which are used in Perl, PHP, and Ruby. Each key-value pair must be on its own line.</p>
 
 <h2>Code Examples</h2>
 
