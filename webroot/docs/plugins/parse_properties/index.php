@@ -7,7 +7,61 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
-<p>...</p>
+<p>This parser extracts strings from files in <a href="http://en.wikipedia.org/wiki/.properties">Java .properties format</a>.</p>
+
+<p>Note that .properties files don't have an official way to provide context or comments for localized strings. Serge supports special <code>#.flag</code> and <code>#.param=value</code> comments that affect the key-value pair that go immediately below it. For example, <code>#.internal</code> allows one to prevent certain strings from being extracted for translation, <code>#.context=value</code> sets the context for the string, and one or more <code>#.comment=comment line</code> lines define a comment that will be extracted and associated with the string.</p>
+
+<h2>Code Examples</h2>
+
+<figure>
+    <figcaption>example.properties</figcaption>
+    <code class="block"><span class="hint">key1</span> = <span class="string">string</span>
+<span class="hint">key2</span> : <span class="string">string</span>
+
+#.internal
+key3 = non-translatable string
+
+#.context=<span class="context">verb</span>
+<span class="hint">key4</span> = <span class="string">string</span>
+
+#.comment=<span class="hint">comment line 1</span>
+#.comment=<span class="hint">comment line 2</span>
+<span class="hint">key5</span> = <span class="string">string</span>
+...</code>
+</figure>
+
+<p class="notice">Limitation: multi-line values are not supported yet.</p>
+
+<h2>Usage</h2>
+
+<figure>
+    <figcaption>sample-java-project.serge</figcaption>
+    <script language="text/x-config-neat">
+jobs
+{
+    :sample-job
+    {
+        plugin               parse_properties
+
+        data
+        {
+            /*
+              whether to escape single quotation marks (' => '')
+              in localized files; this option is needed because
+              there are some inconsistencies between different
+              Java frameworks in dealing with escaped quotes.
+              Default: NO
+            */
+            escaped_quotes   YES
+        }
+
+        # other job parameters
+        # ...
+    }
+}
+</script>
+</figure>
+
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
 

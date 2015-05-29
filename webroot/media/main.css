@@ -112,7 +112,7 @@ dt b {
 }
 
 code, dt b {
-  color: rgb(142, 77, 41);
+  color: rgb(204, 111, 60);
 }
 
 .logo {
@@ -274,11 +274,17 @@ code.cli > * {
     text-indent: 0;
 }
 
+code > .context,
 code > .hint,
 code > .string {
-    border-radius: 0.3em;
-    padding: 0 0.4em;
+    border-radius: 0.2em;
+    padding: 0 0.2em;
     text-align: center;
+}
+
+code > .context {
+    background: rgba(153, 153, 0, 0.3);
+    color: #660;
 }
 
 code > .hint {
