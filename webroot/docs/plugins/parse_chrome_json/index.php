@@ -31,7 +31,7 @@
 <h2>Usage</h2>
 
 <figure>
-    <figcaption>sample-chrome-json-project.serge</figcaption>
+    <figcaption>example-project.serge</figcaption>
     <script language="text/x-config-neat">
 jobs
 {

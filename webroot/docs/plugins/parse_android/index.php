@@ -46,5 +46,23 @@
 
 <p class="notice">Limitation: dynamic number of plurals is not supported yet; all quantity variants need to be pre-created in the original XML resource file.</p>
 
+<h2>Usage</h2>
+
+<figure>
+    <figcaption>example-project.serge</figcaption>
+    <script language="text/x-config-neat">
+jobs
+{
+    :sample-job
+    {
+        plugin               parse_android
+
+        # other job parameters
+        # ...
+    }
+}
+</script>
+</figure>
+
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
 
