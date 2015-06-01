@@ -274,6 +274,7 @@ code.cli > * {
     text-indent: 0;
 }
 
+code > .nop,
 code > .string,
 code > .context,
 code > .hint,
