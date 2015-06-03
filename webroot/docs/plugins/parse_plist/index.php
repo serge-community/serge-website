@@ -7,6 +7,8 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_plist.pm</code></p>
+
 <p>This plugin is used to parse <a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man5/plist.5.html">Apple .plist XML files</a>. String keys are extracted as hints.</p>
 
 <h2>Code Examples</h2>

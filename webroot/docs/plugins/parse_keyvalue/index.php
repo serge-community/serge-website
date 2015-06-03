@@ -7,6 +7,8 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_keyvalue.pm</code></p>
+
 <p>This plugin is used to parse resource files in <code>key=value</code> format. The first occurrence of <code>=</code> is used as a delimiter. Whitespace before and afer the delimiter is ignored. Each key-value pair must be on its own line.</p>
 
 <p>In the output, all line breaks in translations are replaced with <code>\n</code>.</p>

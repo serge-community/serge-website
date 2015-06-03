@@ -7,7 +7,8 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_yaml.pm</code></p>
+
 <p>...</p>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
-

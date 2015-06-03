@@ -7,9 +7,9 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
-<p>Plugin location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_android.pm</code></p>
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_android.pm</code></p>
 
-<p>This plugin extracts strings from Android resource files (strings.xml). String names (IDs) are extracted as translation hints. Tags that bear <code>translatable="false"</code> attribute are skipped. Plugin handles Android-specific escaping of apostrophes and quotation marks.</p>
+<p>This plugin extracts strings from <a href="http://developer.android.com/guide/topics/resources/string-resource.html">Android resource files</a> (strings.xml). String names (IDs) are extracted as translation hints. Tags that bear <code>translatable="false"</code> attribute are skipped. Plugin handles Android-specific escaping of apostrophes and quotation marks.</p>
 
 <h2>Code Examples</h2>
 
@@ -65,4 +65,3 @@ jobs
 </figure>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
-

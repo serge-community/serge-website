@@ -7,6 +7,8 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_json.pm</code></p>
+
 <p>This plugin is used to parse arbitrary JSON objects. It uses regular expressions as a configuration paramater to match translatable nodes in the JSON object tree.</p>
 
 <p>If your JSON is a plain dictionary in <code>"key" : "value"</code> format, where all keys need to be translated, use the <a href="/docs/plugins/parse_json_keyvalue">parse_json_keyvalue</a> plugin instead.</p>
@@ -121,4 +123,3 @@ jobs
 </figure>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
-

@@ -7,6 +7,8 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_hash.pm</code></p>
+
 <p>This plugin is used to parse associative arrays (aka hashes) in <code>'key' => 'value'</code> format which are used in Perl, PHP, and Ruby. Each key-value pair must be on its own line.</p>
 
 <h2>Code Examples</h2>
@@ -65,4 +67,3 @@ jobs
 </figure>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
-

@@ -7,6 +7,8 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_dtd.pm</code></p>
+
 <p>This plugin is used to parse .DTD files with entities, which are typically used to <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localizing_an_extension">localize Mozilla extensions</a>. Entity names are extracted as hints.</p>
 
 <h2>Code Examples</h2>
@@ -37,4 +39,3 @@ jobs
 </figure>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
-

@@ -7,6 +7,8 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_pot.pm</code></p>
+
 <p>This plugin is used to parse <a href="https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html#PO-Files">GNU Gettext .PO/.POT files</a>. Plurals are supported. All comments and references are extracted and combined as a hint.</p>
 
 <h2>Code Examples</h2>
@@ -49,4 +51,3 @@ jobs
 </figure>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
-

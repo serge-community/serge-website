@@ -7,6 +7,8 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_default.pm</code></p>
+
 <p>This is a parser for a markup meta-format that can be applied on top of any text file. This format uses <code>&lt;%</code> and <code>%&gt;</code> as start and end markers, and <code>%%</code> as a separator between the string, context, hint, and flag components.</p>
 <p>It is recommended that the master files which have this markup applied to get an extra <code>.master</code> extension. Examples: <code>readme.txt<em>.master</em></code>, <code>subtitles.srt<em>.master</em></code>, and so on.</p>
 
@@ -66,4 +68,3 @@ jobs
 </figure>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
-

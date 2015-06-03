@@ -7,6 +7,8 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_json_keyvalue.pm</code></p>
+
 <p>This plugin is used to parse plain JSON objects (dictionaries) in <code>"key" : "value"</code> format.</p>
 
 <p>Note that this parser does full JSON parsing/validation, and thus can be used on JSON only. If you have dictionaries in arbitrary JavaScript file, use the <a href="/docs/plugins/parse_js">parse_js</a> plugin instead. If your JSON has an arbitrary structure, see the <a href="/docs/plugins/parse_json">parse_json</a> plugin that gives more flexibility on what nodes to translate.</p>
@@ -59,4 +61,3 @@ jobs
 </figure>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
-

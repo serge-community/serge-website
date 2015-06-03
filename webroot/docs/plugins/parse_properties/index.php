@@ -7,6 +7,8 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_properties.pm</code></p>
+
 <p>This parser extracts strings from files in <a href="http://en.wikipedia.org/wiki/.properties">Java .properties format</a>.</p>
 
 <p>Note that .properties files don't have an official way to provide context or comments for localized strings. Serge supports special <code>#.flag</code> and <code>#.param=value</code> comment lines that affect the key=value line that goes immediately below it. For example, <code>#.internal</code> allows one to prevent certain strings from being extracted for translation, <code>#.context=value</code> sets the context for the string, and one or more <code>#.comment=comment line</code> lines define a comment that will be extracted and associated with the string. All other (unknown) flags are appended as hashtags to the hint; in other words, <code>#.myhashtag</code> is equivalent to <code>#.comment=#myhashtag</code> line. If there's a blank line between such special comments and a key=value line, these comments are discarded.</p>
@@ -59,6 +61,9 @@ jobs
             escaped_quotes   YES
         }
 
+        # .properties files always use Java encoding
+        output_encoding      Java
+
         # other job parameters
         # ...
     }
@@ -67,4 +72,3 @@ jobs
 </figure>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
-

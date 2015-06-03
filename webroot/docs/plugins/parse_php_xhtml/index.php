@@ -7,6 +7,8 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_php_xhtml.pm</code></p>
+
 <p>This plugin is used to parse [X]HTML/XML documents, including documents with embedded PHP and JavaScript code.</p>
 
 <p>Plugin does full XML parsing/validation, so the document must be a XHTML/XML document with balanced tags. When it comes to PHP, these are replaced with special plain-text markers or HTML attributes to make resulting HTML valid. In case validation fails, the plugin can send an error report to specified recipients. If no email settings provided, it will simply report the error in the console output.</p>
@@ -139,4 +141,3 @@ jobs
 </figure>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
-
