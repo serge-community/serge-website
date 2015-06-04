@@ -34,7 +34,6 @@
         "parse_rrc",
         "parse_strings",
         "parse_ts",
-        "parse_wrt_js",
         "parse_wxl",
         "parse_xml",
         "parse_yaml",
