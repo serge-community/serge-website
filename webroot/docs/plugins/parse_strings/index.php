@@ -15,8 +15,6 @@
 
 <p>Also, plugin allows to specify the string context by appending <code>##<em>context</em></code> at the end of the key name (see the example below).</p>
 
-<p class="notice">Limitation: multi-line comments and key values are not supported yet. Also, <code>\U<em>XXXX</em></code> encoding for Unicode symbols is not supported. It is possible to use final Unicode symbols, though.</p>
-
 <h2>Code Examples</h2>
 
 <figure>
@@ -37,6 +35,8 @@
 ...
 </code>
 </figure>
+
+<p class="notice">Limitation: multi-line comments and key values are not supported yet. Also, <code>\U<em>XXXX</em></code> encoding for Unicode symbols is not supported. It is possible to use final Unicode symbols, though.</p>
 
 <h2>Usage</h2>
 

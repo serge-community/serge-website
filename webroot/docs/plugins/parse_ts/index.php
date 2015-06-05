@@ -11,8 +11,6 @@
 
 <p>This parser extracts strings from <a href="http://doc.qt.io/qt-4.8/linguist-ts-file-format.html">Qt Linguist .TS files</a> (used in e.g. <a href="http://developer.blackberry.com/native/documentation/device_platform/internationalization/localization.html">BlackBerry 10</a> platform localization). Upon saving the destination file, it also adjusts the language in the top <code>&lt;TS&gt;</code> tag <code>language</code> attribute, and removes <code>type="unfinished"</code> attribute from individual <code>&lt;translation&gt;</code> attributes.</p>
 
-<p class="notice">Limitation: native <code>&lt;comment&gt;</code>, <code>&lt;extracomment&gt;</code>, and <code>&lt;translatorcomment&gt;</code> tag contents are not extracted as hints yet. Context names are also not extracted at the moment.</p>
-
 <h2>Code Examples</h2>
 
 <figure>
@@ -33,6 +31,8 @@
 &lt;/TS&gt;
 </code>
 </figure>
+
+<p class="notice">Limitation: native <code>&lt;comment&gt;</code>, <code>&lt;extracomment&gt;</code>, and <code>&lt;translatorcomment&gt;</code> tag contents are not extracted as hints yet. Context names are also not extracted at the moment.</p>
 
 <h2>Usage</h2>
 
