@@ -210,8 +210,8 @@ jobs
 
         # DBI-compatible connection string
         # Supported drivers: SQLite, MySQL and Postgres
-        # SQLite sample: 'DBD:SQLite:dbname=/path/to/translate.db3'
-        # SQLite sample: 'DBD:SQLite:dbname=:memory:' - in-memory database
+        # SQLite sample: 'DBI:SQLite:dbname=/path/to/translate.db3'
+        # SQLite sample: 'DBI:SQLite:dbname=:memory:' - in-memory database
         # for testing purposes
         # MySQL sample: 'DBI:mysql:database=translations'
         # MySQL sample: 'DBI:mysql:database=translations;host=localhost;port=3306'
@@ -219,7 +219,7 @@ jobs
         # Note 1: SQLite database will be created automatically
         # if the target file does not exist
         # Note 2: Database will be initialized automatically if necessary
-        db_source                   DBD:SQLite:dbname=./translate.db3
+        db_source                   DBI:SQLite:dbname=./translate.db3
 
         # Optional username for database connection
         # (when applicable; has no effect for SQLite-based databases)
@@ -373,19 +373,16 @@ jobs
 
         # Should the localized files be created for the default language as well? (boolean)
         # YES - the files needs to be created
-        # NO - do not create the files
+        # NO - do not create the files (default)
         # Note: This option is handy when the source file is not the final localizable
         # resource to use but rather a template that has to be preprocessed.
         # See e.g. the `parse_default` parser and its `.master` template file format
         # that allows one to mark up unstructured plain text files for translation
-        output_default_lang_file    YES
+        output_default_lang_file    NO
 
         # Output encoding for generated language files
         # Sample values: UTF-8, UTF-16, UCS-2, UCS-4
-        # For .rc files, the output encoding should be little-endian Unicode (UCS-2LE)
-        # (see MSDN documentation)
-        # For .strings files, the recommended output encoding is UTF-16
-        # (see ADC documentation)
+        # Default: UTF-8
         # This value has effect only if `output_lang_files` or `output_default_lang_file`
         # parameters are set to YES
         output_encoding             UCS-2LE
