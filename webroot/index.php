@@ -24,7 +24,7 @@
         <ul style="margin-left: 0; padding-left: 0">
             <li><strong>Fully extensible</strong>: plugins can provide hooks at various stages of main code execution and control the flow; you can easily write your own parser, synchronization, flow control, pre- and post-filtering plugins</li>
             <li><strong>Robust configuration files</strong> with clean syntax and inheritance/override mechanisms for optimal reuse of common features in multiple projects</li>
-            <li><strong>VCS synchronization plugins</strong>: Git; Git/Gerrit, SVN
+            <li><strong>VCS synchronization plugins</strong>: Git, Gerrit, Subversion, Mercurial
             <li><strong>Translation Service synchronization plugins</strong>: Pootle (online translation server)
             <li><strong>Parser plugins</strong>: Android .strings; Google Chrome .json; DTD entities; arbitrary JSON, XML and YAML trees, including mixed "HTML inside XML"; static PHP/XHTML; MacOS/iOS .strings and .plist files; .pot files; Java .properties; Windows .rc, .resx and .wxl; Blackberry .rrc; Qt .ts; miscellaneous simple key/value formats (Perl, JavaScript, etc.); .master (internal markup format)</li>
             <?php /*

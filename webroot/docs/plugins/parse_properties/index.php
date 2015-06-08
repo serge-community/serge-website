@@ -62,7 +62,7 @@ jobs
             escaped_quotes   YES
         }
 
-        # .properties files always use Java encoding
+        # .properties files generally use Java encoding
         output_encoding      Java
 
         # other job parameters
