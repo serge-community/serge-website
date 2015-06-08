@@ -33,10 +33,11 @@ key3 = non-translatable string
 #.comment=<span class="hint">comment line 1</span>
 #.comment=<span class="hint">comment line 2</span>
 <span class="hint">key5</span> = <span class="string">string</span>
+
+<span class="hint">key6</span> = <span class="string">multi-line \
+string</span>
 ...</code>
 </figure>
-
-<p class="notice">Limitation: multi-line values are not supported yet.</p>
 
 <h2>Usage</h2>
 
