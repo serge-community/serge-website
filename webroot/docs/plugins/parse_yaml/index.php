@@ -29,7 +29,7 @@
 
 <p>For each extracted translatable string, parser builds the full key path (e.g. <code>en/messages/key1</code> or <code>en/messages/plural_message/one</code>) and uses that as a hint provided along with the string.</p>
 
-<p class="notice">Limitation: dynamic number of plurals is not supported yet; all quantity variants need to be pre-created in the original YML resource file, and they extracted as individual translatable units.</p>
+<p class="notice">Limitation: dynamic number of plurals is not supported yet; all quantity variants need to be pre-created in the original YML resource file, and they are extracted as individual translatable units.</p>
 
 
 <h2>Usage</h2>
