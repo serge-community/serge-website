@@ -108,9 +108,31 @@ jobs
             */
             node_exclude         ^description$
 
+            /*
+              optional: one ore more regular expressions to match
+              the node path against; if any of the regular
+              expressions match, the node value is considered an
+              HTML (typically it would be wrapped in CDATA),
+              which needs to be processed by `parse_php_xhtml` parser
+            */
             node_html            \/description$
 
-            xml_kind             android
+            /*
+              optional: provide the XML dialect to optimize for.
+              Accepted values: 'generic', 'android' or 'indesign'.
+              Default value: 'generic'
+
+              'generic': no special treatment is necessary;
+
+              'android': in this mode, do Android-specific
+              apostrophe and quote escaping/unescaping;
+
+              'indesign': in this mode, 'LINE SEPARATOR' (U+2028)
+              Unicode character is stripped from the strings;
+              also, leading and trailing whitespace
+              in text nodes is preserved.
+            */
+            xml_kind             generic
 
             # email to send error reports on behalf of
             email_from           l10n-robot@acme.org
