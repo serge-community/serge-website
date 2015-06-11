@@ -1,7 +1,7 @@
 <?php
     $section = 'callback-plugins';
     $subpage = 'ref-plugin-append_hint_message';
-    $title = 'Append hint to a string';
+    $title = 'Plugin to Append Extra Message to a Hint';
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 
