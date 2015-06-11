@@ -31,7 +31,6 @@
 
 <p class="notice">Limitation: dynamic number of plurals is not supported yet; all quantity variants need to be pre-created in the original YML resource file, and they are extracted as individual translatable units.</p>
 
-
 <h2>Usage</h2>
 
 <figure>
