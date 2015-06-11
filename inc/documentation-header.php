@@ -73,12 +73,12 @@
                     }
                 ?>
             </ul>
-            <?php _item("-ref-plugins",                 "/docs/plugins/$control_plugins[0]",     "Control Plugins",
-                        $section == 'control-plugins' ? "expanded" : "collapsed") ?>
+            <?php _item("-ref-plugins",                 "/docs/plugins/$callback_plugins[0]",     "Callback Plugins",
+                        $section == 'callback-plugins' ? "expanded" : "collapsed") ?>
             <ul>
                 <?php
-                    if ($section == 'control-plugins') {
-                        foreach ($control_plugins as $name) {
+                    if ($section == 'callback-plugins') {
+                        foreach ($callback_plugins as $name) {
                             _item("ref-plugin-$name", "/docs/plugins/$name/",  $name);
                         }
                     }

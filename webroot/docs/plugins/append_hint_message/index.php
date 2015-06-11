@@ -1,5 +1,5 @@
 <?php
-    $section = 'control-plugins';
+    $section = 'callback-plugins';
     $subpage = 'ref-plugin-append_hint_message';
     $title = 'Append hint to a string';
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');

@@ -1,5 +1,5 @@
 <?php
-    $control_plugins = array(
+    $callback_plugins = array(
         "append_hint_message",
         "completeness",
         "control_commands",
