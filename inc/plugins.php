@@ -28,7 +28,6 @@
         "parse_plist",
         "parse_pot",
         "parse_properties",
-        "parse_qualtrics_xml",
         "parse_rc",
         "parse_resx",
         "parse_rrc",

@@ -54,7 +54,6 @@ BEGIN
     <span class="hint">IDS_2</span> "<span class="string">string</span>"
     ...
 END
-
 </code>
 </figure>
 
