@@ -48,18 +48,24 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_properties
-
-        data
+        parser
         {
-            /*
-              whether to escape single quotation marks (' => '')
-              in localized files; this option is needed because
-              there are some inconsistencies between different
-              Java frameworks in dealing with escaped quotes.
-              Default: NO
-            */
-            escaped_quotes   YES
+            plugin               parse_properties
+
+            data
+            {
+                /*
+                Optional: whether to escape single quotation marks
+                (' => '') in localized files.
+
+                This option is needed because there are some
+                inconsistencies between different Java frameworks
+                in dealing with escaped quotes.
+
+                Default: NO
+                */
+                escaped_quotes   YES
+            }
         }
 
         # .properties files generally use Java encoding

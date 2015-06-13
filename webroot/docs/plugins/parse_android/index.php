@@ -55,7 +55,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_android
+        parser
+        {
+            plugin               parse_android
+        }
 
         # other job parameters
         # ...

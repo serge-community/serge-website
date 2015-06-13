@@ -41,7 +41,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_pot
+        parser
+        {
+            plugin               parse_pot
+        }
 
         # other job parameters
         # ...

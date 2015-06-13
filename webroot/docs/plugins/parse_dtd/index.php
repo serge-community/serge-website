@@ -29,7 +29,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_dtd
+        parser
+        {
+            plugin               parse_dtd
+        }
 
         # other job parameters
         # ...

@@ -66,7 +66,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_rc
+        parser
+        {
+            plugin               parse_rc
+        }
 
         # other job parameters
         # ...

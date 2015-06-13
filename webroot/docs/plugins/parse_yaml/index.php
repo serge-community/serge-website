@@ -40,33 +40,39 @@ jobs
 {
     :sample-job
     {
-        plugin                   parse_yaml
-
-        data
+        parser
         {
-            /*
-              should the parser expand aliases (named anchors
-              and references) before extracting text for translation.
-              Default is NO (anchors and references are not expanded
-              and just skipped).
+            plugin                   parse_yaml
 
-              Set this value to YES if you need to translate the
-              referenced blocks of text differently depending on the context;
-              Set this value to NO if all references need to stay intact,
-              and translations to be reused between references.
-            */
-            expand_aliases        NO
+            data
+            {
+                /*
+                Should the parser expand aliases (named anchors
+                and references) before extracting text for translation.
+                Default is NO (anchors and references are not expanded
+                and just skipped).
 
-            # email to send error reports on behalf of
-            email_from           l10n-robot@acme.org
+                Set this value to YES if you need to translate the
+                referenced blocks of text differently depending on the
+                context;
 
-            # one or more email addresses
-            # to send error reports to
-            email_to             engineer@acme.org
-                                 project-manager@acme.org
+                Set this value to NO if all references need to stay
+                intact, and translations to be reused between
+                references.
+                */
+                expand_aliases       NO
 
-            # email subject
-            email_subject        Errors found in XML file
+                # email to send error reports on behalf of
+                email_from           l10n-robot@acme.org
+
+                # one or more email addresses
+                # to send error reports to
+                email_to             engineer@acme.org
+                                     project-manager@acme.org
+
+                # email subject
+                email_subject        Errors found in XML file
+            }
         }
 
         # other job parameters

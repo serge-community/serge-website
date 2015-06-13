@@ -43,7 +43,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_ts
+        parser
+        {
+            plugin               parse_ts
+        }
 
         # other job parameters
         # ...

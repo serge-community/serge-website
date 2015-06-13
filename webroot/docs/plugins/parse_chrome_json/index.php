@@ -39,20 +39,23 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_chrome_json
-
-        data
+        parser
         {
-            # email to send error reports on behalf of
-            email_from       l10n-robot@acme.org
+            plugin               parse_chrome_json
 
-            # one or more email addresses
-            # to send error reports to
-            email_to         chrome-engineer@acme.org
-                             chrome-project-manager@acme.org
+            data
+            {
+                # email to send error reports on behalf of
+                email_from       l10n-robot@acme.org
 
-            # email subject
-            email_subject    Errors found in messages.json
+                # one or more email addresses
+                # to send error reports to
+                email_to         chrome-engineer@acme.org
+                                 chrome-project-manager@acme.org
+
+                # email subject
+                email_subject    Errors found in messages.json
+            }
         }
 
         # other job parameters

@@ -6,15 +6,11 @@
     See https://github.com/iafan/Config-Neat for more information.
 */
 
-/*
-    `sync` block contains all synchroinzation-related settings
-*/
+# `sync` block contains all synchroinzation-related settings
 sync
 {
-    /*
-        `translation_service` defines which translation service (TS)
-        to synchronize .po files with
-    */
+    # `translation_service` defines which translation service (TS)
+    # to synchronize .po files with
     translation_service
     {
         # TS plugin name (currently supported is `pootle`)
@@ -39,9 +35,10 @@ sync
         plugin                      git
 
         /*
-            Plugin-specific data
-            (note that Git and Gerrit plugins rely on Git-specific authentication
-            mechanism that uses private keys)
+        Plugin-specific data
+
+        (Note that Git and Gerrit plugins rely on Git-specific authentication
+        mechanism that uses private keys)
         */
         data
         {
@@ -49,13 +46,13 @@ sync
             local_path              %ENV:SERGE_DATA_DIR%/sample_project_1
 
             /*
-                As you can see from the line above, one can use `%ENV:SOMEVAR%` macro
-                anywhere in the string — it will be substituted with the value
-                of the `SOMEVAR` environment variable; if the variable with that name
-                is not defined, the script will fail with the corresponding message.
-                This allows to use the same configuration file in different environments
-                (e.g. different developers' and build machines) or to reuse
-                common configuration parameters across multiple configuration files.
+            As you can see from the line above, one can use `%ENV:SOMEVAR%` macro
+            anywhere in the string — it will be substituted with the value
+            of the `SOMEVAR` environment variable; if the variable with that name
+            is not defined, the script will fail with the corresponding message.
+            This allows to use the same configuration file in different environments
+            (e.g. different developers' and build machines) or to reuse
+            common configuration parameters across multiple configuration files.
             */
 
             # Path to a single remote repository to sync with local `data_dir` folder
@@ -98,14 +95,10 @@ sync
     }
 }
 
-/*
-    `jobs` block represents an ordered list of localization jobs to process.
-*/
+# `jobs` block represents an ordered list of localization jobs to process.
 jobs
 {
-    /*
-        First job definition
-    */
+    # First job definition
     {
         # Name of the job (this is used only for logging purposes)
         name                        Sample job 1
@@ -172,8 +165,8 @@ jobs
         source_path_prefix          ``
 
         /*
-            In the example above, a blank string is specified using backticks.
-            Backticks can also be used to specify string parameters containing spaces.
+        In the example above, a blank string is specified using backticks.
+        Backticks can also be used to specify string parameters containing spaces.
         */
 
         # Should the directory be processed recursively? (boolean)
@@ -190,16 +183,20 @@ jobs
         # Default: blank (no exclusion takes place)
         source_exclude              ``
 
-        # Plugin to use for processing. See Serge/Engine/Plugin/parse_*.pm files
-        plugin                      parse_rc
-
-        # Optional data for plugin parameters. Each plugin may have specific parameters
-        # inside the `data` block. See the documentation for each specific plugin
-        # for more information.
-        data
+        # Parser plugin definition
+        parser
         {
-            #param1                  value1
-            #param2                  value2
+            # Parser class name. See Serge/Engine/Plugin/parse_*.pm files
+            plugin                  parse_rc
+
+            # Optional plugin data. Each plugin may have specific parameters
+            # inside the `data` block. See the documentation for each specific plugin
+            # for more information.
+            data
+            {
+                #param1             value1
+                #param2             value2
+            }
         }
 
         # Should the strings be normalized, i.e. trimmed and converted to single line
@@ -313,55 +310,55 @@ jobs
         po_path                     ./po/my_project/%LOCALE%/%FILE%.po
 
         /*
-            In the parameter above, the following macros are allowed:
+        In the parameter above, the following macros are allowed:
 
-            %ENV:WHATEVER%  -  gets substituted with `WHATEVER' environment variable,
-                               or dies if it is not set. This allows to define parameters
-                               externally without modifying the config file itself.
+        %ENV:WHATEVER%  -  gets substituted with `WHATEVER' environment variable,
+                           or dies if it is not set. This allows to define parameters
+                           externally without modifying the config file itself.
 
-            %PATH%           - file path including trailing path delimiter
-            %NAME%           - file name without extension
-                               (the rightmost dot is used to split name and extension)
-            %EXT%            - extension (the rightmost dot is used to split
-                               name and extension)
-            %LNAME%          - file name without extension
-                               (the leftmost dot is used to split name and extension)
-            %LEXT%           - extension (the leftmost dot is used to split name and extension)
-            %NAME:NAME%      - split the %NAME% using the rightmost dot and take the left part
-            %NAME:EXT%       - split the %NAME% using the rightmost dot and take the right part
-            %NAME:LNAME%     - split the %NAME% using the leftmost dot and take the left part
-            %NAME:LEXT%      - split the %NAME% using the leftmost dot and take the right part
-                               (%NAME% is equivalent to %NAME:NAME%.%NAME:EXT%)
+        %PATH%           - file path including trailing path delimiter
+        %NAME%           - file name without extension
+                           (the rightmost dot is used to split name and extension)
+        %EXT%            - extension (the rightmost dot is used to split
+                           name and extension)
+        %LNAME%          - file name without extension
+                           (the leftmost dot is used to split name and extension)
+        %LEXT%           - extension (the leftmost dot is used to split name and extension)
+        %NAME:NAME%      - split the %NAME% using the rightmost dot and take the left part
+        %NAME:EXT%       - split the %NAME% using the rightmost dot and take the right part
+        %NAME:LNAME%     - split the %NAME% using the leftmost dot and take the left part
+        %NAME:LEXT%      - split the %NAME% using the leftmost dot and take the right part
+                           (%NAME% is equivalent to %NAME:NAME%.%NAME:EXT%)
 
-            %LNAME:NOLOCALE% - take %LNAME% and strip the source locale '_XX' suffix
-                               (e.g. '_en')
-            %NAME:NOLOCALE%  - take %NAME% and strip the source locale '_XX' suffix
-                               (e.g. '_en')
+        %LNAME:NOLOCALE% - take %LNAME% and strip the source locale '_XX' suffix
+                           (e.g. '_en')
+        %NAME:NOLOCALE%  - take %NAME% and strip the source locale '_XX' suffix
+                           (e.g. '_en')
 
-            %FILE%           - original file name including full path
-                               (equivalent to %PATH%%NAME%.%EXT% or %PATH%%LNAME%.%LEXT%)
+        %FILE%           - original file name including full path
+                           (equivalent to %PATH%%NAME%.%EXT% or %PATH%%LNAME%.%LEXT%)
 
-            %LANG%           - language tag (e.g. 'en', 'ru', 'pt-br')
-            %CULTURE%        - culture tag (e.g. 'en-US', 'ru-RU', 'pt-BR')
-            %LOCALE%         - locale name (e.g. 'en', 'ru', 'pt_BR')
-            %LOCALE:ANDROID% - locale name as used on Android (e.g. 'en', 'ru', 'pt-rBR')
-            %LOCALE:IPHONE%  - locale name as used on iPhone
-                               (**DEPRECATED**, use %LANG% instead + `output_lang_rewrite`)
-            %LOCALE:LC%      - a lowercased locale name (e.g. 'en', 'ru', 'pt_br')
-            %LOCALE:UC%      - an uppercased locale name (e.g. 'EN', 'RU', 'PT_BR')
-            %LOCALE:FULL%    - full locale with country name (e.g. 'en_US', 'ru_RU', 'pt_BR')
-            %LOCALE:FULL:LC% - same as above, but lowercased
-            %LOCALE:FULL:UC% - same as above, but uppercased
-            %LANGNAME%       - full language name (e.g. 'English', 'Russian') used in Mac
-                               (**LEGACY, DEPRECATED**)
-            %LANGNAME:IPHONE%- full language name (e.g. 'English', 'Russian') used in iPhone
-                               (**LEGACY, DEPRECATED**)
-            %LANGID%         - Win32 laguage locale as 4-digit hex value (e.g. '0419')
-            %LANGID:DEC%     - Win32 laguage locale as decimal value (e.g. '1049')
-            %LANGCONST%      - Win32 LANG_ constant (e.g. 'LANG_RUSSIAN')
-            %SUBLANGCONST%   - Win32 SUBLANG_ constant (e.g 'SUBLANG_RUSSIAN_RUSSIA')
-            %AFXTARGCONST%   - Win32 AFX_TARG_ constant (e.g. 'AFX_TARG_RUS')
-            %CODEPAGE%       - Win32 codepage (e.g. '1251')
+        %LANG%           - language tag (e.g. 'en', 'ru', 'pt-br')
+        %CULTURE%        - culture tag (e.g. 'en-US', 'ru-RU', 'pt-BR')
+        %LOCALE%         - locale name (e.g. 'en', 'ru', 'pt_BR')
+        %LOCALE:ANDROID% - locale name as used on Android (e.g. 'en', 'ru', 'pt-rBR')
+        %LOCALE:IPHONE%  - locale name as used on iPhone
+                           (**DEPRECATED**, use %LANG% instead + `output_lang_rewrite`)
+        %LOCALE:LC%      - a lowercased locale name (e.g. 'en', 'ru', 'pt_br')
+        %LOCALE:UC%      - an uppercased locale name (e.g. 'EN', 'RU', 'PT_BR')
+        %LOCALE:FULL%    - full locale with country name (e.g. 'en_US', 'ru_RU', 'pt_BR')
+        %LOCALE:FULL:LC% - same as above, but lowercased
+        %LOCALE:FULL:UC% - same as above, but uppercased
+        %LANGNAME%       - full language name (e.g. 'English', 'Russian') used in Mac
+                           (**LEGACY, DEPRECATED**)
+        %LANGNAME:IPHONE%- full language name (e.g. 'English', 'Russian') used in iPhone
+                           (**LEGACY, DEPRECATED**)
+        %LANGID%         - Win32 laguage locale as 4-digit hex value (e.g. '0419')
+        %LANGID:DEC%     - Win32 laguage locale as decimal value (e.g. '1049')
+        %LANGCONST%      - Win32 LANG_ constant (e.g. 'LANG_RUSSIAN')
+        %SUBLANGCONST%   - Win32 SUBLANG_ constant (e.g 'SUBLANG_RUSSIAN_RUSSIA')
+        %AFXTARGCONST%   - Win32 AFX_TARG_ constant (e.g. 'AFX_TARG_RUS')
+        %CODEPAGE%       - Win32 codepage (e.g. '1251')
         */
 
         # Should the language-specific files be created from each source file? (boolean)
@@ -440,9 +437,7 @@ jobs
         }
     } # end of first job definition
 
-    /*
-        Second job definition
-    */
+    # Second job definition
     {
         name                        Sample `<%`...`%>` parsing job
         active                      YES
@@ -450,7 +445,12 @@ jobs
         destination_languages       es de it fr ru
         source_dir                  ./sample
         source_match                \.txt$
-        plugin                      parse_default
+
+        parser
+        {
+            plugin                  parse_default
+        }
+
         db_source                   DBD:SQLite:dbname=./translate.db3
         db_namespace                sample
         po_path                     ./po/sample/%LANG%/%FILE%.po

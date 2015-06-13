@@ -35,11 +35,14 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_wxl
+        parser
+        {
+            plugin               parse_wxl
+        }
 
         /*
-          Byte-order-mark (BOM) needs to be present
-          in the output file
+        Byte-order-mark (BOM) needs to be present
+        in the output file
         */
         output_bom           YES
 

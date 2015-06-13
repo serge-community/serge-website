@@ -73,46 +73,49 @@ jobs
 {
     :sample-job
     {
-        plugin                   parse_json
-
-        data
+        parser
         {
-            /*
-              one or more regular expressions to match the node
-              path against; if any of the regular expressions
-              match, the node value is extracted for translation.
+            plugin                   parse_json
 
-              Note that '/', '[', and ']' symbols need to be
-              escaped in a regular expression
+            data
+            {
+                /*
+                One or more regular expressions to match the node
+                path against; if any of the regular expressions
+                match, the node value is extracted for translation.
 
-              In the example below, we want to extract all
-              `title` and `description` terminal nodes
-              no matter where they are located in the object tree
-            */
-            path_matches         \/(title|description)$
+                Note that '/', '[', and ']' symbols need to be
+                escaped in a regular expression
 
-            /*
-              optional: one ore more regular expressions to match
-              the node path against; if any of the regular
-              expressions match, the node value is NOT extracted
-              for translation
+                In the example below, we want to extract all
+                `title` and `description` terminal nodes
+                no matter where they are located in the object tree
+                */
+                path_matches         \/(title|description)$
 
-              In the example below, we want to skip (prevent
-              from being translated) the top-level `description`
-              terminal node
-            */
-            path_doesnt_match    ^description$
+                /*
+                Optional: one ore more regular expressions to match
+                the node path against; if any of the regular
+                expressions match, the node value is NOT extracted
+                for translation
 
-            # email to send error reports on behalf of
-            email_from           l10n-robot@acme.org
+                In the example below, we want to skip (prevent
+                from being translated) the top-level `description`
+                terminal node
+                */
+                path_doesnt_match    ^description$
 
-            # one or more email addresses
-            # to send error reports to
-            email_to             engineer@acme.org
-                                 project-manager@acme.org
+                # email to send error reports on behalf of
+                email_from           l10n-robot@acme.org
 
-            # email subject
-            email_subject        Errors found in JSON file
+                # one or more email addresses
+                # to send error reports to
+                email_to             engineer@acme.org
+                                     project-manager@acme.org
+
+                # email subject
+                email_subject        Errors found in JSON file
+            }
         }
 
         # other job parameters

@@ -33,7 +33,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_key_space_value
+        parser
+        {
+            plugin               parse_key_space_value
+        }
 
         # other job parameters
         # ...

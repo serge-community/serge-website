@@ -38,7 +38,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_plist
+        parser
+        {
+            plugin               parse_plist
+        }
 
         # other job parameters
         # ...

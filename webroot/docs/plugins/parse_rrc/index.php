@@ -31,7 +31,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_rrc
+        parser
+        {
+            plugin               parse_rrc
+        }
 
         # .RRC files always use Java encoding
         output_encoding      Java

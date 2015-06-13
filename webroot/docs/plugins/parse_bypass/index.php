@@ -20,7 +20,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_bypass
+        parser
+        {
+            plugin               parse_bypass
+        }
 
         # other job parameters
         # ...

@@ -38,7 +38,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_resx
+        parser
+        {
+            plugin               parse_resx
+        }
 
         # other job parameters
         # ...

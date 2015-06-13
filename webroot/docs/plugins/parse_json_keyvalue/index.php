@@ -37,20 +37,23 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_json_keyvalue
-
-        data
+        parser
         {
-            # email to send error reports on behalf of
-            email_from       l10n-robot@acme.org
+            plugin               parse_json_keyvalue
 
-            # one or more email addresses
-            # to send error reports to
-            email_to         engineer@acme.org
-                             project-manager@acme.org
+            data
+            {
+                # email to send error reports on behalf of
+                email_from       l10n-robot@acme.org
 
-            # email subject
-            email_subject    Errors found in JSON file
+                # one or more email addresses
+                # to send error reports to
+                email_to         engineer@acme.org
+                                 project-manager@acme.org
+
+                # email subject
+                email_subject    Errors found in JSON file
+            }
         }
 
         # other job parameters

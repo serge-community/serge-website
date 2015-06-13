@@ -94,20 +94,22 @@ jobs
 {
     :sample-job
     {
-        plugin                 parse_php_xhtml
-
-        data
+        parser
         {
-            /*
+            plugin                 parse_php_xhtml
+
+            data
+            {
+                /*
                 Optional: should the parser decode all numeric
                 and named entities and replace them with
                 final Unicode symbols?
 
                 Default is NO
-            */
-            expand_entities    NO
+                */
+                expand_entities    NO
 
-            /*
+                /*
                 Optional: once the localized file is about
                 to be saved, should we try to parse it again and,
                 if parsing fails, prohibit it from being saved
@@ -118,19 +120,20 @@ jobs
                 on large projects.
 
                 Default is NO
-            */
-            validate_output    NO
+                */
+                validate_output    NO
 
-            # email to send error reports on behalf of
-            email_from         l10n-robot@acme.org
+                # email to send error reports on behalf of
+                email_from         l10n-robot@acme.org
 
-            # one or more email addresses
-            # to send error reports to
-            email_to           website-engineer@acme.org
-                               website-project-manager@acme.org
+                # one or more email addresses
+                # to send error reports to
+                email_to           website-engineer@acme.org
+                                   website-project-manager@acme.org
 
-            # email subject
-            email_subject      Errors found in JSON file
+                # email subject
+                email_subject      Errors found in JSON file
+            }
         }
 
         # other job parameters

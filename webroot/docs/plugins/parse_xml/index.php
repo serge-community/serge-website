@@ -78,72 +78,76 @@ jobs
 {
     :sample-job
     {
-        plugin                   parse_json
-
-        data
+        parser
         {
-            /*
-              one or more regular expressions to match the node
-              path against; if any of the regular expressions
-              match, the node value is extracted for translation.
+            plugin                   parse_json
 
-              Note that '/', '[', and ']' symbols need to be
-              escaped in a regular expression
+            data
+            {
+                /*
+                One or more regular expressions to match the node
+                path against; if any of the regular expressions
+                match, the node value is extracted for translation.
 
-              In the example below, we want to extract all
-              `title` and `description` terminal nodes
-              no matter where they are located in the object tree
-            */
-            node_match           \/(title|description)$
+                Note that '/', '[', and ']' symbols need to be
+                escaped in a regular expression
 
-            /*
-              optional: one ore more regular expressions to match
-              the node path against; if any of the regular
-              expressions match, the node value is NOT extracted
-              for translation
+                In the example below, we want to extract all
+                `title` and `description` terminal nodes
+                no matter where they are located in the object tree
+                */
+                node_match           \/(title|description)$
 
-              In the example below, we want to skip (prevent
-              from being translated) the top-level `description`
-              terminal node
-            */
-            node_exclude         ^description$
+                /*
+                Optional: one ore more regular expressions to match
+                the node path against; if any of the regular
+                expressions match, the node value is NOT extracted
+                for translation
 
-            /*
-              optional: one ore more regular expressions to match
-              the node path against; if any of the regular
-              expressions match, the node value is considered an
-              HTML (typically it would be wrapped in CDATA),
-              which needs to be processed by `parse_php_xhtml` parser
-            */
-            node_html            \/description$
+                In the example below, we want to skip (prevent
+                from being translated) the top-level `description`
+                terminal node
+                */
+                node_exclude         ^description$
 
-            /*
-              optional: provide the XML dialect to optimize for.
-              Accepted values: 'generic', 'android' or 'indesign'.
-              Default value: 'generic'
+                /*
+                Optional: one ore more regular expressions to match
+                the node path against; if any of the regular
+                expressions match, the node value is considered an
+                HTML (typically it would be wrapped in CDATA),
+                which needs to be processed by `parse_php_xhtml`
+                parser
+                */
+                node_html            \/description$
 
-              'generic': no special treatment is necessary;
+                /*
+                Optional: provide the XML dialect to optimize for.
+                Accepted values: 'generic', 'android' or 'indesign'.
+                Default value: 'generic'
 
-              'android': in this mode, do Android-specific
-              apostrophe and quote escaping/unescaping;
+                'generic': no special treatment is necessary;
 
-              'indesign': in this mode, 'LINE SEPARATOR' (U+2028)
-              Unicode character is stripped from the strings;
-              also, leading and trailing whitespace
-              in text nodes is preserved.
-            */
-            xml_kind             generic
+                'android': in this mode, do Android-specific
+                apostrophe and quote escaping/unescaping;
 
-            # email to send error reports on behalf of
-            email_from           l10n-robot@acme.org
+                'indesign': in this mode, 'LINE SEPARATOR' (U+2028)
+                Unicode character is stripped from the strings;
+                also, leading and trailing whitespace
+                in text nodes is preserved.
+                */
+                xml_kind             generic
 
-            # one or more email addresses
-            # to send error reports to
-            email_to             engineer@acme.org
-                                 project-manager@acme.org
+                # email to send error reports on behalf of
+                email_from           l10n-robot@acme.org
 
-            # email subject
-            email_subject        Errors found in XML file
+                # one or more email addresses
+                # to send error reports to
+                email_to             engineer@acme.org
+                                     project-manager@acme.org
+
+                # email subject
+                email_subject        Errors found in XML file
+            }
         }
 
         # other job parameters

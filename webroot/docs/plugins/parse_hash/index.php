@@ -57,7 +57,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_hash
+        parser
+        {
+            plugin               parse_hash
+        }
 
         # other job parameters
         # ...

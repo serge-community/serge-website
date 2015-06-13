@@ -58,7 +58,10 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_default
+        parser
+        {
+            plugin               parse_default
+        }
 
         # other job parameters
         # ...

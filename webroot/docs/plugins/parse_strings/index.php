@@ -47,15 +47,18 @@ jobs
 {
     :sample-job
     {
-        plugin               parse_strings
+        parser
+        {
+            plugin               parse_strings
+        }
 
         /*
-          .strings always use UTF-16LE output encoding,
-          and byte-order-mark (BOM) needs to be present
-          in the output file
+        .strings always use UTF-16LE output encoding,
+        and byte-order-mark (BOM) needs to be present
+        in the output file
         */
-        output_encoding      UTF-16LE
-        output_bom           YES
+        output_encoding          UTF-16LE
+        output_bom               YES
 
         # other job parameters
         # ...
