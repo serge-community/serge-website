@@ -18,7 +18,7 @@
     <li>Inner HTML of these tags: <code>&lt;h1&gt;</code>...<code>&lt;h7&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code>, <code>&lt;label&gt;</code>, and <code>&lt;option&gt;</code></code>;</li>
     <li>Values of the following attributes: <code>&lt;alt&gt;</code>, <code>&lt;title&gt;</code>;</li>
     <li><code>value</code> attribute of the <code>&lt;input&gt;</code> tag, whose <code>type</code> attribute is one of the following: <code>text</code>, <code>search</code>, <code>email</code>, <code>submit</code>, <code>reset</code>, or <code>button</code>;</li>
-    <li><code>placeholder</code> attribute for any <code>&lt;input&gt;</code> tags;</li>
+    <li><code>placeholder</code> attribute for <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code> tags;</li>
     <li>strings inside <code>_('')</code>, <code>__('')</code>, and <code>___('')</code> wrapper functions (which can be used in embedded PHP or JavaScript). Strings can be single- or double-quoted.</li>
 </ol>
 
