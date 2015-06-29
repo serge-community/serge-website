@@ -17,7 +17,7 @@
 
 <p class="notice">Internally, Serge uses <a href="https://github.com/iafan/Config-Neat">Config::Neat</a> library that implements this format, so you can always use it's own documentation as an additional source of information about the format and its implementation details.</p>
 
-<h2>Basic Syntax</h2>
+<h2>Tree Structure</h2>
 
 <p>Serge configuration file represents a tree structure. There can be sections, nested sub-sections, and parameter-value definitions on each level. Sections are denoted with curly braces. Everything between <code>{</code> and <code>}</code> is considered an inner structure of the section. Section and parameter names technically can consist of any characters except whitespace.</p>
 
@@ -33,6 +33,8 @@ section
     }
 }
 </script>
+
+<h2>Arrays of Objects</h2>
 
 <p>Some sections have an empty name (you can treat these structures as <em>arrays of objects</em>). Consider the following structure, which defines an array of jobs:</p>
 
@@ -120,23 +122,31 @@ parameter1      Localization is the process of adapting
                 or market.
 </script>
 
-<h2>Arrays</h2>
+<h2>Arrays of Strings</h2>
 
-<p>Arrays (arrays of strings, to be more precise) are defined the same as strings. It's config schema that internally decides whether to treat a parameter as a string or array. Array items are separated by whitespace. If any array item needs to have space in between, or evaluate to a space or an empty value, use verbatim quotes:</p>
+<p>Arrays of strings are defined the same way as strings. It's config schema that internally decides whether to treat a parameter as a string or array. Array items are separated by whitespace. If any array item needs to have space in between, or evaluate to a space or an empty value, use verbatim quotes:</p>
 
 <script language="text/x-config-neat">
-# The following evaluates to ('This', 'is', 'a', 'string'):
-parameter1      This is a string
+# The following evaluates to ('This', 'is', 'an', 'array'):
+parameter1      This is an array
 
-# The following also evaluates to ('This', 'is', 'a', 'string')
+# The following also evaluates to ('This', 'is', 'an', 'array')
 # because whitespace is normalized by default:
-parameter2      This is    a   string
+parameter2      This is    an   array
 
-# The following also evaluates to ('This', 'is a', 'string', ''):
-parameter2      This `is a` string ``
+# The following evaluates to ('This', 'is an', 'array', ''):
+parameter3      This `is an` array ``
 
-# The following also evaluates to ('This is a string'):
-parameter2      `This is a string`
+# The following evaluates to ('This is an array'):
+parameter4      `This is an array`
+</script>
+
+<p>Arrays, like strings, can also spawn multiple lines:</p>
+
+<script language="text/x-config-neat">
+languages       ar bn ca cs da de el es et eu fi fr ga gl he
+                hr hu id it ja ko lv ms nl no pl pt pt-br ro
+                ru sh sl sr sv th tr uk vi zh-cn zh-tw
 </script>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
