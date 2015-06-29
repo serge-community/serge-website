@@ -33,6 +33,10 @@
         echo '<li'._sel($id).$li_class.'><a href="'.$url.'"'.$a_class.'>'.htmlspecialchars($title).'</a></li>';
     }
 
+    function _expanded_when($section, $value) {
+        return $section == $value ? 'expanded' : 'collapsed';
+    }
+
     require_once('help-topics.php');
     require_once('plugins.php');
 ?>
@@ -52,7 +56,7 @@
         <h3>Reference</h3>
         <ul>
             <?php _item("help",                         "/docs/help/",                           "Command-line Help",
-                        $section == 'help' ? "expanded" : "collapsed") ?>
+                        _expanded_when($section, 'help')) ?>
             <ul>
                 <?php
                     if ($section == 'help') {
@@ -63,7 +67,7 @@
                 ?>
             </ul>
             <?php _item("-ref-plugins",                 "/docs/plugins/$parser_plugins[0]",      "Parser Plugins",
-                        $section == 'parser-plugins' ? "expanded" : "collapsed") ?>
+                        _expanded_when($section, 'parser-plugins')) ?>
             <ul>
                 <?php
                     if ($section == 'parser-plugins') {
@@ -74,7 +78,7 @@
                 ?>
             </ul>
             <?php _item("-ref-plugins",                 "/docs/plugins/$callback_plugins[0]",     "Callback Plugins",
-                        $section == 'callback-plugins' ? "expanded" : "collapsed") ?>
+                        _expanded_when($section, 'callback-plugins')) ?>
             <ul>
                 <?php
                     if ($section == 'callback-plugins') {
@@ -84,13 +88,22 @@
                     }
                 ?>
             </ul>
-            <?php _item("ref-config",                   "/docs/configuration-files/reference/",  "Configuration File Format") ?>
+            <?php _item("-ref-config-files",            "/docs/configuration-files/syntax/",     "Configuration Files",
+                        _expanded_when($section, 'config-files')) ?>
+            <ul>
+                <?php
+                    if ($section == 'config-files') {
+                        _item("ref-config-syntax",            "/docs/configuration-files/syntax/",     "File Syntax");
+                        _item("ref-config-reference",         "/docs/configuration-files/reference/",  "Reference");
+                    }
+                ?>
+            </ul>
         </ul>
         <?php /*
         <h3>Extending Serge</h3>
         <ul>
-            <?php //_item("dev-plugins",                  "/docs/development/plugins/",            "Plugins") ?>
-            <?php //_item("dev-callbacks",                "/docs/development/callbacks/",          "Callbacks") ?>
+            <?php //_item("dev-plugins",                "/docs/development/plugins/",            "Plugins") ?>
+            <?php //_item("dev-callbacks",              "/docs/development/callbacks/",          "Callbacks") ?>
         </ul>
         */ ?>
     </div>

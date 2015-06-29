@@ -212,13 +212,14 @@ ul.menu.subselection li a.selected:hover {
 
 p.notice {
     display: block;
-    background: #ffbaba;
-    color: #900;
+    background: #fff;
     border: 1px solid rgba(102, 0, 0, 0.1);
     border-radius: 0.3em;
-    padding: 0.3em 0.6em;
+    padding: 0.7em 1em;
     margin: 1em;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-size: 80%;
+    line-height: 150%;
 }
 
 figure,

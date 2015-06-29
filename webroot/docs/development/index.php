@@ -1,6 +1,6 @@
 <?php
     $title = 'Getting Started';
-	include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
+    include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 
 <h1>Getting Started</h1>
