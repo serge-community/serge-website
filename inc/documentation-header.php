@@ -55,17 +55,17 @@
         </ul>
         <h3>Reference</h3>
         <ul>
-            <?php _item("help",                         "/docs/help/",                           "Command-line Help",
-                        _expanded_when($section, 'help')) ?>
+            <?php _item("-ref-config-files",            "/docs/configuration-files/syntax/",     "Configuration Files",
+                        _expanded_when($section, 'config-files')) ?>
             <ul>
                 <?php
-                    if ($section == 'help') {
-                        foreach ($help_topics as $topic) {
-                            _item($topic, "/docs/help/$topic/",  $topic);
-                        }
+                    if ($section == 'config-files') {
+                        _item("ref-config-syntax",            "/docs/configuration-files/syntax/",     "File Syntax");
+                        _item("ref-config-reference",         "/docs/configuration-files/reference/",  "Reference");
                     }
                 ?>
             </ul>
+
             <?php _item("-ref-plugins",                 "/docs/plugins/$parser_plugins[0]",      "Parser Plugins",
                         _expanded_when($section, 'parser-plugins')) ?>
             <ul>
@@ -77,6 +77,7 @@
                     }
                 ?>
             </ul>
+
             <?php _item("-ref-plugins",                 "/docs/plugins/$callback_plugins[0]",     "Callback Plugins",
                         _expanded_when($section, 'callback-plugins')) ?>
             <ul>
@@ -88,13 +89,15 @@
                     }
                 ?>
             </ul>
-            <?php _item("-ref-config-files",            "/docs/configuration-files/syntax/",     "Configuration Files",
-                        _expanded_when($section, 'config-files')) ?>
+
+            <?php _item("help",                         "/docs/help/",                           "Command-line Help",
+                        _expanded_when($section, 'help')) ?>
             <ul>
                 <?php
-                    if ($section == 'config-files') {
-                        _item("ref-config-syntax",            "/docs/configuration-files/syntax/",     "File Syntax");
-                        _item("ref-config-reference",         "/docs/configuration-files/reference/",  "Reference");
+                    if ($section == 'help') {
+                        foreach ($help_topics as $topic) {
+                            _item($topic, "/docs/help/$topic/",  $topic);
+                        }
                     }
                 ?>
             </ul>
