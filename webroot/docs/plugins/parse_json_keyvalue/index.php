@@ -43,15 +43,22 @@ jobs
 
             data
             {
-                # email to send error reports on behalf of
+                /*
+                (STRING) [OPTIONAL] Email to send
+                error reports on behalf of
+                */
                 email_from       l10n-robot@acme.org
 
-                # one or more email addresses
-                # to send error reports to
+                /*
+                (ARRAY) [OPTIONAL] One or more email
+                addresses to send error reports to
+                */
                 email_to         engineer@acme.org
                                  project-manager@acme.org
 
-                # email subject
+                /*
+                (STRING) [OPTIONAL] Email subject
+                */
                 email_subject    Errors found in JSON file
             }
         }

@@ -101,37 +101,46 @@ jobs
             data
             {
                 /*
-                Optional: should the parser decode all numeric
-                and named entities and replace them with
-                final Unicode symbols?
+                (BOOLEAN) [OPTIONAL] Should the parser
+                decode all numeric and named entities
+                and replace them with final Unicode
+                symbols?
 
                 Default is NO
                 */
                 expand_entities    NO
 
                 /*
-                Optional: once the localized file is about
-                to be saved, should we try to parse it again and,
-                if parsing fails, prohibit it from being saved
-                and report an error?
+                (BOOLEAN) [OPTIONAL] Once the localized
+                file is about to be saved, should we try
+                to parse it again and, if parsing fails,
+                prohibit it from being saved and report
+                the error?
 
                 This is useful as a final sanity check,
-                but can significantly increase processing time
-                on large projects.
+                but can significantly increase processing
+                time on large projects.
 
                 Default is NO
                 */
                 validate_output    NO
 
-                # email to send error reports on behalf of
+                /*
+                (STRING) [OPTIONAL] Email to send
+                error reports on behalf of
+                */
                 email_from         l10n-robot@acme.org
 
-                # one or more email addresses
-                # to send error reports to
-                email_to           website-engineer@acme.org
-                                   website-project-manager@acme.org
+                /*
+                (ARRAY) [OPTIONAL] One or more email
+                addresses to send error reports to
+                */
+                email_to           engineer@acme.org
+                                   project-manager@acme.org
 
-                # email subject
+                /*
+                (STRING) [OPTIONAL] Email subject
+                */
                 email_subject      Errors found in JSON file
             }
         }

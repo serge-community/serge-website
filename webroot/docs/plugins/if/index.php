@@ -165,9 +165,9 @@ jobs
                     if
                     {
                         /*
-                        Test if file path matches any of the
-                        provided whitespace-separated list
-                        of regular expressions.
+                        (ARRAY) [OPTIONAL] Test if file path
+                        matches any of the provided whitespace-
+                        separated list of regular expressions.
 
                         Some phases provide a relative
                         file path to match, while others
@@ -178,16 +178,17 @@ jobs
                         file_matches            \bFOO\b \bBAR\b
 
                         /*
-                        Test if file path doesn't match any of
-                        the provided whitespace-separated list
-                        of regular expressions.
+                        (ARRAY) [OPTIONAL] Test if file path
+                        doesn't match any of the provided
+                        whitespace-separated list of regular
+                        expressions.
                         */
                         file_doesnt_match       foo\/bar
 
                         /*
-                        Test if language matches any of the
-                        provided whitespace-separated list
-                        of regular expressions.
+                        (ARRAY) [OPTIONAL] Test if language
+                        matches any of the provided whitespace-
+                        separated list of regular expressions.
 
                         Some phases may not provide a language,
                         in this case this statement can't be
@@ -197,17 +198,19 @@ jobs
                         for more information.
                         */
                         lang_matches            \b\b
+
                         /*
-                        Test if language doesn't match any of
-                        the provided whitespace-separated list
-                        of regular expressions.
+                        (ARRAY) [OPTIONAL] Test if language
+                        doesn't match any of the provided
+                        whitespace-separated list of regular
+                        expressions.
                         */
                         lang_doesnt_match       \bfoo\b
 
                         /*
-                        Test if content matches any of the
-                        provided whitespace-separated list
-                        of regular expressions.
+                        (ARRAY) [OPTIONAL] Test if content
+                        matches any of the provided whitespace-
+                        separated list of regular expressions.
 
                         For some phases, 'content' means the
                         content of the file, while for others
@@ -217,17 +220,19 @@ jobs
                         for more information.
                         */
                         content_matches         \bfoo\b
+
                         /*
-                        Test if content doesn't match any of
-                        the provided whitespace-separated list
+                        (ARRAY) [OPTIONAL] Test if content
+                        doesn't match any of the provided
+                        whitespace-separated list
                         of regular expressions.
                         */
                         content_doesnt_match    \bfoo\b bar_\d+
 
                         /*
-                        Test if comment matches any of the
-                        provided whitespace-separated list
-                        of regular expressions.
+                        (ARRAY) [OPTIONAL] Test if comment
+                        matches any of the provided whitespace-
+                        separated list of regular expressions.
 
                         Only few phases pass comment value
                         (which typically refers to translation
@@ -236,39 +241,45 @@ jobs
                         for more information.
                         */
                         comment_matches         \bfoo\b
+
                         /*
-                        Test if comment doesn't match any of
-                        the provided whitespace-separated list
-                        of regular expressions.
+                        (ARRAY) [OPTIONAL] Test if comment
+                        doesn't match any of the provided
+                        whitespace-separated list of regular
+                        expressions.
                         */
                         comment_doesnt_match    \bfoo\b
 
                         /*
-                        Test if any of the specified flags
-                        have been set by this or descendant
-                        plugins within the same job.
+                        (ARRAY) [OPTIONAL] Test if any of the
+                        specified flags have been set by this
+                        or descendant plugins within the same
+                        job.
                         */
                         has_flag                flag1
+
                         /*
-                        Test if none of the specified flags
-                        have been set.
+                        (ARRAY) [OPTIONAL] Test if none of the
+                        specified flags have been set.
                         */
                         has_no_flag             flag2
+
                         /*
-                        Test if all specified flags
-                        have been set.
+                        (ARRAY) [OPTIONAL] Test if all
+                        specified flags have been set.
                         */
                         has_all_flags           flag3 flag4
 
                         /*
-                        if all statements in the same
-                        `if {...}` block are true,
+                        (ARRAY) [OPTIONAL] If all statements
+                        in the same `if {...}` block are true,
                         set all the specified flags.
                         */
                         set_flag                flag5 flag6
+
                         /*
-                        if all statements in the same
-                        `if {...}` block are true,
+                        (ARRAY) [OPTIONAL] If all statements
+                        in the same `if {...}` block are true,
                         remove all the specified flags.
                         */
                         remove_flag             flag7
@@ -290,4 +301,3 @@ jobs
 </figure>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
-

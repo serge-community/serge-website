@@ -47,30 +47,39 @@ jobs
             data
             {
                 /*
-                Should the parser expand aliases (named anchors
-                and references) before extracting text for translation.
-                Default is NO (anchors and references are not expanded
-                and just skipped).
+                (BOOLEAN) [OPTIONAL] Should the parser
+                expand aliases (named anchors and references)
+                before extracting text for translation?
 
-                Set this value to YES if you need to translate the
-                referenced blocks of text differently depending on the
-                context;
+                Default is NO (anchors and references are not
+                expanded and just skipped).
 
-                Set this value to NO if all references need to stay
-                intact, and translations to be reused between
-                references.
+                Set this value to YES if you need to
+                translate the referenced blocks of text
+                differently depending on the context;
+
+                Set this value to NO if all references
+                need to stay intact, and translations to be
+                reused between references.
                 */
                 expand_aliases       NO
 
-                # email to send error reports on behalf of
-                email_from           l10n-robot@acme.org
+                /*
+                (STRING) [OPTIONAL] Email to send
+                error reports on behalf of
+                */
+                email_from         l10n-robot@acme.org
 
-                # one or more email addresses
-                # to send error reports to
-                email_to             engineer@acme.org
-                                     project-manager@acme.org
+                /*
+                (ARRAY) [OPTIONAL] One or more email
+                addresses to send error reports to
+                */
+                email_to           engineer@acme.org
+                                   project-manager@acme.org
 
-                # email subject
+                /*
+                (STRING) [OPTIONAL] Email subject
+                */
                 email_subject        Errors found in XML file
             }
         }

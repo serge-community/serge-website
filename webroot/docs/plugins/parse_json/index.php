@@ -80,40 +80,49 @@ jobs
             data
             {
                 /*
-                One or more regular expressions to match the node
-                path against; if any of the regular expressions
-                match, the node value is extracted for translation.
+                (ARRAY) [OPTIONAL] One or more regular
+                expressions to match the node path against;
+                if any of the regular expressions match,
+                the node value is extracted for translation.
 
-                Note that '/', '[', and ']' symbols need to be
-                escaped in a regular expression
+                Note that '/', '[', and ']' symbols need
+                to be escaped in a regular expression.
 
-                In the example below, we want to extract all
-                `title` and `description` terminal nodes
-                no matter where they are located in the object tree
+                In the example below, we want to extract
+                all `title` and `description` terminal nodes
+                no matter where they are located in the
+                object tree.
                 */
                 path_matches         \/(title|description)$
 
                 /*
-                Optional: one ore more regular expressions to match
-                the node path against; if any of the regular
-                expressions match, the node value is NOT extracted
-                for translation
+                (ARRAY) [OPTIONAL] One ore more regular
+                expressions to match the node path against;
+                if any of the regular expressions match,
+                the node value is NOT extracted for translation.
 
-                In the example below, we want to skip (prevent
-                from being translated) the top-level `description`
-                terminal node
+                In the example below, we want to skip
+                (prevent from being translated) the top-level
+                `description` terminal node.
                 */
                 path_doesnt_match    ^description$
 
-                # email to send error reports on behalf of
+                /*
+                (STRING) [OPTIONAL] Email to send
+                error reports on behalf of
+                */
                 email_from           l10n-robot@acme.org
 
-                # one or more email addresses
-                # to send error reports to
+                /*
+                (ARRAY) [OPTIONAL] One or more email
+                addresses to send error reports to
+                */
                 email_to             engineer@acme.org
                                      project-manager@acme.org
 
-                # email subject
+                /*
+                (STRING) [OPTIONAL] Email subject
+                */
                 email_subject        Errors found in JSON file
             }
         }

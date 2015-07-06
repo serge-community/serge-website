@@ -32,8 +32,12 @@ jobs
 
                 data
                 {
-                    # you can use macros in the message text;
-                    # see Serge configuration file format reference
+                    /*
+                    (STRING) Message to append to a hint.
+                    You can use macros in the message text;
+                    See Serge configuration file format
+                    reference.
+                    */
                     message          Preview:
                                      https://my-preview-site/%PATH%
                 }

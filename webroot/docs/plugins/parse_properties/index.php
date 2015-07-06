@@ -55,12 +55,13 @@ jobs
             data
             {
                 /*
-                Optional: whether to escape single quotation marks
-                (' => '') in localized files.
+                (BOOLEAN) [OPTIONAL] Should single quotation
+                marks be escaped in localized files?
+                (' => '')
 
                 This option is needed because there are some
-                inconsistencies between different Java frameworks
-                in dealing with escaped quotes.
+                inconsistencies between different Java
+                frameworks in dealing with escaped quotes.
 
                 Default: NO
                 */

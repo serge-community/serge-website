@@ -153,45 +153,45 @@ jobs
                 data
                 {
                     /*
-                    (ARRAY) List of regular expressions
-                    to match the file name against.
-                    Any regular expression should match
-                    in order for the rule to me considered
-                    `true`.
+                    (ARRAY) [OPTIONAL] List of regular
+                    expressions to match the file name
+                    against. Any regular expression should
+                    match in order for the rule to be
+                    considered `true`.
                     */
                     file_matches                    ^foo
                                                     bar$
                     /*
-                    (ARRAY) List of regular expressions
-                    to match the file name against.
+                    (ARRAY) [OPTIONAL] List of regular
+                    expressions to match the file name against.
                     None of the expressions should match
-                    in order for the rule to me considered
+                    in order for the rule to be considered
                     `true`.
                     */
                     file_doesnt_match               ^foobar$
 
                     /*
-                    (ARRAY) List of regular expressions
-                    to match the file content against.
-                    Any regular expression should match
-                    in order for the rule to me considered
-                    `true`.
+                    (ARRAY) [OPTIONAL] List of regular
+                    expressions to match the file content
+                    against. Any regular expression should
+                    match in order for the rule to be
+                    considered `true`.
                     */
                     content_matches                 \bFOO\b
 
                     /*
-                    (ARRAY) List of regular expressions
-                    to match the file content against.
-                    None of the expressions should match
-                    in order for the rule to me considered
-                    `true`.
+                    (ARRAY) [OPTIONAL] List of regular
+                    expressions to match the file content
+                    against. None of the expressions should
+                    match in order for the rule to be
+                    considered `true`.
                     */
                     content_doesnt_match            \bBAR\b
 
                     /*
-                    (STRING) Regular expression to split
-                    the extracted list of languages by.
-                    In order for this to work, the
+                    (STRING) [OPTIONAL] Regular expression
+                    to split the extracted list of languages
+                    by. In order for this to work, the
                     `file_matches` or `content_matches`
                     regular expressions must have `()`
                     (capturing parentheses) to extract the
@@ -207,57 +207,63 @@ jobs
                     */
 
                     /*
-                    (ARRAY) List of languages to limit
-                    translation to. This is always a subset
-                    of job's `destination_languages` list.
+                    (ARRAY) [OPTIONAL] List of languages
+                    to limit translation to. This is always
+                    a subset of job's `destination_languages`
+                    list.
                     */
                     limit_languages                 ARRAY
 
                     /*
-                    (ARRAY) List of languages to include
-                    for translation. This is always a subset
-                    of job's `destination_languages` list.
+                    (ARRAY) [OPTIONAL] List of languages to
+                    include for translation. This is always
+                    a subset of job's `destination_languages`
+                    list.
                     */
                     include_languages               ARRAY
 
                     /*
-                    (ARRAY) List of languages to exclude
-                    from translation. This is always a subset
-                    of job's `destination_languages` list.
+                    (ARRAY) [OPTIONAL] List of languages to
+                    exclude from translation. This is always
+                    a subset of job's `destination_languages`
+                    list.
                     */
                     exclude_languages               ARRAY
 
                     /*
-                    (BOOLEAN) When languages are extracted
-                    from the matched string (see `split_by`),
-                    use them as a target list of languages
-                    for translation.
+                    (BOOLEAN) [OPTIONAL] When languages are
+                    extracted from the matched string (see
+                    `split_by`), use them as a target list
+                    of languages for translation.
                     */
                     limit_to_matched_languages      BOOLEAN
 
                     /*
-                    (BOOLEAN) When languages are extracted
-                    from the matched string (see `split_by`),
-                    add these languages to the target list.
+                    (BOOLEAN) [OPTIONAL] When languages are
+                    extracted from the matched string (see
+                    `split_by`), add these languages to the
+                    target list.
                     */
                     include_matched_languages       BOOLEAN
 
                     /*
-                    (BOOLEAN) When languages are extracted
-                    from the matched string (see `split_by`),
-                    remove these languages to the target list.
+                    (BOOLEAN) [OPTIONAL] When languages are
+                    extracted from the matched string (see
+                    `split_by`), remove these languages to
+                    the target list.
                     */
                     exclude_matched_languages       BOOLEAN
 
                     /*
-                    (BOOLEAN) Remove all languages (reset
-                    the target list)
+                    (BOOLEAN) [OPTIONAL] Remove all
+                    languages (reset the target list)
                     */
                     exclude_all_languages           BOOLEAN
 
                     /*
-                    (BOOLEAN) Include all languages defined
-                    in job's `destination_languages` list.
+                    (BOOLEAN) [OPTIONAL] Include all
+                    languages defined in job's
+                    `destination_languages` list.
                     */
                     include_all_languages           BOOLEAN
                 }

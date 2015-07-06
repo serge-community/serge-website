@@ -85,67 +85,80 @@ jobs
             data
             {
                 /*
-                One or more regular expressions to match the node
-                path against; if any of the regular expressions
-                match, the node value is extracted for translation.
+                (ARRAY) One or more regular expressions to
+                match the node path against; if any of the
+                regular expressions match, the node value
+                is extracted for translation.
 
-                Note that '/', '[', and ']' symbols need to be
-                escaped in a regular expression
+                Note that '/', '[', and ']' symbols need
+                to be escaped in a regular expression.
 
-                In the example below, we want to extract all
-                `title` and `description` terminal nodes
-                no matter where they are located in the object tree
+                In the example below, we want to extract
+                all `title` and `description` terminal nodes
+                no matter where they are located in the
+                object tree.
                 */
                 node_match           \/(title|description)$
 
                 /*
-                Optional: one ore more regular expressions to match
-                the node path against; if any of the regular
-                expressions match, the node value is NOT extracted
-                for translation
+                (ARRAY) [OPTIONAL] One or more regular
+                expressions to match the node path against;
+                if any of the regular expressions match,
+                the node value is NOT extracted for
+                translation.
 
-                In the example below, we want to skip (prevent
-                from being translated) the top-level `description`
-                terminal node
+                In the example below, we want to skip
+                (prevent from being translated) the top-level
+                `description` terminal node.
                 */
                 node_exclude         ^description$
 
                 /*
-                Optional: one ore more regular expressions to match
-                the node path against; if any of the regular
-                expressions match, the node value is considered an
-                HTML (typically it would be wrapped in CDATA),
-                which needs to be processed by `parse_php_xhtml`
-                parser
+                (ARRAY) [OPTIONAL] One or more regular
+                expressions to match the node path against;
+                if any of the regular expressions match,
+                the node value is considered an HTML
+                (usually it is wrapped as CDATA),
+                which needs to be processed by
+                `parse_php_xhtml` parser
                 */
                 node_html            \/description$
 
                 /*
-                Optional: provide the XML dialect to optimize for.
-                Accepted values: 'generic', 'android' or 'indesign'.
-                Default value: 'generic'
+                (STRING) [OPTIONAL] The XML dialect to
+                optimize for.
+
+                Accepted values: 'generic', 'android' or
+                'indesign'. Default value: 'generic'
 
                 'generic': no special treatment is necessary;
 
                 'android': in this mode, do Android-specific
                 apostrophe and quote escaping/unescaping;
 
-                'indesign': in this mode, 'LINE SEPARATOR' (U+2028)
-                Unicode character is stripped from the strings;
-                also, leading and trailing whitespace
-                in text nodes is preserved.
+                'indesign': in this mode, 'LINE SEPARATOR'
+                (U+2028) Unicode character is stripped
+                from the strings; also, leading and trailing
+                whitespace in text nodes is preserved.
                 */
                 xml_kind             generic
 
-                # email to send error reports on behalf of
-                email_from           l10n-robot@acme.org
+                /*
+                (STRING) [OPTIONAL] Email to send
+                error reports on behalf of
+                */
+                email_from         l10n-robot@acme.org
 
-                # one or more email addresses
-                # to send error reports to
-                email_to             engineer@acme.org
-                                     project-manager@acme.org
+                /*
+                (ARRAY) [OPTIONAL] One or more email
+                addresses to send error reports to
+                */
+                email_to           engineer@acme.org
+                                   project-manager@acme.org
 
-                # email subject
+                /*
+                (STRING) [OPTIONAL] Email subject
+                */
                 email_subject        Errors found in XML file
             }
         }

@@ -31,6 +31,9 @@ jobs
 
                 data
                 {
+                    /*
+                    (STRING) A shell command to run
+                    */
                     command    gzip <%FILE% >%FILE%.gz
                 }
             }

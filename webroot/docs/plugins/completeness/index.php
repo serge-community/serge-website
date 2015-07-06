@@ -41,48 +41,56 @@ jobs
                 data
                 {
                     /*
+                    (NUMBER) [OPTIONAL] Threshold
+                    after reaching which the file
+                    is allowed to be created.
                     Allowed values: any real number
-                    within [0..1] range
+                    within [0..1] range.
                     Default is 1
                     */
                     create_threshold     0.95
 
                     /*
+                    (NUMBER) [OPTIONAL] Threshold
+                    after reaching which the file
+                    is allowed to be updated.
                     Allowed values: any real number
-                    within [0..1] range
+                    within [0..1] range.
                     Default is 0
                     */
                     update_threshold     0.5
 
                     /*
-                    If 'can_detete' is set to a true value, the file
-                    will be deleted if its completeness ratio becomes
-                    equal or less than 'update_threshold' value
-
-                    Allowed values: YES or NO
+                    (BOOLEAN) [OPTIONAL] If 'can_detete'
+                    is set to a true value, the file
+                    will be deleted if its completeness
+                    ratio becomes equal or less than
+                    'update_threshold' value.
                     Default is NO
                     */
                     can_delete           YES
 
                     # email to send error reports on behalf of
-                    email_from         l10n-robot@acme.org
+                    email_from           l10n-robot@acme.org
 
                     /*
-                    one or more email addresses
-                    to send error reports to
+                    (ARRAY) [OPTIONAL] One or more email
+                    addresses to send error reports to
                     */
-                    email_to           engineer@acme.org
-                                       project-manager@acme.org
+                    email_to             engineer@acme.org
+                                         project-manager@acme.org
 
                     /*
-                    Email subject prefix. Depending on a report
-                    type, this preffix will be appended with either
-                    ' New files created' or ' Stale files removed'.
+                    (STRING) [OPTIONAL] Email subject prefix.
+                    Depending on a report type, this preffix
+                    will be appended with either
+                    ' New files created' or
+                    ' Stale files removed'.
 
                     Defaults to job name in square brackets:
                     '[<job_name>]:'
                     */
-                    email_subject      [website localization]:
+                    email_subject        [website localization]:
                 }
             }
         }

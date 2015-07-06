@@ -55,10 +55,10 @@ jobs
                 data
                 {
                     /*
-                    When comment is changed for the item,
-                    should all its existing translations
-                    be marked as fuzzy?
-
+                    (BOOLEAN) [OPTIONAL] When comment
+                    is changed for the item, should all
+                    its existing translations be marked
+                    as fuzzy?
                     Default is YES
                     */
                     set_fuzzy_on_comment_change     YES
