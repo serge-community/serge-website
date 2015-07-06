@@ -84,8 +84,8 @@ jobs
                     to the file
                     */
                     command                     gzip
-                                                < %FILE%
-                                                > %FILE%.gz
+                                                <%FILE%
+                                                >%FILE%.gz
                 }
             }
         }
