@@ -14,6 +14,7 @@
     <li>SVN</li>
     <li>Git</li>
     <li>Gerrit (Git-based code review system)</li>
+    <li>Mercurial</li>
 </ul>
 
 <p>Each system is supported by its own &lsquo;VCS plugin&rsquo;, and you can write your own VCS integration plugins. You can use existing plugin code (located in <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/VCS</code> folder) as an inspiration.</p>

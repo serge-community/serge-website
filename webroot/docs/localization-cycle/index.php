@@ -6,7 +6,9 @@
 
 <h1>Localization Cycle</h1>
 
-<p>The diagram below shows what steps are performed by Serge when you run <code><a href="/docs/help/serge-sync/">sync</a></code> or <code><a href="/docs/help/serge-localize/">localize</a></code> command against some <a href="/docs/configuration-file/">configuration file</a> (which describes localization project):</p>
+<p>Localization cycle in Serge is a process of generating localized resources by getting source resources and applying all known translations to them (this is what <code>serge localize</code> does). On top of that, Serge performs all the necessary synchronization with version control system and translation service (this is what <code>serge sync</code> does).</p>
+
+<p>The diagram below shows what steps are performed by Serge when you run <code><a href="/docs/help/serge-sync/">sync</a></code> or <code><a href="/docs/help/serge-localize/">localize</a></code> command against a <a href="/docs/configuration-file/">configuration file</a> which describes your localization project:</p>
 
 <p><img src="/media/sync_diagram.svg" width="680" /></p>
 
@@ -29,9 +31,8 @@
 
 <h1>Intended Use</h1>
 
-<p><code>sync</code> command makes sense in a continuous localization environment. On a very basic level, you can run <code>serge sync /path/to/localization-configuration-files-folder</code> as a cron job on your server.</p>
+<p><code>sync</code> command needs to be used on a <a href="/docs/localization-server/">localization server</a>.</p>
 
 <p><code>localize</code> command alone can be used on a local development machine for on-demand resource localization, localization project configuration, or testing your custom parsers.</p>
-
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>

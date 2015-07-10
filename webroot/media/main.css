@@ -244,6 +244,11 @@ code.cli {
     white-space: pre;
 }
 
+code.block.wrap,
+code.cli.wrap {
+    white-space: normal;
+}
+
 figure {
     overflow: hidden;
 }
@@ -374,6 +379,7 @@ ol > li:before {
 }
 
 .pod .menu a {
+    line-height: 120%;
     white-space: nowrap;
 }
 

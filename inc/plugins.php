@@ -37,4 +37,15 @@
         "parse_xml",
         "parse_yaml",
     );
+
+    $vcs_plugins = array(
+        "git",
+        "gerrit",
+        "mercurial",
+        "svn",
+    );
+
+    $ts_plugins = array(
+        "pootle",
+    );
 ?>

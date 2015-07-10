@@ -30,7 +30,7 @@
         /* DEBUG */
         $li_class = $li_class != '' ? ' class="'.$li_class.'"' : '';
 
-        echo '<li'._sel($id).$li_class.'><a href="'.$url.'"'.$a_class.'>'.htmlspecialchars($title).'</a></li>';
+        echo '<li'._sel($id).$li_class.'><a href="'.$url.'"'.$a_class.'>'.$title.'</a></li>';
     }
 
     function _expanded_when($section, $value) {
@@ -43,15 +43,19 @@
 
 <div class="pod">
     <div class="menu">
+        <ul>
+            <?php _item("",                             "/docs/",                                "What is Serge?") ?>
+        </ul>
         <h3>Basic Concepts</h3>
         <ul>
-            <?php _item("",                             "/docs/",                                "Getting Started") ?>
+            <?php //_item("",                             "/docs/",                                "Getting Started") ?>
             <?php _item("continuous-localization",      "/docs/continuous-localization/",        "Continuous Localization") ?>
-            <?php _item("localization-cycle",           "/docs/localization-cycle/",             "Localization Cycle") ?>
+            <?php _item("configuration-files",          "/docs/configuration-files/",            "Configuration Files") ?>
             <?php _item("version-control",              "/docs/version-control/",                "Version Control") ?>
             <?php _item("translation-service",          "/docs/translation-service/",            "Translation Service") ?>
+            <?php _item("localization-cycle",           "/docs/localization-cycle/",             "Localization Cycle") ?>
+            <?php _item("localization-server",          "/docs/localization-server/",            "Localization Server") ?>
             <?php _item("command-line-interface",       "/docs/command-line-interface/",         "Command-line Interface") ?>
-            <?php _item("configuration-files",          "/docs/configuration-files/",            "Configuration Files") ?>
         </ul>
         <h3>Reference</h3>
         <ul>
@@ -84,6 +88,30 @@
                 <?php
                     if ($section == 'callback-plugins') {
                         foreach ($callback_plugins as $name) {
+                            _item("ref-plugin-$name", "/docs/plugins/$name/",  $name);
+                        }
+                    }
+                ?>
+            </ul>
+
+            <?php _item("-ref-plugins",                 "/docs/plugins/$vcs_plugins[0]",     "VCS Plugins",
+                        _expanded_when($section, 'vcs-plugins')) ?>
+            <ul>
+                <?php
+                    if ($section == 'vcs-plugins') {
+                        foreach ($vcs_plugins as $name) {
+                            _item("ref-plugin-$name", "/docs/plugins/$name/",  $name);
+                        }
+                    }
+                ?>
+            </ul>
+
+            <?php _item("-ref-plugins",                 "/docs/plugins/$ts_plugins[0]",     "Translation Service<br/>Plugins",
+                        _expanded_when($section, 'ts-plugins')) ?>
+            <ul>
+                <?php
+                    if ($section == 'ts-plugins') {
+                        foreach ($ts_plugins as $name) {
                             _item("ref-plugin-$name", "/docs/plugins/$name/",  $name);
                         }
                     }
