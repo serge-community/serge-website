@@ -10,9 +10,9 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><code>serge sync &lt;configuration-files&gt; [--force] [--recreate-po] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
+<p><code>serge sync [configuration-files] [--force] [--recreate-po] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
 
-<p>Where <code>&lt;configuration-files&gt;</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters.</p>
+<p>Where <code>[configuration-files]</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters. If no paths provided, Serge will look up for .serge files in the current directory.</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 

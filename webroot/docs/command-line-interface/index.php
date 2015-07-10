@@ -16,7 +16,7 @@
 <code class="cli">serge push my-ios-client.serge my-mac-client.serge</code>
 
 <p>Example (run 'sync' command on all files with '.serge' extension in the current directory):</p>
-<code class="cli">serge sync .</code>
+<code class="cli">serge sync</code>
 
 <p>Sync-related commands can be specified one after another. In the example below we run 'pull', and then 'localize' command on 'my-ios-client.serge' configuration file:</p>
 <code class="cli">serge pull localize my-ios-client.serge</code>

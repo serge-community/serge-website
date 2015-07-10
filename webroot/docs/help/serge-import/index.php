@@ -10,9 +10,9 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><code>serge import &lt;configuration-files&gt; [options]</code></p>
+<p><code>serge import [configuration-files] [options]</code></p>
 
-<p>Where <code>&lt;configuration-files&gt;</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters.</p>
+<p>Where <code>[configuration-files]</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters. If no paths provided, Serge will look up for .serge files in the current directory.</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
@@ -42,16 +42,10 @@
 <p>If duplicate keys are found, don&#39;t exit but disambiguate them in the order of their presense. Use with care only when you are sure that the ordering and the number of ambigous keys in all files (both original and localized) is the same, otherwise you might end up importing wrong translations for wrong keys.</p>
 
 </dd>
-<dt><b>--quiet</b></dt>
+<dt><b>--no-report</b></dt>
 <dd>
 
-<p>Do not print string =&gt; translation mappings. Only warnings will be printed in this mode.</p>
-
-</dd>
-<dt><b>--report-file=output.html</b></dt>
-<dd>
-
-<p>Save additional HTML report with source&lt;-&gt;translation pairs to the specified HTML file. Useful in conjunction with --dry-run and --quiet options</p>
+<p>By default, serge-import generates HTML reports, one per language, in the current directory with &#39;serge-import-report-xx.html&#39; file names, where &#39;xx&#39; is the language. It is strongly recommended to always review these reports, but one may skip generating report files by providing this option.</p>
 
 </dd>
 <dt><b>--debug</b></dt>

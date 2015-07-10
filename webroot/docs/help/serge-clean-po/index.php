@@ -10,9 +10,9 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><code>serge clean-po &lt;configuration-files&gt; [--dry-run] [--for-each=&quot;do something with &#39;[PATH]&#39;&quot;]</code></p>
+<p><code>serge clean-po [configuration-files] [--dry-run] [--for-each=&quot;do something with &#39;[PATH]&#39;&quot;]</code></p>
 
-<p>Where <code>&lt;configuration-files&gt;</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters.</p>
+<p>Where <code>[configuration-files]</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters. If no paths provided, Serge will look up for .serge files in the current directory.</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
