@@ -10,6 +10,8 @@
 
 <p>All localization-related settings need to be described in <a href="/docs/configuration-files/">configuration files</a>. When run against a configuration file, Serge will perform one <a href="/docs/localization-cycle/">localization cycle</a>, bring localized resources in sync with their source, generate new ones, and apply all known translations that come from .po files. It will handle synchronization with your <a href="/docs/version-control/">version control system</a>, automatically pulling and pushing changes, and will also synchronize with an external <a href="/docs/translation-service/">translation service</a>.</p>
 
+<p>Serge has a <a href="/docs/modular-architecture/">modular architecture</a> and supports many <a href="/docs/file-formats/">file formats</a> out of the box.</p>
+
 <h1>Why is it called so?</h1>
 
 <p>&lsquo;<strong>SERGE</strong>&rsquo; stands for &lsquo;<strong>S</strong>tring <strong>E</strong>xtraction and <strong>R</strong>esource <strong>G</strong>eneration <strong>E</strong>ngine&rsquo;.</p>

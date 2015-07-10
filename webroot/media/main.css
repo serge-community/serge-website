@@ -381,6 +381,7 @@ ol > li:before {
 .pod .menu a {
     line-height: 120%;
     white-space: nowrap;
+    padding: 0.3em;
 }
 
 /* DEBUG */
