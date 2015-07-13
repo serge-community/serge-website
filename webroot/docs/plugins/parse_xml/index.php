@@ -11,7 +11,7 @@
 
 <p>This plugin is used to parse arbitrary XML data structures, including the ones that contain HTML inside CDATA sections, which also needs to be parsed. It uses regular expressions as a configuration parameter to match translatable nodes in the JSON object tree, and to identify the nodes, whose content needs to be treated as HTML which needs to be parsed additionally using the <a href="/docs/plugins/parse_php_xhtml/">parse_php_xhtml</a> parser.</p>
 
-<p>In case XML format validation fails, the plugin can send an error report to specified recipients. If no email settings provided, it will simply report the error in the console output.</p>
+<p>In case XML format validation fails, the plugin can send an error report to specified recipients. If no email settings are provided, it will simply report the error in the console output.</p>
 
 <h2>Code Examples</h2>
 

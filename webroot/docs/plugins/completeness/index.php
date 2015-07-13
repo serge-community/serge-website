@@ -21,7 +21,7 @@
 
 <p>By default, plugin uses the following settings: <code>create_threshold</code> is set to 1, <code>update_threshold</code> is set to 0, and <code>can_delete</code> is set to NO. This means that a file will never be created unless it is 100% complete; once it has been created, it will always be updated no matter what its current completeness ratio is (even if it drops to zero), and it will never be deleted.</p>
 
-<p>If no email settings provided, the plugin will skip sending a report.</p>
+<p>If no email settings are provided, the plugin will skip sending a report.</p>
 
 <h2>Usage</h2>
 

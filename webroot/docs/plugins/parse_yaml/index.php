@@ -11,7 +11,7 @@
 
 <p>This plugin is used to extract localizable strings from arbitrary YAML data structures (typically used to localize <a href="http://guides.rubyonrails.org/i18n.html#adding-translations">Ruby On Rails applications</a>).</p>
 
-<p>In case YAML format validation fails, the plugin can send an error report to specified recipients. If no email settings provided, it will simply report the error in the console output.</p>
+<p>In case YAML format validation fails, the plugin can send an error report to specified recipients. If no email settings are provided, it will simply report the error in the console output.</p>
 
 <h2>Code Examples</h2>
 

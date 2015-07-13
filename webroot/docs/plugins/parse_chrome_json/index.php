@@ -11,7 +11,7 @@
 
 <p>This parser extracts strings from Chrome extension <a href="https://developer.chrome.com/extensions/i18n-messages">messages.json format</a>.</p>
 
-<p>In case JSON format validation fails, the plugin can send an error report to specified recipients. If no email settings provided, it will simply report the error in the console output.</p>
+<p>In case JSON format validation fails, the plugin can send an error report to specified recipients. If no email settings are provided, it will simply report the error in the console output.</p>
 
 <h2>Code Examples</h2>
 
