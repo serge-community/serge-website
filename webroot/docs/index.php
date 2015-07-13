@@ -4,7 +4,7 @@
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 
-<h1>What is Serge?</h1>
+<h1>What Is Serge?</h1>
 
 <p>At its core, Serge is a <a href="/docs/command-line-interface/">command-line tool</a> that can be either run manually on a developers' computer, or automatically (e.g. as a cron job) <a href="/docs/localization-server/">on a server</a>, to achieve <a href="/docs/continuous-localization/">continuous localization integration</a>. After you have it <a href="/download/">downloaded and installed</a>, you can simply run it by saying `<code>serge</code>` in the command line, which will give you a <a href="/docs/help/serge/">quick help</a> and a <a href="/docs/command-line-interface/#available-commands">list of available commands</a>.</p>
 
@@ -12,7 +12,7 @@
 
 <p>Serge has a <a href="/docs/modular-architecture/">modular architecture</a> and supports many <a href="/docs/file-formats/">file formats</a> out of the box.</p>
 
-<h1>Why is it called so?</h1>
+<h1>Why Is It Called So?</h1>
 
 <p>&lsquo;<strong>SERGE</strong>&rsquo; stands for &lsquo;<strong>S</strong>tring <strong>E</strong>xtraction and <strong>R</strong>esource <strong>G</strong>eneration <strong>E</strong>ngine&rsquo;.</p>
 
