@@ -19,6 +19,6 @@
 
 <p>The cron job above will run every 5 minutes and try to launch a new Serge sync cycle for all configuration files in the specified directory.</p>
 
-<p class="notice">Note: in the scenario above, one needs to make sure that only one copy of Serge is running at a time. This is why we're <em>overwriting</em> the same log file (<code>/var/log/serge.log</code>) — this file is locked exclusively, and thus the other instance will fail untill the previous copy finishes execution. If you want to <em>append</em> to a log instead, you need another approach to implement a 'one instance at a time' requirement (for example, use a wrapper script in a combination with <code>flock</code> utility).</p>
+<p class="notice">Note: in the scenario above, one needs to make sure that only one copy of Serge is running at a time. This is why we're <em>overwriting</em> the same log file (<code>/var/log/serge.log</code>) — this file is locked exclusively, and thus the other instance will fail until the previous copy finishes execution. If you want to <em>append</em> to a log instead, you need another approach to implement a 'one instance at a time' requirement (for example, use a wrapper script in a combination with <code>flock</code> utility).</p>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
