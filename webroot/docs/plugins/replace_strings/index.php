@@ -45,7 +45,7 @@ jobs
                     (ARRAY) Replacement regular expression.
                     The first string defines the pattern to find,
                     the second one — the replacement string,
-                    the second one — regexp flags. This is
+                    the third one — regexp flags. This is
                     equivalent to the following expression in Perl:
 
                         s/$what/$with/$flags;

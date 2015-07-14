@@ -11,7 +11,7 @@
 
 <p>Plugin always attaches itself to the following callback phases: <code>after_load_source_file_for_processing</code>, <code>is_file_orphaned</code>, <code>can_process_source_file</code>, <code>can_process_po</code>, <code>can_generate_po</code>, <code>can_generate_localized_file</code>.</p>
 
-<p>This plugin allows to map each file to a subset of languages it needs to be localized into. So, in addition to job-wide list of target languages, one can override the list of languages for any specific file, based on rules that examine the file name or it contents.</p>
+<p>This plugin allows to map each file to a subset of languages it needs to be localized into. So, in addition to job-wide list of target languages, one can override the list of languages for any specific file, based on rules that examine the file name or its contents.</p>
 
 <h2>Default Behavior</h2>
 

@@ -13,8 +13,8 @@
 
 <p>This plugin calculates the translation 'completeness' of a file (ratio of translated strings to the total number of strings in that file) for each language, and, based on its value, provides the following behavior options:</p>
 <ol>
-    <li>an ability to skip creating a new localized file until it's completeness ratio reaches <code>create_threshold</code> level;</li>
-    <li>an ability to skip updating an already existing localized file until it's completeness ratio reaches <code>update_threshold</code> level;</li>
+    <li>an ability to skip creating a new localized file until its completeness ratio reaches <code>create_threshold</code> level;</li>
+    <li>an ability to skip updating an already existing localized file until its completeness ratio reaches <code>update_threshold</code> level;</li>
     <li>an ability to delete a localized file when its completeness drops below <code>update_threshold</code> level;</li>
     <li>send email reports with the summary of the files that reached or dropped below the <code>create_threshold</code> and <code>update_threshold</code> levels.</li>
 </ol>

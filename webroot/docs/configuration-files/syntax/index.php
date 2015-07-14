@@ -15,7 +15,7 @@
     <li>Schema-based config file validation.</li>
 </ul>
 
-<p class="notice">Internally, Serge uses <a href="https://github.com/iafan/Config-Neat">Config::Neat</a> library that implements this format, so you can always use it's own documentation as an additional source of information about the format and its implementation details.</p>
+<p class="notice">Internally, Serge uses <a href="https://github.com/iafan/Config-Neat">Config::Neat</a> library that implements this format, so you can always use its own documentation as an additional source of information about the format and its implementation details.</p>
 
 <h2>Tree Structure</h2>
 

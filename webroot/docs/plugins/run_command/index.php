@@ -9,7 +9,7 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/run_command.pm</code></p>
 
-<p>This plugin inherits all the configuration logic from the parent <a href="/docs/plugins/if/">'if' plugin</a> and, if all conditions are met, runs a shell command. Note that all <code>if</code> conditions are optional: if non provided, the shell command will always run.</p>
+<p>This plugin inherits all the configuration logic from the parent <a href="/docs/plugins/if/">'if' plugin</a> and, if all conditions are met, runs a shell command. Note that all <code>if</code> conditions are optional: if none are provided, the shell command will always run.</p>
 
 <p>Shell command can include macros in <code>command</code> parameter, see below. These macros will be expanded to their actual values. See <a href="/docs/configuration-files/reference/">Configuration File Format</a> reference for the list of available macros.</p>
 
