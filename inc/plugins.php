@@ -34,6 +34,7 @@
         "parse_strings",
         "parse_ts",
         "parse_wxl",
+        "parse_xliff",
         "parse_xml",
         "parse_yaml",
     );
