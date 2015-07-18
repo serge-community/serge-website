@@ -8,7 +8,7 @@
 
 <p>Localization cycle in Serge is a process of generating localized resources by getting source resources and applying all known translations to them (this is what <code>serge localize</code> does). On top of that, Serge performs all the necessary synchronization with version control system and translation service (this is what <code>serge sync</code> does).</p>
 
-<p>The diagram below shows what steps are performed by Serge when you run <code><a href="/docs/help/serge-sync/">sync</a></code> or <code><a href="/docs/help/serge-localize/">localize</a></code> command against a <a href="/docs/configuration-file/">configuration file</a> which describes your localization project:</p>
+<p>The diagram below shows what steps are performed by Serge when you run <code><a href="/docs/help/serge-sync/">sync</a></code> or <code><a href="/docs/help/serge-localize/">localize</a></code> command against a <a href="/docs/configuration-files/">configuration file</a> which describes your localization project:</p>
 
 <p><img src="/media/sync_diagram.svg" width="680" /></p>
 
