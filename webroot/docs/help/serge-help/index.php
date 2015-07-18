@@ -16,7 +16,7 @@
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>Show help on particular command (if it is provided), or general information about Serge. By default (and depending on your operating system), it will try to open and HTML version of the help in your browser. Otherwise it will render a plain-text version in the console.</p>
+<p>Show help on particular command (if it is provided), or general information about Serge. By default (and depending on your operating system), it will try to open an HTML version of the help in your browser. Otherwise it will render a plain-text version in the console.</p>
 
 <p>For the list of available commands, just run <code>serge</code> with no command-line parameters.</p>
 

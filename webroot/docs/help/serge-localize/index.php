@@ -45,7 +45,7 @@
 
 <p>Disable internal optimizations and force process/generate all the files.</p>
 
-<p>This is useful when someone outside has altered/deleted the previously created localized resource files, and you want to rebuold everything.</p>
+<p>This is useful when someone outside has altered/deleted the previously created localized resource files, and you want to rebuild everything.</p>
 
 <p>Note that some localization plugins (for example, <i>completeness</i> plugin) may prevent some files from being updated or created unless a certain criteria is met; <code>--force</code> doesn&#39;t change any of this logic, it will only ensure that the localization procedures will be run for each matching file and no shortcut paths will be taken.</p>
 

@@ -25,7 +25,7 @@
 <dt><b>--force</b></dt>
 <dd>
 
-<p>Instruct the remote party to skip any optimizations and force supdate data from all .po files.</p>
+<p>Instruct the remote party to skip any optimizations and force update data from all .po files.</p>
 
 </dd>
 <dt><b>--echo-commands</b></dt>

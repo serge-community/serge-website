@@ -17,7 +17,7 @@
     <li><code>get_translation</code></li>
 </ul>
 
-<p>This plugin can automatically generate fake translations from source English strings by replacing latin characters with similarly looking Unicode letters with accents. The resulting strings remain readable, though visiually more dense than the original English ones. This allows one to test if the application has all strings externalized properly, and whether there are any problems with displaying Unicode symbols. When replacing characters, the plugin tries not to break tags and various kinds of placeholders.</p>
+<p>This plugin can automatically generate fake translations from source English strings by replacing latin characters with similarly looking Unicode letters with accents. The resulting strings remain readable, though visually more dense than the original English ones. This allows one to test if the application has all strings externalized properly, and whether there are any problems with displaying Unicode symbols. When replacing characters, the plugin tries not to break tags and various kinds of placeholders.</p>
 
 <p class="notice">Ŧĥĩš ĩš áŋ ēҳáḿṕļē őḟ ţĥē ŕēšũļţĩŋğ "ţŕáŋšļáţĩőŋ".</p>
 

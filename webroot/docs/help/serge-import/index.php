@@ -39,7 +39,7 @@
 <dt><b>--disambiguate-keys</b></dt>
 <dd>
 
-<p>If duplicate keys are found, don&#39;t exit but disambiguate them in the order of their presense. Use with care only when you are sure that the ordering and the number of ambigous keys in all files (both original and localized) is the same, otherwise you might end up importing wrong translations for wrong keys.</p>
+<p>If duplicate keys are found, don&#39;t exit but disambiguate them in the order of their presence. Use with care only when you are sure that the ordering and the number of ambigous keys in all files (both original and localized) is the same, otherwise you might end up importing wrong translations for wrong keys.</p>
 
 </dd>
 <dt><b>--no-report</b></dt>
