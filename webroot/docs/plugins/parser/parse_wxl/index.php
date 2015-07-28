@@ -24,7 +24,7 @@
 </code>
 </figure>
 
-<p class="notice">Limitation: the <code>Culture="<em>...</em>"</code> attribute value is not being replaced automatically. This can now be done before file is saved by the means of <a href="/docs/plugins/replace_strings/">replace_strings</a> plugin.</p>
+<p class="notice">Limitation: the <code>Culture="<em>...</em>"</code> attribute value is not being replaced automatically. This can now be done before file is saved by the means of <a href="/docs/plugins/callback/replace_strings/">replace_strings</a> plugin.</p>
 
 <h2>Usage</h2>
 

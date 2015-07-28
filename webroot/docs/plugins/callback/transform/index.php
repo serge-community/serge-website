@@ -13,7 +13,7 @@
 
 <p>Given a source string to translate, this plugin finds similar strings in the database by trying different transformation combinations, and then guesses the translation for the source string by applying the same chain of transformation to the pre-existing similar translation. Transformations include adjusting whitespace, ending punctuation, HTML tags, or applying different case.</p>
 
-<p>Consider this example: there's a phrase "Hello, world!" in the database, and it is already translated into Russian as "Привет, мир!". Now we get a new string, "HELLO, WORLD.". This plugin detects that it can transform "Hello, world!" into "HELLO, WORLD." by uppercasing it first, then removing the ending exclamation mark, and applies the same transformation to the translation. The result, "ПРИВЕТ, МИР", is returned as a guessed translation.</p>
+<p>Consider this example: there's a phrase "Hello, world!" in the database, and it is already translated into Russian as "Привет, мир!". Now we get a new string, "HELLO, WORLD". This plugin detects that it can transform "Hello, world!" into "HELLO, WORLD" by uppercasing it first, then removing the ending exclamation mark, and applies the same transformation to the translation. The result, "ПРИВЕТ, МИР", is returned as a guessed translation.</p>
 
 <h2>Usage</h2>
 

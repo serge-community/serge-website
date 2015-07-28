@@ -11,7 +11,7 @@
 
 <p>This plugin is used to parse arbitrary JSON objects. It uses regular expressions as a configuration paramater to match translatable nodes in the JSON object tree.</p>
 
-<p>If your JSON is a plain dictionary in <code>"key" : "value"</code> format, where all keys need to be translated, use the <a href="/docs/plugins/parse_json_keyvalue">parse_json_keyvalue</a> plugin instead.</p>
+<p>If your JSON is a plain dictionary in <code>"key" : "value"</code> format, where all keys need to be translated, use the <a href="/docs/plugins/parser/parse_json_keyvalue/">parse_json_keyvalue</a> plugin instead.</p>
 
 <p>In case JSON format validation fails, the plugin can send an error report to specified recipients. If no email settings are provided, it will simply report the error in the console output.</p>
 

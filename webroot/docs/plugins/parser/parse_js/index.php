@@ -11,7 +11,7 @@
 
 <p>This plugin is used to parse JavaScript object properties in <code>"key" : "value"</code> format. Whitespace before and afer colon is ignored. Each key-value pair must be on its own line.</p>
 
-<p>Note that this parser supports only a subset of syntax and does no validation. It is targeted for arbitrary JavaScript files. If your resource file is rather a well-formed JSON that can be strictly validated, it is recommended to use the <a href="/docs/plugins/parse_json_keyvalue">parse_json_keyvalue</a> plugin instead.</p>
+<p>Note that this parser supports only a subset of syntax and does no validation. It is targeted for arbitrary JavaScript files. If your resource file is rather a well-formed JSON that can be strictly validated, it is recommended to use the <a href="/docs/plugins/parser/parse_json_keyvalue/">parse_json_keyvalue</a> plugin instead.</p>
 
 <h2>Code Examples</h2>
 

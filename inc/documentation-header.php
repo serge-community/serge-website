@@ -70,45 +70,45 @@
                 ?>
             </ul>
 
-            <?php _item("-ref-plugins",                 "/docs/plugins/$parser_plugins[0]",      "Parser Plugins", _expanded_when($section, 'parser-plugins')) ?>
+            <?php _item("-ref-plugins",                 "/docs/plugins/parser/$parser_plugins[0]",      "Parser Plugins", _expanded_when($section, 'parser-plugins')) ?>
             <ul>
                 <?php
                     if ($section == 'parser-plugins') {
                         foreach ($parser_plugins as $name) {
-                            _item("ref-plugin-$name",   "/docs/plugins/$name/",                   $name);
+                            _item("ref-plugin-$name",   "/docs/plugins/parser/$name/",                   $name);
                         }
                     }
                 ?>
             </ul>
 
-            <?php _item("-ref-plugins",                 "/docs/plugins/$callback_plugins[0]",     "Callback Plugins", _expanded_when($section, 'callback-plugins')) ?>
+            <?php _item("-ref-plugins",                 "/docs/plugins/callback/$callback_plugins[0]",     "Callback Plugins", _expanded_when($section, 'callback-plugins')) ?>
             <ul>
                 <?php
                     if ($section == 'callback-plugins') {
                         foreach ($callback_plugins as $name) {
-                            _item("ref-plugin-$name",   "/docs/plugins/$name/",                   $name);
+                            _item("ref-plugin-$name",   "/docs/plugins/callback/$name/",                   $name);
                         }
                     }
                 ?>
             </ul>
 
-            <?php _item("-ref-plugins",                 "/docs/plugins/$vcs_plugins[0]",          "VCS Plugins", _expanded_when($section, 'vcs-plugins')) ?>
+            <?php _item("-ref-plugins",                 "/docs/plugins/vcs/$vcs_plugins[0]",          "VCS Plugins", _expanded_when($section, 'vcs-plugins')) ?>
             <ul>
                 <?php
                     if ($section == 'vcs-plugins') {
                         foreach ($vcs_plugins as $name) {
-                            _item("ref-plugin-$name",   "/docs/plugins/$name/",                   $name);
+                            _item("ref-plugin-$name",   "/docs/plugins/vcs/$name/",                   $name);
                         }
                     }
                 ?>
             </ul>
 
-            <?php _item("-ref-plugins",                 "/docs/plugins/$ts_plugins[0]",           "Translation Service<br/>Plugins", _expanded_when($section, 'ts-plugins')) ?>
+            <?php _item("-ref-plugins",                 "/docs/plugins/ts/$ts_plugins[0]",           "Translation Service<br/>Plugins", _expanded_when($section, 'ts-plugins')) ?>
             <ul>
                 <?php
                     if ($section == 'ts-plugins') {
                         foreach ($ts_plugins as $name) {
-                            _item("ref-plugin-$name",   "/docs/plugins/$name/",                   $name);
+                            _item("ref-plugin-$name",   "/docs/plugins/ts/$name/",                   $name);
                         }
                     }
                 ?>

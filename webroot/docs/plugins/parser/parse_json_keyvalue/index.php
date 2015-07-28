@@ -11,7 +11,7 @@
 
 <p>This plugin is used to parse plain JSON objects (dictionaries) in <code>"key" : "value"</code> format.</p>
 
-<p>Note that this parser does full JSON parsing/validation, and thus can be used on JSON only. If you have dictionaries in arbitrary JavaScript file, use the <a href="/docs/plugins/parse_js">parse_js</a> plugin instead. If your JSON has an arbitrary structure, see the <a href="/docs/plugins/parse_json">parse_json</a> plugin that gives more flexibility on what nodes to translate.</p>
+<p>Note that this parser does full JSON parsing/validation, and thus can be used on JSON only. If you have dictionaries in arbitrary JavaScript file, use the <a href="/docs/plugins/parser/parse_js/">parse_js</a> plugin instead. If your JSON has an arbitrary structure, see the <a href="/docs/plugins/parser/parse_json/">parse_json</a> plugin that gives more flexibility on what nodes to translate.</p>
 
 <p>In case JSON format validation fails, the plugin can send an error report to specified recipients. If no email settings are provided, it will simply report the error in the console output.</p>
 

@@ -9,7 +9,7 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/process_if.pm</code></p>
 
-<p>This plugin inherits all the configuration logic from the parent <a href="/docs/plugins/if/">'if' plugin</a> and provides hooks to <code>can_*</code> callback phases to allow tweaking various processing logic aspects inside Serge.</p>
+<p>This plugin inherits all the configuration logic from the parent <a href="/docs/plugins/callback/if/">'if' plugin</a> and provides hooks to <code>can_*</code> callback phases to allow tweaking various processing logic aspects inside Serge.</p>
 
 <p>Plugin must be attached through the configuration file to either of the following phases:</p>
 <ul>
