@@ -22,7 +22,7 @@
     <li>To test if you have proper write permissions, alter or add some file in the local repository and run <code>serge push my_project.serge --message="test"</code>; check that your commit went through to the remote server</li>
 </ol>
 
-<p>Later you will run <code>serge sync</code> continuously against this configuration file, which will perform the two-way sync between Serge and Pootle among other synchronization/localization steps. See <a href="/docs/localization-cycle/">Localization Cycle</a> for more information.</p>
+<p>Later you will run <code>serge sync</code> continuously against this configuration file, which will perform the two-way sync between Serge and Git among other synchronization/localization steps. See <a href="/docs/localization-cycle/">Localization Cycle</a> for more information.</p>
 
 <h2>Usage</h2>
 
