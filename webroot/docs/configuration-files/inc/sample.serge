@@ -80,9 +80,6 @@ sync
             # Default: 'Automatic commit of updated project files'
             commit_message          Automatic commit of updated project files
 
-            # (STRING) username to pull and push on behalf of
-            user                    l10n
-
             # (STRING) public committer name
             name                    L10N Robot
 
