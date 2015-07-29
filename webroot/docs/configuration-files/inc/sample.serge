@@ -22,7 +22,7 @@ sync
         data
         {
             # Unique project id (folder name) in Pootle
-            project_id              sample_project_1
+            project_id              my_project
 
             # Path to Pootle's `manage.py` utility that is used to sync
             # .po files with its internal database
