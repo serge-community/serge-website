@@ -1,17 +1,17 @@
 <?php
     $section = 'vcs-plugins';
-    $subpage = 'ref-plugin-git';
-    $title = 'Git Synchronization Plugin';
+    $subpage = 'ref-plugin-mercurial';
+    $title = 'Mercurial Synchronization Plugin';
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
-<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/VCS/git.pm</code></p>
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/VCS/mercurial.pm</code></p>
 
-<p>This plugin provides integration with <a href="https://git-scm.com/">Git</a>-based source code repositories. On <code><a href="/docs/help/serge-pull/">pull</a></code> sync step, Serge will update its local checkout from your Git server. Respectively, on <code><a href="/docs/help/serge-push/">push</a></code> sync step, Serge will push all the updated files back to the remote repository.</p>
+<p>This plugin provides integration with <a href="https://mercurial.selenic.com/">Mercurial</a>-based source code repositories. On <code><a href="/docs/help/serge-pull/">pull</a></code> sync step, Serge will update its local checkout from your Mercurial server. Respectively, on <code><a href="/docs/help/serge-push/">push</a></code> sync step, Serge will push all the updated files back to the remote repository.</p>
 
-<p>Communication between Serge and Git is performed by the means of running <code>git</code> command-line tool. This means that Git must be installed on the same machine as Serge and have authentication properly configured.</p>
+<p>Communication between Serge and Mercurial is performed by the means of running <code>hg</code> command-line tool. This means that Mercurial must be installed on the same machine as Serge and have authentication properly configured.</p>
 
 <p>Each configuration file in Serge represents a single translation project, and maps to one or more remote source code repositories (in case of multiple repositories, they all need to be under the same version control and have the same committer configured, since VCS plugin name and committer username are shared within a configuration file). The typical workflow is this:</p>
 
@@ -22,7 +22,7 @@
     <li>To test if you have proper write permissions, alter or add some file in the local repository and run <code>serge push my_project.serge --message="test"</code>; check that your commit went through to the remote server</li>
 </ol>
 
-<p>Later you will run <code>serge sync</code> continuously against this configuration file, which will perform the two-way sync between Serge and Git among other synchronization/localization steps. See <a href="/docs/localization-cycle/">Localization Cycle</a> for more information.</p>
+<p>Later you will run <code>serge sync</code> continuously against this configuration file, which will perform the two-way sync between Serge and Mercurial among other synchronization/localization steps. See <a href="/docs/localization-cycle/">Localization Cycle</a> for more information.</p>
 
 <h2>Usage</h2>
 
@@ -33,7 +33,7 @@ sync
 {
     vcs
     {
-        plugin                   git
+        plugin                   mercurial
 
 
         data
@@ -44,7 +44,7 @@ sync
 
             # (STRING) Path to a single remote repository
             # to sync with local `data_dir` folder
-            remote_path          ssh://l10n@git.example.com/myrepo
+            remote_path          https://l10n@hg.example.com/myrepo
             # --- OR ---
             # (MAP) A key-value list of local subfolders to create and
             # their corresponding remote repositories (if the localizable
@@ -54,9 +54,9 @@ sync
             {
                 # one can specify branch name after the '#'.
                 # below, the `v5` branch us used
-                main             ssh://l10n@git.example.com/myapp#v5
+                main             https://l10n@hg.example.com/myapp#v5
                 # if no branch is specified, `master` is used by default
-                widget           ssh://l10n@git.example.com/mywidget
+                widget           https://l10n@hg.example.com/mywidget
             }
 
             # (BOOLEAN) [OPTIONAL] should the newly generated
