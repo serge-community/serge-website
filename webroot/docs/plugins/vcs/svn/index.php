@@ -35,7 +35,6 @@ sync
     {
         plugin                   svn
 
-
         data
         {
             # (STRING) Absolute path to local folder where local

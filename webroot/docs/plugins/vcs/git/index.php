@@ -35,7 +35,6 @@ sync
     {
         plugin                   git
 
-
         data
         {
             # (STRING) Absolute path to local folder where local

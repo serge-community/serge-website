@@ -35,7 +35,6 @@ sync
     {
         plugin                   mercurial
 
-
         data
         {
             # (STRING) Absolute path to local folder where local
