@@ -97,6 +97,13 @@ parameter1      YES
 parameter2      NO
 </script>
 
+<p>You can omit 'YES' value altogether, and use just the paramater name as a flag. The example below is identical to the one above:</p>
+
+<script language="text/x-config-neat">
+parameter1      # no value means 'YES'
+parameter2      NO
+</script>
+
 <h2>Strings</h2>
 
 <p>String parameters generally don't have to be wrapped into any quotes. But if the string has leading or trailing spaces, or multiple spaces in between, the string needs to be wrapped with <code>`</code> symbols (<em>verbatim quotes</em>):</p>

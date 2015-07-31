@@ -34,14 +34,14 @@ if
 {
     content_matches    \bL10N_LIMIT_DESTINATION_LANGUAGES=([\w,-]*)
     split_by           ,
-    limit_to_matched_languages  YES
+    limit_to_matched_languages
 }
 
 if
 {
     content_matches    \bL10N_EXCLUDE_DESTINATION_LANGUAGES=([\w,-]*)
     split_by           ,
-    exclude_matched_languages   YES
+    exclude_matched_languages
 }
 </script>
 </figure>
@@ -65,7 +65,7 @@ jobs
         {
             :sample-control-commands
             {
-                plugin              limit_languages
+                plugin                           limit_languages
 
                 data
                 {
@@ -74,7 +74,7 @@ jobs
                         # by default, don’t localize
                         # into any language
                         content_matches          .
-                        exclude_all_languages    YES
+                        exclude_all_languages
                     }
 
                     if
@@ -85,7 +85,7 @@ jobs
                         # ("\b" means "word boundary"
                         # in regular expressions)
                         content_matches          \bLANG_ALL\b
-                        include_all_languages    YES
+                        include_all_languages
                     }
 
                     if
@@ -112,7 +112,7 @@ jobs
                         # example: LANG_INCLUDE=ar,de
                         content_matches         \bLANG_INCLUDE=([\w,-]*)
                         split_by                ,
-                        include_matched_languages    YES
+                        include_matched_languages
                     }
 
                     if
@@ -122,7 +122,7 @@ jobs
                         # example: LANG_EXCLUDE=pt
                         content_matches         \bLANG_EXCLUDE=([\w,-]*)
                         split_by                ,
-                        exclude_matched_languages    YES
+                        exclude_matched_languages
                     }
                 }
             }
@@ -148,7 +148,7 @@ jobs
         {
             :sample-control-commands
             {
-                plugin                   limit_languages
+                plugin                              limit_languages
 
                 data
                 {
@@ -197,7 +197,7 @@ jobs
                     (capturing parentheses) to extract the
                     list of languages.
                     */
-                    split_by                        STRING
+                    split_by                        ,
 
                     /*
                     Once all defined matching rules have
@@ -212,7 +212,7 @@ jobs
                     a subset of job's `destination_languages`
                     list.
                     */
-                    limit_languages                 ARRAY
+                    limit_languages                 ar de zh-cn
 
                     /*
                     (ARRAY) [OPTIONAL] List of languages to
@@ -220,7 +220,7 @@ jobs
                     a subset of job's `destination_languages`
                     list.
                     */
-                    include_languages               ARRAY
+                    include_languages               fr pt-br
 
                     /*
                     (ARRAY) [OPTIONAL] List of languages to
@@ -228,7 +228,7 @@ jobs
                     a subset of job's `destination_languages`
                     list.
                     */
-                    exclude_languages               ARRAY
+                    exclude_languages               es it
 
                     /*
                     (BOOLEAN) [OPTIONAL] When languages are
@@ -236,7 +236,7 @@ jobs
                     `split_by`), use them as a target list
                     of languages for translation.
                     */
-                    limit_to_matched_languages      BOOLEAN
+                    limit_to_matched_languages
 
                     /*
                     (BOOLEAN) [OPTIONAL] When languages are
@@ -244,7 +244,7 @@ jobs
                     `split_by`), add these languages to the
                     target list.
                     */
-                    include_matched_languages       BOOLEAN
+                    include_matched_languages
 
                     /*
                     (BOOLEAN) [OPTIONAL] When languages are
@@ -252,20 +252,20 @@ jobs
                     `split_by`), remove these languages to
                     the target list.
                     */
-                    exclude_matched_languages       BOOLEAN
+                    exclude_matched_languages
 
                     /*
                     (BOOLEAN) [OPTIONAL] Remove all
                     languages (reset the target list)
                     */
-                    exclude_all_languages           BOOLEAN
+                    exclude_all_languages
 
                     /*
                     (BOOLEAN) [OPTIONAL] Include all
                     languages defined in job's
                     `destination_languages` list.
                     */
-                    include_all_languages           BOOLEAN
+                    include_all_languages
                 }
             }
         }
