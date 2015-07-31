@@ -1,13 +1,13 @@
 <?php
     $section = 'callback-plugins';
-    $subpage = 'ref-plugin-limit_destination_languages';
+    $subpage = 'ref-plugin-limit_languages';
     $title = 'Limit Destination Languages on a Per-File Basis';
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
-<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/limit_destination_languages.pm</code></p>
+<p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/limit_languages.pm</code></p>
 
 <p>Plugin always attaches itself to the following callback phases: <code>after_load_source_file_for_processing</code>, <code>is_file_orphaned</code>, <code>can_process_source_file</code>, <code>can_process_po</code>, <code>can_generate_po</code>, <code>can_generate_localized_file</code>.</p>
 
@@ -65,7 +65,7 @@ jobs
         {
             :sample-control-commands
             {
-                plugin              limit_destination_languages
+                plugin              limit_languages
 
                 data
                 {
@@ -148,7 +148,7 @@ jobs
         {
             :sample-control-commands
             {
-                plugin                   limit_destination_languages
+                plugin                   limit_languages
 
                 data
                 {

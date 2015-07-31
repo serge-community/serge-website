@@ -4,7 +4,7 @@
         "completeness",
         "control_commands",
         "if",
-        "limit_destination_languages",
+        "limit_languages",
         "process_if",
         "replace_strings",
         "run_command",
