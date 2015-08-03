@@ -6,7 +6,7 @@
 
 <h1>Supported File Formats</h1>
 
-<p>File format support in Serge is realized via parser plugins. Serge comes with <a href="/docs/plugins/<?php echo $parser_plugins[0] ?>">more than 20 plugins</a> for various localization formats.</p>
+<p>File format support in Serge is realized via parser plugins. Serge comes with <a href="/docs/plugins/parser/<?php echo $parser_plugins[0] ?>">more than 20 plugins</a> for various localization formats.</p>
 
 <ul>
     <li>Native platform-specific file formats:</li>
