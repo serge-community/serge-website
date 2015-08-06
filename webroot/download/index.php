@@ -22,9 +22,9 @@
 
 <h1>The Bleeding Edge</h1>
 
-<p>Serge is being actively developed, so make sure you visit our offical repository: <a href="https://github.com/evernote/serge">github.com/evernote/serge</a></p>
+<p>Serge is being actively developed, so make sure you visit our offical repository: <a href="https://github.com/evernote/serge">github.com/evernote/serge</a>. If you decide to use the bleeding edge version of Serge, follow the instructions below.</p>
 
-<p>Serge can work in any directory. So create a new directory (we will reference it as <code>&lt;serge_root&gt;</code> hereafter), and clone the repo:
+<p>Serge can work in any directory. So create a new directory (we will reference it as <code><em>&lt;serge_root&gt;</em></code> hereafter), and clone the repo:
 
 <code class="cli">cd <em>&lt;serge_root&gt;</em>
 git clone git@github.com:evernote/serge.git .</code>
@@ -36,12 +36,15 @@ wget https://github.com/evernote/serge/archive/master.zip
 unzip master.zip
 unlink master.zip</code>
 
-<p>Then add the <code>&lt;serge_root&gt;/bin</code> directory to your <code>PATH</code> environment variable.</p>
+<p>Then add the <code><em>&lt;serge_root&gt;</em>/bin</code> directory to your <code>PATH</code> environment variable.</p>
 
-<p>In case you use the latest snapshot, you will need to manage dependencies yourself. This command will install missing dependencies into system (make sure you run this as an administrator):
+<p>After unpacking the source, you will need to install/upgrade dependencies. This is done with the help of <code>cpanm</code> package manager, which can itself be installed with the following command:</p>
 
-<code class="cli">cd <em>&lt;serge_root&gt;</em>
-./setup.pl</code>
+<code class="cli">sudo cpan App::cpanminus</code>
+
+Once you have it installed, run the following:
+
+<code class="cli">sudo cpanm --installdeps .</code>
 
 <h1>Verify the Installation</h1>
 
