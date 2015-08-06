@@ -10,10 +10,16 @@
 
 <p>You also need your favorite <strong>VCS client</strong> (e.g. Git or SVN) to be installed and properly configured for Serge to be able to talk to your remote repositories (but this is not required if you are going to use Serge in a localization-only mode).</p>
 
+<p class="notice">Make sure you have enough permissions to install new software/packages/modules; on Unix, use <code>su</code> or <code>sudo</code>.</p>
+
+<p>Some dependency Perl modules include binary modules that need to be compiled from sources. If you're on a Linux machine and don't have a <code>make</code> utility installed, you may need to run your favorite package manager to install build essentials. On Ubuntu/Debian this will be:</p>
+
+<code class="cli">apt-get install build-essential</code>
+
 <?php /*
 <h1>Stable Releases</h1>
 
-<p>Serge, being written in Perl, is published on <a href="http://www.cpan.org/">CPAN</a>. Run the following command to install or upgrade to the latest stable release (make sure you run this as an administrator; on Unix, use <code>sudo</code>):</p>
+<p>Serge, being written in Perl, is published on <a href="http://www.cpan.org/">CPAN</a>. Run the following command to install or upgrade to the latest stable release:</p>
 
 <code class="cli">cpan Serge</code>
 
@@ -40,11 +46,11 @@ unlink master.zip</code>
 
 <p>After unpacking the source, you will need to install/upgrade dependencies. This is done with the help of <code>cpanm</code> package manager, which can itself be installed with the following command:</p>
 
-<code class="cli">sudo cpan App::cpanminus</code>
+<code class="cli">cpan App::cpanminus</code>
 
 Once you have it installed, run the following:
 
-<code class="cli">sudo cpanm --installdeps .</code>
+<code class="cli">cpanm --installdeps .</code>
 
 <h1>Verify the Installation</h1>
 
