@@ -22,8 +22,6 @@
 <p>Serge, being written in Perl, is published on <a href="http://www.cpan.org/">CPAN</a>. Run the following command to install or upgrade to the latest stable release:</p>
 
 <code class="cli">cpan Serge</code>
-
-<p>`cpan` is a command line package installation client that either comes with Perl or can be installed separately using your package manager. It will take care of all missing dependencies.</p>
 */ ?>
 
 <h1>The Bleeding Edge</h1>
