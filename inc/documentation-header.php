@@ -125,14 +125,17 @@
                 ?>
             </ul>
         </ul>
-        <?php /*
         <h3>Extending Serge</h3>
         <ul>
+            <?php _item("callbacks",                    "/docs/dev/callbacks/",                  "Callbacks") ?>
+            <?php /*
             <?php //_item("dev-plugins",                "/docs/development/plugins/",            "Plugins") ?>
-            <?php //_item("dev-callbacks",              "/docs/development/callbacks/",          "Callbacks") ?>
+            */ ?>
         </ul>
-        */ ?>
     </div>
 
     <div class="body">
 
+        <?php if ($tbd): ?>
+        <p class="notice" style="background: #fcc">Content is being developed.</p>
+        <?php endif ?>
