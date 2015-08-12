@@ -1,7 +1,6 @@
 <?php
     $subpage = 'callbacks';
     $title = 'Callbacks';
-    $tbd = 1;
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 
@@ -214,7 +213,7 @@
     <em>(STRINGREF)</em><code>content</code>.
 </p>
 <p>Return value: <em>none</em>.</p>
-<p>This callback is called immediately after <code><a href="#can_generate_localized_file_source">can_generate_localized_file_source</a></code> callback for each files that was allowed to be generated.</p>
+<p>This callback is called immediately after <code><a href="#can_generate_localized_file_source">can_generate_localized_file_source</a></code> callback for each file that was allowed to be generated.</p>
 
 <h2 id="can_extract_2">can_extract</h2>
 <p>This is second time <code><a href="#can_extract">can_extract</a></code> callback is called (when parsing source file to generate its localized copy).</p>
@@ -229,19 +228,49 @@
 <p>This is second time <code><a href="#get_translation">get_translation</a></code> callback is called (when parsing source file to generate its localized copy).</p>
 
 <h2 id="rewrite_translation">rewrite_translation</h2>
-<p>[1]</p>
+<p>Input parameters:
+    <em>(STRING)</em><code>relative_file_path</code>,
+    <em>(STRING)</em><code>language</code>,
+    <em>(STRINGREF)</em><code>translation</code>.
+</p>
+<p>Return value: <em>none</em>.</p>
+<p>This callback is used to rewrite translation before it is placed into a localized file. Note that this transformation is only applied to the translation in the localized file, and not in the .po file or database. This approach can be used to produce different set of localized files from the same set of translations. For example, one can statically rewrite product names, URLs or prices on the fly depending on language or some external parameters.</p>
 
 <h2 id="can_save_localized_file">can_save_localized_file</h2>
-<p>[1]</p>
+<p>Input parameters:
+    <em>(STRING)</em><code>relative_file_path</code>,
+    <em>(STRING)</em><code>language</code>,
+    <em>(STRINGREF)</em><code>content</code>.
+</p>
+<p>Return value: <code>1</code> if the localized file can be saved to file, <code>0</code> otherwise.</p>
+<p>This callback is called after the localized file content has been fully generated and is about to be saved to disk, and can be used to prevent saving certain files.</p>
 
 <h2 id="before_save_localized_file">before_save_localized_file</h2>
-<p>[1]</p>
+<p>Input parameters:
+    <em>(STRING)</em><code>relative_file_path</code>,
+    <em>(STRING)</em><code>language</code>,
+    <em>(STRINGREF)</em><code>content</code>.
+</p>
+<p>Return value: <em>none</em>.</p>
+<p>This callback is called immediately after <code><a href="#can_save_localized_file">can_save_localized_file</a></code> callback for each file that was allowed to be saved to disk.</p>
 
 <h2 id="on_localized_file_change">on_localized_file_change</h2>
-<p>[1]</p>
+<p>Input parameters:
+    <em>(STRING)</em><code>relative_file_path</code>,
+    <em>(STRING)</em><code>language</code>,
+    <em>(STRINGREF)</em><code>content</code>.
+</p>
+<p>Return value: <em>none</em>.</p>
+<p>This callback is similar to <code><a href="#before_save_localized_file">before_save_localized_file</a></code> callback, but it is called after the localized file was saved to disk, and only for files that were changed.</p>
 
 <h2 id="after_save_localized_file">after_save_localized_file</h2>
-<p>[1]</p>
+<p>Input parameters:
+    <em>(STRING)</em><code>relative_file_path</code>,
+    <em>(STRING)</em><code>language</code>,
+    <em>(STRINGREF)</em><code>content</code>.
+</p>
+<p>Return value: <em>none</em>.</p>
+<p>This callback is similar to <code><a href="#before_save_localized_file">before_save_localized_file</a></code> callback, but it is called after the localized file was saved to disk, even if the generated file didn't change from its previous version.</p>
 
 <h2 id="after_job">after_job</h2>
 <p>Input parameters: <em>none</em>.</p>
