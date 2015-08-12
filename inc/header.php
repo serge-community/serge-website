@@ -8,6 +8,7 @@
 <head>
     <title><?php echo isset($title) ? $title.' | Serge' : 'Serge — Free, Open-Source Solution for Continuous Localization' ?></title>
     <link rel="stylesheet" href="/media/vendor/google/google-fonts.css" type="text/css" />
+    <script src="/media/vendor/anchorjs/anchor.min.js"></script>
     <link rel="stylesheet" href="/media/main.css" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <?php echo $head ?>

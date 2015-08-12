@@ -479,3 +479,18 @@ body.subpage-callbacks em {
     color: rgba(0, 0, 0, 0.5);
     margin-left: 0.2em;
 }
+
+/* AnchorJS */
+
+a.anchorjs-link {
+    background: none;
+    font-weight: normal;
+    margin-left: -1.2em !important;
+}
+
+h1:hover .anchorjs-link,
+h2:hover .anchorjs-link,
+h3:hover .anchorjs-link,
+h4:hover .anchorjs-link {
+    opacity: 1 !important;
+}
