@@ -12,7 +12,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <?php echo $head ?>
 </head>
-<body>
+<body class="page-<?php echo $page ?> subpage-<?php echo $subpage ?>">
     <div class="wrapper">
         <div class="header-bg"></div>
         <div class="header">
