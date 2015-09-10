@@ -33,7 +33,7 @@
     <script language="text/x-config-neat">
 sync
 {
-    translation_service
+    ts
     {
         plugin                   pootle
 
