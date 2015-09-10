@@ -313,8 +313,9 @@ jobs
             }
         }
 
-        # (STRING) Path to output .po files (relative to the config file or absolute)
-        po_path                     ./po/my_project/%LOCALE%/%FILE%.po
+        # (STRING) Path to output translation files
+        # (relative to the config file or absolute)
+        ts_file_path                ./po/my_project/%LOCALE%/%FILE%.po
 
         /*
         In the parameter above, the following macros are allowed:
@@ -400,8 +401,8 @@ jobs
         output_bom                  YES
 
         # [OPTIONAL] Map telling to use different language name in language macros
-        # (see the list of available macros in `po_path` parameter description)
-        # and when constructing output path (see `output_path` parameter).
+        # (see the list of available macros in `ts_file_path` parameter description)
+        # and when constructing output path (see `output_file_path` parameter).
         # This allows to tweak language/locale names for different projects.
         output_lang_rewrite
         {
@@ -409,10 +410,10 @@ jobs
         }
 
         # (STRING) Path to a generated file (relative to the config file or absolute).
-        # Allowed macros: same as for the `po_path` parameter (see above)
+        # Allowed macros: same as for the `ts_file_path` parameter (see above)
         # This value has effect only if `output_lang_files` or `output_default_lang_file`
         # parameters are set to YES
-        output_path                 ./%FILE%.%LANG%
+        output_file_path            ./%FILE%.%LANG%
 
         # (ARRAY) [OPTIONAL] List of strings that should be treated as trademarks.
         # If a translatable string contains a trademark, a special 'Do not translate trademarks'
@@ -464,8 +465,8 @@ jobs
 
         db_source                   DBD:SQLite:dbname=./translate.db3
         db_namespace                sample
-        po_path                     ./po/sample/%LANG%/%FILE%.po
-        output_path                 ./sample/%FILE%.%LANG%
+        ts_file_path                ./po/sample/%LANG%/%FILE%.po
+        output_file_path            ./sample/%FILE%.%LANG%
     } # end of second job definition
 
 } # end of jobs block

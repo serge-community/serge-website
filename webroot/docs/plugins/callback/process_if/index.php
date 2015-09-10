@@ -15,8 +15,8 @@
 <ul>
     <li><code>can_process_source_file</code></li>
     <li><code>can_extract</code></li>
-    <li><code>can_process_po</code></li>
-    <li><code>can_generate_po</code></li>
+    <li><code>can_process_ts_file</code></li>
+    <li><code>can_generate_ts_file</code></li>
     <li><code>can_translate</code></li>
     <li><code>can_generate_localized_file</code></li>
     <li><code>can_generate_localized_file_source</code></li>

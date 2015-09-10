@@ -9,7 +9,7 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/test_language.pm</code></p>
 
-<p>Plugin always attaches itself to the following callback phase: <code>can_process_po</code>.</p>
+<p>Plugin always attaches itself to the following callback phase: <code>can_process_ts_file</code>.</p>
 
 <p>Plugin must be attached through the configuration file to exactly one of the following phases:</p>
 <ul>

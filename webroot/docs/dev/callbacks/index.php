@@ -67,12 +67,12 @@
 <p>Return value: <code>1</code> if the string should be extracted for translation, <code>0</code> otherwise.</p>
 <p>This callback is called in source file parsing cycle for each found string, and allows to skip certain strings from translation. Since each source file is parsed twice during localziation cycle, this callback will also be called twice for each extracted string.</p>
 
-<h2 id="before_update_database_from_po">before_update_database_from_po</h2>
+<h2 id="before_update_database_from_ts_file">before_update_database_from_ts_file</h2>
 <p>Input parameters: <em>none</em>.</p>
 <p>Return value: <em>none</em>.</p>
 <p>This callback is called after source files are scanned and parsed and before .po files are scanned and parsed.</p>
 
-<h2 id="before_update_database_from_po_lang_file">before_update_database_from_po_lang_file</h2>
+<h2 id="before_update_database_from_ts_lang_file">before_update_database_from_ts_lang_file</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>namespace</code>,
     <em>(STRING)</em><code>relative_file_path</code>,
@@ -81,15 +81,15 @@
 <p>Return value: <em>none</em>.</p>
 <p>This callback is called before each .po file is read.</p>
 
-<h2 id="can_process_po">can_process_po</h2>
+<h2 id="can_process_ts_file">can_process_ts_file</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>relative_file_path</code>,
     <em>(STRING)</em><code>language</code>.
 </p>
 <p>Return value: <code>1</code> if the .po should be processed, <code>0</code> otherwise.</p>
-<p>This callback is called immediately after <code><a href="#before_update_database_from_po_lang_file">before_update_database_from_po_lang_file</a></code> callback, and is used to skip .po files from being parsed.</p>
+<p>This callback is called immediately after <code><a href="#before_update_database_from_ts_lang_file">before_update_database_from_ts_lang_file</a></code> callback, and is used to skip .po files from being parsed.</p>
 
-<h2 id="rewrite_parsed_po_item">rewrite_parsed_po_item</h2>
+<h2 id="rewrite_parsed_ts_file_item">rewrite_parsed_ts_file_item</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>relative_file_path</code>,
     <em>(STRING)</em><code>language</code>,
@@ -102,7 +102,7 @@
 </p>
 <p>This callback is called in .po file parsing cycle for each unit, and allows to rewrite certain .po fields before they are processed.</p>
 
-<h2 id="after_update_database_from_po_lang_file">after_update_database_from_po_lang_file</h2>
+<h2 id="after_update_database_from_ts_lang_file">after_update_database_from_ts_lang_file</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>namespace</code>,
     <em>(STRING)</em><code>relative_file_path</code>,
@@ -111,12 +111,12 @@
 <p>Return value: <em>none</em>.</p>
 <p>This callback is called after each .po file is parsed and its translations have been imported.</p>
 
-<h2 id="before_generate_po">before_generate_po</h2>
+<h2 id="before_generate_ts_files">before_generate_ts_files</h2>
 <p>Input parameters: <em>none</em>.</p>
 <p>Return value: <em>none</em>.</p>
 <p>This callback is called after .po files are scanned and parsed and before .po files are generated.</p>
 
-<h2 id="can_generate_po">can_generate_po</h2>
+<h2 id="can_generate_ts_file">can_generate_ts_file</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>relative_file_path</code>,
     <em>(STRING)</em><code>language</code>.
@@ -183,14 +183,14 @@
 <p>Return value: <code>1</code> if the localized file can be generated, <code>0</code> otherwise.</p>
 <p>This callback is called before generating each localized file, and can be used to skip certain files. Note that it is called before the file was read from disk. If you need to analyze file content, use >This callback is similar to <code><a href="#can_generate_localized_file_source">can_generate_localized_file_source</a></code> callback instead.</p>
 
-<h2 id="rewrite_relative_output_path">rewrite_relative_output_path</h2>
+<h2 id="rewrite_relative_output_file_path">rewrite_relative_output_file_path</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>relative_file_path</code>.
 </p>
 <p>Return value: new value of <em>(STRING)</em><code>relative_file_path</code>.</p>
 <p>This callback is called before the localized file is about to be generated and is used to rewrite relative path (in other words, change output file location) before it expanded into an absolute path.</p>
 
-<h2 id="rewrite_absolute_output_path">rewrite_absolute_output_path</h2>
+<h2 id="rewrite_absolute_output_file_path">rewrite_absolute_output_file_path</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>absolute_file_path</code>.
 </p>

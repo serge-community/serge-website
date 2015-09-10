@@ -15,8 +15,8 @@
     <li><code>before_save_localized_file</code></li>
     <li><code>rewrite_translation</code></li>
     <li><code>rewrite_path</code></li>
-    <li><code>rewrite_relative_output_path</code></li>
-    <li><code>rewrite_absolute_output_path</code></li>
+    <li><code>rewrite_relative_output_file_path</code></li>
+    <li><code>rewrite_absolute_output_file_path</code></li>
 </ul>
 
 <p>This plugin is used to manipulate (rewrite/patch) strings. Depending on the callback phase this plugin is attached to, it can change source or destination file contents, rewrite translations and file paths. See the documenation on callbacks for more information.</p>
