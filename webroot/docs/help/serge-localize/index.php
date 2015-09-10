@@ -10,7 +10,7 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><code>serge localize &lt;configuration-files&gt; [--force] [--recreate-po] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
+<p><code>serge localize &lt;configuration-files&gt; [--force] [--rebuild-ts-files] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
 
 <p>Where <code>&lt;configuration-files&gt;</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters.</p>
 
@@ -62,12 +62,12 @@
 <p>An optional comma-separated list of jobs to process.</p>
 
 </dd>
-<dt><b>--recreate-po</b></dt>
+<dt><b>--rebuild-ts-files</b></dt>
 <dd>
 
-<p>With this mode enabled, .po files will not be parsed, their existing translations will be discarded, and the .po files will be forcedly generated again.</p>
+<p>With this mode enabled, translation files will not be parsed, their existing translations will be discarded, and the files will be forcedly generated again.</p>
 
-<p>Note that you won&#39;t need this in the typical use of Serge toolkit, until you write some custom scripts that import translations directly into the translation memory database, bypassing the .po files. So, this option will propagate translation changes from the database into .po files, otherwise in the next localization cycle (<code>serge localize</code> or <code>serge sync</code>) translations will be read from .po files, essentially undoing any side changes.</p>
+<p>Note that you won&#39;t need this in the typical use of Serge toolkit, until you write some custom scripts that import translations directly into the translation memory database, bypassing translation files. So, this option will propagate translation changes from the database into translation files, otherwise in the next localization cycle (<code>serge localize</code> or <code>serge sync</code>) translations will be read from these files, essentially undoing any side changes.</p>
 
 <p>The typical custom import flow is:</p>
 
@@ -79,7 +79,7 @@
 <li><p>Run custom script that does something to translation memory database;</p>
 
 </li>
-<li><p>Run <code>serge localize --recreate-po</code> or <code>serge sync --recreate-po</code> once to propagate changes into .po files;</p>
+<li><p>Run <code>serge localize --rebuild-ts-files</code> or <code>serge sync --rebuild-ts-files</code> once to propagate changes into .po files;</p>
 
 </li>
 <li><p>Continue running <code>serge localize</code> or <code>serge sync</code> normally.</p>

@@ -10,13 +10,13 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><code>serge sync [configuration-files] [--force] [--recreate-po] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
+<p><code>serge sync [configuration-files] [--force] [--rebuild-ts-files] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
 
 <p>Where <code>[configuration-files]</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters. If no paths provided, Serge will look up for .serge files in the current directory.</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>For all provided configuration files, run `pull`, `pull-po`, `localize`, `push-po` and `push` commands in one cycle.</p>
+<p>For all provided configuration files, run `pull`, `pull-ts`, `localize`, `push-ts` and `push` commands in one cycle.</p>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -25,13 +25,13 @@
 <dt><b>--force</b></dt>
 <dd>
 
-<p>Has the same effect as <a href="../serge-pull-po/"><code>serge pull-po --force</code></a> and <a href="../serge-localize/"><code>serge localize --force</code></a> combined.</p>
+<p>Has the same effect as <a href="../serge-pull-ts/"><code>serge pull-ts --force</code></a> and <a href="../serge-localize/"><code>serge localize --force</code></a> combined.</p>
 
 </dd>
-<dt><b>--recreate-po</b></dt>
+<dt><b>--rebuild-ts-files</b></dt>
 <dd>
 
-<p>Has the same effect as <a href="../serge-localize/"><code>serge localize --recreate-po</code></a>.</p>
+<p>Has the same effect as <a href="../serge-localize/"><code>serge localize --rebuild-ts-files</code></a>.</p>
 
 </dd>
 <dt><b>--output-only-mode</b></dt>
@@ -68,7 +68,7 @@
 
 <h1 id="SEE-ALSO">SEE ALSO</h1>
 
-<p><a href="../serge-pull/">serge-pull</a>, <a href="../serge-pull-po/">serge-pull-po</a>, <a href="../serge-localize/">serge-localize</a>, <a href="../serge-push-po/">serge-push-po</a>, <a href="../serge-push/">serge-push</a></p>
+<p><a href="../serge-pull/">serge-pull</a>, <a href="../serge-pull-ts/">serge-pull-ts</a>, <a href="../serge-localize/">serge-localize</a>, <a href="../serge-push-ts/">serge-push-ts</a>, <a href="../serge-push/">serge-push</a></p>
 
 <p>Part of <a href="../serge/">serge</a> suite.</p>
 

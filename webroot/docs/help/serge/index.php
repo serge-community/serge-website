@@ -26,7 +26,7 @@
 <li><p>Scan previously generated .po files, extract translations from there and put them into translation database</p>
 
 </li>
-<li><p>Generate .po files with original strings and existing translations</p>
+<li><p>Generate translation files with original strings and existing translations</p>
 
 </li>
 <li><p>Generate localized resource files by taking original resource files and replacing original strings with translated ones.</p>
@@ -62,10 +62,10 @@
 <p>Disable optimizations and force generate all the files</p>
 
 </dd>
-<dt><b>--recreate-po</b></dt>
+<dt><b>--recreate-ts-files</b></dt>
 <dd>
 
-<p>With this mode enabled, .po files will not be parsed, their existing translations will be discarded, and the .po files will be forcedly generated again. This is useful when removing translations from the database and forcing .po files to be in sync with the database</p>
+<p>With this mode enabled, translation files will not be parsed, their existing translations will be discarded, and the files will be forcedly generated again. This is useful when removing translations from the database and forcing translation files to be in sync with the database.</p>
 
 </dd>
 <dt><b>--debug</b></dt>

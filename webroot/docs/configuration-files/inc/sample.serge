@@ -9,9 +9,9 @@
 # `sync` block contains all synchroinzation-related settings
 sync
 {
-    # `translation_service` defines which translation service (TS)
-    # to synchronize .po files with
-    translation_service
+    # `ts` defines which translation service
+    # to synchronize translation files with
+    ts
     {
         # (STRING) TS plugin name
         plugin                      pootle
@@ -25,7 +25,7 @@ sync
             project_id              my_project
 
             # Path to Pootle's `manage.py` utility that is used to sync
-            # .po files with its internal database
+            # local translation files with its internal database
             manage_py_path          /path/to/pootle/manage.py
         }
     }

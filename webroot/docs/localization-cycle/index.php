@@ -16,16 +16,16 @@
 
 <ol>
     <li>Pull source files from the <a href="/docs/version-control/">remote development repository</a> (<code><a href="/docs/help/serge-pull/">pull</a></code>)</li>
-    <li>Pull .po files from <a href="/docs/translation-service/">external translation service</a> (<code><a href="/docs/help/serge-pull-po/">pull-po</a></code>)</li>
+    <li>Pull translation files from <a href="/docs/translation-service/">external translation service</a> (<code><a href="/docs/help/serge-pull-ts/">pull-ts</a></code>)</li>
     <li>Perform an inner (local) localization cycle (<code><a href="/docs/help/serge-localize/">localize</a></code>):
         <ol>
             <li>Parse specific localizable resource files from the local checkout, extract strings from there and put them into its own Translation Memory database</li>
-            <li>Parse previously generated .po files and put new translations into TM database</li>
-            <li>Generate/update .po files that can be further used in an offline or online translation environment</li>
+            <li>Parse previously generated translation files and put new translations into TM database</li>
+            <li>Generate/update translation files that can be further used in an offline or online translation environment</li>
             <li>Generate localized copies of source files based on existing translations</li>
         </ol>
     </li>
-    <li>Push .po files to an <a href="/docs/translation-service/">external translation service</a> (<code><a href="/docs/help/serge-push-po/">push-po</a></code>)</li>
+    <li>Push translation files to an <a href="/docs/translation-service/">external translation service</a> (<code><a href="/docs/help/serge-push-ts/">push-ts</a></code>)</li>
     <li>Push generated localized files back to the <a href="/docs/version-control/">remote repository</a> (<code><a href="/docs/help/serge-push/">push</a></code>)</li>
 </ol>
 
