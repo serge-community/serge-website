@@ -13,6 +13,7 @@
     );
 
     $parser_plugins = array(
+        "metaparser",
         "parse_android",
         "parse_bypass",
         "parse_chrome_json",
