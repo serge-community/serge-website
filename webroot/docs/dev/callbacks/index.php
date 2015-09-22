@@ -6,7 +6,7 @@
 
 <h1>Callbacks</h1>
 
-<p>Callbacks are the way plugins communicate with Serge engine and modify or extend the behavior of localization cycle. Each plugin can listen any number of callbacks. Some plugins have a predefined set of callbacks they listen to; others can be configured via configuration files. Documentation on each callback plugin shipped with Serge provides information on which callback phases are optional, and which are always on.</p>
+<p>Callbacks are the way plugins communicate with Serge engine and modify or extend the behavior of localization cycle. Each plugin can listen to any number of callbacks. Some plugins have a predefined set of callbacks they listen to; others can be configured via configuration files. Documentation on each callback plugin shipped with Serge provides information on which callback phases are optional, and which are always on.</p>
 
 <p>In the list below, callbacks are sorted by their first occurrence in the localization cycle.</p>
 
