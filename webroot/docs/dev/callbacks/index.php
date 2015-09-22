@@ -138,6 +138,7 @@
 <p>Input parameters:
     <em>(STRING)</em><code>relative_file_path</code>,
     <em>(STRING)</em><code>language</code>,
+    <em>(STRINGREF)</em><code>source_string</code>,
     <em>(ARRAYREF)</em><code>dev_comments</code>.
 </p>
 <p>Return value: <em>none</em>.</p>
