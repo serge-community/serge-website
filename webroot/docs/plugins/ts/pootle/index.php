@@ -19,9 +19,9 @@
     <li>Install Pootle and set it up that it's root directory with .po files is e.g. <code>/var/serge/po/</code></li>
     <li>Create a new Serge configuration filee (let's call it <code>my_project.serge</code>) for your translation project so that it generates .po files under <code>/var/serge/po/my_project/</code> (see <a href="/docs/configuration-files/reference/">Configuration File Reference</a>, <code>jobs &rarr; ... &rarr; ts_file_path</code> parameter)</li>
     <li>Run <code>serge localize my_project.serge</code> to make sure everything works; after this step, you get .po files in your output directory</li>
-    <li>Go to Pootle and add a new project with <code>my_project</code> code; Pootle will automatically know that it's files are located under <code>/var/serge/po/my_project/</code> folder</li>
+    <li>Go to Pootle and add a new project with <code>my_project</code> code; Pootle will automatically know that its files are located under <code>/var/serge/po/my_project/</code> folder</li>
     <li>Edit your Serge configuration file to add a <code>sync/ts</code> section (see the example below), and specify <code>my_project</code> as a value for <code>project_id</code> parameter</li>
-    <li>Run <code>serge push-ts my_project.serge</code> to push your translation into Pootle for the first time, then go to Pootle's translation UI and see if everything works as expected</li>
+    <li>Run <code>serge push-ts my_project.serge</code> to push your translations into Pootle for the first time, then go to Pootle's translation UI and see if everything works as expected</li>
 </ol>
 
 <p>Later you will run <code>serge sync</code> continuously against this configuration file, which will perform the two-way sync between Serge and Pootle among other synchronization/localization steps. See <a href="/docs/localization-cycle/">Localization Cycle</a> for more information.</p>
