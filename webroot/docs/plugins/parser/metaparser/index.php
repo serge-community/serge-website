@@ -121,7 +121,7 @@ jobs
                 The second captured group is extracted as a string value.
 
                 Useful for file formats that have keys and values on the same
-                line (this is try for the absoulte majority of localizable
+                line (this is true for the absoulte majority of localizable
                 file formats).
 
                 If you use `keyvalue` parameter, then you shouldn't use
