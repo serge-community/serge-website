@@ -1,7 +1,7 @@
 <?php
     $section = 'callback-plugins';
     $subpage = 'ref-plugin-control_commands';
-    $title = 'Do Actions Based on Commands Provided in .PO Comments';
+    $title = 'Do Actions Based on Commands Provided in Translator\'s Comments';
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 
@@ -11,7 +11,7 @@
 
 <p>Plugin always attaches itself to the following callback phase: <code>rewrite_parsed_ts_file_item</code>.</p>
 
-<p>This plugin allows one to do database-wide operations on internal Serge database based on special commands provided externally as translators' comments in .po files. This basically allows you to admin strings/items/translations right from within the translation interface. Obviously, when this plugin is active, ability to add comments to any translation unit should only be given to trusted translators.</p>
+<p>This plugin allows one to do database-wide operations on internal Serge database based on special commands provided externally as translators' comments coming from translation files. This basically allows you to admin strings/items/translations right from within the translation interface. Obviously, when this plugin is active, ability to add comments to any translation unit should only be given to trusted translators.</p>
 
 <p>Here are the supported commands:</p>
 <dl>
@@ -31,7 +31,7 @@
     <dd>Remove `#tag2` from the comment.</dd>
 
     <dt><code>@skip</code></dt>
-    <dd>Skip string (mark as skipped in Serge database, which will remove it from all .po files on the next localization cycle).</dd>
+    <dd>Skip string (mark as skipped in Serge database, which will remove it from all translation files on the next localization cycle).</dd>
 
     <dt><code>@remove_all</code></dt>
     <dd>Remove exact translations for the same source string from all items in the Serge database.</dd>

@@ -23,7 +23,7 @@
 <li><p>Extracting strings from original (e.g. English) resource files and populate translation database</p>
 
 </li>
-<li><p>Scan previously generated .po files, extract translations from there and put them into translation database</p>
+<li><p>Scan previously generated translated files, extract translations from there and put them into translation database</p>
 
 </li>
 <li><p>Generate translation files with original strings and existing translations</p>

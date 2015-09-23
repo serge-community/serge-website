@@ -23,10 +23,10 @@
 <li><p>Extract strings from original (e.g. English) resource files in the working directory and populate translation database.</p>
 
 </li>
-<li><p>Scan previously generated .po files in the .po directory (if they exist), extract translations from there and put them into translation database.</p>
+<li><p>Scan previously generated translation files in corresponding output directory (if such files exist), extract translations from there and put them into translation database.</p>
 
 </li>
-<li><p>Update .po files with any existing translations, create missing .po files.</p>
+<li><p>Update translation files with any existing translations, create missing translation files.</p>
 
 </li>
 <li><p>Generate localized resource files in the working directory by taking original resource files and replacing original strings with translated ones.</p>
@@ -79,7 +79,7 @@
 <li><p>Run custom script that does something to translation memory database;</p>
 
 </li>
-<li><p>Run <code>serge localize --rebuild-ts-files</code> or <code>serge sync --rebuild-ts-files</code> once to propagate changes into .po files;</p>
+<li><p>Run <code>serge localize --rebuild-ts-files</code> or <code>serge sync --rebuild-ts-files</code> once to propagate changes into translation files;</p>
 
 </li>
 <li><p>Continue running <code>serge localize</code> or <code>serge sync</code> normally.</p>

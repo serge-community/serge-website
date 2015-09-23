@@ -9,7 +9,9 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/TranslationService/pootle.pm</code></p>
 
-<p>This plugin provides integration with <a href="http://pootle.translatehouse.org/">Pootle</a> — a free open-source online translation server software. On <code><a href="/docs/help/serge-push-ts/">push-ts</a></code> sync step, Serge will tell Pootle to scan generated .po files and update its internal translation database so that the new content becomes available for translation online. Respectively, on <code><a href="/docs/help/serge-pull-ts/">pull-ts</a></code> sync step, Serge will tell Pootle to synchronize all the translations back into .po files.</p>
+<p>This plugin provides integration with <a href="http://pootle.translatehouse.org/">Pootle</a> — a free open-source online translation server software. On <code><a href="/docs/help/serge-push-ts/">push-ts</a></code> sync step, Serge will tell Pootle to scan generated translation files and update its internal translation database so that the new content becomes available for translation online. Respectively, on <code><a href="/docs/help/serge-pull-ts/">pull-ts</a></code> sync step, Serge will tell Pootle to synchronize all the translations back into translation files.</p>
+
+<p class="notice">Currently the only supported format for translation files is <a href="https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html">.PO</a> (used in GNU gettext toolchain), which is natively supported by Pootle.</p>
 
 <p>Communication between Serge and Pootle is performed by the means of running Pootle's command-line API tool (the script is called <code>manage.py</code>). Note that this means that Pootle must be installed on the same machine as Serge.</p>
 

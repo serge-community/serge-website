@@ -120,13 +120,14 @@ jobs
         debug                       NO
 
         # (BOOLEAN) [OPTIONAL] Disable saving any files
-        # YES - enable this mode (no .po files and no localized files will be generated)
+        # YES - enable this mode (no translation files and no localized
+        # files will be generated)
         # NO  - disable this mode (default)
         debug_nosave                NO
 
         # (BOOLEAN) [OPTIONAL] Only produce output files: do not parse or
-        # generate .po files, do not update database with source strings
-        # or translations
+        # generate translation files, do not update database
+        # with source strings or translations
         # YES - enable this mode
         # NO - disable this mode (default)
         output_only_mode            NO
@@ -154,7 +155,8 @@ jobs
         # The parameter must end with a path delimiter / (e.g. 'virtual/dir/')
         # or otherwise it will become a file prefix.
         #
-        # Examples (provided we have files 'somefile.po' and 'somefolder/otherfile.po'):
+        # Examples (provided we have translation files 'somefile.po' and
+        # 'somefolder/otherfile.po'):
         # 'my/dir/' will generate files like 'my/dir/somefile.po'
         # or 'my/dir/somefolder/otherfile.po'
         # 'my/prefix_' will generate files like 'my/prefix_somefile.po'
@@ -261,8 +263,8 @@ jobs
         # (BOOLEAN) [OPTIONAL] Should the fuzzy flag be set on translations
         # which are copied from other strings?
         # Fuzzy flag indicates that the translation is not final and needs review.
-        # The fuzzy flag is exported in the .po file, and .po editing software can indicate
-        # or otherwise filter such fuzzy strings.
+        # The fuzzy flag is exported in the translation file, and translation environment
+        # can indicate or otherwise filter such fuzzy strings.
         # YES - set the fuzzy flag (default)
         # NO - do not set the fuzzy flag (but the flag may be set explicitly by other rules,
         # see below)
@@ -313,8 +315,8 @@ jobs
             }
         }
 
-        # (STRING) Path to output translation files
-        # (relative to the config file or absolute)
+        # (STRING) Path to output translation files, relative to the config file or absolute
+        # (currently translation files are generated only in the .po format)
         ts_file_path                ./po/my_project/%LOCALE%/%FILE%.po
 
         /*

@@ -25,7 +25,7 @@
     <em>(STRING)</em><code>relative_file_path</code>.
 </p>
 <p>Return value: new value of <em>(STRING)</em><code>relative_file_path</code>.</p>
-<p>When source files are scanned, file path (relative to the root directory, see <code>job &rarr; source_dir</code> parameter) for files that match the file masks defined in a job is passed through <code>rewrite_path</code> callbacks. Each callback should either return an unmodified file path, or a rewritten one. Use this phase to change file names and paths, for example, remove language-specific filename suffixes. The final relative file path will be used for the corrensponding .po files, so rewriting the path affects the resulting .po folder/file structure.</p>
+<p>When source files are scanned, file path (relative to the root directory, see <code>job &rarr; source_dir</code> parameter) for files that match the file masks defined in a job is passed through <code>rewrite_path</code> callbacks. Each callback should either return an unmodified file path, or a rewritten one. Use this phase to change file names and paths, for example, remove language-specific filename suffixes. The final relative file path will be used for the corrensponding translation files, so rewriting the path affects the resulting translation folder/file structure.</p>
 
 <h2 id="after_load_file">after_load_file</h2>
 <p>Input parameters:
@@ -70,7 +70,7 @@
 <h2 id="before_update_database_from_ts_file">before_update_database_from_ts_file</h2>
 <p>Input parameters: <em>none</em>.</p>
 <p>Return value: <em>none</em>.</p>
-<p>This callback is called after source files are scanned and parsed and before .po files are scanned and parsed.</p>
+<p>This callback is called after source files are scanned and parsed and before translation files are scanned and parsed.</p>
 
 <h2 id="before_update_database_from_ts_lang_file">before_update_database_from_ts_lang_file</h2>
 <p>Input parameters:
@@ -79,15 +79,15 @@
     <em>(STRING)</em><code>language</code>.
 </p>
 <p>Return value: <em>none</em>.</p>
-<p>This callback is called before each .po file is read.</p>
+<p>This callback is called before each translation file is read.</p>
 
 <h2 id="can_process_ts_file">can_process_ts_file</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>relative_file_path</code>,
     <em>(STRING)</em><code>language</code>.
 </p>
-<p>Return value: <code>1</code> if the .po should be processed, <code>0</code> otherwise.</p>
-<p>This callback is called immediately after <code><a href="#before_update_database_from_ts_lang_file">before_update_database_from_ts_lang_file</a></code> callback, and is used to skip .po files from being parsed.</p>
+<p>Return value: <code>1</code> if the translation file should be processed, <code>0</code> otherwise.</p>
+<p>This callback is called immediately after <code><a href="#before_update_database_from_ts_lang_file">before_update_database_from_ts_lang_file</a></code> callback, and is used to skip translation files from being parsed.</p>
 
 <h2 id="rewrite_parsed_ts_file_item">rewrite_parsed_ts_file_item</h2>
 <p>Input parameters:
@@ -100,7 +100,7 @@
     <em>(BOOLEANREF)</em><code>fuzzy</code>,
     <em>(STRINGREF)</em><code>comment</code>.
 </p>
-<p>This callback is called in .po file parsing cycle for each unit, and allows to rewrite certain .po fields before they are processed.</p>
+<p>This callback is called in translation file parsing cycle for each unit, and allows to rewrite certain unit properties before it is processed.</p>
 
 <h2 id="after_update_database_from_ts_lang_file">after_update_database_from_ts_lang_file</h2>
 <p>Input parameters:
@@ -109,20 +109,20 @@
     <em>(STRING)</em><code>language</code>.
 </p>
 <p>Return value: <em>none</em>.</p>
-<p>This callback is called after each .po file is parsed and its translations have been imported.</p>
+<p>This callback is called after each translation file is parsed and its translations have been imported.</p>
 
 <h2 id="before_generate_ts_files">before_generate_ts_files</h2>
 <p>Input parameters: <em>none</em>.</p>
 <p>Return value: <em>none</em>.</p>
-<p>This callback is called after .po files are scanned and parsed and before .po files are generated.</p>
+<p>This callback is called after translation files are scanned and parsed and before translation files are generated.</p>
 
 <h2 id="can_generate_ts_file">can_generate_ts_file</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>relative_file_path</code>,
     <em>(STRING)</em><code>language</code>.
 </p>
-<p>Return value: <code>1</code> if the .po can be generated, <code>0</code> otherwise.</p>
-<p>This callback is called before each .po file is about to be generated, and can be used to prohibit generating certain .po files.</p>
+<p>Return value: <code>1</code> if the translation file can be generated, <code>0</code> otherwise.</p>
+<p>This callback is called before each translation file is about to be generated, and can be used to prohibit generating certain translation files.</p>
 
 <h2 id="can_translate">can_translate</h2>
 <p>Input parameters:
@@ -131,8 +131,8 @@
     <em>(STRINGREF)</em><code>source_string</code>,
     <em>(STRINGREF)</em><code>hint</code>.
 </p>
-<p>Return value: <code>1</code> if the string can be translated (and thus, published in .po file), <code>0</code> otherwise.</p>
-<p>This callback is called for each string about to be added to .po file, and can be used to prohibit exposing  certain strings for translation. The same callback is called when the localized files are generated.</p>
+<p>Return value: <code>1</code> if the string can be translated (and thus, published in the translation file), <code>0</code> otherwise.</p>
+<p>This callback is called for each string about to be added to translation file, and can be used to prohibit exposing  certain strings for translation. The same callback is called when the localized files are generated.</p>
 
 <h2 id="add_dev_comment">add_dev_comment</h2>
 <p>Input parameters:
@@ -142,7 +142,7 @@
     <em>(ARRAYREF)</em><code>dev_comments</code>.
 </p>
 <p>Return value: <em>none</em>.</p>
-<p>This callback is called for units that are about to be added to .po file, and is supposed to be used to add extra developer comments to the end of the provided array.</p>
+<p>This callback is called for units that are about to be added to the translation file, and is supposed to be used to add extra developer comments to the end of the provided array.</p>
 
 <h2 id="get_translation_pre">get_translation_pre</h2>
 <p>Input parameters:
@@ -164,17 +164,17 @@
 
 <p>Plugin may raise the <code>need_save</code> flag to prevent saving the translation to the database. This option makes sense when providing test auto-generated translations, which can always be generated on demand and don't need to be stored in the database.</p>
 
-<p>This callback is requested twice per localization cycle for each string: when generating .po files, and when generating localized files.</p>
+<p>This callback is requested twice per localization cycle for each string: when generating translation files, and when generating localized files.</p>
 
 <h2 id="get_translation">get_translation</h2>
 <p>This callback is identical to <code><a href="#get_translation_pre">get_translation_pre</a></code> callback, but is run after Serge has tried all its internal methods to get a translation, and failed. In other words, this callback is called to only for strings with missing translations.</p>
 
-<p>This callback is requested twice per localization cycle for each string: when generating .po files, and when generating localized files. However, if the callback provides a translation at .po generation step and this translation is saved into the database, callback won't be called again for the same string when localized files are being generated, since the translation will be already in the database.</p>
+<p>This callback is requested twice per localization cycle for each string: when generating translation files, and when generating localized files. However, if the callback provides a translation at translation file generation step and this translation is saved into the database, callback won't be called again for the same string when localized files are being generated, since the translation will be already in the database.</p>
 
 <h2 id="before_generate_localized_files">before_generate_localized_files</h2>
 <p>Input parameters: <em>none</em>.</p>
 <p>Return value: <em>none</em>.</p>
-<p>This callback is called after the .po files have been generated and before generation of localized files has been started.</p>
+<p>This callback is called after the translation files have been generated and before generation of localized files has been started.</p>
 
 <h2 id="can_generate_localized_file">can_generate_localized_file</h2>
 <p>Input parameters:
@@ -235,7 +235,7 @@
     <em>(STRINGREF)</em><code>translation</code>.
 </p>
 <p>Return value: <em>none</em>.</p>
-<p>This callback is used to rewrite translation before it is placed into a localized file. Note that this transformation is only applied to the translation in the localized file, and not in the .po file or database. This approach can be used to produce different set of localized files from the same set of translations. For example, one can statically rewrite product names, URLs or prices on the fly depending on language or some external parameters.</p>
+<p>This callback is used to rewrite translation before it is placed into a localized file. Note that this transformation is only applied to the translation in the localized file, and not in the translation file or database. This approach can be used to produce different set of localized files from the same set of translations. For example, one can statically rewrite product names, URLs or prices on the fly depending on language or some external parameters.</p>
 
 <h2 id="can_save_localized_file">can_save_localized_file</h2>
 <p>Input parameters:
