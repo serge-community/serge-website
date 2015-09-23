@@ -415,17 +415,6 @@ jobs
         # parameters are set to YES
         output_file_path            ./%FILE%.%LANG%
 
-        # (ARRAY) [OPTIONAL] List of strings that should be treated as trademarks.
-        # If a translatable string contains a trademark, a special 'Do not translate trademarks'
-        # hint will be added to a generated .po file, with the list of such found strings.
-        #
-        # ** DEPRECATION WARNING: This functionality will be eventually moved into a
-        # separate plugin **
-        #
-        trademarks                  Apple Microsoft `Mac OS`
-                                    `Microsoft Windows`
-                                    `Windows Phone`
-
         # [OPTIONAL] A list of callback plugins that we should load,
         # with the parameters to pass
         callback_plugins

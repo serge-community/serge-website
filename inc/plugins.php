@@ -9,6 +9,7 @@
         "replace_strings",
         "run_command",
         "test_language",
+        "trademarks",
         "transform",
     );
 
