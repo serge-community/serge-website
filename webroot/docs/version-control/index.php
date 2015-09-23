@@ -17,7 +17,7 @@
     <li>Mercurial</li>
 </ul>
 
-<p>Each system is supported by the means of <a href="/docs/plugins/<?php echo $vcs_plugins[0] ?>">VCS plugins</a>, and you can write your own VCS integration plugins. You can use existing plugins code (located in <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/VCS</code> folder) as inspiration.</p>
+<p>Each system is supported by the means of <a href="/docs/plugins/vcs/<?php echo $vcs_plugins[0] ?>">VCS plugins</a>, and you can write your own VCS integration plugins. You can use existing plugins code (located in <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/VCS</code> folder) as inspiration.</p>
 
 <p>VCS are defined on a per-<a href="/docs/configuration-files/">configuration file</a> basis. So you can have some translation projects working with Git, and others with SVN, for example. Also, each translation project can define one or more repositories to pull data from.</p>
 
