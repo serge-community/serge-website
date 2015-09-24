@@ -1,7 +1,7 @@
 <?php
     $section = 'callback-plugins';
     $subpage = 'ref-plugin-trademarks';
-    $title = 'Detect Trademark Names And Ask Not To Translate Them';
+    $title = 'Add "Do Not Alter Trademarks" Comment';
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 ?>
 
