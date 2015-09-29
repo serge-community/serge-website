@@ -32,7 +32,7 @@
         <li><a href="/docs/plugins/parser/parse_hash/">Perl and PHP hashes</a></li>
         <li>Several key-separator-value formats;</li>
     </ul>
-    <li><a href="/docs/plugins/parser/parse_default/">Generic markup parser</a> that one can use to convert plain-text documents or into localizable ones.</li>
+    <li><a href="/docs/plugins/parser/parse_master/">Generic markup parser</a> that one can use to convert plain-text documents or into localizable ones.</li>
 </ul>
 
 <p>On top of supporting different file formats, Serge autodetects various Unicode encodings for source files, and can be configured to output localized files in any encoding.</p>

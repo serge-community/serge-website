@@ -385,7 +385,7 @@ jobs
         # NO - do not create the files (default)
         # Note: This option is handy when the source file is not the final localizable
         # resource to use but rather a template that has to be preprocessed.
-        # See e.g. the `parse_default` parser and its `.master` template file format
+        # See e.g. the `parse_master` parser and its `.master` template file format
         # that allows one to mark up unstructured plain text files for translation
         output_default_lang_file    NO
 
@@ -447,11 +447,11 @@ jobs
         source_language             en
         destination_languages       es de it fr ru
         source_dir                  ./sample
-        source_match                \.txt$
+        source_match                \.txt\.master$
 
         parser
         {
-            plugin                  parse_default
+            plugin                  parse_master
         }
 
         db_source                   DBD:SQLite:dbname=./translate.db3
