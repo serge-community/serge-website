@@ -1,4 +1,5 @@
 .cm-keyword     {color: #08c; }
+.cm-key-inherit {color: #f80; }
 .cm-key-label   {color: #f08; font-style: italic; }
 .cm-key-merge   {color: #0c0; }
 .cm-key-delete  {color: #c00; }
