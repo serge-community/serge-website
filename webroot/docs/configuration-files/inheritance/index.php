@@ -54,7 +54,7 @@ jobs
 </script>
 </figure>
 
-<p>Here, the <code>@inherit</code> directive tells which settings to inherit the current block structure from. <code>.#inc/common</code> indicates that we need to take the current configuration file (<code>.</code>) and search for <code>inc&rarr;common</code> block in it, then use its contents to populate the block that contains the <code>@inherit</code> directive, then apply overrides described in that block.</p>
+<p>Here, the <code>@inherit</code> directive tells which settings to inherit the current block structure from. <code>.#inc/common</code> indicates that we need to take the current configuration file (<code>.</code>) and search for <code><nobr>inc &rarr; job-common</nobr></code> block in it, then use its contents to populate the block that contains the <code>@inherit</code> directive, then apply overrides described in that block.</p>
 
 <p>Adding a minus sign before any parameter name (for example, <code>-parameter2</code>) removes the parameter. Similarly, adding a plus sign (e.g., <code>+parameter3</code>) treats the value as an array, and appends the new value to the end of that array.</p>
 
