@@ -7,7 +7,7 @@
 
 <h1>Configuration File Inheritance</h1>
 
-<p>As you will later see from <a href="/docs/configuration-files/reference/">Serge configuration file reference</a>, there are many configuration parameters that are likely to be shared among different localization jobs. So if you're using Serge to localize more than one simple project with just one type of files, then you're going to have multiple configuration files, and it makes sense to externalize common settings and reference them in multiple places.</p>
+<p>As you will later see from <a href="/docs/configuration-files/reference/">Serge configuration file reference</a>, there are many configuration parameters that are likely to be shared among different localization jobs. So if you're using Serge to localize more than one simple project with files of just one type, then you're going to have multiple configuration files, and it makes sense to externalize common settings and reference them in multiple places.</p>
 
 <p>Serge configuration files support a powerful way to externalize common settings, and then inherit and override them at any level of your configuration tree. Consider the following example:</p>
 
