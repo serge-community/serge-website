@@ -54,7 +54,7 @@ jobs
 </script>
 </figure>
 
-<p>Here, the <code>@inherit</code> directive tells which settings to inherit the current block structure from. <code>.#inc/common</code> indeicates that we need to take the current configuration file (<code>.</code>) and search for <code>inc&rarr;common</code> block in it, then use its contents to populate the block that contains the <code>@inherit</code> directive, then apply overrides described in that block.</p>
+<p>Here, the <code>@inherit</code> directive tells which settings to inherit the current block structure from. <code>.#inc/common</code> indicates that we need to take the current configuration file (<code>.</code>) and search for <code>inc&rarr;common</code> block in it, then use its contents to populate the block that contains the <code>@inherit</code> directive, then apply overrides described in that block.</p>
 
 <p>Adding a minus sign before any parameter name (for example, <code>-parameter2</code>) removes the parameter. Similarly, adding a plus sign (e.g., <code>+parameter3</code>) treats the value as an array, and appends the new value to the end of that array.</p>
 
@@ -138,7 +138,7 @@ jobs
 
 <h2>Multiple Inheritance</h2>
 
-<p>The <code>@inherit</code> directive allows one to specify more than one block reference. Each block is interpreted from left to right (the first inherited block structure is applied, then the second one, and so on. Each next inherited block overrides settings accumulated previously. This allows you to have some global settings in a separate file, then some common local setting defined in a particular configuration file that may override global settings. Consider the example below:</p>
+<p>The <code>@inherit</code> directive allows one to specify more than one block reference. Each block is interpreted from left to right (the first inherited block structure is applied, then the second one, and so on). Each next inherited block overrides settings accumulated previously. This allows you to have some global settings in a separate file, then some common local setting defined in a particular configuration file that may override global settings. Consider the example below:</p>
 
 <figure>
     <figcaption>common.serge.inc</figcaption>
