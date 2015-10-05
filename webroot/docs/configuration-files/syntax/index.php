@@ -9,7 +9,7 @@
 
 <p>These are the main highlights of the configuration files used in Serge:</p>
 <ul>
-    <li>Clean, easy-to read syntax</li>
+    <li>Clean, easy-to-read syntax</li>
     <li>Flexible inheritance/override mechanism to reuse common settings</li>
     <li>Ability to reference environment variables (reuse the same configuration files in multiple scenarios)</li>
     <li>Schema-based config file validation</li>
