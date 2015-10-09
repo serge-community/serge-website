@@ -48,14 +48,22 @@ jobs
                     if
                     {
                         file_matches            \.myext$
-                        set_flag                GZIP
+
+                        then
+                        {
+                            set_flag            GZIP
+                        }
                     }
 
                     # test file contents
                     if
                     {
                         content_matches         \bSERGE_GZIP\b
-                        set_flag                GZIP
+
+                        then
+                        {
+                            set_flag            GZIP
+                        }
                     }
                 }
             }
@@ -75,17 +83,22 @@ jobs
                     if
                     {
                         has_flag                GZIP
-                    }
 
-                    /*
-                    Command can spawn multiple lines; these
-                    line breaks are treated as a regular space.
-                    '%FILE%' is replaced with the full path
-                    to the file
-                    */
-                    command                     gzip
+                        then
+                        {
+                            /*
+                            Command can spawn multiple lines;
+                            these line breaks are treated
+                            as a regular space.
+
+                            '%FILE%' is replaced with the
+                            full path to the file.
+                            */
+                            command             gzip
                                                 <%FILE%
                                                 >%FILE%.gz
+                        }
+                    }
                 }
             }
         }
@@ -140,7 +153,7 @@ jobs
     </li>
 
     <li>
-        <code>set_flag</code> and <code>remove_flag</code> actions will take effect in an <code>if { ... }</code> block only when all conditional statements within that block evaluate to 'true'.
+        <code>if &rarr; then</code> block (it's actions inside, like <code>set_flag</code> and <code>remove_flag</code>) will take effect only when all conditional statements within the parent <code>if</code> block evaluate to 'true'.
     </li>
 </ol>
 
@@ -162,6 +175,10 @@ jobs
 
                 data
                 {
+                    /*
+                    There can be one or more `if` blocks.
+                    All blocks are evaluated top to bottom.
+                    */
                     if
                     {
                         /*
@@ -271,23 +288,46 @@ jobs
                         has_all_flags           flag3 flag4
 
                         /*
-                        (ARRAY) [OPTIONAL] If all statements
-                        in the same `if {...}` block are true,
-                        set all the specified flags.
+                        `then` block is evaluated only if all
+                        conditions in the parent `if` block
+                        are met
                         */
-                        set_flag                flag5 flag6
+                        then
+                        {
+                            /*
+                            (ARRAY) [OPTIONAL] If all statements
+                            in the same `if {...}` block are true,
+                            set all the specified flags.
+                            */
+                            set_flag                flag5 flag6
 
-                        /*
-                        (ARRAY) [OPTIONAL] If all statements
-                        in the same `if {...}` block are true,
-                        remove all the specified flags.
-                        */
-                        remove_flag             flag7
+                            /*
+                            (ARRAY) [OPTIONAL] If all statements
+                            in the same `if {...}` block are true,
+                            remove all the specified flags.
+                            */
+                            remove_flag             flag7
+                        }
                     }
 
                     if
                     {
                         #...
+
+                        then
+                        {
+                            /*
+                            (BOOLEAN) [OPTIONAL] For the phases that
+                            expect boolean result from the plugin,
+                            this directive instructs to stop processing
+                            other `if` blocks below and return
+                            the corresponsing value: 1 (YES) or 0 (NO).
+                            If ommitted, `if` statements below will
+                            be processed. See `process_if` plugin
+                            for more examples.
+                            */
+                            return                  YES
+                        }
                     }
                 }
             }

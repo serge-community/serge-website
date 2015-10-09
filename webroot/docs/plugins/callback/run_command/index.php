@@ -41,6 +41,27 @@ jobs
                     command    gzip <%FILE% >%FILE%.gz
                 }
             }
+
+            :minify
+            {
+                plugin         run_command
+                phase          after_save_localized_file
+
+                data
+                {
+                    if
+                    {
+                        file_matches    \.js$
+
+                        then
+                        {
+                            command    jsmin
+                                       <%FILE%
+                                       >%PATH%%NAME%.min.js
+                        }
+                    }
+                }
+            }
         }
 
         # other job parameters

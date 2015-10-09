@@ -33,15 +33,23 @@
 if
 {
     content_matches    \bL10N_LIMIT_DESTINATION_LANGUAGES=([\w,-]*)
-    split_by           ,
-    limit_to_matched_languages
+
+    then
+    {
+        split_by       ,
+        limit_to_matched_languages
+    }
 }
 
 if
 {
     content_matches    \bL10N_EXCLUDE_DESTINATION_LANGUAGES=([\w,-]*)
-    split_by           ,
-    exclude_matched_languages
+
+    then
+    {
+        split_by       ,
+        exclude_matched_languages
+    }
 }
 </script>
 </figure>
@@ -57,9 +65,10 @@ jobs
 {
     :sample-job
     {
-        destination_languages       da de es es-latam fi fr
-                                    id it ja ko nl pl pt
-                                    pt-br ru sv tr zh-cn zh-tw
+        destination_languages                    da de es es-latam fi
+                                                 fr id it ja ko nl pl
+                                                 pt pt-br ru sv tr
+                                                 zh-cn zh-tw
 
         callback-plugins
         {
@@ -74,7 +83,11 @@ jobs
                         # by default, don’t localize
                         # into any language
                         content_matches          .
-                        exclude_all_languages
+
+                        then
+                        {
+                            exclude_all_languages
+                        }
                     }
 
                     if
@@ -85,7 +98,11 @@ jobs
                         # ("\b" means "word boundary"
                         # in regular expressions)
                         content_matches          \bLANG_ALL\b
-                        include_all_languages
+
+                        then
+                        {
+                            include_all_languages
+                        }
                     }
 
                     if
@@ -93,8 +110,12 @@ jobs
                         # if "LANG_EUROPE" marker is present
                         # in the file, include European languages
                         content_matches         \bLANG_EUROPE\b
-                        include_languages       da de es fi fr it nl
+
+                        then
+                        {
+                            include_languages   da de es fi fr it nl
                                                 pl pt ru sv tr
+                        }
                     }
 
                     if
@@ -102,7 +123,11 @@ jobs
                         # if "LANG_APAC" marker is present
                         # in the file, include APAC languages
                         content_matches         \bLANG_APAC\b
-                        include_languages       id ja ko zh-cn zh-tw
+
+                        then
+                        {
+                            include_languages   id ja ko zh-cn zh-tw
+                        }
                     }
 
                     if
@@ -111,8 +136,12 @@ jobs
                         # set of languages
                         # example: LANG_INCLUDE=ar,de
                         content_matches         \bLANG_INCLUDE=([\w,-]*)
-                        split_by                ,
-                        include_matched_languages
+
+                        then
+                        {
+                            split_by            ,
+                            include_matched_languages
+                        }
                     }
 
                     if
@@ -121,8 +150,12 @@ jobs
                         # set of languages
                         # example: LANG_EXCLUDE=pt
                         content_matches         \bLANG_EXCLUDE=([\w,-]*)
-                        split_by                ,
-                        exclude_matched_languages
+
+                        then
+                        {
+                            split_by            ,
+                            exclude_matched_languages
+                        }
                     }
                 }
             }

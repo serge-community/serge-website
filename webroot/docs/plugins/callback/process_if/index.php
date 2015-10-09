@@ -43,11 +43,30 @@ jobs
                 plugin  process_if
                 phase   can_process_source_file
 
-                data
+                 data
                 {
                     if
                     {
                         content_matches         \bLOCALIZABLE\b
+
+                        then
+                        {
+                            /*
+                            (BOOLEAN) [OPTIONAL] This directive
+                            instructs to stop processing other `if`
+                            blocks below and return the corresponsing
+                            value: 1 (YES) or 0 (NO).
+                            If ommitted, `if` statements below will
+                            be processed. See `process_if` plugin
+                            for more examples.
+                            */
+                            return              YES
+                        }
+                    }
+
+                    if
+                    {
+                        # ...
                     }
                 }
             }

@@ -57,6 +57,25 @@ jobs
                                      https://my-help-site/%EXT%
                 }
             }
+
+            :conditional-help-link
+            {
+                plugin               append_hint_message
+
+                data
+                {
+                    if
+                    {
+                        file_matches    ^foo-
+
+                        then
+                        {
+                            message     Help on FOO files:
+                                        https://my-help-site/foo-files
+                        }
+                    }
+                }
+            }
         }
 
         # other job parameters

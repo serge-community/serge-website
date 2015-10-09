@@ -23,6 +23,8 @@
 
 <p>You can include macros in <code>replace</code> parameter, see below. These macros will be expanded to their actual values. See <a href="/docs/configuration-files/reference/">Configuration File Reference</a> for the list of available macros.</p>
 
+<p>This plugin inherits all the configuration logic from the parent <a href="/docs/plugins/callback/if/">'if' plugin</a> and, if all conditions are met, exectutes the rewrite logic. Note that all <code>if</code> conditions are optional: if none are provided, the replacement rules will be always executed.</p>
+
 <h2>Usage</h2>
 
 <figure>
@@ -49,15 +51,34 @@ jobs
                     equivalent to the following expression in Perl:
 
                         s/$what/$with/$flags;
+
+                    Note that there can be more than one `replace`
+                    rule defined inside this block.
                     */
 
                     #          what          with              flags
                     replace    `lang = "en"` `lang = "%LANG%"` sg
+                }
+            }
 
-                    /*
-                    Note that there can be more than one `replace`
-                    rule defined inside this block.
-                    */
+            :replace-foo-with-bar
+            {
+                plugin         replace_strings
+                phase          before_save_localized_file
+
+                data
+                {
+                    if
+                    {
+                        content_matches     \bFOO_TO_BAR\b
+
+                        then
+                        {
+                            replace         foo bar sg
+                            replace         Foo Bar sg
+                            replace         FOO BAR sg
+                        }
+                    }
                 }
             }
         }
