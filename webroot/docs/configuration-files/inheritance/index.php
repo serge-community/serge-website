@@ -203,4 +203,12 @@ jobs
 </script>
 </figure>
 
+<h2>Testing Inheritance Rules</h2>
+
+<p>Internally, Serge uses <a href="https://github.com/iafan/Config-Neat">Config::Neat</a> library that implements this inheritable configuration file format, and this library, which is installed as a prerequisite for Serge, comes with the <code>dump-nconf</code> utility that you can use to preview the final config structure.</p>
+
+<p>So if you have a file <code>my-config.serge</code> which has <code>@inherit</code> statements, you can run this command and it will dump your expanded config into STDOUT:</p>
+
+<code class="cli">dump-nconf my-config.serge</code>
+
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
