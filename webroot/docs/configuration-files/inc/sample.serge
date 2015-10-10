@@ -109,8 +109,8 @@ jobs
         optimizations               YES
 
         # (BOOLEAN) [OPTIONAL] Is the job active?
-        # YES - active
-        # NO  - job should be skipped (default)
+        # YES - active (default)
+        # NO  - job should be skipped
         active                      YES
 
         # (BOOLEAN) [OPTIONAL] Debug mode
