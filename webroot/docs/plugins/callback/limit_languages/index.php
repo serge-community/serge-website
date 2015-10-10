@@ -70,7 +70,7 @@ jobs
                                                  pt pt-br ru sv tr
                                                  zh-cn zh-tw
 
-        callback-plugins
+        callback_plugins
         {
             :sample-control-commands
             {
@@ -177,7 +177,7 @@ jobs
 {
     :sample-job
     {
-        callback-plugins
+        callback_plugins
         {
             :sample-control-commands
             {

@@ -32,7 +32,7 @@ jobs
     {
         destination_languages  test
 
-        callback-plugins
+        callback_plugins
         {
             :fake-translate
             {

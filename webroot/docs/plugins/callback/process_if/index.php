@@ -32,7 +32,7 @@ jobs
 {
     :sample-job
     {
-        callback-plugins
+        callback_plugins
         {
             /*
             Source files will be considered localizable

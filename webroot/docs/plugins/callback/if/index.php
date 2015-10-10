@@ -30,7 +30,7 @@ jobs
 {
     :sample-job
     {
-        callback-plugins
+        callback_plugins
         {
             /*
             Set 'GZIP' flag if file has a '.myext'
@@ -166,7 +166,7 @@ jobs
 {
     :sample-job
     {
-        callback-plugins
+        callback_plugins
         {
             :sample-if-logic
             {

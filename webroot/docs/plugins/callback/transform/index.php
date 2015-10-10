@@ -26,7 +26,7 @@ jobs
     {
         destination_languages            de fr ja ko ru
 
-        callback-plugins
+        callback_plugins
         {
             :fake-translate
             {

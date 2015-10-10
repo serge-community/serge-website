@@ -46,7 +46,7 @@ jobs
 {
     :sample-job
     {
-        callback-plugins
+        callback_plugins
         {
             :sample-control-commands
             {

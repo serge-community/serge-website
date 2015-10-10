@@ -22,7 +22,7 @@ jobs
 {
     :sample-job
     {
-        callback-plugins
+        callback_plugins
         {
             :detect-trademarks
             {
