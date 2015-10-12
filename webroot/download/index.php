@@ -72,7 +72,7 @@ Once you have it installed, run the following command in <code><em>&lt;serge_roo
 
 <h2>Step 6. Generate HTML Help</h2>
 
-<p>If you're installing Serge on your development machine, you can take advantage of using HTML help that will open in your browser. Run the following command to generate HTML version of the help for Serge commands:</p>
+<p>If you're installing Serge on your development machine, you can take advantage of using HTML help that will open in your browser. Run the following command to generate the HTML version of the help for Serge commands:</p>
 
 <code class="cli">serge gendocs</code>
 
