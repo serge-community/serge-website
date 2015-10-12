@@ -9,7 +9,7 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/run_command.pm</code></p>
 
-<p>Plugin always attaches itself to the following callback phase: <code>after_save_localized_file</code>.</p>
+<p>Plugin always attaches itself to the following callback phase: <code><a href="/docs/dev/callbacks/#after_save_localized_file">after_save_localized_file</a></code>.</p>
 
 <p>This plugin allows one to run some shell command each time the localized file is saved, which allows one to post-process (compile, pack, validate) localized files.</p>
 

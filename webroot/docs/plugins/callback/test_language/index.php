@@ -9,12 +9,12 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/test_language.pm</code></p>
 
-<p>Plugin always attaches itself to the following callback phase: <code>can_process_ts_file</code>.</p>
+<p>Plugin always attaches itself to the following callback phase: <code><a href="/docs/dev/callbacks/#can_process_ts_file">can_process_ts_file</a></code>.</p>
 
 <p>Plugin must be attached through the configuration file to exactly one of the following phases:</p>
 <ul>
-    <li><code>get_translation_pre</code></li>
-    <li><code>get_translation</code></li>
+    <li><code><a href="/docs/dev/callbacks/#get_translation_pre">get_translation_pre</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#get_translation">get_translation</a></code></li>
 </ul>
 
 <p>This plugin can automatically generate fake translations from source English strings by replacing latin characters with similarly looking Unicode letters with accents. The resulting strings remain readable, though visually more dense than the original English ones. This allows one to test if the application has all strings externalized properly, and whether there are any problems with displaying Unicode symbols. When replacing characters, the plugin tries not to break tags and various kinds of placeholders.</p>

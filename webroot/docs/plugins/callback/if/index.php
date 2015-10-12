@@ -12,14 +12,14 @@
 <p>Plugin always attaches itself to the following callback phase: <code>before_job</code>.</p>
 <p>Plugin must also be attached through the configuration file to either of the following phases:</p>
 <ul>
-    <li><code>after_load_source_file_for_processing</code></li>
-    <li><code>after_load_file</code></li>
-    <li><code>before_save_localized_file</code></li>
+    <li><code><a href="/docs/dev/callbacks/#after_load_source_file_for_processing">after_load_source_file_for_processing</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#after_load_file">after_load_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#before_save_localized_file">before_save_localized_file</a></code></li>
 </ul>
 
 <p>This plugin allows to define conditional <em>'if'</em> / <em>'if not'</em> logic, and do some action when a condition is satisfied. This is a base plugin that doesn't change the localization behavior or perform any actions on localized files. Several other descendant plugins, namely <a href="/docs/plugins/callback/process_if/">process_if</a>, <a href="/docs/plugins/callback/replace_strings/">replace_strings</a>, and <a href="/docs/plugins/callback/run_command/">run_command</a>, inherit all the logic of the 'if' plugin and use it to control different callback phases and implement some useful actions on top of it.</p>
 
-<p>However, the 'if' plugin is still useful for one particular task: to raise flags that can be queried in other plugin's conditionals. Flags have a file-wide scope: they are remembered for a particular source file and its localized copies, and are shared across multiple callback plugins within a job. For example, you can set up a generic 'if' plugin tied to <code>after_load_source_file_for_processing</code> phase, which would analyze the source file content and set some flag, in a combination with a <a href="/docs/plugins/callback/run_command/">run_command</a> plugin tied to <code>after_save_localized_file</code> phase that can do something with the localized file only if that particular flag is set (see the example below).</p>
+<p>However, the 'if' plugin is still useful for one particular task: to raise flags that can be queried in other plugin's conditionals. Flags have a file-wide scope: they are remembered for a particular source file and its localized copies, and are shared across multiple callback plugins within a job. For example, you can set up a generic 'if' plugin tied to <code><a href="/docs/dev/callbacks/#after_load_source_file_for_processing">after_load_source_file_for_processing</a></code> phase, which would analyze the source file content and set some flag, in a combination with a <a href="/docs/plugins/callback/run_command/">run_command</a> plugin tied to <code><a href="/docs/dev/callbacks/#after_save_localized_file">after_save_localized_file</a></code> phase that can do something with the localized file only if that particular flag is set (see the example below).</p>
 
 <h2>Example</h2>
 

@@ -13,14 +13,14 @@
 
 <p>Plugin must be attached through the configuration file to either of the following phases:</p>
 <ul>
-    <li><code>can_process_source_file</code></li>
-    <li><code>can_extract</code></li>
-    <li><code>can_process_ts_file</code></li>
-    <li><code>can_generate_ts_file</code></li>
-    <li><code>can_translate</code></li>
-    <li><code>can_generate_localized_file</code></li>
-    <li><code>can_generate_localized_file_source</code></li>
-    <li><code>can_save_localized_file</code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_process_source_file">can_process_source_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_extract">can_extract</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_process_ts_file">can_process_ts_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_generate_ts_file">can_generate_ts_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_translate">can_translate</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_generate_localized_file">can_generate_localized_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_generate_localized_file_source">can_generate_localized_file_source</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_save_localized_file">can_save_localized_file</a></code></li>
 </ul>
 
 <h2>Usage</h2>

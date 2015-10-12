@@ -9,7 +9,7 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/control_commands.pm</code></p>
 
-<p>Plugin always attaches itself to the following callback phase: <code>rewrite_parsed_ts_file_item</code>.</p>
+<p>Plugin always attaches itself to the following callback phase: <code><a href="/docs/dev/callbacks/#rewrite_parsed_ts_file_item">rewrite_parsed_ts_file_item</a></code>.</p>
 
 <p>This plugin allows one to do database-wide operations on internal Serge database based on special commands provided externally as translators' comments coming from translation files. This basically allows you to admin strings/items/translations right from within the translation interface. Obviously, when this plugin is active, ability to add comments to any translation unit should only be given to trusted translators.</p>
 

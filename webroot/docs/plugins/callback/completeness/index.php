@@ -9,7 +9,12 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/completeness.pm</code></p>
 
-<p>Plugin always attaches itself to the following callback phases: <code>can_generate_localized_file</code>, <code>after_save_localized_file</code>, <code>after_job</code>.</p>
+<p>Plugin always attaches itself to the following callback phases:</p>
+<ul>
+    <li><code><a href="/docs/dev/callbacks/#can_generate_localized_file">can_generate_localized_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#after_save_localized_file">after_save_localized_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#after_job">after_job</a></code></li>
+</ul>
 
 <p>This plugin calculates the translation 'completeness' of a file (ratio of translated strings to the total number of strings in that file) for each language, and, based on its value, provides the following behavior options:</p>
 <ol>

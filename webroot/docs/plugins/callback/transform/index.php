@@ -9,7 +9,7 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/transform.pm</code></p>
 
-<p>Plugin attaches itself to the following callback phase: <code>get_translation</code>.</p>
+<p>Plugin always attaches itself to the following callback phase: <code><a href="/docs/dev/callbacks/#get_translation">get_translation</a></code>.</p>
 
 <p>Given a source string to translate, this plugin finds similar strings in the database by trying different transformation combinations, and then guesses the translation for the source string by applying the same chain of transformation to the pre-existing similar translation. Transformations include adjusting whitespace, ending punctuation, HTML tags, or applying different case.</p>
 
@@ -28,10 +28,9 @@ jobs
 
         callback_plugins
         {
-            :fake-translate
+            :transform
             {
                 plugin                   transform
-                phase                    get_translation
 
                 data
                 {

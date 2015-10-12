@@ -9,7 +9,7 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/trademarks.pm</code></p>
 
-<p>Plugin always attaches itself to the following callback phase: <code>add_dev_comment</code>.</p>
+<p>Plugin always attaches itself to the following callback phase: <code><a href="/docs/dev/callbacks/#add_dev_comment">add_dev_comment</a></code>.</p>
 
 <p>Given a list of trademarks names, this plugin will add a 'Please do not alter trademarks (...)' message to developer comments for each string that has any of such trademark names.</p>
 

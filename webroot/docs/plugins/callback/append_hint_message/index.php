@@ -9,7 +9,7 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/append_hint_message.pm</code></p>
 
-<p>Plugin always attaches itself to the following callback phase: <code>add_dev_comment</code>.</p>
+<p>Plugin always attaches itself to the following callback phase: <code><a href="/docs/dev/callbacks/#add_dev_comment">add_dev_comment</a></code>.</p>
 
 <p>Adding a hint allows you to provide better context to translators. It can include, for example, links to a preview server, or some hashtags to help translators find similar messages. This plugin is used to append an arbitrary message to a hint associated with the translatable string. Message is added to the end of the existing hint message and is separated with two line breaks (so it looks like a new 'paragraph'). You can use multiple entries for this plugin in <code>callback_plugins</code> section if you want to add several 'paragraphs'. Multi-line hint is then exported as a developer's comment in generated translation file, and is generally displayed to translators within their translation environment.</p>
 

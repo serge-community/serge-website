@@ -11,12 +11,12 @@
 
 <p>Plugin must be attached through the configuration file to exactly one of the following phases:</p>
 <ul>
-    <li><code>after_load_file</code></li>
-    <li><code>before_save_localized_file</code></li>
-    <li><code>rewrite_translation</code></li>
-    <li><code>rewrite_path</code></li>
-    <li><code>rewrite_relative_output_file_path</code></li>
-    <li><code>rewrite_absolute_output_file_path</code></li>
+    <li><code><a href="/docs/dev/callbacks/#after_load_file">after_load_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#before_save_localized_file">before_save_localized_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#rewrite_translation">rewrite_translation</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#rewrite_path">rewrite_path</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#rewrite_relative_output_file_path">rewrite_relative_output_file_path</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#rewrite_absolute_output_file_path">rewrite_absolute_output_file_path</a></code></li>
 </ul>
 
 <p>This plugin is used to manipulate (rewrite/patch) strings. Depending on the callback phase this plugin is attached to, it can change source or destination file contents, rewrite translations and file paths. See the documenation on callbacks for more information.</p>

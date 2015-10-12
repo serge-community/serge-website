@@ -9,7 +9,15 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/limit_languages.pm</code></p>
 
-<p>Plugin always attaches itself to the following callback phases: <code>after_load_source_file_for_processing</code>, <code>is_file_orphaned</code>, <code>can_process_source_file</code>, <code>can_process_ts_file</code>, <code>can_generate_ts_file</code>, <code>can_generate_localized_file</code>.</p>
+<p>Plugin always attaches itself to the following callback phases:</p>
+<ul>
+    <li><code><a href="/docs/dev/callbacks/#after_load_source_file_for_processing">after_load_source_file_for_processing</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#is_file_orphaned">is_file_orphaned</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_process_source_file">can_process_source_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_process_ts_file">can_process_ts_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_generate_ts_file">can_generate_ts_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#can_generate_localized_file">can_generate_localized_file</a></code></li>
+</ul>
 
 <p>This plugin allows to map each file to a subset of languages it needs to be localized into. So, in addition to job-wide list of target languages, one can override the list of languages for any specific file, based on rules that examine the file name or its contents.</p>
 
