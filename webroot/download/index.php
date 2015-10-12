@@ -12,10 +12,6 @@
 
 <p class="notice">Make sure you have enough permissions to install new software/packages/modules; on Unix, use <code>su</code> or <code>sudo</code>.</p>
 
-<p>Some dependency Perl modules include binary modules that need to be compiled from sources. If you're on a Linux machine and don't have a <code>make</code> utility installed, you may need to run your favorite package manager to install build essentials. On Ubuntu/Debian this will be:</p>
-
-<code class="cli">apt-get install build-essential</code>
-
 <?php /*
 <h1>Stable Releases</h1>
 
@@ -24,39 +20,67 @@
 <code class="cli">cpan Serge</code>
 */ ?>
 
-<h1>The Bleeding Edge</h1>
+<h1>Installation</h1>
 
-<p>Serge is being actively developed, so make sure you visit our offical repository: <a href="https://github.com/evernote/serge">github.com/evernote/serge</a>. If you decide to use the bleeding edge version of Serge, follow the instructions below.</p>
+<h2>Step 1. Create a Directory for Serge</h2>
 
-<p>Serge can work in any directory. So create a new directory (we will reference it as <code><em>&lt;serge_root&gt;</em></code> hereafter), and clone the repo:
+<p>Serge can work in any directory. So create a new directory (we will reference it as <code><em>&lt;serge_root&gt;</em></code> hereafter).
+
+<h2>Step 2. Download Sources</h2>
+
+<p>Serge is being actively developed, and its source code is available <a href="https://github.com/evernote/serge">on GitHub</a>. Code in master branch is considered a bleeding edge version; stable releases are marked with <a href="https://github.com/evernote/serge/releases">release tags</a>.</p>
+
+<p>Pick the option that works best for you:</p>
+
+<h3>A. Clone the Repository</h3>
 
 <code class="cli">cd <em>&lt;serge_root&gt;</em>
 git clone git@github.com:evernote/serge.git .</code>
 
-<p>or download the snapshot as a ZIP archive:</p>
+<h3>B. Download a Snapshot</h3>
 
 <code class="cli">cd <em>&lt;serge_root&gt;</em>
-wget https://github.com/evernote/serge/archive/master.zip
-unzip master.zip
-unlink master.zip</code>
+wget https://github.com/evernote/serge/archive/<em>&lt;version&gt;</em>.zip
+unzip <em>&lt;version&gt;</em>.zip
+unlink <em>&lt;version&gt;</em>.zip</code>
 
-<p>Then add the <code><em>&lt;serge_root&gt;</em>/bin</code> directory to your <code>PATH</code> environment variable.</p>
+<h2>Step 3. Install Dependencies</h2>
 
-<p>After unpacking the source, you will need to install/upgrade dependencies. This is done with the help of <code>cpanm</code> package manager, which can itself be installed with the following command:</p>
+<p>Some dependency Perl modules include binaries that need to be compiled from sources. If you're on a Linux machine and don't have a <code>make</code> utility installed, you may need to run your favorite package manager to install build essentials. On Ubuntu/Debian this will be:</p>
+
+<code class="cli">apt-get install build-essential</code>
+
+<p>Installing/upgrading dependencies is done with the help of <code>cpanm</code> package manager, which needs to be installed with the following command:</p>
 
 <code class="cli">cpan App::cpanminus</code>
 
-Once you have it installed, run the following:
+Once you have it installed, run the following command in <code><em>&lt;serge_root&gt;</em></code> directory:
 
 <code class="cli">cpanm --installdeps .</code>
 
-<h1>Verify the Installation</h1>
+<h2>Step 4. Add Serge to Your PATH</h2>
+
+<p>Add the <code><em>&lt;serge_root&gt;</em>/bin</code> directory to your <code>PATH</code> environment variable so that you can run if from any directory.</p>
+
+<h2>Step 5. Verify the Installation</h2>
 
 <p>Run this command:</p>
 
 <code class="cli">serge</code>
 
 <p>If you see command-line help from Serge, then everything has been set up correctly.</p>
+
+<h2>Step 6. Generate HTML Help</h2>
+
+<p>If you're installing Serge on your development machine, you can take advantage of using HTML help that will open in your browser. Run the following command to generate HTML version of the help for Serge commands:</p>
+
+<code class="cli">serge gendocs</code>
+
+<p>To test the result, run:</p>
+
+<code class="cli">serge help</code>
+
+<p>This will open a help page in the browser.</p>
 
 <p>Now, <a href="/docs/">get started with Serge workflow and configuration &rarr;</a></p>
 
