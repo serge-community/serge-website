@@ -1,6 +1,12 @@
 <?php
     $page = 'download';
     $title = 'Download';
+
+    $head = '
+        <script src="/media/vendor/jquery/jquery-2.1.1.min.js"></script>
+        <script src="/media/vendor/jquery/jquery.timeago.min.js"></script>
+    ';
+
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/header.php');
 ?>
 
@@ -24,7 +30,9 @@
 
 <h2>Step 1. Create a Directory for Serge</h2>
 
-<p>Serge can work in any directory. So create a new directory (we will reference it as <code><em>&lt;serge_root&gt;</em></code> hereafter).
+<p>Serge can work in any directory. So create a new directory (we will reference it as <code><em>&lt;serge_root&gt;</em></code> hereafter). For example:</p>
+
+<code class="cli">mkdir ~/serge</code>
 
 <h2>Step 2. Download Sources</h2>
 
@@ -35,14 +43,18 @@
 <h3>A. Clone the Repository</h3>
 
 <code class="cli">cd <em>&lt;serge_root&gt;</em>
-git clone git@github.com:evernote/serge.git .</code>
+git clone git@github.com:evernote/serge.git
+cd serge</code>
 
-<h3>B. Download a Snapshot</h3>
+<h3>B. Download Latest Stable Snapshot</h3>
+
+<p>Latest stable release: <span id="latest_release_info"><a href="https://github.com/evernote/serge/releases/latest">See this page</a></span></p>
 
 <code class="cli">cd <em>&lt;serge_root&gt;</em>
-wget https://github.com/evernote/serge/archive/<em>&lt;version&gt;</em>.zip
-unzip <em>&lt;version&gt;</em>.zip
-unlink <em>&lt;version&gt;</em>.zip</code>
+wget https://github.com/evernote/serge/archive/<em class="tag_name">&lt;version&gt;</em>.zip</span>
+unzip serge-<em class="tag_name">&lt;version&gt;</em>.zip
+unlink serge-<em class="tag_name">&lt;version&gt;</em>.zip
+cd serge-<em class="tag_name">&lt;version&gt;</em></code>
 
 <h2>Step 3. Install Dependencies</h2>
 
@@ -54,13 +66,13 @@ unlink <em>&lt;version&gt;</em>.zip</code>
 
 <code class="cli">cpan App::cpanminus</code>
 
-Once you have it installed, run the following command in <code><em>&lt;serge_root&gt;</em></code> directory:
+Once you have it installed, run the following command in <code><em>&lt;serge_root&gt;</em>/serge-<em class="tag_name">&lt;version&gt;</em></code> directory:
 
 <code class="cli">cpanm --installdeps .</code>
 
 <h2>Step 4. Add Serge to Your PATH</h2>
 
-<p>Add the <code><em>&lt;serge_root&gt;</em>/bin</code> directory to your <code>PATH</code> environment variable so that you can run if from any directory.</p>
+<p>Add the <code><em>&lt;serge_root&gt;</em>/serge-<em class="tag_name">&lt;version&gt;</em>/bin</code> directory to your <code>PATH</code> environment variable so that you can run if from any directory.</p>
 
 <h2>Step 5. Verify the Installation</h2>
 
@@ -83,5 +95,17 @@ Once you have it installed, run the following command in <code><em>&lt;serge_roo
 <p>This will open a help page in the browser.</p>
 
 <p>Now, <a href="/docs/">get started with Serge workflow and configuration &rarr;</a></p>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var project = 'evernote/serge';
+        $.getJSON('https://api.github.com/repos/'+project+'/releases/latest').done(function (release) {
+            if (release.assets) {
+                $('.tag_name').text(release.tag_name.replace(' ', '+'));
+                $('#latest_release_info').html('<strong>' + release.tag_name + '</strong> (released ' + $.timeago(release.assets[0].updated_at) + ')');
+            }
+        });
+    });
+</script>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/footer.php') ?>
