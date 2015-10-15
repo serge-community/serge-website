@@ -64,7 +64,7 @@ if
 
 <h2>Custom Rules</h2>
 
-<p>When default rules are not enough, you can implement your own ones, by defining one ore more <nobr><code>if { ... }</code></nobr> rules inside plugin's <code>data</code> config section. The <code>if</code> rules are processed top to bottom; each rule can add or remove languages so the most priority rules are placed at the bottom. See the example below:</p>
+<p>When default rules are not enough, you can implement your own ones, by defining one or more <nobr><code>if { ... }</code></nobr> rules inside plugin's <code>data</code> config section. The <code>if</code> rules are processed top to bottom; each rule can add or remove languages so the most priority rules are placed at the bottom. See the example below:</p>
 
 <figure>
     <figcaption>example-project.serge</figcaption>

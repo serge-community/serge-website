@@ -96,7 +96,7 @@ jobs
                 path_matches         \/(title|description)$
 
                 /*
-                (ARRAY) [OPTIONAL] One ore more regular
+                (ARRAY) [OPTIONAL] One or more regular
                 expressions to match the node path against;
                 if any of the regular expressions match,
                 the node value is NOT extracted for translation.
