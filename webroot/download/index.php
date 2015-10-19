@@ -102,7 +102,8 @@ Once you have it installed, run the following command in <code><em>&lt;serge_roo
         $.getJSON('https://api.github.com/repos/'+project+'/releases/latest').done(function (release) {
             if (release.assets) {
                 $('.tag_name').text(release.tag_name.replace(' ', '+'));
-                $('#latest_release_info').html('<strong>' + release.tag_name + '</strong> (released ' + $.timeago(release.published_at) + ')');
+                var esc_tag_name = $("<div>").text(release.tag_name).html();
+                $('#latest_release_info').html('<strong>' + esc_tag_name + '</strong> (released ' + $.timeago(release.published_at) + ')');
             }
         });
     });
