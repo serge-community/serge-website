@@ -11,7 +11,7 @@
                 Serge.io website and Serge documentation are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
             </div>
             <ul class="social-buttons">
-                <li><iframe src="http://ghbtns.com/github-btn.html?user=evernote&amp;repo=serge&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
+                <li><iframe src="https://ghbtns.com/github-btn.html?user=evernote&amp;repo=serge&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></li>
                 <?php /*
                 <li><div class="fb-like" data-href="https://serge.io/" data-width="120px" data-height="20px" data-layout="button_count" data-action="like"></div></li>
                 <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://serge.io/" data-dnt="true"></a></li>
