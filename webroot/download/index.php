@@ -51,7 +51,7 @@ cd serge</code>
 <p>Latest stable release: <span id="latest_release_info"><a href="https://github.com/evernote/serge/releases/latest">See this page</a></span></p>
 
 <code class="cli">cd <em>&lt;serge_root&gt;</em>
-wget https://github.com/evernote/serge/archive/<em class="tag_name">&lt;version&gt;</em>.zip</span>
+wget https://github.com/evernote/serge/archive/<em class="tag_name">&lt;version&gt;</em>.zip -O serge-<em class="tag_name">&lt;version&gt;</em>.zip</span>
 unzip serge-<em class="tag_name">&lt;version&gt;</em>.zip
 unlink serge-<em class="tag_name">&lt;version&gt;</em>.zip
 cd serge-<em class="tag_name">&lt;version&gt;</em></code>
