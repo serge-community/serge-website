@@ -71,9 +71,12 @@ Once you have it installed, run the following command in <code><em>&lt;serge_roo
 
 <code class="cli">cpanm --installdeps .</code>
 
-<h2>Step 4. Add Serge to Your PATH</h2>
+<h2>Step 4. Make Serge Available from Any Directory</h2>
 
-<p>Add the <code><em>&lt;serge_root&gt;</em>/serge-<em class="tag_name">&lt;version&gt;</em>/bin</code> directory to your <code>PATH</code> environment variable so that you can run if from any directory.</p>
+<p>Under Windows, it is recommended to add the <code><em>&lt;serge_root&gt;</em>/serge-<em class="tag_name">&lt;version&gt;</em>/bin</code> directory to your <code>PATH</code> environment variable.</p>
+<p>Under Mac/Linux, the preferred approach is to create a symlink to <code>serge</code> binary:</p>
+
+<code class="cli">ln -s <em>&lt;serge_root&gt;</em>/serge-<em class="tag_name">&lt;version&gt;</em>/bin/serge /usr/bin/serge</code>
 
 <h2>Step 5. Verify the Installation</h2>
 
