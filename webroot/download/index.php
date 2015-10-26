@@ -58,9 +58,10 @@ cd serge-<em class="tag_name">&lt;version&gt;</em></code>
 
 <h2>Step 3. Install Dependencies</h2>
 
-<p>Some dependency Perl modules include binaries that need to be compiled from sources. If you're on a Linux machine and don't have a <code>make</code> utility installed, you may need to run your favorite package manager to install build essentials. On Ubuntu/Debian this will be:</p>
+<p>Some dependency Perl modules include binaries that need to be compiled from sources. If you're on a Linux machine, run your package manager to install build essentials and libssl headers. On Ubuntu/Debian this will be:</p>
 
-<code class="cli">apt-get install build-essential</code>
+<code class="cli">apt-get -qq update
+apt-get -qq -y install build-essential libssl-dev</code>
 
 <p>Installing/upgrading dependencies is done with the help of <code>cpanm</code> package manager, which needs to be installed with the following command:</p>
 
