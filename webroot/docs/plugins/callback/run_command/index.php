@@ -31,7 +31,6 @@ jobs
             :gzip
             {
                 plugin         run_command
-                phase          after_save_localized_file
 
                 data
                 {
@@ -45,7 +44,6 @@ jobs
             :minify
             {
                 plugin         run_command
-                phase          after_save_localized_file
 
                 data
                 {
