@@ -15,7 +15,7 @@
 
 <p>This plugin inherits all the configuration logic from the parent <a href="/docs/plugins/callback/if/">'if' plugin</a> and, if all conditions are met, runs a shell command. Note that all <code>if</code> conditions are optional: if none are provided, the shell command will always run.</p>
 
-<p>Shell command can include macros in <code>command</code> parameter, see below. These macros will be expanded to their actual values. See <a href="/docs/configuration-files/reference/">Configuration File Reference</a> for the list of available macros.</p>
+<p>Shell command can include macros in <code>command</code> parameter, which will be expanded to their actual values. See <a href="/docs/configuration-files/reference/">Configuration File Reference</a> for the list of standard macros. In addition to standard macros, <code>%OUTFILE%</code> will be substituted with the full output file path, and <code>%OUTPATH%</code> will be substituted with the full directory path (sans the file name).</p>
 
 <h2>Usage</h2>
 
@@ -37,7 +37,7 @@ jobs
                     /*
                     (STRING) A shell command to run
                     */
-                    command    gzip <%FILE% >%FILE%.gz
+                    command    gzip <%OUTFILE% >%OUTFILE%.gz
                 }
             }
 
@@ -54,8 +54,8 @@ jobs
                         then
                         {
                             command    jsmin
-                                       <%FILE%
-                                       >%PATH%%NAME%.min.js
+                                       <%OUTFILE%
+                                       >%OUTPATH%%NAME%.min.js
                         }
                     }
                 }
