@@ -5,6 +5,12 @@
     $head = '
         <script src="/media/vendor/jquery/jquery-2.1.1.min.js"></script>
         <script src="/media/vendor/jquery/jquery.timeago.min.js"></script>
+
+        <style>
+            h3 a {
+                font-weight: 400;
+            }
+        </style>
     ';
 
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/header.php');
@@ -36,19 +42,17 @@
 
 <h2>Step 2. Download Sources</h2>
 
-<p>Serge is being actively developed, and its source code is available <a href="https://github.com/evernote/serge">on GitHub</a>. Code in master branch is considered a bleeding edge version; stable releases are marked with <a href="https://github.com/evernote/serge/releases">release tags</a>.</p>
+<p>Serge is being actively developed, and its source code is available <a href="https://github.com/evernote/serge">on GitHub</a>. Code in <code>master</code> branch is considered a bleeding edge version; stable releases are marked with <a href="https://github.com/evernote/serge/releases">release tags</a>.</p>
 
 <p>Pick the option that works best for you:</p>
 
-<h3>A. Clone the Repository</h3>
+<h3>A. Clone the Repository <a href="https://github.com/evernote/serge"><span id="latest_master_info"></span></a></h3>
 
 <code class="cli">cd <em>&lt;serge_root&gt;</em>
 git clone git@github.com:evernote/serge.git
 cd serge</code>
 
-<h3>B. Download Latest Stable Snapshot</h3>
-
-<p>Latest stable release: <span id="latest_release_info"><a href="https://github.com/evernote/serge/releases/latest">See this page</a></span></p>
+<h3>B. Download Latest Stable Snapshot <a href="https://github.com/evernote/serge/releases/latest"><span id="latest_release_info"></span></a></h3>
 
 <code class="cli">cd <em>&lt;serge_root&gt;</em>
 wget https://github.com/evernote/serge/archive/<em class="tag_name">&lt;version&gt;</em>.zip -O serge-<em class="tag_name">&lt;version&gt;</em>.zip</span>
@@ -103,11 +107,20 @@ Once you have it installed, run the following command in <code><em>&lt;serge_roo
 <script type="text/javascript">
     $(document).ready(function () {
         var project = 'evernote/serge';
+
+        // update master branch information
+        $.getJSON('https://api.github.com/repos/'+project+'/branches/master').done(function (branch) {
+            if (branch.commit) {
+                $('#latest_master_info').html('(updated ' + $.timeago(branch.commit.commit.committer.date) + ')');
+            }
+        });
+
+        // update latest release information
         $.getJSON('https://api.github.com/repos/'+project+'/releases/latest').done(function (release) {
             if (release.assets) {
                 $('.tag_name').text(release.tag_name.replace(' ', '+'));
                 var esc_tag_name = $("<div>").text(release.tag_name).html();
-                $('#latest_release_info').html('<strong>' + esc_tag_name + '</strong> (released ' + $.timeago(release.published_at) + ')');
+                $('#latest_release_info').html('(version ' + esc_tag_name + ', released ' + $.timeago(release.published_at) + ')');
             }
         });
     });
