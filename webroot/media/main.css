@@ -97,6 +97,12 @@ h3:target {
     color: #fff;
 }
 
+h1:target a,
+h2:target a,
+h3:target a {
+    color: #9ef;
+}
+
 code, dt {
     font-family: "Inconsolata", monospace;
     font-size: 110%;
