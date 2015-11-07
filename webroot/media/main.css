@@ -3,7 +3,6 @@ html {
 }
 
 body {
-    font-family: "Roboto", sans-serif;
     text-rendering: optimizeLegibility;
     font-weight: 300;
     line-height: 160%;
@@ -12,6 +11,11 @@ body {
     color: #000;
     text-align: center;
     overflow-y: scroll; /* to avoid horizontal jumps on short pages */
+}
+
+body, input, select {
+    font-family: "Roboto", sans-serif;
+    font-size: 12pt;
 }
 
 strong, b {
@@ -417,8 +421,9 @@ ol > li:before {
     background-image: url(triangle_expanded.svg);
 }
 
-.pod .body h1:first-child {
+.pod .body h1:first-of-type {
     margin-top: 0;
+    margin-right: 5em; /* for version dropdown */
 }
 
 .pod .body h1#NAME {
@@ -499,4 +504,38 @@ h2:hover .anchorjs-link,
 h3:hover .anchorjs-link,
 h4:hover .anchorjs-link {
     opacity: 1 !important;
+}
+
+/* Version dropdown */
+
+.doc-version-container {
+    position: relative;
+}
+
+.doc-version-container select {
+    font-size: 0.8em;
+    background: none;
+    color: #333;
+    border: none;
+    border-radius: 0.3em;
+    padding: 0.2em 0.3em;
+
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+
+    padding-left: 2.2em;
+    background: url(icon_fork.svg) 0.6em 50% no-repeat;
+    background-size: 1.25em 1.25em;
+
+}
+
+.doc-version-container select:hover {
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+}
+
+.doc-version {
+    color: #666;
+    position: absolute;
+    right: 0;
+    top: 0.45em;
 }
