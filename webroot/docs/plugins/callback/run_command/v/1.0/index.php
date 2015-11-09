@@ -15,7 +15,7 @@
 
 <p>This plugin allows one to run some shell command each time the localized file is saved, which allows one to post-process (compile, pack, validate) localized files.</p>
 
-<p>This plugin inherits all the configuration logic from the parent <a href="/docs/plugins/callback/if/">'if' plugin</a> and, if all conditions are met, runs a shell command. Note that all <code>if</code> conditions are optional: if none are provided, the shell command will always run. You can have multiple <code>command</code> entries; all provided commands will run sequentially.</p>
+<p>This plugin inherits all the configuration logic from the parent <a href="/docs/plugins/callback/if/">'if' plugin</a> and, if all conditions are met, runs a shell command. Note that all <code>if</code> conditions are optional: if none are provided, the shell command will always run.</p>
 
 <p>Shell command can include macros in <code>command</code> parameter, which will be expanded to their actual values. See <a href="/docs/configuration-files/reference/">Configuration File Reference</a> for the list of standard macros. In addition to standard macros, <code>%OUTFILE%</code> will be substituted with the full output file path, and <code>%OUTPATH%</code> will be substituted with the full directory path (sans the file name).</p>
 
@@ -38,12 +38,8 @@ jobs
                 {
                     /*
                     (STRING) A shell command to run
-
-                    Note that there can be more than one `command`
-                    entry defined.
                     */
                     command    gzip <%OUTFILE% >%OUTFILE%.gz
-                    command    md5sum -b %OUTFILE%.gz >%OUTFILE%.gz.md5
                 }
             }
 
