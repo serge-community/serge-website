@@ -10,7 +10,7 @@
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><code>serge localize &lt;configuration-files&gt; [--force] [--rebuild-ts-files] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
+<p><code>serge localize &lt;configuration-files&gt; [--force] [--rebuild-ts-files] [--output-only-mode] [--lang=aa,bb,cc] [--jobs=foo,bar]</code></p>
 
 <p>Where <code>&lt;configuration-files&gt;</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters.</p>
 
