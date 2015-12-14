@@ -3,6 +3,7 @@
         "append_hint_message",
         "completeness",
         "control_commands",
+        "feature_branch",
         "if",
         "limit_languages",
         "process_if",
