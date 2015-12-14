@@ -62,14 +62,12 @@
 <h2 id="can_extract">can_extract</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>relative_file_path</code>,
-    <em>(STRING, OPTIONAL)</em><code>language</code>,
+    <em>reserved</em>,
     <em>(STRINGREF)</em><code>source_string</code>,
     <em>(STRINGREF)</em><code>hint</code>.
-    <em>(STRING)</em><code>context</code>,
-    <em>(STRING)</em><code>key</code>.
 </p>
 <p>Return value: <code>1</code> if the string should be extracted for translation, <code>0</code> otherwise.</p>
-<p>This callback is called in source file parsing cycle for each found string, and allows to skip certain strings from translation. Since each source file is parsed twice during localziation cycle, this callback will also be called twice for each extracted string. During the first pass, the <code>language</code> parameter is not set (since Serge is dealing with the source file); During the second pass, language is set to the target language this file is being generated for.</p>
+<p>This callback is called in source file parsing cycle for each found string, and allows to skip certain strings from translation. Since each source file is parsed twice during localziation cycle, this callback will also be called twice for each extracted string.</p>
 
 <h2 id="before_update_database_from_ts_file">before_update_database_from_ts_file</h2>
 <p>Input parameters: <em>none</em>.</p>
@@ -156,8 +154,7 @@
     <em>(STRING)</em><code>relative_file_path</code>,
     <em>(STRING)</em><code>language</code>,
     <em>(BOOLEAN)</em><code>disallow_similar_lang</code>,
-    <em>(INTEGER)</em><code>item_id</code>,
-    <em>(STRING)</em><code>key</code>.
+    <em>(INTEGER)</em><code>item_id</code>.
 </p>
 <p>Return values (array):
     <em>(STRING)</em><code>translation</code>,
@@ -241,19 +238,6 @@
 </p>
 <p>Return value: <em>none</em>.</p>
 <p>This callback is used to rewrite translation before it is placed into a localized file. Note that this transformation is only applied to the translation in the localized file, and not in the translation file or database. This approach can be used to produce different set of localized files from the same set of translations. For example, one can statically rewrite product names, URLs or prices on the fly depending on language or some external parameters.</p>
-
-<h2 id="log_translation">log_translation</h2>
-<p>Input parameters:
-    <em>(STRING)</em><code>source_string</code>,
-    <em>(STRING)</em><code>context</code>,
-    <em>(STRING)</em><code>hint</code>,
-    <em>(ARRAYREF)</em><code>flags</code>,
-    <em>(STRING)</em><code>language</code>,
-    <em>(STRING)</em><code>key</code>,
-    <em>(STRING)</em><code>translation</code>.
-</p>
-<p>Return value: <em>none</em>.</p>
-<p>This callback is called after the translation is determined for the source string, and can be used to save translations into a database, or save them in memory for some plugin-specific needs.</p>
 
 <h2 id="can_save_localized_file">can_save_localized_file</h2>
 <p>Input parameters:
