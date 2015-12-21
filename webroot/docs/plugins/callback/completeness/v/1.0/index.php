@@ -85,19 +85,6 @@ jobs
                     save_incomplete_to   /path/to/folder
 
                     /*
-                    (ARRAY) [OPTIONAL] List of languages
-                    for which the completeness plugin
-                    logic should be bypassed. Useful for
-                    pseudo-localization, when translations
-                    for certain languages are generated
-                    on the fly and not stored in the
-                    database (and thus completeness ratio
-                    can't be calculated on them)
-                    Default is: <empty array>
-                    */
-                    bypass_languages     test
-
-                    /*
                     (BOOLEAN) [OPTIONAL] If 'can_detete'
                     is set to a true value, the file
                     will be deleted if its completeness
