@@ -73,7 +73,7 @@ jobs
                     saved because its translations are
                     incomplete, you can still save such
                     incomplete files into a separate
-                    folder by specifying path to the folder
+                    folder by specifying the path to the folder
                     in this parameter. This can be useful
                     for debugging purposes or to allow
                     previewing incomplete files
