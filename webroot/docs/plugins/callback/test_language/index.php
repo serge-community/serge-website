@@ -32,11 +32,11 @@
 
 <h3>String Expansion</h3>
 
-<p>String Expansion is done by appending a certain amount of 'XXXXXXXXXX' words to the end of the string, depending on the length of the original string. It allows one to these the UI layout against longer strings. For large strings, the expansion ratio is 1.4 (40% extra symbols); for shorter strings this ratio gradually increases to 2.0.</p>
+<p>String Expansion is done by appending a certain amount of 'xxxxxxxxxx' words to the end of the string, depending on the length of the original string. It allows one to these the UI layout against longer strings. For large strings, the expansion ratio is 1.4 (40% extra symbols); for shorter strings this ratio gradually increases to 2.0.</p>
 
-<p>In addition to adding extra symbols, the string gets wrapped with exclamation marks, which allows one to visually identify if the string is fully visible in the UI, as well as identify places of concatenation.</p>
+<p>In addition to adding extra symbols, the string gets wrapped with square brackets, which allows one to visually identify if the string is fully visible in the UI, as well as identify places of concatenation. If the source string already uses square brackets (for e.g. some sort of placeholders), parenthesis will be used as start and end markers instead.</p>
 
-<p class="notice">!Ŧĥĩš ĩš áŋ ēҳáḿṕļē őḟ ţĥē ŕēšũļţĩŋğ "ţŕáŋšļáţĩőŋ". XXXXXXXXXX XXXXXXXXXX XX!</p>
+<p class="notice">[Ŧĥĩš ĩš áŋ ēҳáḿṕļē őḟ ţĥē ŕēšũļţĩŋğ "ţŕáŋšļáţĩőŋ". xxxxxxxxxx xxxxxxxxxx xx]</p>
 
 <h2>Usage</h2>
 
