@@ -13,8 +13,8 @@
 <ul>
     <li><code><a href="/docs/dev/callbacks/#before_job">before_job</a></code></li>
     <li><code><a href="/docs/dev/callbacks/#can_extract">can_extract</a></code></li>
-    <li><code><a href="/docs/dev/callbacks/#log_translation">log_translation</a></code></li>
     <li><code><a href="/docs/dev/callbacks/#get_translation_pre">get_translation_pre</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#after_job">after_job</a></code></li>
 </ul>
 
 <p>This plugin allows you localize multiple versions (branches) of the same resource files without having to expose duplicate strings for translation. Consider the following example: you have a main development branch (let's call it <code>master</code>) where you have resources to localize. In addition to that, you have multiple feature branches, each having a few new or changed translatable strings as compared to master. A naive approach would be to create multiple translation projects, one per branch. But each project can contain thousands of strings, and it's not practical to keep them all in the database and expose them for translation just for the sake of a few new strings that differ from master, especially if the lifespan of a feature branch is short.</p>
