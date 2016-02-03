@@ -60,9 +60,10 @@ jobs
                 {
                     /*
                     (BOOLEAN) [OPTIONAL] Should the
-                    translations be saved into the database?
-                    Generally you won't need to save
-                    such translations into the database
+                    translations be saved into the database,
+                    and should TS files be generated
+                    and parsed for the test language?
+                    Generally you won't need to do that
                     unless for some low-level debugging
                     purposes.
                     Default: NO
