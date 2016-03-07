@@ -40,6 +40,7 @@
     <!-- /Twitter -->
     */ ?>
 
+    <script src="/media/vendor/anchorjs/anchor.min.js"></script>
     <script>
         anchors.options = {
             placement: 'left',
@@ -59,5 +60,7 @@
         ga('send', 'pageview');
     </script>
     <!-- /Google Analytics -->
+
+    <script src="/media/vendor/LinkToSelection.min.js"></script>
 </body>
 </html>
