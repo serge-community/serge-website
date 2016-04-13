@@ -34,13 +34,6 @@
                 &lt;p&gt;<span class="string">Second Product Description</span>&lt;/p&gt;
             ]]&gt;&lt;/description&gt;
         &lt;/item&gt;
-        &lt;item sku="P003" obsolete="1"&gt;
-            &lt;price&gt;3.45&lt;/price&gt;
-            &lt;title&gt;Third Product&lt;/title&gt;
-            &lt;description&gt;&lt;![CDATA[
-                &lt;p&gt;Third Product Description&lt;/p&gt;
-            ]]&gt;&lt;/description&gt;
-        &lt;/item&gt;
     &lt;/items&gt;
 &lt;/products&gt;
 </code>
@@ -63,7 +56,6 @@
 <span class="nop" >products[1]/price</span>       => <span class="nop"   >1.23</span>
 <span class="hint">products[1]/title</span>       => <span class="string">Second Product</span>
 <span class="hint">products[1]/description</span> => <span class="string">Second Product Description</span>
-//...
 </code>
 </figure>
 
@@ -80,7 +72,7 @@ jobs
     {
         parser
         {
-            plugin                   parse_json
+            plugin                   parse_xml
 
             data
             {

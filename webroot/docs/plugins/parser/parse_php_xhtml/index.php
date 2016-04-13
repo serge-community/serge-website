@@ -54,8 +54,7 @@
 &lt;p&gt;
     &lt;span lang="en"&gt;<span class="string">outer string</span>&lt;/span&gt;
     &lt;span lang=""&gt;inner string&lt;/span&gt;
-    &lt;/p&gt;
-
+&lt;/p&gt;
 &lt;p&gt;
     <span class="string">Click here: &lt;a href="http://sample.com"&gt;http://sample.com&lt;/a&gt;</span>
 &lt;/p&gt;
