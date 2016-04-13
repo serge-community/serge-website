@@ -139,14 +139,14 @@ jobs
                 (STRING) [OPTIONAL] Email to send
                 error reports on behalf of
                 */
-                email_from         l10n-robot@acme.org
+                email_from           l10n-robot@acme.org
 
                 /*
                 (ARRAY) [OPTIONAL] One or more email
                 addresses to send error reports to
                 */
-                email_to           engineer@acme.org
-                                   project-manager@acme.org
+                email_to             engineer@acme.org
+                                     project-manager@acme.org
 
                 /*
                 (STRING) [OPTIONAL] Email subject
