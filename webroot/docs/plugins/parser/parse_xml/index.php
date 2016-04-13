@@ -47,15 +47,15 @@
 
 <figure>
     <figcaption>products.xml (internal 'path => value' representation)</figcaption>
-    <code class="block"><span class="nop" >description</span>             => <span class="nop"   >Product list</span>
-<span class="nop" >products[0]/sku</span>         => <span class="nop"   >P001</span>
-<span class="nop" >products[0]/price</span>       => <span class="nop"   >1.23</span>
-<span class="hint">products[0]/title</span>       => <span class="string">First Product</span>
-<span class="hint">products[0]/description</span> => <span class="string">First Product Description</span>
-<span class="nop" >products[1]/sku</span>         => <span class="nop"   >P001</span>
-<span class="nop" >products[1]/price</span>       => <span class="nop"   >1.23</span>
-<span class="hint">products[1]/title</span>       => <span class="string">Second Product</span>
-<span class="hint">products[1]/description</span> => <span class="string">Second Product Description</span>
+    <code class="block"><span class="nop" >products/description</span>               => <span class="nop"   >Product list</span>
+<span class="nop" >products/items/item[0]/sku</span>         => <span class="nop"   >P001</span>
+<span class="nop" >products/items/item[0]/price</span>       => <span class="nop"   >1.23</span>
+<span class="hint">products/items/item[0]/title</span>       => <span class="string">First Product</span>
+<span class="hint">products/items/item[0]/description</span> => <span class="string">First Product Description</span>
+<span class="nop" >products/items/item[1]/sku</span>         => <span class="nop"   >P002</span>
+<span class="nop" >products/items/item[1]/price</span>       => <span class="nop"   >2.34</span>
+<span class="hint">products/items/item[1]/title</span>       => <span class="string">Second Product</span>
+<span class="hint">products/items/item[1]/description</span> => <span class="string">Second Product Description</span>
 </code>
 </figure>
 
@@ -103,7 +103,7 @@ jobs
                 (prevent from being translated) the top-level
                 `description` terminal node.
                 */
-                node_exclude         ^description$
+                node_exclude         ^products\/description$
 
                 /*
                 (ARRAY) [OPTIONAL] One or more regular
