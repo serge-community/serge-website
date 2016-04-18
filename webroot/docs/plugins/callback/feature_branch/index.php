@@ -85,7 +85,7 @@ jobs
     :feature1
     {
         # inherit all settings from master job above
-        @inherit .#jobs/:master
+        @inherit                    .#jobs/:master
 
         # override job id (it must be unique)
         job                         job.feature1
