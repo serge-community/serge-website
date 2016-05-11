@@ -7,6 +7,7 @@
 <html>
 <head>
     <title><?php echo isset($title) ? $title.' | Serge' : 'Serge — Free, Open-Source Solution for Continuous Localization' ?></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
     <link rel="stylesheet" href="/media/vendor/google/google-fonts.css" type="text/css" />
     <link rel="stylesheet" href="/media/main.css" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -23,7 +24,7 @@
                 <li><a href="/download/"<?php echo menuSel('download') ?>>Download</a></li>
                 <li><a href="/docs/"<?php echo menuSel('documentation') ?>>Documentation</a></li>
                 <li><a href="/contact/"<?php echo menuSel('contact') ?>>Contact Us</a></li>
-                <li class="extra"><a href="//evernote.com">evernote.com</a></li>
+                <li class="extra"><input id="search" placeholder="Search the docs..."/></li>
             </ul>
         </div>
 

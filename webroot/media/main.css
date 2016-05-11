@@ -198,7 +198,7 @@ ul.menu li {
 
 ul.menu li.extra {
     border-left: 1px solid rgba(255, 255, 255, 0.3);
-    padding-left: 1em;
+    padding-left: 1.5em;
     margin-right: -0.5em;
 }
 
@@ -527,7 +527,6 @@ h4:hover .anchorjs-link {
     padding-left: 2.2em;
     background: url(icon_fork.svg) 0.6em 50% no-repeat;
     background-size: 1.25em 1.25em;
-
 }
 
 .doc-version-container select:hover {
@@ -540,4 +539,81 @@ h4:hover .anchorjs-link {
     position: absolute;
     right: 0;
     top: 0.45em;
+}
+
+/* Algolia Community Docsearch */
+
+input#search {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.2em 0.3em;
+    color: #fff;
+    border-radius: 1em;
+    width: 12em;
+
+    padding-left: 2.2em;
+    background: url(icon_search.svg) 0.6em 50% no-repeat;
+    background-size: 1.25em 1.25em;
+}
+
+input#search:hover,
+input#search:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+input#search:focus {
+    outline: none;
+}
+
+input#search::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+input#search:hover::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+input#search:focus::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0);
+}
+
+/* override for Algolia-injected inline style */
+.aa-input {
+    vertical-align: baseline !important;
+}
+
+.aa-dropdown-menu {
+    border: 1px solid rgba(102, 0, 0, 0.2);
+    border-radius: 0.3em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Bottom border of each suggestion */
+.algolia-docsearch-suggestion {
+    border-bottom-color: green;
+}
+/* Main category headers */
+.algolia-docsearch-suggestion--category-header {
+    background-color: rgb(204, 111, 60);
+    font-weight: normal;
+}
+/* Highlighted search terms */
+.algolia-docsearch-suggestion--highlight {
+    color: black;
+    background-color: #fe0;
+}
+/* Highligted search terms in the main category headers */
+.algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--highlight  {
+    color: black;
+    background-color: #fe0;
+}
+/* Currently selected suggestion */
+.aa-cursor .algolia-docsearch-suggestion--content {
+    color: #000;
+}
+.aa-cursor .algolia-docsearch-suggestion {
+    background: rgba(0, 0, 0, 0.1);
 }

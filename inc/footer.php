@@ -3,7 +3,7 @@
 
         <div class="footer">
             <div class="copyright">
-                &copy; 2014&ndash;<?php echo date("Y"); ?> Evernote Corporation.<br/>
+                &copy; 2014&ndash;<?php echo date("Y"); ?> <a href="//evernote.com/">Evernote Corporation</a>.<br/>
                 All rights reserved.
             </div>
             <div class="license">
@@ -61,6 +61,15 @@
     </script>
     <!-- /Google Analytics -->
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script type="text/javascript">
+        docsearch({
+            apiKey: '5daa61caf4ab880c9c7b40e02da858da',
+            indexName: 'serge',
+            inputSelector: '#search',
+            debug: true
+        });
+    </script>
     <script src="/media/vendor/LinkToSelection.min.js"></script>
 </body>
 </html>
