@@ -107,12 +107,12 @@ jobs
                     */
                     can_delete           YES
 
-                    # email to send error reports on behalf of
+                    # email to send status reports on behalf of
                     email_from           l10n-robot@acme.org
 
                     /*
                     (ARRAY) [OPTIONAL] One or more email
-                    addresses to send error reports to
+                    addresses to send status reports to
                     */
                     email_to             engineer@acme.org
                                          project-manager@acme.org
