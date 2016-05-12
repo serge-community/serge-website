@@ -67,9 +67,10 @@
             apiKey: '5daa61caf4ab880c9c7b40e02da858da',
             indexName: 'serge',
             inputSelector: '#search',
-            <?php /*
-            autocompleteOptions: { debug: 'true' }
-            */ ?>
+            autocompleteOptions: {
+                hint: false<?php /*,
+                debug: true*/?>
+            }
         });
     </script>
     <script src="/media/vendor/LinkToSelection.min.js"></script>
