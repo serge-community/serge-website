@@ -585,10 +585,6 @@ input#search:focus::-webkit-input-placeholder {
     vertical-align: baseline !important;
 }
 
-.aa-hint {
-    display: none !important;
-}
-
 /* Popup menu container */
 .aa-dropdown-menu {
     border: 1px solid rgba(102, 0, 0, 0.2);
