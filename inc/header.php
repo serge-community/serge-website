@@ -9,7 +9,7 @@
     <title><?php echo isset($title) ? $title.' | Serge' : 'Serge — Free, Open-Source Solution for Continuous Localization' ?></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
     <link rel="stylesheet" href="/media/vendor/google/google-fonts.css" type="text/css" />
-    <link rel="stylesheet" href="/media/main.css?1" type="text/css" />
+    <link rel="stylesheet" href="/media/main.css?2" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <?php echo $head ?>
 </head>
