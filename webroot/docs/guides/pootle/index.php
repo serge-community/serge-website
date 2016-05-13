@@ -73,7 +73,7 @@ destination_languages   de ja pt-br
 
 <h2>Registering a Project in Pootle</h2>
 
-<p>In order to appear in the translation interface, every new project needs to be initially registered in Pootle. You, as Pootle administrator, need to go to Pootle's Admin interface, select Projects tab, create a new project there and specify the project id, e.g. <code>project1</code>. This will tell Pootle that the project files are located in <code>/var/serge/po/project1/</code> directory. Pootle will scan files in there and publish the project for translation. In addition to specifying the project id, you need to give the project its display name, e.g. "Project 1", and leave default values for other parameters.</p>
+<p>In order to appear in the translation interface, every new project needs to be initially registered in Pootle. You, as a Pootle administrator, need to go to Pootle's Admin interface, select Projects tab, create a new project there and specify the project id, e.g. <code>project1</code>. This will tell Pootle that the project files are located in <code>/var/serge/po/project1/</code> directory. Pootle will scan files in there and publish the project for translation. In addition to specifying the project id, you need to give the project its display name, e.g. "Project 1", and leave default values for other parameters.</p>
 
 <h2>Configuring Serge Synchronization</h2>
 
