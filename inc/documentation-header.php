@@ -126,6 +126,10 @@
                 ?>
             </ul>
         </ul>
+        <h3>Guides</h3>
+        <ul>
+            <?php _item("guides-pootle",                "/docs/guides/pootle/",                         "Serge + Pootle") ?>
+        </ul>
         <h3>Extending Serge</h3>
         <ul>
             <?php _item("callbacks",                    "/docs/dev/callbacks/",                         "Callbacks") ?>

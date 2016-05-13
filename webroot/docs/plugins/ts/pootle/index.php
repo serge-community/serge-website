@@ -13,7 +13,7 @@
 
 <p class="notice">Currently the only supported format for translation files is <a href="https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html">.PO</a> (used in GNU gettext toolchain), which is natively supported by Pootle.</p>
 
-<p>Communication between Serge and Pootle is performed by the means of running Pootle's command-line API tool (the script is called <code>manage.py</code>). Note that this means that Pootle must be installed on the same machine as Serge.</p>
+<p>Communication between Serge and Pootle is performed by the means of running Pootle's command-line API tool (the script is called <code>manage.py</code>). Note that this means that Pootle must be installed on the same machine as Serge. Please refer to <a href="/docs/guides/pootle/">Serge + Pootle</a> configuration guide for more information.</p>
 
 <p>Each configuration file in Serge represents a single translation project, and maps to a single specific project in Pootle. The typical workflow is this:</p>
 
