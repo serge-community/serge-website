@@ -14,7 +14,7 @@
 
 <h2>Initial Pootle Configuration</h2>
 
-<p>It is recommended that you install both Serge and Pootle on the same dedicated localization server which will be accessible by your translators. Once you install Pootle (please follow its own installation instructions), you will need to specify the root directory where Pootle expects all translation files to be stored, in its configuration file (typically it's named <code>90-local.conf</code>):</p>
+<p>It is recommended that you install both Serge and Pootle on the same dedicated localization server which will be accessible by your translators. Once you install Pootle (please follow its own installation instructions), you will need to specify the root directory where Pootle expects all translation files to be stored, in its configuration file (typical installations will use <code>~/.pootle/pootle.conf</code>):</p>
 
 <script language="text/x-config-neat">
 POOTLE_TRANSLATION_DIRECTORY = '/var/serge/po'
