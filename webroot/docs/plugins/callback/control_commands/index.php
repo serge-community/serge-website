@@ -33,8 +33,11 @@
     <dt><code>@skip</code></dt>
     <dd>Skip string (mark as skipped in Serge database, which will remove it from all translation files on the next localization cycle).</dd>
 
-    <dt><code>@remove_all</code></dt>
-    <dd>Remove exact translations for the same source string from all items in the Serge database.</dd>
+    <dt><code>@rewrite_all</code></dt>
+    <dd>Rewrite all translations for the same source string with the provided translation value. If translation is empty, this will simply remove the translation.</dd>
+
+    <dt><code>@rewrite_all_as_fuzzy</code></dt>
+    <dd>Rewrite all translations for the same source string with the provided value and mark translations as fuzzy. If the translation is empty, this has the same effect as @rewrite_all (because empty translations can't be fuzzy).</dd>
 </dl>
 
 <h2>Usage</h2>
