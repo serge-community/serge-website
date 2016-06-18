@@ -42,6 +42,11 @@
         "parse_yaml",
     );
 
+    $serializer_plugins = array(
+        "serialize_po",
+        "serialize_csv",
+    );
+
     $vcs_plugins = array(
         "git",
         "gerrit",

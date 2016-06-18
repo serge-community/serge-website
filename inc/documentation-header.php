@@ -76,7 +76,18 @@
                 <?php
                     if ($section == 'parser-plugins') {
                         foreach ($parser_plugins as $name) {
-                            _item("ref-plugin-$name",   "/docs/plugins/parser/$name/",                   $name);
+                            _item("ref-plugin-$name",   "/docs/plugins/parser/$name/",                  $name);
+                        }
+                    }
+                ?>
+            </ul>
+
+            <?php _item("-ref-plugins",                 "/docs/plugins/serializer/$serializer_plugins[0]", "Serializer Plugins", _expanded_when($section, 'serializer-plugins')) ?>
+            <ul>
+                <?php
+                    if ($section == 'serializer-plugins') {
+                        foreach ($serializer_plugins as $name) {
+                            _item("ref-plugin-$name",   "/docs/plugins/serializer/$name/",              $name);
                         }
                     }
                 ?>

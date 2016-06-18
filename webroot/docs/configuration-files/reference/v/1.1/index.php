@@ -10,7 +10,7 @@
 <h1>Configuration File Reference</h1>
 
 <script language="text/x-config-neat">
-<?php include('../inc/sample.serge') ?>
+<?php include('../../../inc/sample.serge.v1.1') ?>
 </script>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>

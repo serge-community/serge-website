@@ -14,7 +14,22 @@
 
     #echo "[$uri][$version_root][$option]";
 
-    $dirs = array_reverse(scandir($_SERVER['DOCUMENT_ROOT'] . $uri . $version_root . 'v/'));
+    $latest_caption = 'Latest';
+    $versions_dir = $_SERVER['DOCUMENT_ROOT'] . $uri . $version_root . 'v/';
+    if (file_exists($versions_dir)) {
+        $dirs = array_reverse(scandir($versions_dir));
+        array_pop($dirs); // remove '..'
+        array_pop($dirs); // remove '.'
+    } else {
+        $dirs = array();
+
+        if ($available_since != '') {
+            $latest_caption = "Since $available_since";
+        }
+    }
+    if ($available_since == '') {
+        $available_since = '1.0';
+    }
 ?>
 
 <div class="doc-version-container">
@@ -27,15 +42,23 @@
             });
         </script>
         <select id="doc-version">
-            <option value="<?php echo $version_root ?>" onchange="">Latest</option>
+            <option value="<?php echo $version_root ?>" onchange=""><?php echo $latest_caption ?></option>
             <?php
+                $last_value = end($dirs);
                 foreach ($dirs as $version) {
-                    if (($version != '.') && ($version != '..')) {
-                        $subdir = "v/$version/";
-                        $sel = ($subdir == $option) ? ' selected' : '';
-                        $version = preg_replace('/-/', '&ndash;', $version); # replace hyphen with short dash
-                        echo "<option value=\"$version_root$subdir\"$sel>$version</option>\n";
+                    $subdir = "v/$version/";
+                    $sel = ($subdir == $option) ? ' selected' : '';
+                    $version_print = preg_replace('/-/', '&ndash;', $version); # replace hyphen with short dash
+
+                    $caption = "$version_print and below";
+                    if ($last_value == $version && $available_since != '') {
+                        if ($version == $available_since) {
+                            $caption = "$version_print";
+                        } else {
+                            $caption = "$version_print &mdash; $available_since";
+                        }
                     }
+                    echo "<option value=\"$version_root$subdir\"$sel>$caption</option>\n";
                 }
             ?>
         </select>

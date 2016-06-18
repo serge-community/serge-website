@@ -10,7 +10,7 @@
 
 <p>A part of Serge's <a href="/docs/localization-cycle/">localization cycle</a> is a two-way synchronization with an external translation service. Serge automatically pulls translation files from external translation service and pushes updated translation files back.</p>
 
-<p>Support for translation file formats is provided by <a href="/docs/plugins/serializer/<?php echo $serializer_plugins[0] ?>">serializer plugins</a>.</p>
+<p class="notice">Currently the only supported format for translation files is <a href="https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html">.PO</a> (used in GNU gettext toolchain).</p>
 
 <p>A translation service can potentially be:</p>
 
