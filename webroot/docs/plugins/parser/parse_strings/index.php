@@ -22,15 +22,15 @@
     <code class="block">/* this comment is not attached to a string */
 
 /* <span class="hint">comment</span> */
-"<span class="hint">some key</span>" = "<span class="string">string</span>"
+"<span class="hint">some key</span>" = "<span class="string">string</span>";
 
 /* <span class="hint">comment</span> */
-<span class="hint">some_key</span> = "<span class="string">string</span>" // <span class="hint">extra comment</span>
+<span class="hint">some_key</span> = "<span class="string">string</span>"; // <span class="hint">extra comment</span>
 
 /* this comment is not attached to a string */
 
 /* <span class="hint">comment</span> */
-"<span class="hint">some_key</span>##<span class="context">context</span>" = "<span class="string">string</span>" // <span class="hint">extra comment</span>
+"<span class="hint">some_key</span>##<span class="context">context</span>" = "<span class="string">string</span>"; // <span class="hint">extra comment</span>
 
 ...
 </code>
