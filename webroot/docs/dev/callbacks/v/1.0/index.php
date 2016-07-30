@@ -164,7 +164,7 @@
 </p>
 <p>This callback is called whenever Serge wants to get a translation for the string, before it tries looking up the translation in the database. If a plugin can't provide a translation, it should return both <code>translation</code> and <code>comment</code> member of the array as undefined values. If the comment is set but translation isn't, it means a valid 'empty' translation.</p>
 
-<p>Plugin may raise the <code>need_save</code> flag to prevent saving the translation to the database. This option makes sense when providing test auto-generated translations, which can always be generated on demand and don't need to be stored in the database.</p>
+<p>Plugin needs to provide true value for <code>need_save</code> flag for translation to be saved to the database. By default the translation won't be saved, and this makes sense when providing test auto-generated translations, which can always be generated on demand and which don't need to be stored in the database.</p>
 
 <p>This callback is requested twice per localization cycle for each string: when generating translation files, and when generating localized files.</p>
 
