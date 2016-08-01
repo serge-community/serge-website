@@ -66,29 +66,6 @@ jobs
                 */
                 expand_aliases       NO
 
-
-                /*
-                (STRING) [OPTIONAL] The YAML dialect to
-                optimize for.
-
-                Accepted values: 'generic' and 'rails'.
-                Default value: 'generic'
-
-                'generic': no special treatment is necessary;
-
-                'rails': the root node is considered a name
-                of the language; in this mode the root node
-                is stripped from the generated path (which
-                is used as a hint at translation time and
-                as a key at import time), and when localized
-                file is saved, the root node is replaced
-                with the name of the target language;
-                one can use `output_lang_rewrite` job
-                parameter to control how the languages
-                are rendered.
-                */
-                yaml_kind          generic
-
                 /*
                 (STRING) [OPTIONAL] Email to send
                 error reports on behalf of
