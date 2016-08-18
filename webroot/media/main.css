@@ -473,6 +473,11 @@ ol > li:before {
     margin-bottom: 120px;
 }
 
+body.page-index .cta {
+    font-size: 150%;
+    margin-top: 1.6em;
+}
+
 /* tables */
 
 div.table {
