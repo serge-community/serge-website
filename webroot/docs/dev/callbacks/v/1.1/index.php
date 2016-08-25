@@ -72,10 +72,6 @@
 <p>This callback is called in source file parsing cycle for each found string, and allows to skip certain strings from translation. Since each source file is parsed twice during localziation cycle, this callback will also be called twice for each extracted string. During the first pass, the <code>language</code> parameter is not set (since Serge is dealing with the source file); During the second pass, language is set to the target language this file is being generated for.</p>
 
 <h2 id="before_update_database_from_ts_file">before_update_database_from_ts_file</h2>
-
-<p>DEPRECATED. Use <code><a href="#before_update_database_from_ts_files">before_update_database_from_ts_files</a></code>.</p>
-
-<h2 id="before_update_database_from_ts_files">before_update_database_from_ts_files</h2>
 <p>Input parameters: <em>none</em>.</p>
 <p>Return value: <em>none</em>.</p>
 <p>This callback is called after source files are scanned and parsed and before translation files are scanned and parsed.</p>
