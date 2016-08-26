@@ -62,10 +62,16 @@ cd serge-<em class="tag_name">&lt;version&gt;</em></code>
 
 <h2>Step 3. Install Dependencies</h2>
 
-<p>Some dependency Perl modules include binaries that need to be compiled from sources. If you're on a Linux machine, run your package manager to install build essentials and library headers. On Ubuntu/Debian this will be:</p>
+<h3>Step 3.1. Install Prerequisites (Linux Only)</h3>
+
+<p>Some Perl modules that you're about to install in step 3.2 require compiling binaries from sources. If you're on a Linux machine, run your package manager to install build essentials and library headers. For example, on Ubuntu/Debian this will be:</p>
 
 <code class="cli">apt-get -qq update
 apt-get -qq -y install build-essential libssl-dev libexpat-dev</code>
+
+<p>If you're on Windows, skip this step and go to 3.2.</p>
+
+<h3>Step 3.2. Install Perl Modules (All Platforms)</h3>
 
 <p>Installing/upgrading dependencies is done with the help of <code>cpanm</code> package manager, which needs to be installed with the following command:</p>
 
