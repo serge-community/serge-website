@@ -662,3 +662,59 @@ input#search:focus::-webkit-input-placeholder {
         margin-top: .5em;
     }
 }
+
+/* Download page os selector */
+
+ul.menu.selector {
+    text-align: center;
+    float: none;
+}
+
+ul.menu.selector li a {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.content.win #os_win,
+.content.unix #os_unix,
+.content.mac #os_mac,
+.content.latest #version_latest,
+.content.stable #version_stable {
+    background-color: rgba(204, 111, 60, 0.8);
+    color: #fff;
+}
+
+/* OS selector */
+
+.content .win,
+.content .mac,
+.content .unix,
+.content .latest,
+.content .stable {
+    display: none !important;
+}
+
+.content.win .win { display: inline !important; }
+.content.unix .unix { display: inline !important; }
+.content.mac .mac { display: inline !important; }
+
+.content.win code.cli.win { display: block !important; }
+.content.unix code.cli.unix { display: block !important; }
+.content.mac code.cli.mac { display: block !important; }
+
+.content.latest .latest { display: inline !important; }
+.content.stable .stable { display: inline !important; }
+
+.content.latest code.cli.latest { display: block !important; }
+.content.stable code.cli.stable { display: block !important; }
+
+/* Version selector */
+
+ul.menu.selector#version_selector li a {
+    width: 8em;
+}
+
+ul.menu.selector#version_selector li div {
+    font-size: 80%;
+}

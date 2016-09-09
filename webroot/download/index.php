@@ -2,9 +2,36 @@
     $page = 'download';
     $title = 'Download';
 
+    // parse param string like 'win/stable' or 'unix/latest'
+
+    $params = explode('/', $_SERVER['QUERY_STRING'], 2);
+    $os = $params[0];
+
+    if ($os != '') {
+        $os = ($os == 'win') || ($os == 'unix') || ($os == 'mac') ? $os : '';
+    }
+
+    if ($os == '') {
+        $ua = $_SERVER['HTTP_USER_AGENT'];
+
+        if (preg_match('/Windows/', $ua)) {
+            $os = 'win';
+        } elseif (preg_match('/Macintosh/', $ua)) {
+            $os = 'mac';
+        } else {
+            $os = 'unix';
+        }
+    }
+
+    $version = $params[1] == 'latest' ? 'latest' : 'stable';
+
     $head = '
         <script src="/media/vendor/jquery/jquery-2.1.1.min.js"></script>
         <script src="/media/vendor/jquery/jquery.timeago.min.js"></script>
+        <script>
+            var version = "'.$version.'";
+            var os = "'.$os.'";
+        </script>
 
         <style>
             h3 a {
@@ -16,85 +43,98 @@
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/header.php');
 ?>
 
-<h1>System Requirements</h1>
+<h1>Before You Start</h1>
 
-<p>Serge can run on any OS with <strong>Perl 5.10 or higher</strong>. Modern Mac OS and Unix systems have Perl already installed. On Windows, we recommend installing <a href="http://strawberryperl.com/">Strawberry Perl</a>.</p>
+<h3>Choose Your Patform</h3>
+<ul class="menu selector" id="os_selector">
+    <li><a id="os_win">Windows</a></li>
+    <li><a id="os_unix">Unix</a></li>
+    <li><a id="os_mac">Mac OS</a></li>
+</ul>
 
-<p>You also need your favorite <strong>VCS client</strong> (e.g. Git or SVN) to be installed and properly configured for Serge to be able to talk to your remote repositories (but this is not required if you are going to use Serge in a localization-only mode).</p>
+<p>Below you will see instructions on installing Serge on your system with the necessary dependencies. If you prefer to keep things isolated, you can also <a href="https://github.com/evernote/serge-dockerfiles">install Serge as a Docker container</a>.</p>
 
-<p class="notice">Make sure you have enough permissions to install new software/packages/modules; on Unix, use <code>su</code> or <code>sudo</code>.</p>
+<h3>Select Preferred Version</h3>
+<ul class="menu selector" id="version_selector">
+    <li><a id="version_latest">Latest</a><div id="latest_master_info"></div></li>
+    <li><a id="version_stable">Stable (<span class="tag_name"></span>)</a><div id="latest_release_info"></div></li>
+</ul>
 
-<?php /*
-<h1>Stable Releases</h1>
+<p>Serge source code is available <a href="https://github.com/evernote/serge">on GitHub</a>. Code in <code>master</code> branch is considered the latest version; stable releases are marked with <a href="https://github.com/evernote/serge/releases">release tags</a>.</p>
 
-<p>Serge, being written in Perl, is published on <a href="http://www.cpan.org/">CPAN</a>. Run the following command to install or upgrade to the latest stable release:</p>
+<h1>Installing Serge on
+    <span class="win">Windows</span>
+    <span class="unix">Unix</span>
+    <span class="mac">Mac OS</span>
+</h1>
 
-<code class="cli">cpan Serge</code>
-*/ ?>
+<p>
+    Serge can run on any OS with <strong>Perl 5.10 or higher</strong>.
+    <span class="mac unix"><span class="unix">Unix</span><span class="mac">Mac OS</span> systems have Perl already installed.</span>
+    <span class="win">On Windows, we recommend installing <a href="http://strawberryperl.com/">Strawberry Perl</a>.</span>
+</p>
 
-<h1>Installation</h1>
+<p>You can check your Perl version by running this command:</p>
+<code class="cli">perl -v</code>
+
+<!--
+<p>If you plan to use Serge in full sync mode (that is, to pull and push data to your version control system, like Git, Mercurial or SVN), it is assumed that you have the client command-line application for it installed and properly configured. This is not needed if you plan to use Serge in a localization-only mode (generate/update resource files locally).</p>
+-->
 
 <h2>Step 1. Create a Directory for Serge</h2>
 
-<p>Serge can work in any directory. So create a new directory (we will reference it as <code><em>&lt;serge_root&gt;</em></code> hereafter). For example:</p>
+<p>Serge can work in any directory. So create a new directory for Serge application files. For example:</p>
 
-<code class="cli">mkdir ~/serge</code>
+<code class="cli unix mac">mkdir ~/serge</code>
+<code class="cli win">mkdir C:\Serge</code>
 
-<h2>Step 2. Download Sources</h2>
+<h2>Step 2. Download the <span class="stable">Stable Release</span><span class="latest">Latest Code Snapshot</span></h2>
 
-<p>Serge is being actively developed, and its source code is available <a href="https://github.com/evernote/serge">on GitHub</a>. Code in <code>master</code> branch is considered a bleeding edge version; stable releases are marked with <a href="https://github.com/evernote/serge/releases">release tags</a>.</p>
 
-<p>Pick the option that works best for you:</p>
+<!--<h3>Download <span class="stable">Stable Release</span><span class="latest">Latest Code</span></h3>-->
 
-<h3>A. Clone the Repository <a href="https://github.com/evernote/serge"><span id="latest_master_info"></span></a></h3>
+<section class="mac unix">
+   <code class="cli">cd ~/serge
+wget https://github.com/evernote/serge/archive/<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip -O serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip</span>
+unzip serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip
+unlink serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip
+cd serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span></code>
+</section>
 
-<code class="cli">cd <em>&lt;serge_root&gt;</em>
-git clone git@github.com:evernote/serge.git
-cd serge</code>
-
-<h3>B. Download Latest Stable Snapshot <a href="https://github.com/evernote/serge/releases/latest"><span id="latest_release_info"></span></a></h3>
-
-<code class="cli">cd <em>&lt;serge_root&gt;</em>
-wget https://github.com/evernote/serge/archive/<em class="tag_name">&lt;version&gt;</em>.zip -O serge-<em class="tag_name">&lt;version&gt;</em>.zip</span>
-unzip serge-<em class="tag_name">&lt;version&gt;</em>.zip
-unlink serge-<em class="tag_name">&lt;version&gt;</em>.zip
-cd serge-<em class="tag_name">&lt;version&gt;</em></code>
+<section class="win">
+    <p>Download <a id="download_link" href="#">https://github.com/evernote/serge/archive/<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip</a> and unpack it to <code>C:\Serge</code>.</p>
+</section>
 
 <h2>Step 3. Install Dependencies</h2>
 
-<h3>Step 3.1. Install Prerequisites (Linux Only)</h3>
+<section class="unix">
+    <p>Some Perl modules that you're about to install in step 3.2 require compiling binaries from sources. Run your package manager to install build essentials and library headers. For example, on Ubuntu/Debian this will be:</p>
 
-<p>Some Perl modules that you're about to install in step 3.2 require compiling binaries from sources. If you're on a Linux machine, run your package manager to install build essentials and library headers. For example, on Ubuntu/Debian this will be:</p>
+    <code class="cli">sudo apt-get -qq update
+sudo apt-get -qq -y install build-essential libssl-dev libexpat-dev</code>
+</section>
 
-<code class="cli">apt-get -qq update
-apt-get -qq -y install build-essential libssl-dev libexpat-dev</code>
+<p>Installing/upgrading Perl dependencies is done with the help of <code>cpanm</code> package manager, which needs to be installed with the following command:</p>
 
-<p>If you're on Windows, skip this step and go to 3.2.</p>
+<code class="cli"><span class="mac unix">sudo </span>cpan App::cpanminus</code>
 
-<h3>Step 3.2. Install Perl Modules (All Platforms)</h3>
+Once you have it installed, run the following commands:
 
-<p>Installing/upgrading dependencies is done with the help of <code>cpanm</code> package manager, which needs to be installed with the following command:</p>
-
-<code class="cli">cpan App::cpanminus</code>
-
-Once you have it installed, run the following command in <code><em>&lt;serge_root&gt;</em>/serge-<em class="tag_name">&lt;version&gt;</em></code> directory:
-
-<code class="cli">cpanm --installdeps .</code>
+<code class="cli">cd <span class="unix mac">~/serge/</span><span class="win">C:\Serge\</span>serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>
+<span class="mac unix">sudo </span>cpanm --installdeps .</code>
 
 <h2>Step 4. Make Serge Available from Any Directory</h2>
 
-<p>Under Windows, it is recommended to add the <code><em>&lt;serge_root&gt;</em>/serge-<em class="tag_name">&lt;version&gt;</em>/bin</code> directory to your <code>PATH</code> environment variable.</p>
-<p>Under Mac/Linux, the preferred approach is to create a symlink to <code>serge</code> binary:</p>
+<p class="win">Add <code>C:\Serge\serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>\bin</code> directory to your <code>PATH</code> environment variable in Windows settings (make sure to remove the path to the previous version of Serge if it was there). After that you will need to close and open a new shell window so that it would pick up the changes.</p>
 
-<code class="cli">ln -s <em>&lt;serge_root&gt;</em>/serge-<em class="tag_name">&lt;version&gt;</em>/bin/serge /usr/bin/serge</code>
+<p class="mac unix">Create a symlink to <code>serge</code> binary:</p>
+<code class="cli mac unix">sudo ln -s ~/serge/serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>/bin/serge /usr/bin/serge</code>
 
 <h2>Step 5. Verify the Installation</h2>
 
-<p>Run this command:</p>
+<p>Run this command to see command-line help from Serge:</p>
 
 <code class="cli">serge</code>
-
-<p>If you see command-line help from Serge, then everything has been set up correctly.</p>
 
 <h2>Step 6. Generate HTML Help</h2>
 
@@ -117,7 +157,7 @@ Once you have it installed, run the following command in <code><em>&lt;serge_roo
         // update master branch information
         $.getJSON('https://api.github.com/repos/'+project+'/branches/master').done(function (branch) {
             if (branch.commit) {
-                $('#latest_master_info').html('(updated ' + $.timeago(branch.commit.commit.committer.date) + ')');
+                $('#latest_master_info').html('updated ' + $.timeago(branch.commit.commit.committer.date));
             }
         });
 
@@ -126,8 +166,43 @@ Once you have it installed, run the following command in <code><em>&lt;serge_roo
             if (release.assets) {
                 $('.tag_name').text(release.tag_name.replace(' ', '+'));
                 var esc_tag_name = $("<div>").text(release.tag_name).html();
-                $('#latest_release_info').html('(version ' + esc_tag_name + ', released ' + $.timeago(release.published_at) + ')');
+                $('#latest_release_info').html('released ' + $.timeago(release.published_at));
             }
+            $('#download_link').each(function() {
+                $(this).attr('href', $(this).text());
+            });
+        });
+
+        function updateState() {
+            $('.content').removeClass().addClass('content').addClass(version).addClass(os);
+            history.replaceState(undefined, undefined, '?'+os+'/'+version+location.hash);
+        }
+
+        updateState()
+
+        $('#os_win').on('click', function() {
+            os = 'win';
+            updateState();
+        });
+
+        $('#os_unix').on('click', function() {
+            os = 'unix';
+            updateState();
+        });
+
+        $('#os_mac').on('click', function() {
+            os = 'mac';
+            updateState();
+        });
+
+        $('#version_latest').on('click', function() {
+            version = 'latest';
+            updateState();
+        });
+
+        $('#version_stable').on('click', function() {
+            version = 'stable';
+            updateState();
         });
     });
 </script>
