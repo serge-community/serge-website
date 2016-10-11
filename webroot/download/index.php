@@ -128,7 +128,7 @@ Once you have it installed, run the following commands:
 <p class="win">Add <code>C:\Serge\serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>\bin</code> directory to your <code>PATH</code> environment variable in Windows settings (make sure to remove the path to the previous version of Serge if it was there). After that you will need to close and open a new shell window so that it would pick up the changes.</p>
 
 <p class="mac unix">Create a symlink to <code>serge</code> binary:</p>
-<code class="cli mac unix">sudo ln -s ~/serge/serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>/bin/serge /usr/bin/serge</code>
+<code class="cli mac unix">sudo ln -s ~/serge/serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>/bin/serge /usr/local/bin/serge</code>
 
 <h2>Step 5. Verify the Installation</h2>
 
