@@ -136,17 +136,19 @@ Once you have it installed, run the following commands:
 
 <code class="cli">serge</code>
 
-<h2>Step 6. Generate HTML Help</h2>
+<section class="win">
+    <h2>Step 6. Generate HTML Help</h2>
 
-<p>If you're installing Serge on your development machine, you can take advantage of using HTML help that will open in your browser. Run the following command to generate the HTML version of the help for Serge commands:</p>
+    <p>If you're installing Serge on your development machine, you can take advantage of using HTML help that will open in your browser. Run the following command to generate the HTML version of the help for Serge commands:</p>
 
-<code class="cli">serge gendocs</code>
+    <code class="cli">serge gendocs</code>
 
-<p>To test the result, run:</p>
+    <p>To test the result, run:</p>
 
-<code class="cli">serge help</code>
+    <code class="cli">serge help</code>
 
-<p>This will open a help page in the browser.</p>
+    <p>This will open a help page in the browser.</p>
+</section>
 
 <p>Now, <a href="/docs/">get started with Serge workflow and configuration &rarr;</a></p>
 
