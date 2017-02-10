@@ -38,6 +38,12 @@
 
 <dl>
 
+<dt><b>--version</b></dt>
+<dd>
+
+<p>Print Serge version information and exit.</p>
+
+</dd>
 <dt><b>--dry-run</b></dt>
 <dd>
 
