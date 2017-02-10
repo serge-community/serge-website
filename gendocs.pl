@@ -3,14 +3,14 @@
 use strict;
 
 BEGIN {
-    use File::Basename;
-    use File::Spec::Functions qw(rel2abs abs2rel catfile);
-    map { unshift(@INC, catfile(dirname(rel2abs(__FILE__)), $_)) } qw(../Serge/lib);
+    unshift(@INC, "$ENV{L10N_HOME}/serge/lib");
 }
 
 use Encode qw(encode_utf8);
+use File::Basename;
 use File::Find qw(find);
 use File::Path;
+use File::Spec::Functions qw(abs2rel catfile);
 use Pod::Simple::XHTML;
 use Pod::Text;
 use Serge::Pod;
