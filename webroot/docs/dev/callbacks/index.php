@@ -214,7 +214,7 @@
     <em>(STRINGREF)</em><code>content</code>.
 </p>
 <p>Return value: <code>1</code> if the localized file can be generated, <code>0</code> otherwise.</p>
-<p>This callback is similar to <code><a href="#can_generate_localized_file">can_generate_localized_file</a></code> callback, but it is called after the file has been read for disk, so that plugin can analyze source file contents to decide whether to skip the file or not.</p>
+<p>This callback is similar to <code><a href="#can_generate_localized_file">can_generate_localized_file</a></code> callback, but it is called after the file has been read from disk, so that plugin can analyze source file contents to decide whether to skip the file or not.</p>
 
 <h2 id="after_load_source_file_for_generating">after_load_source_file_for_generating</h2>
 <p>Input parameters:
