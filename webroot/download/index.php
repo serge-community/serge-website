@@ -102,7 +102,7 @@ cd serge-<span class="latest">master</span><span class="stable"><span class="tag
 </section>
 
 <section class="win">
-    <p>Download <a id="download_link" href="#">https://github.com/evernote/serge/archive/<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip</a> and unpack it to <code>C:\Serge</code>.</p>
+    <p>Download <a id="download_link" href="#"><span>https://github.com/evernote/serge/archive/</span><span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span><span>.zip</span></a> and unpack it to <code>C:\Serge</code>.</p>
 </section>
 
 <h2>Step 3. Install Dependencies</h2>
@@ -170,13 +170,18 @@ Once you have it installed, run the following commands:
                 var esc_tag_name = $("<div>").text(release.tag_name).html();
                 $('#latest_release_info').html('released ' + $.timeago(release.published_at));
             }
-            $('#download_link').each(function() {
-                $(this).attr('href', $(this).text());
-            });
+            updateLinks()
         });
+
+        function updateLinks() {
+            $('#download_link').each(function() {
+                $(this).attr('href', $(this).children(":visible").text());
+            });
+        }
 
         function updateState() {
             $('.content').removeClass().addClass('content').addClass(version).addClass(os);
+            updateLinks()
             history.replaceState(undefined, undefined, '?'+os+'/'+version+location.hash);
         }
 
