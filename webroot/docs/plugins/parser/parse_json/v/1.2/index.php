@@ -11,7 +11,7 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Engine/Plugin/parse_json.pm</code></p>
 
-<p>This plugin is used to parse arbitrary JSON data structures. It uses regular expressions as a configuration parameter to match translatable nodes in the JSON object tree, and to identify the nodes whose content needs to be treated as HTML which needs to be parsed additionally using the <a href="/docs/plugins/parser/parse_php_xhtml/">parse_php_xhtml</a> parser.</p>
+<p>This plugin is used to parse arbitrary JSON objects. To match translatable nodes in the JSON object tree, it uses regular expressions as a configuration paramater.</p>
 
 <p>If your JSON is a plain dictionary in <code>"key" : "value"</code> format, where all keys need to be translated, use the <a href="/docs/plugins/parser/parse_json_keyvalue/">parse_json_keyvalue</a> plugin instead.</p>
 
@@ -108,16 +108,6 @@ jobs
                 `description` terminal node.
                 */
                 path_doesnt_match    ^description$
-
-                /*
-                (ARRAY) [OPTIONAL] One or more regular
-                expressions to match the node path against;
-                if any of the regular expressions match,
-                the node value is considered an HTML
-                which needs to be processed by
-                `parse_php_xhtml` parser
-                */
-                path_html            _html$
 
                 /*
                 (STRING) [OPTIONAL] Email to send
