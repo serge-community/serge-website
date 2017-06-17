@@ -528,16 +528,15 @@ h4:hover .anchorjs-link {
 .doc-version-container select {
     font-size: 0.8em;
     background: none;
-    color: #333;
+    color: rgb(204, 111, 60);
     border: none;
     border-radius: 0.3em;
     padding: 0.2em 0.3em;
-
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-
     padding-left: 2.2em;
     background: url(icon_fork.svg) 0.6em 50% no-repeat;
     background-size: 1.25em 1.25em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .doc-version-container select:hover {
