@@ -59,23 +59,12 @@
 <p>Return value: <code>1</code> if the file should be temporarily skipped, <code>0</code> otherwise.</p>
 <p>This callback is called immediately after <code><a href="#is_file_orphaned">is_file_orphaned</a></code> callback, and is used to temporarily skip files from being processed (such files are not marked as orphaned in the database).</p>
 
-<h2 id="rewrite_source">rewrite_source</h2>
-<p>Input parameters:
-    <em>(STRING)</em><code>relative_file_path</code>,
-    <em>(STRING, OPTIONAL)</em><code>language</code>,
-    <em>(STRINGREF)</em><code>source_string</code>,
-    <em>(STRINGREF)</em><code>hint</code>.
-</p>
-<p>Return value: <em>none</em>.</p>
-<p>This callback is used to rewrite source string before it is passed through translation pipeline. It can be used to normalize string input, adjust punctuation, etc. Note that this rewriting happens before the <code>can_extract</code> phase, so it is run for all strings,
-even for ones that may later be discarded.</p>
-
 <h2 id="can_extract">can_extract</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>relative_file_path</code>,
     <em>(STRING, OPTIONAL)</em><code>language</code>,
     <em>(STRINGREF)</em><code>source_string</code>,
-    <em>(STRINGREF)</em><code>hint</code>,
+    <em>(STRINGREF)</em><code>hint</code>.
     <em>(STRING)</em><code>context</code>,
     <em>(STRING)</em><code>key</code>.
 </p>
@@ -235,9 +224,6 @@ even for ones that may later be discarded.</p>
 </p>
 <p>Return value: <em>none</em>.</p>
 <p>This callback is called immediately after <code><a href="#can_generate_localized_file_source">can_generate_localized_file_source</a></code> callback for each file that was allowed to be generated.</p>
-
-<h2 id="rewrite_source_2">rewrite_source</h2>
-<p>This is second time <code><a href="#rewrite_source">rewrite_source</a></code> callback is called (when parsing source file to generate its localized copy).</p>
 
 <h2 id="can_extract_2">can_extract</h2>
 <p>This is second time <code><a href="#can_extract">can_extract</a></code> callback is called (when parsing source file to generate its localized copy).</p>

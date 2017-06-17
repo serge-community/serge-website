@@ -15,7 +15,6 @@
 <ul>
     <li><code><a href="/docs/dev/callbacks/#after_load_file">after_load_file</a></code></li>
     <li><code><a href="/docs/dev/callbacks/#before_save_localized_file">before_save_localized_file</a></code></li>
-    <li><code><a href="/docs/dev/callbacks/#rewrite_source">rewrite_source</a></code></li>
     <li><code><a href="/docs/dev/callbacks/#rewrite_translation">rewrite_translation</a></code></li>
     <li><code><a href="/docs/dev/callbacks/#rewrite_path">rewrite_path</a></code></li>
     <li><code><a href="/docs/dev/callbacks/#rewrite_relative_output_file_path">rewrite_relative_output_file_path</a></code></li>
