@@ -88,7 +88,7 @@ jobs
         @inherit                    .#jobs/:master
 
         # override job id (it must be unique)
-        job                         job.feature1
+        id                          job.feature1
 
         # since we are working on the same resource files across
         # multiple branches,  we must disambiguate file paths
