@@ -20,6 +20,7 @@
         "parse_bypass",
         "parse_chrome_json",
         "parse_dtd",
+        "parse_go",
         "parse_hash",
         "parse_js",
         "parse_json",
