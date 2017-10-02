@@ -22,7 +22,7 @@
     <code class="block">package main
 
 func init() {
-	loc.Translations["en"] = map[string]string{
+	locpool.Resources["en"] = map[string]string{
         // <span class="hint">H1 Heading</span>
         "<span class="hint">WelcomeMessage</span>##<span class="context">title</span>": "<span class="string">Welcome!</span>",
 
@@ -54,6 +54,23 @@ jobs
         parser
         {
             plugin                   parse_go
+        }
+
+        callback_plugins
+        {
+            # for the example strings.go file above, change the
+            # language key name before saving the localized file
+            :rewrite-language-key
+            {
+                plugin               replace_strings
+                phase                before_save_localized_file
+
+                data
+                {
+                    replace          `locpool\.Resources\["en`
+                                     `locpool\.Resources\["%LANG%`
+                }
+            }
         }
 
         # other job parameters
