@@ -65,13 +65,6 @@ sync
             # (YES or NO, defaults to NO)
             add_unversioned      NO
 
-            # (STRING) [OPTIONAL] additional parameters to be used
-            # in `git clone` command at project initialization
-            # (when `serge pull --initialize` is run). An example below
-            # tells cloning to be shallow (which can speed up cloning
-            # projects with extensive history)
-            clone_params         --depth 1 --no-tags
-
             # (STRING) [OPTIONAL] Commit message
             # Default: 'Automatic commit of updated project files'
             commit_message       Automatic commit of updated project files
