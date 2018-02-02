@@ -50,6 +50,7 @@ sub save_php {
     my ($command, $podfile) = @_;
 
     my $outfile = catfile($help_root, $command, 'index.php');
+    my $version_dir = catfile($help_root, $command, 'v');
 
     my $out;
 
@@ -59,11 +60,19 @@ sub save_php {
     $parser->perldoc_url_prefix('../');
     $parser->perldoc_url_postfix('/');
 
+    my $include_version_selector = '';
+    if (-d $version_dir) {
+        $include_version_selector =
+            qq|
+    include(\$_SERVER['DOCUMENT_ROOT'] . '/../inc/version-selector.php');
+|;
+    }
+
     $parser->html_header(
 qq|<?php
     \$command = '$command';
     include(\$_SERVER['DOCUMENT_ROOT'] . '/../inc/help-header.php');
-?>
+$include_version_selector?>
 |);
     $parser->html_footer(
 qq|

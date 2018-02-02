@@ -1,5 +1,5 @@
 <?php
-    $command = 'serge-push-ts';
+    $command = 'serge-pull-ts';
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/help-header.php');
 
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/version-selector.php');
@@ -8,17 +8,17 @@
 
 <h1 id="NAME">NAME</h1>
 
-<p>serge-push-ts - Push translation files to translation server</p>
+<p>serge-pull-ts - Pull translation files from translation server</p>
 
 <h1 id="SYNOPSIS">SYNOPSIS</h1>
 
-<p><code>serge push-ts [configuration-files] [--force] [--echo-commands] [--echo-output]</code></p>
+<p><code>serge pull-ts [configuration-files] [--force] [--echo-commands] [--echo-output]</code></p>
 
 <p>Where <code>[configuration-files]</code> is a path to a specific .serge file, or a directory to scan .serge files in. You can specify multiple paths as separate command-line parameters. If no paths provided, Serge will look up for .serge files in the current directory.</p>
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>Based on each configuration file&#39;s <b>sync</b> section, push translation files to remote translation server.</p>
+<p>Based on each configuration file&#39;s <b>job</b> section, pull updated translation files from remote translation server into the local directory.</p>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -27,13 +27,7 @@
 <dt><b>--force</b></dt>
 <dd>
 
-<p>Instruct the remote party to skip any optimizations and force update data from all translation files.</p>
-
-</dd>
-<dt><b>--lang=xx[,yy][,zz]</b>, <b>--language=xx[,yy][,zz]</b> <b>--languages=xx[,yy][,zz]</b></dt>
-<dd>
-
-<p>An optional comma-separated list of target languages. If not specified, all the available languages are supposed to be synchronized.</p>
+<p>Instruct the remote party to skip any optimizations and force update all translation files.</p>
 
 </dd>
 <dt><b>--echo-commands</b></dt>

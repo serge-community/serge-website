@@ -18,7 +18,7 @@
 
 <h1 id="DESCRIPTION">DESCRIPTION</h1>
 
-<p>Based on each configuration file&#39;s <b>sync</b> section, push translation files to remote translation server.</p>
+<p>Based on each configuration file&#39;s <b>job</b> section, push translation files to remote translation server.</p>
 
 <h1 id="OPTIONS">OPTIONS</h1>
 
@@ -28,12 +28,6 @@
 <dd>
 
 <p>Instruct the remote party to skip any optimizations and force update data from all translation files.</p>
-
-</dd>
-<dt><b>--lang=xx[,yy][,zz]</b>, <b>--language=xx[,yy][,zz]</b> <b>--languages=xx[,yy][,zz]</b></dt>
-<dd>
-
-<p>An optional comma-separated list of target languages. If not specified, all the available languages are supposed to be synchronized.</p>
 
 </dd>
 <dt><b>--echo-commands</b></dt>
