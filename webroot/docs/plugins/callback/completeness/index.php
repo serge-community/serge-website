@@ -79,6 +79,12 @@ jobs
                     previewing incomplete files
                     by translators.
 
+                    The parameter accepts the same file-
+                    and language-based macros as `ts_file_path`
+                    and `output_file_path` parameters of the
+                    configuration file. See the configuration
+                    file reference for the full list of macros.
+
                     If this parameter is missing,
                     incomplete files will not be created.
                     */
