@@ -148,6 +148,10 @@
             <?php //_item("dev-plugins",                "/docs/development/plugins/",                   "Plugins") ?>
             */ ?>
         </ul>
+        <h3>Integrations</h3>
+        <ul>
+            <?php _item("third-party-ts",               "/docs/third-party/translation-services/",      "Translation Services") ?>
+        </ul>
     </div>
 
     <div class="body">
