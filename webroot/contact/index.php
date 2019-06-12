@@ -6,7 +6,7 @@
 
 <h1>Need help?</h1>
 
-<p>Feel free to ask questions on our <a href="https://gitter.im/evernote-serge/general">Gitter channel</a> or <a href="https://webchat.freenode.net/?nick=web-guest-...&amp;channels=serge&amp;prompt=1&amp;uio=MTE9MzE28">#serge IRC channel on Freenode</a>.</p>
+<p>Feel free to ask questions in our <a href="https://gitter.im/evernote-serge/general">Gitter chat</a>.</p>
 
 <h1>Found a Bug?</h1>
 
