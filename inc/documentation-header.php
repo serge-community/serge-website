@@ -139,7 +139,7 @@
         </ul>
         <h3>Guides</h3>
         <ul>
-            <?php _item("guides-pootle",                "/docs/guides/pootle/",                         "Serge + Pootle") ?>
+            <?php _item("guides-zing",                "/docs/guides/zing/",                         "Serge + Zing") ?>
         </ul>
         <h3>Extending Serge</h3>
         <ul>

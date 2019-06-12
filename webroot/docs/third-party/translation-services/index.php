@@ -6,14 +6,14 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
-<p>In addition to working with <a href="https://evernote.github.io/zing/">Zing</a> (Evernote's own open-source translation platform) and Pootle (the open-source project that Zing originates from), Serge can potentially work with any other translation service or tool for as long as it meets the following criteria:</p>
+<p>While we highly recommend using Serge with <a href="https://evernote.github.io/zing/">Zing</a>, Evernote's own open-source translation platform, you can set it up to work with any other translation service or tool for as long as it meets the following criteria:</p>
 
 <ol>
     <li>Provides a public API</li>
     <li>Works with resource files as a whole, not with their deltas. I.e. you should be able to create and update source resource files on the translation service, and then download full translated files back.</li>
 </ol>
 
-<p>Of course, each translation platform or tool is different, and the way they handle localization automation differs as well, with their own quirks and limitations, so you may want to pilot your translation workflow with multiple systems before committing to a specific one. What's great about Serge is that you're no longer translation service-dependent, and it is much easier to change the tools as you go. Feel free to ask questions on translation platforms in our <a href="https://gitter.im/evernote-serge/general">Gitter chat</a>.</p>
+<p>Of course, each translation platform or tool is different, and the way they handle localization automation differs as well, so you may want to pilot your translation workflow with multiple systems before committing to a specific one. What's great about Serge is that you're no longer translation service-dependent, and it is much easier to change the tools as you go. Feel free to ask questions on translation platforms in our <a href="https://gitter.im/evernote-serge/general">Gitter chat</a>.</p>
 
 <p>Below we have compiled a list of third-party translation service plugins that need to be installed separately.</p>
 

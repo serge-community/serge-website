@@ -22,7 +22,7 @@
 
 <p>Such functionality is realized by the means of <a href="/docs/plugins/ts/<?php echo $ts_plugins[0] ?>">translation service plugins</a>, which need to know how to send files from a specified directory to an external service and how to get the files back into file system.</p>
 
-<p>At Evernote, we use <a href="/docs/guides/pootle/">Serge in a combination with Pootle</a> — a free open-source online translation server software that you can host on your premises (either on the same <a href="/docs/localization-server/">localization server</a> where Serge runs, or separately).</p>
+<p>At Evernote, we use <a href="/docs/guides/zing/">Serge in a combination with Zing</a> — our own free open-source online translation server software that you can host on your premises (either on the same <a href="/docs/localization-server/">localization server</a> where Serge runs, or separately). Also, check out the <a href="/docs/third-party/translation-services/">list of translation services</a> for which you can install third-party plugins.</p>
 
 <p>Note that Serge is very flexible when it comes to <a href="/docs/configuration-files/">configuration</a>. You can send a subset of translation projects to a localization vendor, while using crowdsourcing approach to translate the rest.</p>
 

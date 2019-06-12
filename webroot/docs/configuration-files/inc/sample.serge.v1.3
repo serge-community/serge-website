@@ -6,7 +6,7 @@
     See https://github.com/iafan/Config-Neat for more information.
 */
 
-# `sync` block contains all synchronization-related settings
+# `sync` block contains all synchroinzation-related settings
 sync
 {
     # `ts` defines which translation service
@@ -14,15 +14,19 @@ sync
     ts
     {
         # (STRING) TS plugin name
-        plugin                      zing
+        plugin                      pootle
 
         # [OPTIONAL] Plugin data. Each plugin may have specific parameters
         # inside the `data` block. See the documentation for each specific
         # plugin for more information.
         data
         {
-            # Unique project id (folder name) in Zing
+            # Unique project id (folder name) in Pootle
             project_id              my_project
+
+            # Path to Pootle's `manage.py` utility that is used to sync
+            # local translation files with its internal database
+            manage_py_path          /path/to/pootle/manage.py
         }
     }
 
@@ -171,19 +175,12 @@ jobs
 
         # (ARRAY) List of regular expressions for the file name
         # to match the files that should be processed.
-        # This matches case-sensitively against the file name (without path)
+        # This matches case-insensitively against the file name (without path)
         source_match                \.rc$
-
-        # (ARRAY) [OPTIONAL] List of regular expressions for directory paths
-        # that should be skipped. Matches are performed case-sensitively
-        # against the relative directory path (without file name).
-        # Default behavior: Exclude `.svn', `.git', `.hg' (Mercurial),
-        # '.bzr' (Bazaar) and `CVS' dirs
-        source_exclude_dirs ^(\.svn|\.git|\.hg|\.bzr|CVS)$
 
         # (ARRAY) [OPTIONAL] List of regular expressions for the file name
         # to match the files that should be skipped.
-        # This matches case-sensitively against the file name (without path)
+        # This matches case-insensitively against the file name (without path)
         # Default behavior: no exclusion takes place
         source_exclude              ``
 

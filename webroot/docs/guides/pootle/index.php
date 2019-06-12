@@ -6,7 +6,7 @@
 
 <h1>Serge + Pootle</h1>
 
-<p class="notice"><a href="http://pootle.translatehouse.org/">Pootle</a> is a free open-source web-based translation server. Pootle works with Serge beautifully, and is a recommended translation front-end if you want to build a truly seamless continuous localization process. Pootle supports working with both community and paid translators.</p>
+<p class="notice">IMPORTANT: This guide is kept for historical reasons; Pootle open-source project is no longer maintained by the open-source community, so for new installations we recommend using <a href="/docs/guides/zing/">Zing</a>.</p>
 
 <h1>Configuring Serge to work with Pootle</h1>
 

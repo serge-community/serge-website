@@ -6,7 +6,7 @@
 
 <h1>Localization Server</h1>
 
-<p>Localization server is a server which continuously runs Serge and is configured to have proper access to your <a href="/docs/version-control/">version control</a> infrastructure. For example, for Git-based setups this means that you need to have Git properly configured there, with all the necessary public keys. If you decide to host a public-facing translation server software like <a href="http://pootle.translatehouse.org/">Pootle</a>, it will typically be the same server.</p>
+<p>Localization server is a server which continuously runs Serge and is configured to have proper access to your <a href="/docs/version-control/">version control</a> infrastructure. For example, for Git-based setups this means that you need to have Git properly configured there, with all the necessary public keys. If you decide to host a public-facing translation server software like <a href="https://evernote.github.io/zing/">Zing</a>, it will typically be the same server.</p>
 
 <p>For better security, we recommend to setup a separate user to run localization-related scripts on behalf of.</p>
 

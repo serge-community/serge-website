@@ -56,6 +56,6 @@
     );
 
     $ts_plugins = array(
-        "pootle",
+        "zing",
     );
 ?>
