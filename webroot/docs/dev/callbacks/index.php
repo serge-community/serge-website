@@ -184,14 +184,20 @@ even for ones that may later be discarded.</p>
 <p>This callback is called for each string about to be added to translation file, and can be used to prohibit exposing  certain strings for translation. The same callback is called when the localized files are generated.</p>
 
 <h2 id="add_dev_comment">add_dev_comment</h2>
+<p>DEPRECATED. Use <code><a href="#add_hint">add_hint</a></code>.</p>
+
+<h2 id="add_hint">add_hint</h2>
 <p>Input parameters:
+    <em>(STRING)</em><code>source_string</code>,
+    <em>(STRING)</em><code>context</code>,
+    <em>(STRING)</em><code>namespace</code>,
     <em>(STRING)</em><code>relative_file_path</code>,
+    <em>(STRING)</em><code>key</code>,
     <em>(STRING)</em><code>language</code>,
-    <em>(STRINGREF)</em><code>source_string</code>,
-    <em>(ARRAYREF)</em><code>dev_comments</code>.
+    <em>(ARRAYREF)</em><code>hint_lines</code>.
 </p>
 <p>Return value: <em>none</em>.</p>
-<p>This callback is called for units that are about to be added to the translation file, and is supposed to be used to add extra developer comments to the end of the provided array.</p>
+<p>This callback is called for units that are about to be added to the translation file, and can change the <code>hint_lines</code> array, usually to append extra comments.</p>
 
 <h2 id="after_serialize_ts_file">after_serialize_ts_file</h2>
 <p>Input parameters:
