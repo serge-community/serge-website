@@ -104,19 +104,6 @@ jobs
                         foo              bAr
                         baz              EtC
                     }
-
-                    /*
-                    [OPTIONAL] A dictionary of predefined
-                    fuzzy translations. Providing translations
-                    with a fuzzy flag set is needed mostly for
-                    tests.
-                    */
-                    fuzzy_translations
-                    {
-                        # source         (STRING) translation
-                        abc              Ijk
-                        def              Xyz
-                    }
                 }
             }
         }
