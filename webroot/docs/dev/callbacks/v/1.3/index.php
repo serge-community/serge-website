@@ -91,22 +91,6 @@ even for ones that may later be discarded.</p>
 <p>Return value: <em>none</em>.</p>
 <p>This callback is called after source files are scanned and parsed and before translation files are scanned and parsed.</p>
 
-<h2 id="rewrite_relative_ts_file_path">rewrite_relative_ts_file_path</h2>
-<p>Input parameters:
-    <em>(STRING)</em><code>relative_file_path</code>,
-    <em>(STRING)</em><code>language</code>.
-</p>
-<p>Return value: new value of <em>(STRING)</em><code>relative_file_path</code>, or <code>undef</code> if no rewrite is needed.</p>
-<p>This callback is called before each translation file is read.</p>
-
-<h2 id="rewrite_absolute_ts_file_path">rewrite_absolute_ts_file_path</h2>
-<p>Input parameters:
-    <em>(STRING)</em><code>absolute_file_path</code>,
-    <em>(STRING)</em><code>language</code>.
-</p>
-<p>Return value: new value of <em>(STRING)</em><code>absolute_file_path</code>, or <code>undef</code> if no rewrite is needed.</p>
-<p>This callback is called after <code>rewrite_relative_ts_file_path</code>, once the absolute path has been resolved.</p>
-
 <h2 id="before_update_database_from_ts_lang_file">before_update_database_from_ts_lang_file</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>namespace</code>,
@@ -114,7 +98,7 @@ even for ones that may later be discarded.</p>
     <em>(STRING)</em><code>language</code>.
 </p>
 <p>Return value: <em>none</em>.</p>
-<p>This callback is called after <code>rewrite_absolute_ts_file_path</code>, once the target file has been checked for presence.</p>
+<p>This callback is called before each translation file is read.</p>
 
 <h2 id="can_process_ts_file">can_process_ts_file</h2>
 <p>Input parameters:
@@ -123,14 +107,6 @@ even for ones that may later be discarded.</p>
 </p>
 <p>Return value: <code>1</code> if the translation file should be processed, <code>0</code> otherwise.</p>
 <p>This callback is called immediately after <code><a href="#before_update_database_from_ts_lang_file">before_update_database_from_ts_lang_file</a></code> callback, and is used to skip translation files from being parsed.</p>
-
-<h2 id="before_deserialize_ts_file">before_deserialize_ts_file</h2>
-<p>Input parameters:
-    <em>(STRING)</em><code>relative_file_path</code>,
-    <em>(STRINGREF)</em><code>content</code>.
-</p>
-<p>Return value: <em>none</em>.</p>
-<p>This callback is called once the translation interchange file is read into memory. The callback allows to preprocess the file's content before parsing.</p>
 
 <h2 id="rewrite_parsed_ts_file_item">rewrite_parsed_ts_file_item</h2>
 <p>Input parameters:
@@ -167,12 +143,6 @@ even for ones that may later be discarded.</p>
 <p>Return value: <code>1</code> if the translation file can be generated, <code>0</code> otherwise.</p>
 <p>This callback is called before each translation file is about to be generated, and can be used to prohibit generating certain translation files.</p>
 
-<h2 id="rewrite_relative_ts_file_path">rewrite_relative_ts_file_path</h2>
-<p>This is second time <code><a href="#rewrite_relative_ts_file_path">rewrite_relative_ts_file_path</a></code> callback is called (before generating the translation interchange file).</p>
-
-<h2 id="rewrite_absolute_ts_file_path">rewrite_absolute_ts_file_path</h2>
-<p>This is second time <code><a href="#rewrite_absolute_ts_file_path">rewrite_absolute_ts_file_path</a></code> callback is called (before generating the translation interchange file).</p>
-
 <h2 id="can_translate">can_translate</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>relative_file_path</code>,
@@ -192,14 +162,6 @@ even for ones that may later be discarded.</p>
 </p>
 <p>Return value: <em>none</em>.</p>
 <p>This callback is called for units that are about to be added to the translation file, and is supposed to be used to add extra developer comments to the end of the provided array.</p>
-
-<h2 id="after_serialize_ts_file">after_serialize_ts_file</h2>
-<p>Input parameters:
-    <em>(STRING)</em><code>relative_file_path</code>,
-    <em>(STRINGREF)</em><code>content</code>.
-</p>
-<p>Return value: <em>none</em>.</p>
-<p>This callback is called once the translation interchange file content is generated in memory. The callback allows to post-process the file's content before saving.</p>
 
 <h2 id="get_translation_pre">get_translation_pre</h2>
 <p>Input parameters:
@@ -246,14 +208,14 @@ even for ones that may later be discarded.</p>
 <p>Input parameters:
     <em>(STRING)</em><code>relative_file_path</code>.
 </p>
-<p>Return value: new value of <em>(STRING)</em><code>relative_file_path</code>, or <code>undef</code> if no rewrite is needed.</p>
+<p>Return value: new value of <em>(STRING)</em><code>relative_file_path</code>.</p>
 <p>This callback is called before the localized file is about to be generated and is used to rewrite relative path (in other words, change output file location) before it expanded into an absolute path.</p>
 
 <h2 id="rewrite_absolute_output_file_path">rewrite_absolute_output_file_path</h2>
 <p>Input parameters:
     <em>(STRING)</em><code>absolute_file_path</code>.
 </p>
-<p>Return value: new value of <em>(STRING)</em><code>absolute_file_path</code>, or <code>undef</code> if no rewrite is needed.</p>
+<p>Return value: new value of <em>(STRING)</em><code>absolute_file_path</code>.</p>
 <p>This callback is called to rewrite already expanded ouput file path.</p>
 
 <h2 id="can_generate_localized_file_source">can_generate_localized_file_source</h2>
