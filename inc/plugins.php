@@ -46,6 +46,7 @@
     $serializer_plugins = array(
         "serialize_po",
         "serialize_csv",
+        "serialize_xliff",
     );
 
     $vcs_plugins = array(
