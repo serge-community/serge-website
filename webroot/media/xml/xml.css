@@ -1,0 +1,12 @@
+.cm-meta        {color: #999; font-style: italic; }
+.cm-tag         {color: #08c; }
+.cm-bracket     {color: #999; }
+.cm-attribute   {color: #86f; }
+.cm-string      {color: #090; }
+.cm-comment     {color: #999; }
+
+code.block.xml {
+    font-size: 110%;
+    line-height: 120%;
+    color: #000;
+}

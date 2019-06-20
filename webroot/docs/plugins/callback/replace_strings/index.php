@@ -26,7 +26,7 @@
 
 <p>You can include macros in <code>replace</code> parameter, see below. These macros will be expanded to their actual values. See <a href="/docs/configuration-files/reference/">Configuration File Reference</a> for the list of available macros.</p>
 
-<p>This plugin inherits all the configuration logic from the parent <a href="/docs/plugins/callback/if/">'if' plugin</a> and, if all conditions are met, exectutes the rewrite logic. Note that all <code>if</code> conditions are optional: if none are provided, the replacement rules will be always executed.</p>
+<p>This plugin inherits all the configuration logic from the parent <a href="/docs/plugins/callback/if/">'if' plugin</a> and, if all conditions are met, executes the rewrite logic. Note that all <code>if</code> conditions are optional: if none are provided, the replacement rules will be always executed.</p>
 
 <h2>Usage</h2>
 

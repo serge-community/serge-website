@@ -1,6 +1,7 @@
 <?php
     $callback_plugins = array(
         "append_hint_message",
+        "apply_xslt",
         "completeness",
         "control_commands",
         "feature_branch",

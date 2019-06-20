@@ -16,6 +16,10 @@
         <script src="/media/configneat/colorize_config.js"></script>
     ';
 
+    if (isset($extra_head)) {
+        $head .= $extra_head;
+    }
+
     include('header.php');
 
     function _sel($id) {
