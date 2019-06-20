@@ -290,26 +290,6 @@ jobs
                         has_all_flags           flag3 flag4
 
                         /*
-                        (ARRAY) [OPTIONAL] Test if any of the
-                        specified captures have been set by this
-                        or descendant plugins within the same
-                        job.
-                        */
-                        has_capture             MYGLOBAL:1
-
-                        /*
-                        (ARRAY) [OPTIONAL] Test if none of the
-                        specified captures have been set.
-                        */
-                        has_no_capture          FOO:1
-
-                        /*
-                        (ARRAY) [OPTIONAL] Test if all
-                        specified captures have been set.
-                        */
-                        has_all_captures       FOO:1 FOO:2 FOO:3
-
-                        /*
                         `then` block is evaluated only if all
                         conditions in the parent `if` block
                         are met
@@ -329,35 +309,6 @@ jobs
                             remove all the specified flags.
                             */
                             remove_flag             flag7
-
-                            /*
-                            (LIST) [OPTIONAL] a list of capture rules
-                            to execute.
-                            */
-                            capture
-                            {
-                                :capture-global-comment
-                                {
-                                    /*
-                                    (ARRAY) An array of two strings: a pattern
-                                    to match, and, optionally, match flags.
-
-                                    Matched text in parenthesis ('capture groups'
-                                    in terms of regular expressions) will be
-                                    stored as numbered captures: `1`, `2`, `3`, ...
-                                    */
-                                    match        `Global comment:\s*(.*?)\s*\n` `s`
-
-                                    /*
-                                    (STRING) [OPTIONAL] a prefix to add to each
-                                    capture for disambiguation. For example,
-                                    `1` becomes `MYGLOBAL:1`, `2` => `MYGLOBAL:2`,
-                                    and so on.
-                                    */
-                                    prefix       MYGLOBAL:
-                                }
-                            }
-
                         }
                     }
 
