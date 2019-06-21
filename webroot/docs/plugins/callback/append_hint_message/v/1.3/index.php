@@ -19,7 +19,7 @@
 
 <p>In the context of <code>if</code> conditions, the <code>content_matches</code> and <code>content_doesnt_match</code> rules work against the source string (not the entire file).</p>
 
-<p>When configuring the plugin, you can include macros in hint <code>message</code> parameter, see below. These macros will be expanded to their actual values. Having macros allows one to construct preview links pointing to a specific target file, or to a help page for a specific file extension. In addition to file- and language-based macros (see <a href="/docs/configuration-files/reference/">Configuration File Reference</a> for the list of available macros), one can use <code>%CAPTURE:...%</code> macros to substitute them with captured data (see <a href="/docs/plugins/callback/if/">'if' plugin</a> documentation for more information).</p>
+<p>When configuring the plugin, you can include macros in hint <code>message</code> parameter, see below. These macros will be expanded to their actual values. Having macros allows one to construct preview links pointing to a specific target file, or to a help page for a specific file extension. See <a href="/docs/configuration-files/reference/">Configuration File Reference</a> for the list of available macros.</p>
 
 <h2>Usage</h2>
 

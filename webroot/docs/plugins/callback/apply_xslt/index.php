@@ -69,7 +69,9 @@ jobs
                     {
                         /*
                         (STRING) param name and its value;
-                        values can contain macros, e.g. %CAPTURE:...%.
+                        values can contain %CAPTURE:...% macros
+                        (see `if` plugin for more information
+                        about captures).
 
                         In XSLT, all such external parameters must
                         first be declared as <xsl:param name="foo" />
