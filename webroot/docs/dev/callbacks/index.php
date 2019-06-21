@@ -312,7 +312,9 @@ even for ones that may later be discarded.</p>
     <em>(ARRAYREF)</em><code>flags</code>,
     <em>(STRING)</em><code>language</code>,
     <em>(STRING)</em><code>key</code>,
-    <em>(STRING)</em><code>translation</code>.
+    <em>(STRING)</em><code>translation</code>,
+    <em>(STRING)</em><code>namespace</code>,
+    <em>(STRING)</em><code>relative_file_path</code>.
 </p>
 <p>Return value: <em>none</em>.</p>
 <p>This callback is called after the translation is determined for the source string, and can be used to save translations into a database, or save them in memory for some plugin-specific needs.</p>
