@@ -15,33 +15,7 @@
 
 <p>Given a source string to translate, this plugin finds similar strings in the database by trying different transformation combinations, and then guesses the translation for the source string by applying the same chain of transformation to the pre-existing similar translation. Transformations include adjusting whitespace, ending punctuation, HTML tags, or applying different case.</p>
 
-<p>This plugin speeds up the translation when small tweaks are applied to source strings in the course of product development.</p>
-
-<h2>Example</h2>
-
-<p>We get a new string, "HELLO, WORLD", that has no translation into Russian:</p>
-
-<p class="notice">New string: "HELLO, WORLD" &rarr; no Russian translation</p>
-
-<p>The plugin detects that in the Serge database associated with the current job there's a similar "Hello, world!" string, which already has a Russian translation:
-
-<p class="notice">Existing string: "Hello, world!" &rarr; Russian translation: "Привет, мир!"</p>
-
-<p>The plugin tries to guess the desired sequence of transformations needed to go from "Hello, world!" to "HELLO, WORLD":</p>
-
-<p class="notice">
-    "Hello, world!" &rarr; <strong>(???)</strong> &rarr; "HELLO, WORLD"<br/>
-    "Hello, world!" &rarr; <strong>(uppercase) &rarr; (remove exclamation mark)</strong> &rarr; "HELLO, WORLD"
-</p>
-
-<p>Once the transformation has been determined, it applies it to the Russian translation of the original string:
-
-<p class="notice">"Привет, мир!" &rarr; <strong>(uppercase) &rarr; (remove exclamation mark)</strong> &rarr; "ПРИВЕТ, МИР"</p>
-
-<p>And the resulting translation, "ПРИВЕТ, МИР", is returned by the plugin as a fuzzy translation, ready for review:</p>
-
-<p class="notice">New string: "HELLO, WORLD" &rarr; Russian translation: "ПРИВЕТ, МИР"</p>
-
+<p>Consider this example: there's a phrase "Hello, world!" in the database, and it is already translated into Russian as "Привет, мир!". Now we get a new string, "HELLO, WORLD". This plugin detects that it can transform "Hello, world!" into "HELLO, WORLD" by uppercasing it first, then removing the ending exclamation mark, and applies the same transformation to the translation. The result, "ПРИВЕТ, МИР", is returned as a guessed translation.</p>
 
 <h2>Usage</h2>
 
@@ -52,11 +26,40 @@ jobs
 {
     :sample-job
     {
+        destination_languages            de fr ja ko ru
+
         callback_plugins
         {
             :transform
             {
                 plugin                   transform
+
+                data
+                {
+                    /*
+                    (BOOLEAN) [OPTIONAL] Should the guessed
+                    translations be returned as fuzzy?
+                    Default: YES
+                    */
+                    as_fuzzy_default     YES
+
+                    /*
+                    (ARRAY) [OPTIONAL] List of languages
+                    for which guessed translations are
+                    always returned as fuzzy (despite
+                    the `as_fuzzy_default` setting)
+                    */
+                    as_fuzzy             ja ko
+
+                    /*
+                    (ARRAY) [OPTIONAL] List of languages
+                    for which guessed translations are
+                    always returned as NOT fuzzy (despite
+                    the `as_fuzzy_default` setting)
+                    */
+                    as_not_fuzzy         ru
+
+                }
             }
         }
 
