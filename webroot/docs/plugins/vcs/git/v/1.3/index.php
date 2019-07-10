@@ -56,8 +56,7 @@ sync
                 # one can specify branch name after the '#'.
                 # below, the `v5` branch us used
                 main             ssh://l10n@git.example.com/myapp#v5
-                # if no branch is specified, default repo branch is used
-                # (typically, `master`)
+                # if no branch is specified, `master` is used by default
                 widget           ssh://l10n@git.example.com/mywidget
             }
 
@@ -65,6 +64,13 @@ sync
             # files be added to the remote repository automatically?
             # (YES or NO, defaults to NO)
             add_unversioned      NO
+
+            # (STRING) [OPTIONAL] additional parameters to be used
+            # in `git clone` command at project initialization
+            # (when `serge pull --initialize` is run). An example below
+            # tells cloning to be shallow (which can speed up cloning
+            # projects with extensive history)
+            clone_params         --depth 1 --no-tags
 
             # (STRING) [OPTIONAL] Commit message
             # Default: 'Automatic commit of updated project files'
@@ -75,33 +81,6 @@ sync
 
             # (STRING) commiter's email address
             email                l10n-robot@example.com
-
-            # (STRING) [OPTIONAL] additional parameters to be used
-            # in `git clone` command at project initialization
-            # (when `serge pull --initialize` is run). An example below
-            # tells cloning to be shallow (which can speed up cloning
-            # projects with extensive history)
-            clone_params         --depth 1 --no-tags
-
-            # (STRING) [OPTIONAL] additional parameters to be used
-            # in `git fetch` command during the update of a local project
-            # repository (during `serge pull` step). An example below
-            # tells fetch to be shallow
-            fetch_params         --depth 1 --no-tags
-
-            # (STRING) [OPTIONAL] additional parameters to be used
-            # in `git commit` command when changes are committed
-            # to the local repository (during `serge push` step).
-            # An example below tells commit to bypass the pre-commit
-            # and commit-msg hooks
-            commit_params        --no-verify
-
-            # (STRING) [OPTIONAL] additional parameters to be used
-            # in `git push` command when changes are pushed
-            # to the remote origin (during `serge push` step).
-            # An example below tells commit to bypass the pre-push
-            # hook
-            push_params          --no-verify
         }
     }
 
