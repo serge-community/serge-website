@@ -52,7 +52,7 @@
     <li><a id="os_mac">Mac OS</a></li>
 </ul>
 
-<p>Below you will see instructions on installing Serge on your system with the necessary dependencies. If you prefer to keep things isolated, you can also <a href="https://github.com/evernote/serge-dockerfiles">install Serge as a Docker container</a>.</p>
+<p>Below you will see instructions on installing Serge on your system with the necessary dependencies. If you prefer to keep things isolated, you can also <a href="https://github.com/evernote/serge/tree/master/docker">install Serge as a Docker container</a>.</p>
 
 <h3>Select Preferred Version</h3>
 <ul class="menu selector" id="version_selector">
