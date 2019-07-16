@@ -6,15 +6,15 @@
 
 <h1>Localization Server</h1>
 
-<p>Localization server is a server which continuously runs Serge and is configured to have proper access to your <a href="/docs/version-control/">version control</a> infrastructure. For example, for Git-based setups this means that you need to have Git properly configured there, with all the necessary public keys. If you decide to host a public-facing translation server software like <a href="https://evernote.github.io/zing/">Zing</a>, it will typically be the same server.</p>
+<p>Localization server is a server which continuously runs Serge and is configured to have proper access to your <a href="/docs/version-control/">version control</a> infrastructure. For example, for Git-based setups this means that you need to have Git properly configured there, with all the necessary public keys. If you decide to host a public-facing translation server software like <a href="/docs/guides/zing/">Zing</a>, it will typically be the same server.</p>
 
 <p>For better security, we recommend to setup a separate user to run localization-related scripts on behalf of.</p>
 
-<p>Assuming your server runs under Linux-based OS, and your Serge configuration files are stored in e.g. <code>/usr/local/share/serge</code> folder, and the user is named <code>l10n</code>, a bare-bones setup would be to create a system-wide crontab file <code>/etc/cron.d/serge</code> with the following contents:</p>
+<p>Assuming your server runs under Linux-based OS, and your Serge configuration files are stored in e.g. <code>/var/serge/data/configs</code> folder (see <a href="/docs/organizing-your-data/">Organizing your data</a>), and the user is named <code>l10n</code>, a bare-bones setup would be to create a system-wide crontab file <code>/etc/cron.d/serge</code> with the following contents:</p>
 
 <figure>
     <figcaption>/etc/cron.d/serge</figcaption>
-    <code class="block wrap">*/5 * * * * l10n serge sync /usr/local/share/serge >/var/log/serge.log 2>&amp;1</code>
+    <code class="block wrap">*/5 * * * * l10n serge sync /var/serge/data/configs >/var/log/serge.log 2>&amp;1</code>
 </figure>
 
 <p>The cron job above will run every 5 minutes and try to launch a new Serge sync cycle for all configuration files in the specified directory.</p>

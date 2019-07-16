@@ -17,10 +17,12 @@
 <p>It is recommended that you install both Serge and Zing on the same dedicated localization server which will be accessible by your translators. Once you install Zing (please follow its own installation instructions), you will need to specify the root directory where Zing expects all translation files to be stored, in its configuration file (typical installations will use <code>~/.zing/zing.conf</code>):</p>
 
 <script language="text/x-config-neat">
-ZING_TRANSLATION_DIRECTORY = '/var/serge/po'
+ZING_TRANSLATION_DIRECTORY = '/var/serge/data/ts'
 </script>
 
-<p>Below is an example of the file structure that Zing would expect under <code>/var/serge/po</code> directory:</p>
+<p class="notice">Why <code>/var/serge/data/ts</code>? Technically, you can set up any directory to exchange files between Serge and Zing. In this guide, we try to follow the suggested canonical directory structure for your Serge installation. See <a href="/docs/organizing-your-data/">Organizing your data</a>.</p>
+
+<p>Below is an example of the file structure that Zing would expect under <code>/var/serge/data/ts</code> directory:</p>
 
 <script language="text/x-config-neat">
 /project1
@@ -54,11 +56,11 @@ ZING_TRANSLATION_DIRECTORY = '/var/serge/po'
 <figure>
     <figcaption>Part of project1.serge</figcaption>
     <script language="text/x-config-neat">
-ts_file_path            /var/serge/po/project1/%LOCALE%/%FILE%.po
+ts_file_path            /var/serge/data/ts/project1/%LOCALE%/%FILE%.po
 </script>
 </figure>
 
-<p>Notice that we use <code>%LOCALE%</code> macro here to generate locale-specific folders under <code>/var/serge/po/project1/</code> directory. For this macro to generate proper locale names, it is recommended to specify destination languages in their "canonical" form, where language name is a two-char <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1 language code</a> optionally followed by dash and a two-char <a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1 country code</a>. In Serge, it is recommended to use a lowercase version of the language, as macros like <code>%LOCALE%</code> will properly adjust the case:</p>
+<p>Notice that we use <code>%LOCALE%</code> macro here to generate locale-specific folders under <code>/var/serge/data/ts/project1/</code> directory. For this macro to generate proper locale names, it is recommended to specify destination languages in their "canonical" form, where language name is a two-char <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1 language code</a> optionally followed by dash and a two-char <a href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1 country code</a>. In Serge, it is recommended to use a lowercase version of the language, as macros like <code>%LOCALE%</code> will properly adjust the case:</p>
 
 <figure>
     <figcaption>Part of project1.serge</figcaption>
@@ -73,7 +75,7 @@ destination_languages   de ja pt-br
 
 <h2>Registering a Project in Zing</h2>
 
-<p>In order to appear in the translation interface, every new project needs to be initially registered in Zing. You, as a Zing administrator, need to go to Zing's Admin interface, select Projects tab, create a new project there and specify the project id, e.g. <code>project1</code>. This will tell Zing that the project files are located in <code>/var/serge/po/project1/</code> directory. Zing will scan files in there and publish the project for translation. In addition to specifying the project id, you need to give the project its display name, e.g. "Project 1", and leave default values for other parameters.</p>
+<p>In order to appear in the translation interface, every new project needs to be initially registered in Zing. You, as a Zing administrator, need to go to Zing's Admin interface, select Projects tab, create a new project there and specify the project id, e.g. <code>project1</code>. This will tell Zing that the project files are located in <code>/var/serge/data/ts/project1/</code> directory. Zing will scan files in there and publish the project for translation. In addition to specifying the project id, you need to give the project its display name, e.g. "Project 1", and leave default values for other parameters.</p>
 
 <h2>Configuring Serge Synchronization</h2>
 
@@ -140,7 +142,7 @@ jobs
 {
     # job 1
     {
-        ts_file_path            /var/serge/po/project1/%LOCALE%/%FILE%.po
+        ts_file_path            /var/serge/data/ts/project1/%LOCALE%/%FILE%.po
         destination_languages   de ja pt-br
 
         # other job parameters

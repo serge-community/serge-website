@@ -60,6 +60,7 @@
             <?php _item("translation-service",          "/docs/translation-service/",                   "Translation Service") ?>
             <?php _item("localization-cycle",           "/docs/localization-cycle/",                    "Localization Cycle") ?>
             <?php _item("localization-server",          "/docs/localization-server/",                   "Localization Server") ?>
+            <?php _item("organizing-your-data",         "/docs/organizing-your-data/",                  "Organizing Your Data") ?>
             <?php _item("command-line-interface",       "/docs/command-line-interface/",                "Command-line Interface") ?>
         </ul>
         <h3>Reference</h3>

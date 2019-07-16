@@ -12,13 +12,16 @@
 
 <p>When running any Serge command which expects a configuration file, you can actually provide multiple configuration files, or even specify the directory where configuration files with .serge extension are located, and Serge will process all these files.</p>
 
-<p>Example (run 'push' command on 'my-ios-client.serge' and 'my-mac-client.serge' configuration files):</p>
+<p>Example (run <code>push</code> command on <code>my-ios-client.serge</code> and <code>my-mac-client.serge</code> configuration files):</p>
 <code class="cli">serge push my-ios-client.serge my-mac-client.serge</code>
 
-<p>Example (run 'sync' command on all files with '.serge' extension in the current directory):</p>
+<p>Example (run <code>sync</code> command on all files with <code>.serge</code> extension in the current directory in their alphabetical order):</p>
 <code class="cli">serge sync</code>
 
-<p>Sync-related commands can be specified one after another. In the example below we run 'pull', and then 'localize' command on 'my-ios-client.serge' configuration file:</p>
+<p>You can also run Serge against a specified directory:</p>
+<code class="cli">serge sync /var/serge/data/configs</code>
+
+<p>Sync-related commands can be specified one after another. In the example below we run <code>pull</code>, and then <code>localize</code> command on <code>my-ios-client.serge</code> configuration file:</p>
 <code class="cli">serge pull localize my-ios-client.serge</code>
 
 
