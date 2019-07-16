@@ -2,6 +2,13 @@
     $section = 'serializer-plugins';
     $subpage = 'ref-plugin-serialize_xliff';
     $title = '.XLIFF Serializer Plugin';
+
+    $extra_head = '
+        <script src="/media/vendor/codemirror/mode/xml.js"></script>
+        <link rel="stylesheet" href="/media/xml/xml.css" />
+        <script src="/media/xml/colorize_config.js"></script>
+    ';
+
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-header.php');
 
     $available_since = '1.4';
@@ -18,28 +25,29 @@
 
 <figure>
     <figcaption>messages.json.xliff</figcaption>
-    <code class="block"><?xml version="1.0" encoding="utf-8"?>&lt;xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2"&gt;
-    &lt;file datatype="x-unknown" original="messages.json"
-        source-language="en" target-language="test"&gt;
-        &lt;body&gt;
-            &lt;trans-unit approved="yes" id="37881f5ca702bb268877e4edb0edc83d"
-                xml:space="preserve"&gt;
-                &lt;source xml:lang="en"&gt;Value 1&lt;/source&gt;
-                &lt;target state="new" xml:lang="test" /&gt;
-                &lt;note from="developer"&gt;Description 1&lt;/note&gt;
-                &lt;context-group name="serge" purpose="x-serge"&gt;
-                    &lt;context context-type="x-serge-id"&gt;1&lt;/context&gt;
-                    &lt;context context-type="x-serge-file-id"&gt;1&lt;/context&gt;
-                    &lt;context context-type="x-serge-context"&gt;string1&lt;/context&gt;
-                &lt;/context-group&gt;
-            &lt;/trans-unit&gt;
+    <script language="text/xml"><?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file datatype="x-unknown" original="messages.json"
+        source-language="en" target-language="test">
+        <body>
+            <trans-unit approved="yes" id="37881f5ca702bb268877e4edb0edc83d"
+                xml:space="preserve">
+                <source xml:lang="en">Value 1</source>
+                <target state="new" xml:lang="test" />
+                <note from="developer">Description 1</note>
+                <context-group name="serge" purpose="x-serge">
+                    <context context-type="x-serge-id">1</context>
+                    <context context-type="x-serge-file-id">1</context>
+                    <context context-type="x-serge-context">string1</context>
+                </context-group>
+            </trans-unit>
 
-            &lt;!-- ... more units go here ... --&gt;
+            <!-- ... more units go here ... -->
 
-        &lt;/body&gt;
-    &lt;/file&gt;
-&lt;/xliff&gt;
-</code>
+        </body>
+    </file>
+</xliff>
+</script>
 </figure>
 
 <h2>Usage</h2>
