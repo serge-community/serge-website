@@ -63,8 +63,8 @@
     &lt;a href="http://sample.com"&gt;http://sample.com&lt;/a&gt;
 &lt;/p&gt;
 
-&lt;input type="search" placeholder="<span class="string">string</span>"&gt;
-&lt;input type="text" value="<span class="string">string</span>"&gt;
+&lt;input type="search" placeholder="<span class="string">string</span>" /&gt;
+&lt;input type="text" value="<span class="string">string</span>" /&gt;
 
 &lt;div&gt;string&lt;/div&gt;
 &lt;div lang="en"&gt;<span class="string">string</span>&lt;/div&gt;
