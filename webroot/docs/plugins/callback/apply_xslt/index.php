@@ -25,11 +25,8 @@
 <ul>
     <li><code><a href="/docs/dev/callbacks/#after_load_file">after_load_file</a></code></li>
     <li><code><a href="/docs/dev/callbacks/#before_save_localized_file">before_save_localized_file</a></code></li>
-    <li><code><a href="/docs/dev/callbacks/#rewrite_source">rewrite_source</a></code></li>
-    <li><code><a href="/docs/dev/callbacks/#rewrite_translation">rewrite_translation</a></code></li>
-    <li><code><a href="/docs/dev/callbacks/#rewrite_path">rewrite_path</a></code></li>
-    <li><code><a href="/docs/dev/callbacks/#rewrite_relative_output_file_path">rewrite_relative_output_file_path</a></code></li>
-    <li><code><a href="/docs/dev/callbacks/#rewrite_absolute_output_file_path">rewrite_absolute_output_file_path</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#after_serialize_ts_file">after_serialize_ts_file</a></code></li>
+    <li><code><a href="/docs/dev/callbacks/#before_deserialize_ts_file">before_deserialize_ts_file</a></code></li>
 </ul>
 
 <p>This plugin allows one to do apply XSLT transformations to an XML document. Examples of use: pre-processing source <a href="/docs/plugins/parser/parse_xml/">XML resource files</a> before parsing; post-processing generated localized XML resource files before saving; pre- and post-processing of XML-based translation interchange files (e.g. <a href="/docs/plugins/serializer/serialize_xliff/">XLIFF</a>).</p>
