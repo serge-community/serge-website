@@ -6,6 +6,7 @@
         "control_commands",
         "feature_branch",
         "if",
+        "keys_language",
         "limit_languages",
         "process_if",
         "replace_strings",
