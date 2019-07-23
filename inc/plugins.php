@@ -21,6 +21,7 @@
         "parse_android",
         "parse_bypass",
         "parse_chrome_json",
+        "parse_csv",
         "parse_dtd",
         "parse_go",
         "parse_hash",
