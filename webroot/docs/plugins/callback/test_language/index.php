@@ -88,8 +88,8 @@ jobs
                     /*
                     (STRING) [OPTIONAL] Target language name.
                     This plugin will kick in when the target
-                    language if job's `destination_languages`
-                    parameter matches this value
+                    language in job's `destination_languages`
+                    parameter matches this value.
                     Default: test
                     */
                     language             test
