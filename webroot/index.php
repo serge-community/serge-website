@@ -4,7 +4,7 @@
 ?>
 
 <div class="motto">Free, Open-Source Solution for Continuous Localization</div>
-<div class="graphic-bg"></div>
+<a href="/docs/"><div class="graphic-bg"></div></a>
 <div class="graphic"></div>
 
 <div class="table">
