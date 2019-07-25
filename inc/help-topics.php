@@ -1,1 +1,1 @@
-<?php $help_topics = array("serge","serge-clean-ts","serge-gendocs","serge-help","serge-import","serge-localize","serge-pull","serge-pull-ts","serge-push","serge-push-ts","serge-sync","serge-test-parser"); ?>
+<?php $help_topics = array("serge","serge-clean-ts","serge-gendocs","serge-help","serge-import","serge-localize","serge-pull","serge-pull-ts","serge-push","serge-push-ts","serge-show","serge-sync","serge-test-parser"); ?>
