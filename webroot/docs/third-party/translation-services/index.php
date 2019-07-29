@@ -6,11 +6,11 @@
 
 <h1><?php echo htmlspecialchars($title) ?></h1>
 
-<p>While we highly recommend using Serge with <a href="https://evernote.github.io/zing/">Zing</a>, Evernote's own open-source translation platform, you can set it up to work with any other translation service or tool for as long as it meets the following criteria:</p>
+<p>While we highly recommend using Serge with <a href="https://evernote.github.io/zing/">Zing</a>, Evernote's own open-source TMS/CAT tool, you can set it up to work with any other translation service or tool for as long as it meets the following criteria:</p>
 
 <ol>
-    <li>Provides a public API</li>
-    <li>Works with resource files as a whole, not with their deltas. I.e. you should be able to create and update source resource files on the translation service, and then download full translated files back.</li>
+    <li>Provides a public remotely accessible API or a command-line interface.</li>
+    <li>Works with "permanent" projects, not job-based ones. You should be able create a project once and then modify it at will by adding, removing, or re-uploading modified source files.</li>
 </ol>
 
 <p>Of course, each translation platform or tool is different, and the way they handle localization automation differs as well, so you may want to pilot your translation workflow with multiple systems before committing to a specific one. What's great about Serge is that you're no longer translation service-dependent, and it is much easier to change the tools as you go. Feel free to ask questions on translation platforms in our <a href="https://gitter.im/evernote-serge/general">Gitter chat</a>.</p>
