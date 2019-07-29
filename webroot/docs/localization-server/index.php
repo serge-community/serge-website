@@ -10,15 +10,24 @@
 
 <p>For better security, we recommend to setup a separate user to run localization-related scripts on behalf of.</p>
 
-<p>Assuming your server runs under Linux-based OS, and your Serge configuration files are stored in e.g. <code>/var/serge/data/configs</code> folder (see <a href="/docs/organizing-your-data/">Organizing your data</a>), and the user is named <code>l10n</code>, a bare-bones setup would be to create a system-wide crontab file <code>/etc/cron.d/serge</code> with the following contents:</p>
+<p>Assuming your server runs under Linux-based OS, and your Serge configuration files are stored in e.g. <code>/var/serge/data/configs</code> folder (see <a href="/docs/organizing-your-data/">Organizing your data</a>), a bare-bones setup would be to create a simple wrapper script, <code>/usr/local/bin/serge-endless-sync</code>, that will run the localization in an endless loop, like this:</p>
 
 <figure>
-    <figcaption>/etc/cron.d/serge</figcaption>
-    <code class="block wrap">*/5 * * * * l10n serge sync /var/serge/data/configs >/var/log/serge.log 2>&amp;1</code>
+    <figcaption>/usr/local/bin/serge-endless-sync</figcaption>
+    <code class="block"><span class="cm-comment">#!/bin/bash</span>
+<span class="cm-keyword">while :</span>
+<span class="cm-keyword">do</span>
+    <span class="cm-comment"># run the localization cycle (and rewrite the log)</span>
+    serge sync /var/serge/data/configs >/var/log/serge.log 2>&amp;1
+
+    <span class="cm-comment"># clean up orphaned translation interchange files (and append to the log)</span>
+    serge clean-ts /var/serge/data/configs >>/var/log/serge.log 2>&amp;1
+
+    <span class="cm-keyword">echo</span> "Waiting 10 seconds till the next cycle. Press [Ctrl+C] to stop..."
+    <span class="cm-keyword">sleep</span> 10
+<span class="cm-keyword">done</code>
 </figure>
 
-<p>The cron job above will run every 5 minutes and try to launch a new Serge sync cycle for all configuration files in the specified directory.</p>
-
-<p class="notice">Note: in the scenario above, one needs to make sure that only one copy of Serge is running at a time. This is why we're <em>overwriting</em> the same log file (<code>/var/log/serge.log</code>) — this file is locked exclusively, and thus the other instance will fail until the previous copy finishes execution. If you want to <em>append</em> to a log instead, you need another approach to implement a 'one instance at a time' requirement (for example, use a wrapper script in a combination with <code>flock</code> utility).</p>
+<p>For testing purposes, you can run this script directly from the command line. In the actual production environment, you will need to run it as a daemon so that it starts automatically after system reboot. You may also want to add some log rotation instead of rewriting the <code>/var/log/serge.log</code> file on each cycle.</p>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
