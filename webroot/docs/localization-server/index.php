@@ -10,7 +10,7 @@
 
 <p>For better security, we recommend to setup a separate user to run localization-related scripts on behalf of.</p>
 
-<p>Assuming your server runs under Linux-based OS, and your Serge configuration files are stored in e.g. <code>/var/serge/data/configs</code> folder (see <a href="/docs/organizing-your-data/">Organizing your data</a>), a bare-bones setup would be to create a simple wrapper script, <code>/usr/local/bin/serge-endless-sync</code>, that will run the localization in an endless loop, like this:</p>
+<p>Assuming your server runs under Unix-based OS, and your Serge configuration files are stored in e.g. <code>/var/serge/data/configs</code> folder (see <a href="/docs/organizing-your-data/">Organizing your data</a>), a bare-bones setup would be to create a simple wrapper script, <code>/usr/local/bin/serge-endless-sync</code>, that will run the localization in an endless loop, like this:</p>
 
 <figure>
     <figcaption>/usr/local/bin/serge-endless-sync</figcaption>
