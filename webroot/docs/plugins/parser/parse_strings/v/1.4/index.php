@@ -34,16 +34,11 @@ i<?php
 /* <span class="hint">comment</span> */
 "<span class="hint">some_key</span>##<span class="context">context</span>" = "<span class="string">string</span>"; // <span class="hint">extra comment</span>
 
-/* <span class="hint">This is a multi-line string</span> */
-"<span class="hint">another key</span>" = "<span class="string">one
-two
-three</span>";
-
 ...
 </code>
 </figure>
 
-<p class="notice">Note: <code>\U<em>XXXX</em></code> encoding for Unicode symbols is not supported. Use actual Unicode symbols instead.</p>
+<p class="notice">Limitation: multi-line comments and key values are not supported yet. Also, <code>\U<em>XXXX</em></code> encoding for Unicode symbols is not supported. It is possible to use final Unicode symbols, though.</p>
 
 <h2>Usage</h2>
 
@@ -60,11 +55,9 @@ jobs
         }
 
         /*
-        .strings historically use UTF-16LE output encoding,
-        for which a byte-order-mark (BOM) needs to be present
-        in the output file. But it is also possible to use
-        UTF-8 nowadays (in which case you won't need these
-        two parameters).
+        .strings always use UTF-16LE output encoding,
+        and byte-order-mark (BOM) needs to be present
+        in the output file
         */
         output_encoding          UTF-16LE
         output_bom               YES
