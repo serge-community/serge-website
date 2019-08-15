@@ -115,9 +115,29 @@ jobs
                 if any of the regular expressions match,
                 the node value is considered an HTML
                 which needs to be processed by
-                `parse_php_xhtml` parser
+                a nested HTML parser.
                 */
                 path_html            _html$
+
+                /*
+                [OPTIONAL] In order to specify an alternative
+                nested HTML parser, or to control nested parser
+                parameters, one can provide this parser definition
+                block. If omitted, the `parse_php_xhtml` parser
+                will be used with the default parameters.
+                */
+                html_parser
+                {
+                    parser           parse_php_xhtml
+
+                    data
+                    {
+                                     # plugin-specific data;
+                                     # see the documentation
+                                     # for a particular parser
+                                     # that you will be using
+                    }
+                }
 
                 /*
                 (STRING) [OPTIONAL] Email to send
