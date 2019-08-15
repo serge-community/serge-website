@@ -127,33 +127,14 @@ jobs
                 validate_output    NO
 
                 /*
-                (ARRAY) [OPTIONAL] Array of additional tags
-                that are used to extract content from.
-
-                Default is an empty value.
-                */
-                include_tags       td th
-
-                /*
-                (ARRAY) [OPTIONAL] Array of tags
-                that must be excluded from processing
-                (this value takes precedence over
-                include_tags and allows one to
-                modify the original default list of tags).
-
-                Default is an empty value.
-                */
-                exclude_tags       li
-
-                /*
                 (STRING) [OPTIONAL] Email to send
-                error reports on behalf of.
+                error reports on behalf of
                 */
                 email_from         l10n-robot@acme.org
 
                 /*
                 (ARRAY) [OPTIONAL] One or more email
-                addresses to send error reports to.
+                addresses to send error reports to
                 */
                 email_to           engineer@acme.org
                                    project-manager@acme.org
