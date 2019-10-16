@@ -30,6 +30,7 @@
         "parse_json_keyvalue",
         "parse_keyvalue",
         "parse_key_space_value",
+        "parse_locjson",
         "parse_master",
         "parse_php_xhtml",
         "parse_plist",
