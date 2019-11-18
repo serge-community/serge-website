@@ -73,7 +73,7 @@ sync
             # (STRING) public committer name
             name                 L10N Robot
 
-            # (STRING) committer's email address
+            # (STRING) commiter's email address
             email                l10n-robot@example.com
 
             # (STRING) [OPTIONAL] additional parameters to be used
@@ -81,30 +81,12 @@ sync
             # (when `serge pull --initialize` is run). An example below
             # tells cloning to be shallow (which can speed up cloning
             # projects with extensive history)
-            # Default: empty string
             clone_params         --depth 1 --no-tags
-
-            # (STRING) [OPTIONAL] a command to be invoked to clone
-            # a repository. When specified, the `clone_params` parameter
-            # is ignored, and the internal `git clone <...>` command
-            # invocation is replaced with the provided one.
-            # This is useful to run complex cloning scripts
-            # that work better with monorepos, or to set up specific
-            # repository properties to support, for example, Git LFS.
-            # Before the command is executed, the local checkout directory
-            # is pre-created and set as a current working directory,
-            # and the following environment variables are set:
-            #   GIT_LOCAL  => target local checkout directory
-            #   GIT_REMOTE => remote URL (as parsed from `remote_path`)
-            #   GIT_BRANCH => branch name (as parsed from `remote_path`)
-            # Default: empty string
-            clone_command        ./clone-monorepo.sh lfs/include/path
 
             # (STRING) [OPTIONAL] additional parameters to be used
             # in `git fetch` command during the update of a local project
             # repository (during `serge pull` step). An example below
             # tells fetch to be shallow
-            # Default: empty string
             fetch_params         --depth 1 --no-tags
 
             # (STRING) [OPTIONAL] additional parameters to be used
@@ -112,7 +94,6 @@ sync
             # to the local repository (during `serge push` step).
             # An example below tells commit to bypass the pre-commit
             # and commit-msg hooks
-            # Default: empty string
             commit_params        --no-verify
 
             # (STRING) [OPTIONAL] additional parameters to be used
@@ -120,7 +101,6 @@ sync
             # to the remote origin (during `serge push` step).
             # An example below tells commit to bypass the pre-push
             # hook
-            # Default: empty string
             push_params          --no-verify
         }
     }
@@ -128,58 +108,6 @@ sync
     # other sync parameters
     # ...
 }
-</script>
-</figure>
-
-<p>The following script, if used in <code>clone_command</code>, is identical to the default behavior: it clones a remote repo into a target local directory. It can be a good starting point for you to experiment with custom cloning scripts.</p>
-
-<figure>
-    <figcaption>clone-default.sh</figcaption>
-    <script language="text/x-config-neat">
-#!/bin/sh
-
-echo "Initializing local checkout..."
-echo "GIT_LOCAL : $GIT_LOCAL"
-echo "GIT_REMOTE: $GIT_REMOTE"
-echo "GIT_BRANCH: $GIT_BRANCH"
-
-# set up the repository
-# (current working directory is already set
-# to the proper pre-created local folder)
-git clone $GIT_REMOTE --branch $GIT_BRANCH .
-</script>
-</figure>
-
-<p>The following script initializes LFS, enables sparse checkout, and uses an external parameter passed from the config file.</p>
-
-<figure>
-    <figcaption>clone-monorepo.sh</figcaption>
-    <script language="text/x-config-neat">
-#!/bin/sh
-
-LFS_INCLUDE_PATH=$1
-
-echo "Initializing local monorepo checkout..."
-echo "LFS_INCLUDE_PATH : $LFS_INCLUDE_PATH"
-echo "GIT_LOCAL        : $GIT_LOCAL"
-echo "GIT_REMOTE       : $GIT_REMOTE"
-echo "GIT_BRANCH       : $GIT_BRANCH"
-
-# set up the repository
-# (current working directory is already set
-# to the proper pre-created local folder)
-git init
-git lfs install
-git remote add origin "$GIT_REMOTE"
-git config core.sparsecheckout true
-git config lfs.fetchinclude "$LFS_INCLUDE_PATH"
-echo "$LFS_INCLUDE_PATH" >> .git/info/sparse-checkout
-
-# do an initial fetch/checkout of just one branch
-# with no tags and with a history depth of 1
-git fetch origin --no-tags --depth=1 \
-    +refs/heads/$GIT_BRANCH:refs/remotes/origin/$GIT_BRANCH
-git checkout $GIT_BRANCH
 </script>
 </figure>
 
