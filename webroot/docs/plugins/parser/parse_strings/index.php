@@ -43,8 +43,6 @@ three</span>";
 </code>
 </figure>
 
-<p class="notice">Note: <code>\U<em>XXXX</em></code> encoding for Unicode symbols is not supported. Use actual Unicode symbols instead.</p>
-
 <h2>Usage</h2>
 
 <figure>
