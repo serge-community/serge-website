@@ -31,6 +31,7 @@
     <li><a href="https://www.mojito.global/">Mojito</a> (open-source)</li>
     <li><a href="https://phraseapp.com/">PhraseApp</a> (commercial)</li>
     <li><a href="https://www.transifex.com">Transifex</a> (commercial)</li>
+    <li><a href="https://www.weblate.org">Weblate</a> (open-source)</li>
     <li><a href="https://zanata.org">Zanata</a> (open-source)</li>
 </ul>
 
