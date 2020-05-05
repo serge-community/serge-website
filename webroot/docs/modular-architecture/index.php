@@ -21,6 +21,6 @@
     <li>Control Serge Translation Memory database right from the translation UI (by the means of commands provided in translator's comments)</li>
 </ul>
 
-<p>Learn more about supported functionality by looking up the documentation on available <a href="/docs/plugins/<?php echo $parser_plugins[0] ?>">parser plugins</a> and <a href="/docs/plugins/<?php echo $callback_plugins[0] ?>">callback plugins</a>.</p>
+<p>Learn more about supported functionality by looking up the documentation on available <a href="/docs/plugins/parser/<?php echo $parser_plugins[0] ?>">parser plugins</a> and <a href="/docs/plugins/callback/<?php echo $callback_plugins[0] ?>">callback plugins</a>.</p>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
