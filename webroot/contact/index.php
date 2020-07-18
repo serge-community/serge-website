@@ -10,10 +10,10 @@
 
 <h1>Found a Bug?</h1>
 
-<p>Please file an issue <a href="https://github.com/evernote/serge/issues?state=open">on Github</a>.</p>
+<p>Search for issues <a href="https://github.com/evernote/serge/issues">on Github</a> first, then file a new one.</p>
 
 <h1>Want to Contribute?</h1>
 
-<p>Clone <a href="https://github.com/evernote/serge">our Github repo</a>, create a new branch (one branch per bugfix or feature) and push your changes there, then create a pull request. Note that it makes sense to first open an issue on Github and discuss bugs and enhancements prior to making a pull request. This will make sure that your changes are something we want to see in the mainstream branch and understand what they are about.</p>
+<p>Contributions and bugfixes are welcome! For new functionality, please get in touch with us in <a href="https://gitter.im/evernote-serge/general">Gitter chat</a> and describe what you want to achieve, before contributing the code.</p>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/footer.php') ?>
