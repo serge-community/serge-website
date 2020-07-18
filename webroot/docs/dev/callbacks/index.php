@@ -44,7 +44,7 @@
     <em>(STRINGREF)</em><code>content</code>.
 </p>
 <p>Return value: <em>none</em>.</p>
-<p>This callback is called when a source file is loaded to extract strings from.</p>
+<p>This callback is called when a source file is loaded into memory. This step can be used to unconditionally preprocess all the matching resource files on the fly, before the content hash of the file is calculated. See also the <code><a href="#before_parsing_source_file">before_parsing_source_file</a></code> callback below.</p>
 
 <h2 id="is_file_orphaned">is_file_orphaned</h2>
 <p>Input parameters: <em>(STRING)</em>relative_file_path.</p>
@@ -58,6 +58,15 @@
 </p>
 <p>Return value: <code>1</code> if the file should be temporarily skipped, <code>0</code> otherwise.</p>
 <p>This callback is called immediately after <code><a href="#is_file_orphaned">is_file_orphaned</a></code> callback, and is used to temporarily skip files from being processed (such files are not marked as orphaned in the database).</p>
+
+<h2 id="before_parsing_source_file">before_parsing_source_file</h2>
+<p>Input parameters:
+    <em>(STRING)</em><code>relative_file_path</code>,
+    <em>(STRINGREF)</em><code>content</code>.
+</p>
+<p>Return value: <em>none</em>.</p>
+
+<p>This callback is called after the file content was loaded, preprocessed, its hash value has been calculated, compared to a previous one stored in the database, and it was determined that the file content has been changed. This means that this callback (and content parsing that immediately follows it) will run only for files that have been modified since last run (or when Serge is running in a forced mode, which tells it to parse all the files unconditionally).
 
 <h2 id="rewrite_source">rewrite_source</h2>
 <p>Input parameters:
