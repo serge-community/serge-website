@@ -13,10 +13,10 @@
     <code class="block">/var
     /serge
         /data
-            /db
-            /vcs
-            /ts
             /configs
+            /db
+            /ts
+            /vcs
 </code>
 </figure>
 
@@ -66,21 +66,21 @@
     <code class="block">/var
     /serge
         /data
+            /configs
+                android.serge
+                ios.serge
             /db
                 translate.db3
-            /vcs
-                /android
-                    ... local checkout for your project ...
-                /ios
-                    ... local checkout for your project ...
             /ts
                 /android
                     ... translation interchange files created by Serge ...
                 /ios
                     ... translation interchange files created by Serge ...
-            /configs
-                android.serge
-                ios.serge
+            /vcs
+                /android
+                    ... local checkout for your project ...
+                /ios
+                    ... local checkout for your project ...
 </code>
 </figure>
 
