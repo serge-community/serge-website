@@ -48,7 +48,7 @@
 <div class="pod">
     <div class="menu">
         <ul>
-            <?php _item("",                             "/docs/",                                       "What is Serge?") ?>
+            <?php _item("",                             "/docs/",                                       "Getting Started") ?>
         </ul>
         <h3>Basic Concepts</h3>
         <ul>

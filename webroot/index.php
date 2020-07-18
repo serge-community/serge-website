@@ -3,29 +3,37 @@
     include($_SERVER['DOCUMENT_ROOT'] . '/../inc/header.php');
 ?>
 
-<div class="motto">Free, Open-Source Solution for Continuous Localization</div>
 <a href="/docs/"><div class="graphic-bg"></div></a>
 <div class="graphic"></div>
 
 <div class="table">
-    <div style="width: 410px; padding-right: 80px">
-        <h1>In a Nutshell</h1>
+    <div style="width: 360px; padding-right: 80px">
+        <h1>Continuous Localization <nobr>Made Easy</nobr></h1>
 
-        <p><strong style="cursor: help" title="'Serge' stands for 'String Extraction and Resource Generation Engine'">Serge</strong> helps you set up a seamless continuous localization process for your software in a fully automated and scalable fashion.</p>
+        <p><strong>Serge</strong> (<strong>S</strong>tring <strong>E</strong>xtraction and <strong>R</strong>esource <strong>G</strong>eneration <strong>E</strong>ngine) is a continuous localization solution that allows you to configure robust localization automation scenarios in minutes, and integrate localization processes into your everyday development, content authoring and CI/CD workflows.</p>
 
-        <p>It allows developers to concentrate on maintaining resource files in just one language (e.g. English), and will take care of keeping all localized resources in sync and translated.</p>
+        <p>Your team can focus on maintaining resource files in a single source language, and Serge will take care of keeping all localized resources in sync and translated, without relying on third-party systems.</p>
 
-        <p>Serge is developed and maintained by <a href="http://evernote.com/">Evernote</a>, where it works non-stop to help deliver various Evernote clients, websites and marketing materials in 25 languages.</p>
+        <p>By means of writing platform-agnostic connectors, Serge can be used to enable continuous localization for any externally stored content: your marketing website, blog, CMS, help center, documentation, app store descriptions.</p>
 
-        <p class="cta"><a href="/docs/">Learn more &rarr;</a></p>
+        <p>Serge was originally developed by <a href="http://evernote.com/">Evernote</a>, where it works non-stop to deliver various Evernote clients, websites and marketing materials in 25 languages. Today it is used by large enterprises and smaller teams alike, helping them reach their global audiences without sacrificing the speed of product development.</p>
+
+        <p><a href="/docs/" class="cta-button">Get Started</a></p>
     </div>
 
-    <div style="width: 520px">
-        <h1>Watch the Video</h1>
+    <div>
+        <h1>What problem does it solve?</h1>
 
-        <p>This is a recording of the presentation we did at IMUG meetup. It gives an overview of what Serge is and how you can use it in your team:</p>
+        <p>When you decide to automate your localization process, you usually look at the proprietary automation APIs provided by a translation platform of your choice. This <em>last-mile</em> integration is what Serge does for you, providing the following benefits:</p>
 
-        <p><iframe width="520" height="293" src="https://www.youtube.com/embed/bC3wECRgLog" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+        <ul>
+            <li><strong>Ease of maintenance.</strong> Instead of writing custom scripts, you are writing configuration files (once) and rarely have to touch them again.</li>
+            <li><strong>No vendor lock-in.</strong> Having Serge between your source code and an external translation platform system allows you to switch to another one anytime, keeping all your existing automation in place. <a href="/docs/third-party/translation-services/">Check out the list of supported translation platforms</a>.</li>
+            <li><strong>Security.</strong> You will never have to give external TMS access to your code repository, and third parties will not see your original source files. Serge creates intermediate translation files that contain only the translatable content. There's no way for an external vendor to break your resource files, and you never have to deal with any merge conflicts.</li>
+            <li><strong>Flexibility.</strong> You can easily deal with logical projects spawning multiple repositories and file formats.</li>
+            <li><strong>Advanced localization workflows.</strong> With Serge, many things that were typically tricky to implement, are possible: multi-step localization with intermediate languages, simultaneous localization of multiple code branches, conditional file processing based on their contents, and so on.</li>
+            <li><strong>Extensibility.</strong> With modular architecture, you're not limited to what one TMS has to offer; you can create custom parsers, synchronization plugins for other version control systems and TMS, while keeping the majority of your localization automation intact.</li>
+        </ul>
     </div>
 </div>
 

@@ -1,5 +1,17 @@
 html {
     -webkit-text-size-adjust: 100%; /* prevent font scaling on iOS */
+
+    --primary-color: #7e64bd;
+    --primary-color-50: #7e64bd80;
+    --primary-color-70: #7e64bdb3;
+    --primary-color-80: #7e64bdcc;
+    --link-color: #f26322;
+    --external-link-color: #1e7ced;
+    --footer-link-color: #777;
+    --cta-button-color: #7e64bd;
+
+    --motto-bg-color: #1a1a1a;
+    --graphic-bg-color: #0062ff0f;
 }
 
 body {
@@ -13,32 +25,37 @@ body {
     overflow-y: scroll; /* to avoid horizontal jumps on short pages */
 }
 
-body, input, select {
-    font-family: "Roboto", sans-serif;
+body,
+input,
+select {
+    font-family: 'Roboto', sans-serif;
     font-size: 12pt;
 }
 
-strong, b {
+strong,
+b {
     font-weight: 400;
 }
 
-a, a:visited {
-   color: rgb(95, 179, 54);
-   text-decoration: none;
-   font-weight: bolder;
+a,
+a:visited {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bolder;
 }
 
 a {
     display: inline-block;
     padding: 0 0.3em;
-    border-radius: 0.3em;
+    border-radius: 3px;
     margin: 0 -0.3em;
 }
 
 a[href^="//"],
 a[href^="http://"],
-a[href^="https://"] {
-    color: #00a2dd;
+a[href^="https://"]
+{
+    color: var(--external-link-color);
 }
 
 a:hover {
@@ -53,12 +70,12 @@ a:hover {
 }
 
 .header-bg {
-    background: rgb(204, 111, 60);
+    background: var(--primary-color);
     position: absolute;
     height: 70px;
     left: 0;
     right: 0;
-         box-sizing: border-box;
+    box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
 
@@ -66,7 +83,7 @@ a:hover {
     position: relative;
     height: 70px;
     padding-top: 14px;
-         box-sizing: border-box;
+    box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
 
@@ -74,7 +91,9 @@ a:hover {
     background: none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 400;
     color: rgba(0, 0, 0, 0.8);
     font-size: 1.5em;
@@ -97,7 +116,7 @@ h3 {
 h1:target,
 h2:target,
 h3:target {
-    background-color: rgb(204, 111, 60);
+    background-color: var(--primary-color);
     color: #fff;
 }
 
@@ -113,8 +132,9 @@ h3:target code {
     color: #fff;
 }
 
-code, dt {
-    font-family: "Inconsolata", monospace;
+code,
+dt {
+    font-family: 'Inconsolata', monospace;
     font-size: 110%;
     font-weight: normal;
 }
@@ -127,8 +147,9 @@ dt b {
     font-weight: normal;
 }
 
-code, dt b {
-  color: rgb(204, 111, 60);
+code,
+dt b {
+    color: var(--primary-color);
 }
 
 .logo {
@@ -182,6 +203,11 @@ a.logo {
 
 .footer .license {
     float: right;
+}
+
+.footer a,
+.footer a:visited {
+    color: var(--footer-link-color);
 }
 
 /* ========================== */
@@ -345,7 +371,8 @@ ul.social-buttons li {
     /*width: 120px;*/
 }
 
-ul, ol {
+ul,
+ol {
     margin-left: 1em;
 }
 
@@ -358,7 +385,7 @@ ol > li {
     position: relative;
 }
 ol > li:before {
-    content: counters(item, ".")".";
+    content: counters(item, '.') '.';
     counter-increment: item;
     position: absolute;
     margin-right: 100%;
@@ -414,7 +441,7 @@ ol > li:before {
 }
 
 .pod .menu li.selected a {
-    background: rgb(204, 111, 60);
+    background: var(--primary-color);
     color: #fff;
 }
 
@@ -444,27 +471,13 @@ ol > li:before {
 
 /* Home page */
 
-.motto {
-    display: block;
-    text-align: center;
-    font-size: 1.4em;
-    background-color: rgb(70, 70, 70);
-    color: #fff;
-    height: 120px;
-    line-height: 120px;
-    position: absolute;
-    left: 0;
-    right: 0;
-}
-
 .graphic-bg {
-    background: rgb(229, 225, 219) url(homepage_diagram.svg) 50% 0 no-repeat;
-    background-size: 1565px 220px;
+    background: var(--graphic-bg-color) url(homepage_diagram.svg) 50% 0 no-repeat;
+    background-size: 1565px 317px;
     position: absolute;
-    height: 220px;
+    height: 317px;
     left: 0;
     right: 0;
-    top: 190px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -473,9 +486,12 @@ ol > li:before {
     margin-bottom: 120px;
 }
 
-body.page-index .cta {
+a.cta-button {
     font-size: 150%;
-    margin-top: 1.2em;
+    background-color: var(--cta-button-color);
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 3px;
 }
 
 /* tables */
@@ -528,7 +544,7 @@ h4:hover .anchorjs-link {
 .doc-version-container select {
     font-size: 0.8em;
     background: none;
-    color: rgb(204, 111, 60);
+    color: var(--primary-color);
     border: none;
     border-radius: 0.3em;
     padding: 0.2em 0.3em;
@@ -610,7 +626,7 @@ input#search:focus::-webkit-input-placeholder {
 }
 /* Main category headers */
 .algolia-docsearch-suggestion--category-header {
-    background-color: rgb(204, 111, 60);
+    background-color: var(--primary-color);
     font-weight: normal;
     padding: 0 0.7em;
 }
@@ -621,7 +637,7 @@ input#search:focus::-webkit-input-placeholder {
     background-color: #fe0;
 }
 /* Highligted search terms in the main category headers */
-.algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--highlight  {
+.algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--highlight {
     color: black;
     background-color: #fe0;
 }
@@ -630,7 +646,7 @@ input#search:focus::-webkit-input-placeholder {
     color: #000;
 }
 .aa-cursor .algolia-docsearch-suggestion {
-    background: rgba(229, 225, 219, 0.7);
+    background: var(--primary-color-70);
 }
 
 .algolia-docsearch-suggestion__secondary {
@@ -644,12 +660,12 @@ input#search:focus::-webkit-input-placeholder {
 @media (min-width: 768px) {
     .algolia-docsearch-suggestion--subcategory-column {
         border-right: 1px solid rgba(0, 0, 0, 0.1);
-        background: rgba(229, 225, 219, 0.5);
+        background: var(--primary-color-50);
         cursor: pointer;
     }
 
     .aa-cursor .algolia-docsearch-suggestion--subcategory-column {
-        background: rgba(229, 225, 219, 0.8);
+        background: var(--primary-color-80);
     }
 
     .algolia-docsearch-suggestion__secondary {
@@ -658,7 +674,7 @@ input#search:focus::-webkit-input-placeholder {
 
     .algolia-docsearch-suggestion__secondary .algolia-docsearch-suggestion--subcategory-column-text {
         line-height: 150%;
-        margin-top: .5em;
+        margin-top: 0.5em;
     }
 }
 
@@ -680,7 +696,7 @@ ul.menu.selector li a {
 .content.mac #os_mac,
 .content.latest #version_latest,
 .content.stable #version_stable {
-    background-color: rgba(204, 111, 60, 0.8);
+    background-color: var(--primary-color-80);
     color: #fff;
 }
 
@@ -694,19 +710,39 @@ ul.menu.selector li a {
     display: none !important;
 }
 
-.content.win .win { display: inline !important; }
-.content.unix .unix { display: inline !important; }
-.content.mac .mac { display: inline !important; }
+.content.win .win {
+    display: inline !important;
+}
+.content.unix .unix {
+    display: inline !important;
+}
+.content.mac .mac {
+    display: inline !important;
+}
 
-.content.win code.cli.win { display: block !important; }
-.content.unix code.cli.unix { display: block !important; }
-.content.mac code.cli.mac { display: block !important; }
+.content.win code.cli.win {
+    display: block !important;
+}
+.content.unix code.cli.unix {
+    display: block !important;
+}
+.content.mac code.cli.mac {
+    display: block !important;
+}
 
-.content.latest .latest { display: inline !important; }
-.content.stable .stable { display: inline !important; }
+.content.latest .latest {
+    display: inline !important;
+}
+.content.stable .stable {
+    display: inline !important;
+}
 
-.content.latest code.cli.latest { display: block !important; }
-.content.stable code.cli.stable { display: block !important; }
+.content.latest code.cli.latest {
+    display: block !important;
+}
+.content.stable code.cli.stable {
+    display: block !important;
+}
 
 /* Version selector */
 
