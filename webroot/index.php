@@ -28,7 +28,7 @@
 
         <ul>
             <li><strong>Ease of maintenance.</strong> Instead of writing custom scripts, you are writing configuration files (once) and rarely have to touch them again.</li>
-            <li><strong>No vendor lock-in.</strong> Having Serge between your source code and an external translation platform system allows you to switch to another one anytime, keeping all your existing automation in place. <a href="/docs/third-party/translation-services/">Check out the list of supported translation platforms</a>.</li>
+            <li><strong>No vendor lock-in.</strong> Having Serge between your source code and an external translation platform system allows you to switch to another one anytime, keeping all your existing automation in place. <a href="/docs/third-party/translation-platforms/">Check out the list of supported translation platforms</a>.</li>
             <li><strong>Security.</strong> You will never have to give external TMS access to your code repository, and third parties will not see your original source files. Serge creates intermediate translation files that contain only the translatable content. There's no way for an external vendor to break your resource files, and you never have to deal with any merge conflicts.</li>
             <li><strong>Flexibility.</strong> You can easily deal with logical projects spawning multiple repositories and file formats.</li>
             <li><strong>Advanced localization workflows.</strong> With Serge, many things that were typically tricky to implement, are possible: multi-step localization with intermediate languages, simultaneous localization of multiple code branches, conditional file processing based on their contents, and so on.</li>

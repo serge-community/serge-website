@@ -155,7 +155,7 @@
         </ul>
         <h3>Integrations</h3>
         <ul>
-            <?php _item("third-party-ts",               "/docs/third-party/translation-services/",      "Translation Services") ?>
+            <?php _item("third-party-ts",               "/docs/third-party/translation-platforms/",     "Translation Platforms") ?>
         </ul>
     </div>
 
