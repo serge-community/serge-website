@@ -8,7 +8,7 @@
 
 <h1>Callbacks</h1>
 
-<p>Callbacks are the way plugins communicate with Serge engine and modify or extend the behavior of localization cycle. Each plugin can listen to any number of callbacks. Some plugins have a predefined set of callbacks they listen to; others can be configured via configuration files. Documentation on each callback plugin shipped with Serge provides information on which callback phases are optional, and which are always on.</p>
+<p>Callbacks are the way plugins communicate with Serge engine and modify or extend the behavior of its localization cycle. Each plugin can listen to any number of callbacks. Some plugins have a predefined set of callbacks they listen to; others can be configured via configuration files. Documentation on each callback plugin shipped with Serge provides information on which callback phases are optional, and which are always on.</p>
 
 <p>In the list below, callbacks are sorted by their first occurrence in the localization cycle.</p>
 
@@ -27,7 +27,7 @@
     <em>(STRING)</em><code>relative_file_path</code>.
 </p>
 <p>Return value: new value of <em>(STRING)</em><code>relative_file_path</code>.</p>
-<p>When source files are scanned, file path (relative to the root directory, see <code>job &rarr; source_dir</code> parameter) for files that match the file masks defined in a job is passed through <code>rewrite_path</code> callbacks. Each callback should either return an unmodified file path, or a rewritten one. Use this phase to change file names and paths, for example, remove language-specific filename suffixes. The final relative file path will be used for the corrensponding translation files, so rewriting the path affects the resulting translation folder/file structure.</p>
+<p>When source files are scanned, file path (relative to the root directory, see <code>job &rarr; source_dir</code> parameter) for files that match the file masks defined in a job is passed through <code>rewrite_path</code> callbacks. Each callback should either return an unmodified file path, or a rewritten one. Use this phase to change file names and paths, for example, remove language-specific filename suffixes. The final relative file path will be used for the corresponding translation files, so rewriting the path affects the resulting translation folder/file structure.</p>
 
 <h2 id="after_load_file">after_load_file</h2>
 <p>Input parameters:
@@ -89,7 +89,7 @@ even for ones that may later be discarded.</p>
     <em>(STRING)</em><code>key</code>.
 </p>
 <p>Return value: <code>1</code> if the string should be extracted for translation, <code>0</code> otherwise.</p>
-<p>This callback is called in source file parsing cycle for each found string, and allows to skip certain strings from translation. Since each source file is parsed twice during localziation cycle, this callback will also be called twice for each extracted string. During the first pass, the <code>language</code> parameter is not set (since Serge is dealing with the source file); During the second pass, language is set to the target language this file is being generated for.</p>
+<p>This callback is called in source file parsing cycle for each found string, and allows to skip certain strings from translation. Since each source file is parsed twice during localization cycle, this callback will also be called twice for each extracted string. During the first pass, the <code>language</code> parameter is not set (since Serge is dealing with the source file); During the second pass, language is set to the target language this file is being generated for.</p>
 
 <h2 id="before_update_database_from_ts_file">before_update_database_from_ts_file</h2>
 
@@ -269,7 +269,7 @@ even for ones that may later be discarded.</p>
     <em>(STRING)</em><code>absolute_file_path</code>.
 </p>
 <p>Return value: new value of <em>(STRING)</em><code>absolute_file_path</code>, or <code>undef</code> if no rewrite is needed.</p>
-<p>This callback is called to rewrite already expanded ouput file path.</p>
+<p>This callback is called to rewrite already expanded output file path.</p>
 
 <h2 id="can_generate_localized_file_source">can_generate_localized_file_source</h2>
 <p>Input parameters:
