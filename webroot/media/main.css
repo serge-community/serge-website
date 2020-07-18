@@ -354,6 +354,10 @@ code > .flags {
     color: #369;
 }
 
+code.block > .inactive {
+    color: #aaa;
+}
+
 ul.social-buttons {
     list-style-type: none;
     margin: 0;

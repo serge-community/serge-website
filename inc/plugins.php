@@ -7,6 +7,7 @@
         "feature_branch",
         "if",
         "keys_language",
+        "lib",
         "limit_languages",
         "process_if",
         "replace_strings",
