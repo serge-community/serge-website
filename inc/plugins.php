@@ -58,6 +58,7 @@
         "git",
         "gerrit",
         "mercurial",
+        "rclone",
         "svn",
     );
 
