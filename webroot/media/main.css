@@ -476,7 +476,8 @@ ol > li:before {
 /* Home page */
 
 .graphic-bg {
-    background: var(--graphic-bg-color) url(homepage_diagram.svg) 50% 0 no-repeat;
+    background-color: var(--graphic-bg-color);
+    background: url(homepage_diagram.svg) 50% 0 no-repeat;
     background-size: 1565px 317px;
     position: absolute;
     height: 317px;
