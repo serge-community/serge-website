@@ -98,7 +98,7 @@ jobs
 {
     :sample-job
     {
-        destination_languages  test
+        destination_languages  keys
 
         callback_plugins
         {
@@ -126,9 +126,9 @@ jobs
                     This plugin will kick in when the target
                     language in job's `destination_languages`
                     parameter matches this value.
-                    Default: test
+                    Default: keys
                     */
-                    language             test
+                    language             keys
 
                     /*
                     (STRING) [OPTIONAL] Initial 'seed' string
