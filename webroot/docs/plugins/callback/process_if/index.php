@@ -79,7 +79,7 @@ jobs
 </script>
 </figure>
 
-<p>See also: <a href="/docs/plugins/if/">'if' plugin reference</a>.</p>
+<p>See also: <a href="/docs/plugins/callback/if/">'if' plugin reference</a>.</p>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/../inc/documentation-footer.php') ?>
 
