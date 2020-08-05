@@ -54,9 +54,9 @@ jobs
                             /*
                             (BOOLEAN) [OPTIONAL] This directive
                             instructs to stop processing other `if`
-                            blocks below and return the corresponsing
+                            blocks below and return the corresponding
                             value: 1 (YES) or 0 (NO).
-                            If ommitted, `if` statements below will
+                            If omitted, `if` statements below will
                             be processed. See `process_if` plugin
                             for more examples.
                             */
