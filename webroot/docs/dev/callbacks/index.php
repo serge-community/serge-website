@@ -31,7 +31,7 @@
 
 <h2 id="after_load_file">after_load_file</h2>
 <p>Input parameters:
-    <em>(STRING)</em><code>relative_file_path</code>,
+    <em>(STRING)</em><code>absolute_file_path</code>,
     <em>(STRING)</em><code>source_language</code>,
     <em>(STRINGREF)</em><code>content</code>.
 </p>
