@@ -20,8 +20,6 @@
     <li><code><a href="/docs/dev/callbacks/#rewrite_path">rewrite_path</a></code></li>
     <li><code><a href="/docs/dev/callbacks/#rewrite_relative_output_file_path">rewrite_relative_output_file_path</a></code></li>
     <li><code><a href="/docs/dev/callbacks/#rewrite_absolute_output_file_path">rewrite_absolute_output_file_path</a></code></li>
-    <li><code><a href="/docs/dev/callbacks/#rewrite_relative_ts_file_path">rewrite_relative_ts_file_path</a></code></li>
-    <li><code><a href="/docs/dev/callbacks/#rewrite_absolute_ts_file_path">rewrite_absolute_ts_file_path</a></code></li>
 </ul>
 
 <p>This plugin is used to manipulate (rewrite/patch) strings. Depending on the callback phase this plugin is attached to, it can change source or destination file contents, rewrite translations and file paths. See the documenation on callbacks for more information.</p>
