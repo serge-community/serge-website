@@ -14,9 +14,7 @@
 
 <h2>Smartcat</h2>
 
-<p>Plugin repository: <a href="https://github.com/smartcatai/smartcat-serge-sync-plugin">https://github.com/smartcatai/smartcat-serge-sync-plugin</a></p>
-
-<p><a href="https://smartcat.ai/">Smartcat</a> is a commercial translation platform integrated with Serge and supporting Serge as a part of their subscription. Check out their case study:
+<p><a href="https://smartcat.ai/">Smartcat</a> is a commercial translation platform integrated with Serge and supporting Serge as a part of their subscription. Smartcat plugin is included with Serge. Check out their case study:
 
 <p class="notice"><a href="https://www.smartcat.ai/blog/how-software-companies-can-set-up-continuous-localization-with-smartcat-serge-xsolla-case-study/">How software companies can set up continuous localization with Smartcat & Serge: Xsolla case study</a></p>
 

@@ -63,6 +63,7 @@
     );
 
     $ts_plugins = array(
+        "smartcat_v2",
         "zing",
     );
 ?>
