@@ -6,7 +6,7 @@
 
 <h1>Serge + Zing</h1>
 
-<p><a href="https://evernote.github.io/zing/">Zing</a> is Evernote's free open-source web-based translation server. Zing was designed to seamlessly work with Serge and support all of its features, and is our recommended translation front-end. Zing supports working with both community and paid translators.</p>
+<p><a href="https://serge-community.github.io/zing/">Zing</a> is a free open-source web-based translation server. Zing was designed to seamlessly work with Serge and support all of its features, and is our recommended translation front-end. Zing supports working with both community and paid translators.</p>
 
 <h1>Configuring Serge to work with Zing</h1>
 

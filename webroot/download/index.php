@@ -52,7 +52,7 @@
     <li><a id="os_mac">Mac OS</a></li>
 </ul>
 
-<p>Below you will see instructions on installing Serge on your system with the necessary dependencies. If you prefer to keep things isolated, you can also <a href="https://github.com/evernote/serge/tree/master/docker">install Serge as a Docker container</a>.</p>
+<p>Below you will see instructions on installing Serge on your system with the necessary dependencies. If you prefer to keep things isolated, you can also <a href="https://github.com/serge-community/serge/tree/master/docker">install Serge as a Docker container</a>.</p>
 
 <h3>Select Preferred Version</h3>
 <ul class="menu selector" id="version_selector">
@@ -60,7 +60,7 @@
     <li><a id="version_stable">Stable (<span class="tag_name"></span>)</a><div id="latest_release_info"></div></li>
 </ul>
 
-<p>Serge source code is available <a href="https://github.com/evernote/serge">on GitHub</a>. Code in <code>master</code> branch is considered the latest version; stable releases are marked with <a href="https://github.com/evernote/serge/releases">release tags</a>.</p>
+<p>Serge source code is available <a href="https://github.com/serge-community/serge">on GitHub</a>. Code in <code>master</code> branch is considered the latest version; stable releases are marked with <a href="https://github.com/serge-community/serge/releases">release tags</a>.</p>
 
 <h1>Installing Serge on
     <span class="win">Windows</span>
@@ -95,14 +95,14 @@
 
 <section class="mac unix">
    <code class="cli">cd ~/serge
-wget https://github.com/evernote/serge/archive/<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip -O serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip</span>
+wget https://github.com/serge-community/serge/archive/<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip -O serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip</span>
 unzip serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip
 unlink serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span>.zip
 cd serge-<span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span></code>
 </section>
 
 <section class="win">
-    <p>Download <a id="download_link" href="#"><span>https://github.com/evernote/serge/archive/</span><span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span><span>.zip</span></a> and unpack it to <code>C:\Serge</code>.</p>
+    <p>Download <a id="download_link" href="#"><span>https://github.com/serge-community/serge/archive/</span><span class="latest">master</span><span class="stable"><span class="tag_name"><em>&lt;version&gt;</em></span></span><span>.zip</span></a> and unpack it to <code>C:\Serge</code>.</p>
 </section>
 
 <h2>Step 3. Install Dependencies</h2>
@@ -154,7 +154,7 @@ Once you have it installed, run the following commands:
 
 <script type="text/javascript">
     $(document).ready(function () {
-        var project = 'evernote/serge';
+        var project = 'serge-community/serge';
 
         // update master branch information
         $.getJSON('https://api.github.com/repos/'+project+'/branches/master').done(function (branch) {

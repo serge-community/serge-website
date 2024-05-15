@@ -16,7 +16,7 @@
 
         <p>By means of writing platform-agnostic connectors, Serge can be used to enable continuous localization for any externally stored content: your marketing website, blog, CMS, help center, documentation, app store descriptions.</p>
 
-        <p>Serge was originally developed by <a href="http://evernote.com/">Evernote</a>, where it works non-stop to deliver various Evernote clients, websites and marketing materials in 25 languages. Today it is used by large enterprises and smaller teams alike, helping them reach their global audiences without sacrificing the speed of product development.</p>
+        <p>Serge is used by large enterprises and smaller teams alike, helping them reach their global audiences without sacrificing the speed of product development.</p>
 
         <p><a href="/docs/" class="cta-button">Get Started</a></p>
     </div>

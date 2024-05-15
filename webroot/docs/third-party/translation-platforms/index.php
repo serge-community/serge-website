@@ -10,7 +10,7 @@
 
 <h2>Zing</h2>
 
-<p><a href="https://evernote.github.io/zing/">Zing</a> is Evernote's own free open-source TMS/CAT tool, tailored to work with Serge. This is a self-hosted solution; no commercial support is provided. Zing plugin is included with Serge.</p>
+<p><a href="https://serge-community.github.io/zing/">Zing</a> is a free open-source TMS/CAT tool, tailored to work with Serge. This is a self-hosted solution; no commercial support is provided. Zing plugin is included with Serge.</p>
 
 <h2>Smartcat</h2>
 

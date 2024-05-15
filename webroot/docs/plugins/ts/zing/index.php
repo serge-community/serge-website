@@ -12,7 +12,7 @@
 
 <p>Plugin source location: <code>&lt;serge_root&gt;/lib/Serge/Sync/Plugin/TranslationService/zing.pm</code></p>
 
-<p>This plugin provides integration with <a href="https://evernote.github.io/zing/">Zing</a>, Evernote's own open-source translation platform.</p>
+<p>This plugin provides integration with <a href="https://serge-community.github.io/zing/">Zing</a> open-source translation platform.</p>
 
 <p>On <code><a href="/docs/help/serge-push-ts/">push-ts</a></code> sync step, Serge will tell Zing to scan generated translation files and update its internal translation database so that the new content becomes available for translation online. Respectively, on <code><a href="/docs/help/serge-pull-ts/">pull-ts</a></code> sync step, Serge will tell Zing to synchronize all the translations back into translation files.</p>
 

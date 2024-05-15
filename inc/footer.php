@@ -2,10 +2,6 @@
         </div><!-- /content -->
 
         <div class="footer">
-            <div class="copyright">
-                &copy; 2014&ndash;<?php echo date("Y"); ?> <a href="//evernote.com/">Evernote Corporation</a>.<br/>
-                All rights reserved.
-            </div>
             <div class="license">
                 Serge is licensed under Standard Perl License (dual <a href="http://dev.perl.org/licenses/gpl1.html">GPL</a> / <a href="http://dev.perl.org/licenses/artistic.html">Artistic License</a>)<br/>
                 Serge.io website and Serge documentation are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
